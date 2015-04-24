@@ -33,14 +33,48 @@ to do - Picture Fill polyfill
 Plugins
 -- Default Menu
 
-# DownLoad
-```
-git clone git://where.FrontEndSeed.will.live name-of-your-new-project
+# Download
+`git clone ssh://git@gitlab.lemondigits.com:2022/internal/frontendseed.git`
 
-git init
+or
 
-git remote add origin git://where.FrontEndSeed.will.live name-of-your-new-project
+`git clone http://gitlab.lemondigits.com/internal/frontendseed.git`
+
+Then rename the file `mv frontendseed mynewproject`
+
+`cd mynewproject`
+
+Then set up your new git repo for the new project.
+
+check the remote repo like this
+
+`git remote -v`
+
+which should give you back
+
 ```
+origin	http://gitlab.lemondigits.com/internal/frontendseed.git (fetch)
+origin	http://gitlab.lemondigits.com/internal/frontendseed.git (push)
+```
+
+remove it `git remote remove origin`
+
+add the new repo in its place.
+
+`git remote add origin http://gitlab.lemondigits.com/max/mynewproject.git`
+
+or
+
+`git remote add origin ssh://git@gitlab.lemondigits.com:2022/max/mynewproject.git`
+
+then run `git remote -v` again to check that they are correct. They should look like the below
+
+```
+origin	ssh://git@gitlab.lemondigits.com:2022/max/mynewproject.git (fetch)
+origin	ssh://git@gitlab.lemondigits.com:2022/max/mynewproject.git (push)
+```
+
+at this point if you'r using smartgit or a GUI you can open the local repo using CMD+O (add local working copy)
 
 # Install Steps
 
