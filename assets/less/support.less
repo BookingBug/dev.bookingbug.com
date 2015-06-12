@@ -1,0 +1,18 @@
+/*
+# Support
+
+Mainly based on Modernizr output
+
+Here we define the warings that show if the users 
+has an outof date browser or no JS
+We can also set environment vars such as if its not a touch device
+
+*/
+
+.browser-warning-js {
+	display: none;
+}
+
+html:not(.js) .browser-warning-js {
+  display:block;
+}

@@ -4,7 +4,10 @@
   "description": "This project is a default front end start point. Made for LemonDigits.com fr use on client projects.",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "rake",
+    "install": "npm install && bower install && grunt",
+    "start": "node server.js",
+    "watch": "grunt watch"
   },
   "author": "",
   "license": "ISC",

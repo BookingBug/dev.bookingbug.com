@@ -1,6 +1,23 @@
 # FrontEndSeed
 ### Seed Project for prototypes and production front-ends
 
+
+# Exsisting Project
+
+`bower install`
+
+`bundle install`
+
+`npm install`
+
+`npm start`
+
+`npm test` needs to have a server running `npm start` in order to work.
+
+`npm watch` run grunt and watch for changes
+
+# New Project
+
 This project is a default front end start point. Made for LemonDigits.com fr use on client projects.
 
 ## Features
@@ -85,6 +102,10 @@ at this point if you'r using smartgit or a GUI you can open the local repo using
 `bower install` make sure to change the repo details in the bower.json file we did not create it on the fly as it where with npm, as there are many packages.
 
 `grunt watch`
+
+run the server in a new shell
+
+` npm start `
 
 # Rspec Tests
 
