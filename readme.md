@@ -32,6 +32,7 @@ This project is a default front end start point. Made for LemonDigits.com fr use
 - og and twitter cards
 - Google Structured Data
 - IE Exceptions <html class="ie ie8" lang="en">
+- support warning for browser version and no js. Based on modinzr
 
 ### Libs
 - moderizr (bower)

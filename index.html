@@ -2,7 +2,7 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" class="ie"><!--<![endif]-->
     <head itemscope itemtype="http://schema.org/WebSite">
         <title itemprop='name'>siteName</title>
         <link rel="canonical" href="https://example.com/" itemprop="url">
@@ -36,7 +36,6 @@
         <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="bower_components/animate.css/animate.css">
-        <link rel="stylesheet" href="bower_components/jReject/css/jquery.reject.css">
 
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
@@ -45,7 +44,6 @@
         <script type="text/javascript" src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
         <script type="text/javascript" src="bower_components/es5-shim/es5-shim.min.js"></script>
         <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
-        <script type="text/javascript" src="bower_components/jReject/js/jquery.reject.js"></script>
 
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -96,9 +94,12 @@
 
     </head>
 
-    <body lang="en">
-    <div class="browser-warning-js">
-        Javascript is disabled on your browser, you may get a worse experience
+    <body>
+    <div class="browser-warning js">
+        <i class="fa fa-exclamation-circle"></i>&nbsp; For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="http://www.enable-javascript.com/" target="_blank"> instructions how to enable JavaScript in your web browser</a>.
+    </div>
+    <div class="browser-warning ie">
+        <i class="fa fa-exclamation-circle"></i>&nbsp;<a href="https://whatbrowser.org/">You are using an out of date browser, we suggest you upgrade. You may continue if you wish, but aspects of the site may not function correctly.</a>
     </div>
     it runs :)
     </body>

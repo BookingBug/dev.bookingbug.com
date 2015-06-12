@@ -9,10 +9,30 @@ We can also set environment vars such as if its not a touch device
 
 */
 
-.browser-warning-js {
+@warning-color: rgb(244, 56, 56);
+
+.browser-warning {
 	display: none;
+	background-color: fade(@warning-color, 90%);
+	padding: 0.75em;
+	font-size: 1.1em;
+	color: #f7f7f7;
+	font-weight: 300;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100%;
 }
 
-html:not(.js) .browser-warning-js {
+.browser-warning a {
+	color: lighten(@warning-color, 40%);
+	text-decoration: none;
+}
+
+html:not(.js) .browser-warning.js {
+  display:block;
+}
+
+html.ie .browser-warning.ie {
   display:block;
 }
