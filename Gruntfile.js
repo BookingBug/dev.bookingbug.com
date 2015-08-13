@@ -4,23 +4,18 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          compress: true,
-          yuicompress: true,
-          optimization: 2
+          compress: true
         },
         files: {
           // target.css file: source.less file
-          "assets/css/main.css": "assets/less/styles.less"
+          "assets/css/less.min.css": "assets/less/styles.less"
         }
       }
     },
     watch: {
       styles: {
         files: ['assets/less/**/*.less'], // which files to watch
-        tasks: ['less'],
-        options: {
-          nospawn: true
-        }
+        tasks: ['less']
       }
     }
   });

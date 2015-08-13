@@ -1,7 +1,6 @@
 # FrontEndSeed
 ### Seed Project for prototypes and production front-ends
 
-
 # Exsisting Project
 
 `bower install`

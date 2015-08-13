@@ -1,6 +1,29 @@
-var connect = require('connect');
-var serveStatic = require('serve-static');
+var Twig = require("twig");
+var express = require('express');
+var app = express();
 
+app.use('/assets', express.static('assets'));
+app.use('/bower_components', express.static('bower_components'));
 
-connect().use(serveStatic(__dirname)).listen(8080);
-console.log('app running on port 8080');
+app.set("twig options", {
+    strict_variables: false
+});
+ 
+app.get('/', function(req, res){
+  res.render('index.twig', {
+    //templateVar : "Hello World"
+  });
+});
+
+app.get('/page', function(req, res){
+  res.render('page.twig', {
+    //templateVar : "Hello World"
+  });
+});
+
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+});

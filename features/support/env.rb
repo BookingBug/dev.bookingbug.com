@@ -8,7 +8,7 @@ end
 
 Capybara.configure do |config|
   config.default_driver = :chrome
-  config.app_host   = 'http://localhost:8080'
+  config.app_host   = 'http://localhost:3000'
 end
 
 World(Capybara)
