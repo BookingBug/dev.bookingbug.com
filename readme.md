@@ -1,7 +1,32 @@
 # FrontEndSeed
-### Seed Project for prototypes and production front-ends
+Seed Project for prototypes and production front end static-ish websites.
+based on Express and Node. Its designed to be the jump off point when starting a new project.
 
-# Exsisting Project
+# Prerequisites
+you need to have the below installed for this project.
+
+> Installing Ruby can be quite fidderly if your not familiar with it. We use it here to run UI tests so dont worry about it for the moment, you can set it up later. Mac comes with ruby installed but alas its the wrong version for our needs.
+
+- Node https://nodejs.org/
+- Bower http://bower.io/
+- Ruby http://www.ruby-lang.org/en/downloads/
+- Ruby Gems http://rubygems.org/
+- Chromedriver https://sites.google.com/a/chromium.org/chromedriver/getting-started
+- Bundler: `sudo gem install bundler rake`
+
+# How To Use
+To start using this simply clone the repo like so
+
+`git clone https://github.com/maxmckenzie/FrontEndSeed.git NewProject`
+
+Relace NewProject with your project name. If you didnt know this, passing this argument after the git clone url will create a directory with the name NewProject and checkout the repo into that folder.
+
+Then run `git remote remove origin` this will remove the original URL form your local repo. you can then add your repo URL. For more info on this take a look here https://help.github.com/articles/adding-a-remote/
+
+> If you arer also using Github for your project then you can simply hit the fork button on this page https://github.com/maxmckenzie/FrontEndSeed
+
+# Install and Start
+run the following commands.
 
 `bower install`
 
@@ -9,15 +34,11 @@
 
 `npm install`
 
+then run 
+
 `npm start`
 
-`npm test` needs to have a server running `npm start` in order to work.
-
-`npm watch` run grunt and watch for changes
-
-# New Project
-
-This project is a default front end start point. Made for LemonDigits.com fr use on client projects.
+You will also need to run `grunt watch` when editing the Less styles. grnu twill then build the CSS output for you.
 
 ## Features
 - NPM
@@ -27,87 +48,24 @@ This project is a default front end start point. Made for LemonDigits.com fr use
 - Bower
 - Rspec UI Tests
 
-## Structure
+## HTML Structure
 - og and twitter cards
 - Google Structured Data
 - IE Exceptions <html class="ie ie8" lang="en">
-- support warning for browser version and no js. Based on modinzr
+- support warning for browser version and no js. Based on modernizr
 
-### Libs
-- moderizr (bower)
-- JQuery (bower)
-- html5shiv (bower)
-- es5-shim (bower)
-- Google open sans (CDN)
-- Font Awsome (bower)
-- normalize.css (bower)
-- animate.css (bower)
-- Style Guide - kali - bower
-- jReject (bower) its happening
-
-to do - Picture Fill polyfill
-
-Plugins
--- Default Menu
-
-# Download
-`git clone ssh://git@gitlab.lemondigits.com:2022/internal/frontendseed.git`
-
-or
-
-`git clone http://gitlab.lemondigits.com/internal/frontendseed.git`
-
-Then rename the file `mv frontendseed mynewproject`
-
-`cd mynewproject`
-
-Then set up your new git repo for the new project.
-
-check the remote repo like this
-
-`git remote -v`
-
-which should give you back
-
-```
-origin	http://gitlab.lemondigits.com/internal/frontendseed.git (fetch)
-origin	http://gitlab.lemondigits.com/internal/frontendseed.git (push)
-```
-
-remove it `git remote remove origin`
-
-add the new repo in its place.
-
-`git remote add origin http://gitlab.lemondigits.com/max/mynewproject.git`
-
-or
-
-`git remote add origin ssh://git@gitlab.lemondigits.com:2022/max/mynewproject.git`
-
-then run `git remote -v` again to check that they are correct. They should look like the below
-
-```
-origin	ssh://git@gitlab.lemondigits.com:2022/max/mynewproject.git (fetch)
-origin	ssh://git@gitlab.lemondigits.com:2022/max/mynewproject.git (push)
-```
-
-at this point if you'r using smartgit or a GUI you can open the local repo using CMD+O (add local working copy)
-
-# Install Steps
-
-## NPM
-`npm init && sudo npm install -g grunt-cli && sudo npm install -g bower && npm install grunt --save && npm install grunt-contrib-watch --save && npm install grunt-contrib-less --save`
-
-## Bower
-`bower install` make sure to change the repo details in the bower.json file we did not create it on the fly as it where with npm, as there are many packages.
-
-`grunt watch`
-
-run the server in a new shell
-
-` npm start `
+## Libs Included
+- modernizr (loaded via bower)
+- JQuery (loaded via bower)
+- html5shiv (loaded via bower)
+- es5-shim (loaded via bower)
+- Google open sans (loaded via CDN)
+- Font Awsome (loaded via bower)
+- normalize.css (loaded via bower)
+- animate.css (loaded via bower)
 
 # Rspec Tests
+More info on this coming.
 
 == UI Test Project Layout
 
