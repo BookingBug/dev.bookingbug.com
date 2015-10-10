@@ -19,7 +19,7 @@ you need to have the below installed for this project.
 - Express http://expressjs.com/
 - Twig http://twig.sensiolabs.org/ 
 
-> We use the js version if twig for this application so bare in mind that the docs are for PHP. Same syntax. Just rember that some features are not avalible before you start hitting your head against a wall.
+> We use the js version of twig for this application so bare in mind that the docs are for PHP. Same syntax. Just rember that some features are not avalible before you start hitting your head against a wall.
 
 # How To Use
 To start using this simply clone the repo like so
