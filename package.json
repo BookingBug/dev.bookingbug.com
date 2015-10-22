@@ -5,11 +5,13 @@
   "main": "Gruntfile.js",
   "scripts": {
     "test": "rake",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bower install"
   },
   "author": "",
   "license": "",
   "dependencies": {
+    "bower": "^1.6.3",
     "express": "^4.13.3",
     "grunt": "~0.4.5",
     "grunt-contrib-less": "~1.0.1",

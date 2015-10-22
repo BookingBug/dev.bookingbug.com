@@ -47,6 +47,21 @@ then run
 
 You will also need to run `grunt watch` when editing the Less styles. grnu twill then build the CSS output for you.
 
+# Heroku Support
+> Heroku is the nuts. If you've not heard of it check it out. like now.... why are you still reading this?
+
+So to deploy to Heroku. We have to do a couple of things. Firstly go get the toolbelt from there site https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+
+Then run `heroku login` and enter your heroku account details.
+
+Now its time to create the app. run `heroku create myApp` or whatever you want in place of 'myApp'. Now before you push, you miust run a buildpack command to tell heroku to run a node instance, the reason for this is that our feature UI tests are in ruby. this is probelematic as heroku picks this up and sets ruby as the framework rather than node.
+
+So you'll need to run `heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs`
+
+I usually open a new shell (terminal window) at this point and run `heroku logs --tail` in the app directory. Cause we all love commands flying past right... oh yeha and thats where the error messages appear.
+
+Once you're through the above run `git push heroku master` and watch that sweet sweet auto deploy unfold.
+
 ## Features
 - NPM
 - Grunt
