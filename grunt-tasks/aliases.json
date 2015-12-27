@@ -1,0 +1,13 @@
+{
+	"default": ["build"],
+
+	"compile-local": [
+		"less",
+		"csslint:lax",
+		"notify:finished"
+	],
+
+	"build": [	
+		"compile-local"
+	]
+}

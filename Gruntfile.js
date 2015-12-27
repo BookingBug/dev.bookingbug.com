@@ -1,26 +1,23 @@
+var path = require('path');
+var LoadGruntConfig = require('load-grunt-config');
+var execSync = require('child_process').execSync;
+
 module.exports = function(grunt) {
+    var environment = (process.env.LD_ENVIRONMENT || "local");
 
-  grunt.initConfig({
-    less: {
-      development: {
-        options: {
-          compress: true
-        },
-        files: {
-          // target.css file: source.less file
-          "assets/css/less.min.css": "assets/less/styles.less"
-        }
-      }
-    },
-    watch: {
-      styles: {
-        files: ['assets/less/**/*.less'], // which files to watch
-        tasks: ['less']
-      }
-    }
-  });
+    var localGitHash = null;
+    try {
+        localGitHash = execSync("git rev-parse HEAD").toString().replace(/(\r\n|\n|\r)/gm, "");
+    } catch(e) { }
 
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['less']);
+    var project_config = {};
+    project_config.__versionString = (process.env.CI_BUILD_REF || localGitHash || "ffffff").substr(0, 6);
+    project_config.environment     = environment;
+
+    require('time-grunt')(grunt);
+
+    LoadGruntConfig(grunt, {
+        configPath: path.join(process.cwd(), 'grunt-tasks'),
+        data: project_config
+    });
 };
