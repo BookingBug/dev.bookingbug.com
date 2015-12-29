@@ -3,7 +3,6 @@
 
 	"compile-local": [
 		"less",
-		"csslint:lax",
 		"notify:finished"
 	],
 
