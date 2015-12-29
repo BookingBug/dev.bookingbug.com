@@ -9,10 +9,6 @@ you need to have the below installed for this project.
 
 - Node https://nodejs.org/
 - Bower http://bower.io/
-- Ruby http://www.ruby-lang.org/en/downloads/
-- Ruby Gems http://rubygems.org/
-- Chromedriver https://sites.google.com/a/chromium.org/chromedriver/getting-started
-- Bundler: `sudo gem install bundler rake`
 
 # Docs
 - Wiki https://github.com/maxmckenzie/FrontEndSeed/wiki
