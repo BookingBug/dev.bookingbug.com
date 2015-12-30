@@ -3,6 +3,8 @@
 
 	"compile-local": [
 		"less",
+		"babel",
+		"concat",
 		"notify:finished"
 	],
 

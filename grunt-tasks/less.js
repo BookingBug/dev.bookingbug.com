@@ -1,7 +1,7 @@
 module.exports = function(grunt, options) {
 
   var files = {};
-  files["assets/css/less.min.css"] = ['assets/**/*.less'];
+  files["assets/dist/less.min.css"] = ['assets/**/*.less'];
   
   return {
     less: {
