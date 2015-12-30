@@ -10,8 +10,8 @@ module.exports = function(grunt, options) {
 		}
 	};
 
-	tasks["radio.js"] = {
-		src: "tmp/babel/public/assets/javascript/**/*.js",
+	tasks["build.concat.js"] = {
+		src: "tmp/babel/assets/javascript/**/*.js",
 		dest: "assets/dist/build.concat.js"
 	};
 
