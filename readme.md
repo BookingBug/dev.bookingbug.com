@@ -2,6 +2,21 @@
 Seed Project for prototypes and production front end static-ish websites.
 based on Express and Node. Its designed to be the jump off point when starting a new project.
 
+# Features
+- ECMA6 ready with babel.js for browser support.
+- Modular Grunt Tasks.
+- LESS
+- CSS auto prefix
+- Grunt Build Notifications
+- normalize.css
+- fontawesome
+- animate.css
+- html5shiv
+- es5-shim
+- jquery
+- modernizr
+- IE and no JS user warnings
+
 # Prerequisites
 you need to have the below installed for this project.
 
