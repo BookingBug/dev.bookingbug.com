@@ -10,13 +10,9 @@ app.set("twig options", {
 });
  
 app.get('/', function(req, res){
-  res.render('index.twig', {
+  res.render('pages/index.twig', {
     //templateVar : "Hello World"
   });
-});
-
-app.get('/page', function(req, res){
-  res.render('page.twig');
 });
 
 app.set('port', (process.env.PORT || 5000));

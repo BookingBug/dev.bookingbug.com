@@ -4,8 +4,7 @@
   "description": "This project is a default front end start point. Made for LemonDigits.com fr use on client projects.",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "rake",
-    "start": "node server.js",
+    "start": "node index.js",
     "postinstall": "bower install"
   },
   "author": "",
