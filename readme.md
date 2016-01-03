@@ -20,8 +20,6 @@ based on Express and Node. Its designed to be the jump off point when starting a
 # Prerequisites
 you need to have the below installed for this project.
 
-> Installing Ruby can be quite fiddly if your not familiar with it. We use it here to run UI tests so don't worry about it for the moment, you can set it up later. Mac comes with ruby installed but alas its the wrong version for our needs.
-
 - Node https://nodejs.org/
 - Bower http://bower.io/
 
