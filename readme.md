@@ -45,7 +45,7 @@ Then run `git remote remove origin` this will remove the original URL form your 
 # Install and Start
 run the following commands.
 
-`npm install` to install all the node and bower dependancies. It also then builds all the assets with grunt
+`npm install` to install all the node and bower dependencies. It also then builds all the assets with grunt
 then run.
 
 `npm start` This lances the app and watches the `javascript/, css/` and `views/` directories for a change and then reboots/rebuilds where necessary.
@@ -61,6 +61,8 @@ Now its time to create the app. run `heroku create myApp` or whatever you want i
 
 So you'll need to run `heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs`
 
-I usually open a new shell (terminal window) at this point and run `heroku logs --tail` in the app directory. Cause we all love commands flying past right... oh yeha and thats where the error messages appear.
+I usually open a new shell (terminal window) at this point and run `heroku logs --tail` in the app directory. Cause we all love commands flying past right... oh yeah and that's where the error messages appear.
 
 Once you're through the above run `git push heroku master` and watch that sweet sweet auto deploy unfold.
+
+You can then run `heroku open` to open the application in a browser.
