@@ -48,7 +48,7 @@ run the following commands.
 `npm install` to install all the node and bower dependencies. It also then builds all the assets with grunt
 then run.
 
-`npm start` This lances the app and watches the `javascript/, css/` and `views/` directories for a change and then reboots/rebuilds where necessary.
+`npm start` This launches the app and watches the `javascript/, css/` and `views/` directories for a change and then reboots/rebuilds where necessary.
 
 # Heroku Support
 > Heroku is the nuts. If you've not heard of it check it out. like now.... why are you still reading this?
