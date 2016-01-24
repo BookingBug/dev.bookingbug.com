@@ -13,7 +13,7 @@ module.exports = function(grunt, options) {
 			cwd: './',
 			ext: 'twig',
 			ignore: ['node_modules/**'],
-			watch: ['views']
+			watch: ['views', 'index.js']
     	}
 	}
   };
