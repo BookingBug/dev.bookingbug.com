@@ -10,7 +10,7 @@ app.set("twig options", {
 });
  
 app.get('/', function(req, res){
-  res.render('pages/index.twig', {
+  res.render('index.twig', {
     //templateVar : "Hello World"
   });
 });
