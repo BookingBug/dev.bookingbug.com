@@ -15,6 +15,7 @@ based on Express and Node. Its designed to be the jump off point when starting a
 - es5-shim
 - jquery
 - modernizr
+- Desktop Notifications
 - IE and no JS user warnings
 
 # Prerequisites
@@ -28,7 +29,7 @@ you need to have the below installed for this project.
 - Express http://expressjs.com/
 - Twig http://twig.sensiolabs.org/ 
 
-> We use the js version of twig for this application so bare in mind that the docs are for PHP. Same syntax. Just remember that some features are not available before you start hitting your head against a wall.
+> We use the JavaScript version of Twig for this application so bare in mind that the docs are for PHP. Same syntax. Just remember that some features are not available before you start hitting your head against a wall.
 
 # How To Use
 To start using this simply clone the repo like so
@@ -44,13 +45,10 @@ Then run `git remote remove origin` this will remove the original URL form your 
 # Install and Start
 run the following commands.
 
-`npm install`
+`npm install` to install all the node and bower dependancies. It also then builds all the assets with grunt
+then run.
 
-then run 
-
-`npm start`
-
-You will also need to run `grunt watch` when editing the Less styles. grunt twill then build the CSS output for you.
+`npm start` This lances the app and watches the `javascript/, css/` and `views/` directories for a change and then reboots/rebuilds where necessary.
 
 # Heroku Support
 > Heroku is the nuts. If you've not heard of it check it out. like now.... why are you still reading this?
