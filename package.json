@@ -4,8 +4,8 @@
   "description": "This project is a default front end start point. Made for LemonDigits.com fr use on client projects.",
   "main": "Gruntfile.js",
   "scripts": {
-    "start": "node index.js",
-    "postinstall": "bower install"
+    "start": "grunt nodemon",
+    "postinstall": "bower install && grunt"
   },
   "author": "",
   "license": "",
@@ -19,6 +19,7 @@
     "grunt-contrib-csslint": "^0.5.0",
     "grunt-contrib-less": "^1.1.0",
     "grunt-contrib-watch": "~0.6.1",
+    "grunt-nodemon": "^0.4.1",
     "grunt-notify": "^0.4.3",
     "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-clean-css": "^1.5.1",
