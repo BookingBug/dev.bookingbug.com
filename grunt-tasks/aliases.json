@@ -5,11 +5,11 @@
 		"less",
 		"babel",
 		"concat",
-		"nodemon",
 		"notify:finished"
 	],
 
 	"build": [	
-		"compile-local"
+		"compile-local",
+		"nodemon"
 	]
 }
