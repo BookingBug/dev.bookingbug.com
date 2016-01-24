@@ -9,7 +9,6 @@
 	],
 
 	"build": [	
-		"compile-local",
-		"nodemon"
+		"compile-local"
 	]
 }
