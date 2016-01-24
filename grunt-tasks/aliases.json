@@ -5,6 +5,7 @@
 		"less",
 		"babel",
 		"concat",
+		"nodemon",
 		"notify:finished"
 	],
 
