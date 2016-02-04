@@ -1,7 +1,3 @@
-# FrontEndSeed
-Seed Project for prototypes and production front end static-ish websites.
-based on Express and Node. Its designed to be the jump off point when starting a new project.
-
 # Features
 - ECMA6 ready with babel.js for browser support.
 - Modular Grunt Tasks.
@@ -25,22 +21,11 @@ you need to have the below installed for this project.
 - Bower http://bower.io/
 
 # Docs
-- Wiki https://github.com/maxmckenzie/FrontEndSeed/wiki
-- Express http://expressjs.com/
-- Twig http://twig.sensiolabs.org/ 
+- Wiki [https://github.com/maxmckenzie/FrontEndSeed/wiki](https://github.com/maxmckenzie/FrontEndSeed/wiki) - built on FrontEndSeed
+- Express [http://expressjs.com/](http://expressjs.com/)
+- Twig [http://twig.sensiolabs.org/](http://expressjs.com/)
 
 > We use the JavaScript version of Twig for this application so bare in mind that the docs are for PHP. Same syntax. Just remember that some features are not available before you start hitting your head against a wall.
-
-# How To Use
-To start using this simply clone the repo like so
-
-`git clone https://github.com/maxmckenzie/FrontEndSeed.git NewProject`
-
-Replace NewProject with your project name. If you didn't know this, passing this argument after the git clone url will create a directory with the name NewProject and checkout the repo into that folder.
-
-Then run `git remote remove origin` this will remove the original URL form your local repo. you can then add your repo URL. For more info on this take a look here https://help.github.com/articles/adding-a-remote/
-
-> If you are also using Github for your project then you can simply hit the fork button on this page https://github.com/maxmckenzie/FrontEndSeed
 
 # Install and Start
 run the following commands.

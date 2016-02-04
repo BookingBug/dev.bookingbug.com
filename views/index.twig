@@ -1,11 +1,6 @@
-{% include 'components/header.twig' %}
+{% include 'bbug::components/header.twig' %}
+{% include 'bbug::components/menu.twig' %}
 
-<div class="content">
-	<h1>FrontEndSeed</h1>
+{{ content }}
 
-	<p>FrontEndSeed is a platform for creating simple front end websites. You can also use it as a prototyping framework. It comes with a few things out of the box such as ES6 capability via Babel and no-js IE error messages</p>
-
-	<p>For more on this check out <a href="https://github.com/maxmckenzie/FrontEndSeed">The Readme</a> and <a href="https://github.com/maxmckenzie/FrontEndSeed/wiki">The Wiki</a></p>
-</div>
-
-{% include 'components/footer.twig' %}
+{% include 'bbug::components/footer.twig' %}
