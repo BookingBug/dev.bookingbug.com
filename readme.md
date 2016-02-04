@@ -1,5 +1,7 @@
 # Features
 - ECMA6 ready with babel.js for browser support.
+- Markdown templates
+- Dynamic markdown doc loading via app.set('/:categories/:pages')
 - Modular Grunt Tasks.
 - LESS
 - CSS auto prefix
