@@ -3,8 +3,12 @@
 class Core {
 	constructor() {
 		this.log('Loaded Core JavaScript');
-		this.checkPerms();
-		this.notify('Notifications Enabled!', 'FrontEndSeed comes with Desktop Notifications');
+		this.bind();
+		this.checkDependancies();
+		//TODO if url matches menu item href add class active
+		
+		// this.checkPerms();
+		// this.notify('Notifications Enabled!', 'FrontEndSeed comes with Desktop Notifications');
 	}
 
 	checkPerms() {
@@ -13,6 +17,15 @@ class Core {
 			this.log('Need desktop notification permission');
 		} else {
 			this.log('Desktop notification permission granted');
+		}
+	}
+
+	checkDependancies() {
+		// Check for the various File API support.
+		if (window.File && window.FileReader && window.FileList && window.Blob) {
+		// Great success! All the File APIs are supported.
+		} else {
+			alert('The File APIs are not fully supported in this browser.');
 		}
 	}
 
@@ -27,6 +40,33 @@ class Core {
 
 	log(message) {
 		console.log(message);
+	}
+
+	bind() {
+		this.log('loaded bind');
+		const $menuItem = $('nav.main-menu a');
+
+		$menuItem.each((index, value) => {
+			$(value).on('click', event => {
+				event.preventDefault();
+				const $url = $(value).attr('href');
+				this.historyPush($url);
+			})
+		})
+	}
+
+	historyPush(url) {
+		history.pushState(null, null, url);
+		this.switchContent(url);
+	}
+
+	switchContent(path) {
+		this.log(path)
+		$('.content > .container').fadeOut(() => {
+			$('.content > .container').load( path + ' .content > .container',() => {
+				$('.content > .container').fadeIn();
+			});
+		});
 	}
 
 }

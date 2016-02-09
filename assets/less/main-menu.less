@@ -1,0 +1,30 @@
+nav.main-menu {
+	width:20rem;
+	display: inline-block;
+	margin-top:0.35rem;
+	ul {
+		list-style: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	> ul > li > a {
+		font-weight: 600;
+		font-size: 1.1rem;
+		color: lighten(@color-black, 30%);
+		text-decoration: none;
+		display: block;
+		padding-bottom: 0.5rem;
+	}
+	> ul > li > ul > li > a {
+		color: darken(#428bca, 5%);
+		text-decoration: none;
+		display: block;
+		font-weight: 400;
+		padding:0.25rem 0;
+		line-height: 1.25;
+	}
+	> ul > li > ul {
+		padding: 0 0 0 1.75rem;
+	}
+}

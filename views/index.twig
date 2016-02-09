@@ -1,6 +1,12 @@
 {% include 'bbug::components/header.twig' %}
-{% include 'bbug::components/menu.twig' %}
 
-{{ content }}
+<div class="wrapper">
+	{% include 'bbug::components/menu.twig' %}
+	<div class="content markdown-body">
+		<div class="container">
+			{{ content }}
+		</div>
+	</div>
+</div>
 
 {% include 'bbug::components/footer.twig' %}
