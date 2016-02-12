@@ -2,10 +2,15 @@
 .content {
 	width: 60rem;
 	display: inline-block;
-	float: right;
+	float: left;
 	padding: 1rem;
-}
-
-.content:after {
-	clear:both;
+	margin-bottom: 3rem;
+	img {
+		max-width:40rem;
+	}
+	@media (max-width: 82rem) {
+		max-width: 60rem;
+		float: none;
+		padding: 2rem;
+	}
 }

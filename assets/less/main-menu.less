@@ -2,19 +2,25 @@ nav.main-menu {
 	width:20rem;
 	display: inline-block;
 	margin-top:0.35rem;
+	transition: left 250ms ease-out;
+	float: left;
+
 	ul {
 		list-style: none;
 	}
 	a:hover {
 		text-decoration: underline;
 	}
-	> ul > li > a {
+	> ul > li > span {
 		font-weight: 600;
 		font-size: 1.1rem;
 		color: lighten(@color-black, 30%);
 		text-decoration: none;
 		display: block;
 		padding-bottom: 0.5rem;
+		i {
+			padding-right: 1.7rem;
+		}
 	}
 	> ul > li > ul > li > a {
 		color: darken(#428bca, 5%);
@@ -26,5 +32,49 @@ nav.main-menu {
 	}
 	> ul > li > ul {
 		padding: 0 0 0 1.75rem;
+	}
+	.logo {
+		padding:1rem 3rem 0rem 2.75rem;
+	}
+
+	@media (max-width: 82rem) {
+		position: fixed;
+		left: -20rem;
+		top:-0.5rem;
+		display: block;
+		height: 100%;
+		overflow-y: scroll;
+		background-color: #f7f7f7;
+		transition: left 250ms ease-in;
+		z-index: 1000;
+
+		ul,
+		.logo {
+			padding-left:1rem;
+		}
+
+		&.active {
+			left:0;
+		}
+
+		.menu-toggle {
+			&:after {
+				font-family: FontAwesome;
+				cursor: pointer;
+				content: "\f0c9";
+				display: inline-block;
+				padding-right: 3px;
+				vertical-align: middle;
+				position: fixed;
+				top: 1rem;
+				right:0.5rem;
+				font-size: 2.5rem;
+			}
+		}
+		.menu-toggle.active {
+			&:after {
+				content: "\f00d";
+			}
+		}
 	}
 }

@@ -1,3 +1,4 @@
+# Install the JavaScript SDK
 The BookingBug JavaScript API is a powerful set of tools that you can use in any web page that allows you to embed JavaScript.
 
 It is designed to be extremely simple to use, even for someone with only basic HTML skills and no JavaScript experience. It is also designed to be flexible and powerful enough to enable even the most demanding or sophisticated use cases.

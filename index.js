@@ -10,6 +10,7 @@ let indexTpl = Twig.twig({
   namespaces: {'bbug':'views/'}
 });
 
+app.use('/assets/images', express.static('assets/images'));
 app.use('/dist', express.static('dist'));
 app.use('/bower_components', express.static('bower_components'));
 

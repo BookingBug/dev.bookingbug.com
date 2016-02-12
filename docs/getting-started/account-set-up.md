@@ -16,9 +16,3 @@ Now you can start using BookingBug in your own site. You can embed the BookingBu
 <img src="https://i.imgur.com/Iq5cGbG.png" alt="">
 
 Alternatively you can take advantage of the optional public site that BookingBug hosts for you. You can add a book now button to your own site to direct users to the public site.
-
-You can also integrate your new booking journey with Facebook, Drupal and [Wordpress](https://wordpress.org/plugins/bookingbug/).
-
-You may have further requirements for your booking journey and you may need to customise it past what the embed widget can offer.
-
-> You can follow the guides below to develop your own integration or if you're an enterprise customer. Then you can contact sales@bookingbug.com and request a bespoke service where we will work with you to build and deploy your customised booking journey.

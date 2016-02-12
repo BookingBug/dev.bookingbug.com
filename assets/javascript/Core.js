@@ -3,8 +3,13 @@
 class Core {
 	constructor() {
 		this.log('Loaded Core JavaScript');
-		this.bind();
+		this.menuLinks();
 		this.checkDependancies();
+
+		const $toggle = $('.menu-toggle');
+		const $target = $('.main-menu');
+
+		this.bindMenu($target, $toggle);
 		//TODO if url matches menu item href add class active
 		
 		// this.checkPerms();
@@ -42,15 +47,21 @@ class Core {
 		console.log(message);
 	}
 
-	bind() {
+	menuLinks() {
 		this.log('loaded bind');
 		const $menuItem = $('nav.main-menu a');
 
 		$menuItem.each((index, value) => {
 			$(value).on('click', event => {
-				event.preventDefault();
-				const $url = $(value).attr('href');
-				this.historyPush($url);
+				this.log('sdf')
+				if ($(value).attr('target')) {
+					return
+				} else {
+					event.preventDefault();
+					const $url = $(value).attr('href');
+					this.menuClose($('.main-menu'), $('.menu-toggle'));
+					this.historyPush($url);
+				}
 			})
 		})
 	}
@@ -67,6 +78,26 @@ class Core {
 				$('.content > .container').fadeIn();
 			});
 		});
+	}
+
+	bindMenu($target, $toggle) {
+		$toggle.on('click', (e) => {
+			if ($target.hasClass('active')) {
+				this.menuClose($target, $toggle);
+			} else {
+				this.menuOpen($target, $toggle);
+			}
+		});
+	}
+
+	menuOpen($target, $toggle) {
+		$target.addClass('active');
+		$toggle.addClass('active');
+	}
+
+	menuClose($target, $toggle) {
+		$target.removeClass('active');
+		$toggle.removeClass('active');
 	}
 
 }
