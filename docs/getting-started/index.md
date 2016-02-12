@@ -29,13 +29,13 @@ The designer allows you to customise your booking journey with ease. You can add
 
 The BookingBug JavaScript SDK is based on Angular JS and is built on top of BookingBug’s underlying API. This is the easiest way to implement the BookingBug service into your application.
 
-[Get Started with the JavaScript SDK >](/Javascript_SDK)
+[Get Started with the JavaScript SDK >](/javascript-sdk)
 
 ## REST API
 
 Our REST API allows you to integrate the BookingBug system into your application. You have more power over the way it integrates compared to the JavaScipt SDK. This is great if you want to integrate the platform with a native mobile app. However for most websites the JavaScript SDK is the one to look at.
 
-[Get Started with the REST SDK >](/REST_API)
+[Get Started with the REST SDK >](/rest-api)
 
 ## Experts
 
@@ -47,4 +47,4 @@ We only offer custom integrations and bespoke booking journeys to our enterprise
 
 We've also collected some useful tools that will help getting up and running with our Platform.
 
-[Find an Expert >](/javascript-sdk)
+[Check out the tools >](/tools-and-support)

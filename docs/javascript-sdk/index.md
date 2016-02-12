@@ -30,7 +30,7 @@ This will make the `yo bookingbug` command available globally on your local deve
 yo bookingbug
 ```
 
-> You can see a screen cast of this [here](https://drive.google.com/file/d/0BySZotrqAKdcWFdjM0tVLUVkUjA/view)
+> You can see a screen-cast of this [here](https://drive.google.com/file/d/0BySZotrqAKdcWFdjM0tVLUVkUjA/view)
 
 you will be asked the following so make sure to have all the info you need.
 

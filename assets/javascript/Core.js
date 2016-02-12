@@ -76,6 +76,7 @@ class Core {
 		$('.content > .container').fadeOut(() => {
 			$('.content > .container').load( path + ' .content > .container',() => {
 				$('.content > .container').fadeIn();
+				$('body').animate({scrollTop:0}, '500', 'swing');
 			});
 		});
 	}

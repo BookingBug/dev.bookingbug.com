@@ -1,6 +1,5 @@
 // styling for content container
 .content {
-	width: 60rem;
 	display: inline-block;
 	float: left;
 	padding: 1rem;
@@ -8,8 +7,11 @@
 	img {
 		max-width:40rem;
 	}
-	@media (max-width: 82rem) {
-		max-width: 60rem;
+	@media (min-width:76rem) {
+		width: 60rem;
+	}
+	@media (max-width: 75rem) {
+		max-width: 45rem;
 		float: none;
 		padding: 2rem;
 	}
