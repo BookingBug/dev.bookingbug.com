@@ -5,7 +5,7 @@ It is designed to be extremely simple to use, even for someone with only basic H
 
 ## Extend the JavaScript SDK
 
-Using Node and Yeoman, you can create a stand alone booking service that includes the JavaScript SDK. This will create a directory with all of the templates, styles and scripts you may need
+Using Node and Yeoman, you can create a stand-alone booking service that includes the JavaScript SDK. This will create a directory with all of the templates, styles and scripts you may need
 
 ## Dependencies
 you will need to install the following dependencies via the terminal before getting started. Once you've installed node you can install the rest of the dependencies with `npm install -g name_of_dependency`
@@ -18,7 +18,7 @@ you will need to install the following dependencies via the terminal before gett
 > If your not familiar with the terminal don't despair. You should take a look as its very powerful. [Codecademy do a really good interactive tutorial](https://www.codecademy.com/ru/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) on it that will introduce you to the basics.
 
 ## Create you project
-Once you have your dependences installed you can download our Yeoman generator.
+Once you have your dependencies installed you can download our Yeoman generator.
 
 ```
 npm install -g generator-bookingbug
@@ -35,8 +35,8 @@ yo bookingbug
 you will be asked the following so make sure to have all the info you need.
 
 - What is the name of your project?
-- What type of application do you want? (Public-bookings application, allows for an end user to book without logging in, the member application is naturally the opposite to this).
+- What type of application do you want? (Public-bookings application, allows for an end user to book without logging in, the member application is naturally opposite to this).
 - What is your BookingBug company id? (The `company_id` variable is the number you'll see at the top right of the screen when you log into your BookingBug account. E.g: ukw12345).
-- What is the API URL? (this can be left as is, unless you have been told to use another specific end point).
+- What is the API URL? (this can be left as is unless you have been told to use another specific end point).
 
 Once all of the above has installed. Run `gulp` in the root of the directory to watch files for changes and to serve your application on [http://localhost:8000](http://localhost:8000)

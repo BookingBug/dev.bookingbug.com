@@ -15,13 +15,13 @@ The easiest way to implement the BookingBug platform into your website is to use
 
 ## Integrations
 
-BookingBug has many integrations that you can use to tie all your on-line services together. These include Sage pay, paypal, stripe, sale force and more.
+BookingBug has many integrations that you can use to tie all your on-line services together. These include Sage pay, PayPal, stripe, sale force and more.
 
 [Get Started with the JavaScript Check out our integrations](/integrations)
 
 ## Designer
 
-The designer allows you to customise your booking journey with ease. You can add text to your booking journey change the colours and the layout. You can then export your final code and place it in your website.
+The designer allows you to customise your booking journey with ease. You can add text to your booking journey change the colours and the layout. You can then export your final code and place it on your website.
 
 [Get Started with the REST SDK](/designer)
 
@@ -39,12 +39,12 @@ Our REST API allows you to integrate the BookingBug system into your application
 
 ## Experts
 
-We only offer custom integrations and bespoke booking journeys to our enterprise customers. As an SME customer you may want help getting set up or commission development of a customised booking journey to suit your needs.s
+We only offer custom integrations and bespoke booking journeys to our enterprise customers. As an SME customer, you may want help getting set up or commission development of a customised booking journey to suit your needs.s
 
 [Find an Expert](/experts)
 
 <!--## Tools and Support
 
-We've also collected some useful tools that will help getting up and running with our Platform.
+We've also collected some useful tools that will help to get up and running with our Platform.
 
 [Find an Expert](/javascript-sdk)-->

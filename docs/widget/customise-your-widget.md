@@ -1,7 +1,7 @@
 # Customising your widget
 You can customise the widget to match your brand colours and the style of your website. This can all be done via your booking bug dashboard.
 
-Additionally you can customise the CSS code to get further control of the widget. This is useful if you want to customise the font for example.
+Additionally, you can customise the CSS code to get further control of the widget. This is useful if you want to customise the font for example.
 
 <img src="https://i.imgur.com/9qyHhs9.png" alt="">
 

@@ -1,5 +1,5 @@
 # Apply to become an Expert
-We offer custom development and bespoke work for our clients. However we can only offer this to our enterprise clients.
+We offer custom development and bespoke work for our clients. However, we can only offer this to our enterprise clients.
 
 We've received many requests form our SME clients for bespoke work. So we've decided to let you, the community offer your expertise.
 
