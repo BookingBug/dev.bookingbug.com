@@ -1,13 +1,26 @@
 {% include 'bbug::components/header.twig' %}
 
 <div class="wrapper">
+	
+	<header>
+        <div class="logo">
+            <a href="/"><img src="/assets/images/bblogo.svg" alt=""></a>
+            <span class="tagline">Developer Documentation</span>
+        </div>
+        <div class="menu-toggle"></div>
+        <div class="clearfix"></div>
+    </header>
+
 	{% include 'bbug::components/menu.twig' %}
+
 	<div class="content markdown-body">
 		<div class="container">
 			{{ content }}
 		</div>
 	</div>
+
 	<div class="clearfix"></div>
+
 </div>
 
 {% include 'bbug::components/footer.twig' %}

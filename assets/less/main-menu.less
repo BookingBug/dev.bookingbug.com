@@ -33,8 +33,11 @@ nav.main-menu {
 	> ul > li > ul {
 		padding: 0 0 0 1.75rem;
 	}
-	.logo {
-		padding:0.75rem 3rem 0rem 2.75rem;
+
+	.details {
+		font-size: 0.85rem;
+		color: lighten(@color-black, 40%);
+		line-height: 1.3rem;
 	}
 
 	@media (max-width: 70rem) {
@@ -51,30 +54,11 @@ nav.main-menu {
 		ul,
 		.logo {
 			padding-left:1rem;
+			padding-top:0.5rem;
 		}
 
 		&.active {
 			left:0;
-		}
-
-		.menu-toggle {
-			&:after {
-				font-family: FontAwesome;
-				cursor: pointer;
-				content: "\f0c9";
-				display: inline-block;
-				padding-right: 3px;
-				vertical-align: middle;
-				position: fixed;
-				top: 1rem;
-				right:0.5rem;
-				font-size: 2.5rem;
-			}
-		}
-		.menu-toggle.active {
-			&:after {
-				content: "\f00d";
-			}
 		}
 	}
 }

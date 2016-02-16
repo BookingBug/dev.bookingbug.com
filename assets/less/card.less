@@ -1,5 +1,11 @@
 .card {
-	width:23%;
+	width:24%;
+	@media (max-width:45rem) {
+		width:49%;
+	}
+	@media (max-width:25rem) {
+		width:99%;
+	}
 	display: inline-block;
 	padding:0.65rem 0.5rem;
 	vertical-align: top;
@@ -8,6 +14,7 @@
 		border-radius: 0.5rem;
 		padding:0.5rem 0.65rem;
 		display: block;
+		min-height: 15rem;
 	}
 	img {
 		width: 100%;
@@ -21,6 +28,12 @@
 			color: lighten(#141414, 10%);
 		}
 	}
+
+	.fa-angle-right {
+		padding-left: .25rem;
+		position: relative;
+		top: 0.03rem;
+	}
 }
 
 .card.experts-apply {
@@ -33,5 +46,15 @@
 		font-size: 1.25rem;
 		line-height: 1.25rem;
 		color:lighten(#141414, 40%);
+	}
+}
+
+.card:nth-child(4n) {
+	padding-left:0;
+}
+
+@media (max-width:45rem) {
+	.card:nth-child(2n) {
+		padding-left:0;
 	}
 }

@@ -1,0 +1,50 @@
+header	{
+	padding-top:1rem;
+	.logo {
+		padding:0.75rem 3rem 0rem 2.5rem;
+		width:20rem;
+		display: block;
+		float:left;
+		.tagline {
+			position: relative;
+			top: -0.7rem;
+			letter-spacing: 2.1px;
+			color: #989898;
+		}
+	}
+
+
+	@media (max-width: 70rem) {
+	padding-top:0;
+		.logo {
+			padding-left:2rem;
+			.tagline {
+				letter-spacing: 2.445px;
+			}
+		}
+		.menu-toggle {
+			position: fixed;
+			top: 1rem;
+			right:0.5rem;
+			&:after {
+				color: @color-primary;
+				font-family: FontAwesome;
+				cursor: pointer;
+				content: "\f0c9";
+				display: inline-block;
+				padding-right: 3px;
+				vertical-align: middle;
+				position: fixed;
+				top: 1.53rem;
+				right:1rem;
+				font-size: 2.67rem;
+			}
+		}
+		.menu-toggle.active {
+			&:after {
+				color: @color-primary;
+				content: "\f00d";
+			}
+		}
+	}
+}
