@@ -9,6 +9,8 @@ class Core {
 		const $target = $('.main-menu');
 
 		this.menuBind($target, $toggle);
+
+		this.tabsInit();
 		
 		this.disqusLoad(window.location['href'], window.location.pathname);
 		
@@ -72,6 +74,17 @@ class Core {
 	menuClose($target, $toggle) {
 		$target.removeClass('active');
 		$toggle.removeClass('active');
+	}
+
+	tabsInit() {
+		$(".tabs__menu a").click(function(event) {
+	        event.preventDefault();
+	        $(this).parent().addClass("current");
+	        $(this).parent().siblings().removeClass("current");
+	        var tab = $(this).attr("href");
+	        $(".tab__content").not(tab).css("display", "none");
+	        $(tab).fadeIn();
+	    });
 	}
 
 	disqusLoad(url, path) {

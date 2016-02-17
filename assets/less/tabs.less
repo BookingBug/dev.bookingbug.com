@@ -1,0 +1,48 @@
+.tabs {
+    width:100%;
+    &__menu {
+        list-style: none;
+        margin:0 !important;
+        padding:0 !important;
+
+        li {
+            display: inline-block;
+            background-color: #fff;
+            a {
+                padding: 0.5rem 1rem;
+                display: block;
+                text-transform: uppercase;
+                color: lighten(@color-black, 20%);
+                text-decoration: none;
+            }
+
+            a:hover {
+
+            }
+        }
+
+        li.current {
+            background-color: #f7f7f7;
+            position: relative;
+            z-index: 5;
+            a {
+                color: @color-black;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.tab {
+    width:100%;
+    margin-bottom: 2rem;
+
+    &__content {
+        width: 100%;
+        display: none;
+    }
+}
+
+#tab-1 {
+    display: block;   
+}
