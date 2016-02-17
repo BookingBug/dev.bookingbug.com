@@ -50,6 +50,7 @@ class Core {
 			$('.content > .container').load( path + ' .content > .container',() => {
 				$('.content > .container').fadeIn(() => {
 					this.disqusReload(path);
+					this.tabsInit();
 				});
 				$('body').animate({scrollTop:0}, '500', 'swing');
 			});
