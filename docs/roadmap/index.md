@@ -6,7 +6,7 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 ## Version 1.2
 - **REST API Event Booking** a tutorial similar to the [service booking](rest-api/service-booking) documentation with user flow diagrams and end point examples
 - **Single Sign On** A tutorial showing developers how to Single Sign-on (SSO) via the API and the JS SDK
-- **Hook back button on History API** currently hitting the browsers back button will take you back to the homepage regardless of where you have been.
+- **Hook back button on History API** currently hitting the browsers back button will take you back to the homepage regardless of where you have been. This needs to have the pushState and popState accounted for.
 
 ## Version 1.3
 - **Affiliate Push Notifications** A tutorial showing developers how to use affiliate push notifications via the API and the JS SDK
