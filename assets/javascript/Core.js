@@ -77,7 +77,7 @@ class Core {
 	}
 
 	tabsInit() {
-		$(".tabs__menu a").click(function(event) {
+		$(".tabs__menu a").on('click', function(event) {
 	        event.preventDefault();
 	        $(this).parent().addClass("current");
 	        $(this).parent().siblings().removeClass("current");
