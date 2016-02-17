@@ -11,6 +11,8 @@ class Core {
 		this.menuBind($target, $toggle);
 
 		this.tabsInit();
+		this.highlightCode();
+		this.log(this.highlightCode());
 		
 		this.disqusLoad(window.location['href'], window.location.pathname);
 		
@@ -50,7 +52,10 @@ class Core {
 			$('.content > .container').load( path + ' .content > .container',() => {
 				$('.content > .container').fadeIn(() => {
 					this.disqusReload(path);
+					//refreash dom binded elements
 					this.tabsInit();
+					this.highlightCode();
+					this.log(this.highlightCode());
 				});
 				$('body').animate({scrollTop:0}, '500', 'swing');
 			});
@@ -124,6 +129,11 @@ class Core {
 	disqusHide() {
 		const $comments = $('.comments');
 		$comments.hide();
+	}
+
+	highlightCode() {
+		hljs.initHighlighting.called = false;
+		hljs.initHighlighting();
 	}
 }
 
