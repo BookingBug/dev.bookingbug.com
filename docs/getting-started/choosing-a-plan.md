@@ -20,7 +20,7 @@ All SME account types come with access to our dedicated support team which you c
 # Enterprise
 Enterprise accounts offer fully custom solutions for large, multi-location clients, developed in conjunction with their in house teams. If you are in need of an enterprise account then you will need to contact [sales@bookingbug.co.uk](mailto:sales@bookingbug.co.uk) for a quote.
 
-(Read more on our enterprise plans)[https://www.bookingbug.co.uk/enterprise]
+[Read more on our enterprise plans](https://www.bookingbug.co.uk/enterprise)
 
 ## Support
 If you are an enterprise customer then you will receive a dedicated account manager.
