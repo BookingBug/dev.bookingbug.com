@@ -9,13 +9,17 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 - **Hook back button on History API** currently hitting the browsers back button will take you back to the homepage regardless of where you have been. This needs to have the pushState and popState accounted for.
 
 ## Version 1.3
+- **Page Routing Guide** how the JS SDK routes pages and logic
+- **Extending Directives Guide** the number of ways that you can extend controllers
 - **Affiliate Push Notifications** A tutorial showing developers how to use affiliate push notifications via the API and the JS SDK
-- **Full integrations Directory** a full list of integrations ordered by category to be created and added to the docs.
+- **Full integrations Directory** a full list of integrations ordered by category to be created and added to the docs
 
 ## Version 1.4
 - **Useful Tools** A page in the documentation highlighting tools that will be of use to a developer working on the platform
+- **JavaScript SDK Reference** Review the SDK reference and expand code examples.
 - **JavaScript SDK Examples** Publicly accessible example code bases for 3<sup>rd</sup> party Developers to use.
 
 ## Version 1.5
-- **REST API Discounts** A tutorial on how to work with the discounts on offer via the REST API.
-- **REST API Packages and Bulk Purchases** A tutorial showing developers how to apply packages and bulk purchases via the API.
+- **Internationalisation** Guide on translations what directives need to be added
+- **REST API Discounts** A tutorial on how to work with the discounts on offer via the REST API
+- **REST API Packages and Bulk Purchases** A tutorial showing developers how to apply packages and bulk purchases via the API
