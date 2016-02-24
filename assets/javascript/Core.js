@@ -13,7 +13,8 @@ class Core {
 		this.tabsInit();
 		this.highlightCode();
 		this.log(this.highlightCode());
-		
+		this.historyPop();
+
 		this.disqusLoad(window.location['href'], window.location.pathname);
 		
 		// TODO if url matches menu item href add class active  to said menu item
@@ -41,8 +42,15 @@ class Core {
 	}
 
 	historyPush(url) {
-		history.pushState(null, null, url);
+		history.pushState(url, null, url);
 		this.switchContent(url);
+	}
+
+	historyPop() {
+		window.addEventListener('popstate', (e) => {
+		  //e.state is equal to the url passed to the history.js function
+		  this.historyPush(e.state);
+		});
 	}
 
 	switchContent(path) {
