@@ -11,6 +11,7 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 - **Single Sign On** A tutorial showing developers how to Single Sign-on (SSO) via the API and the JS SDK
 
 ## Version 1.3
+- **Better page title support** need to add better page title support to the application
 - **Extending Directives Guide** the number of ways that you can extend controllers
 - **Affiliate Push Notifications** A tutorial showing developers how to use affiliate push notifications via the API and the JS SDK
 - **Full integrations Directory** a full list of integrations ordered by category to be created and added to the docs
