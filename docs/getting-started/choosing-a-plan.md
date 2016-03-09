@@ -15,7 +15,7 @@ If you need an SME account then you can go to the [BookingBug](https://bookingbu
 | Resources     | 1    | 10    | 20     |
 
 
-> All SME account types come with access to our dedicated support team which you can contact by emailing support@bookingbug.com or calling +44 (0)20 3287 9111 the support desk is open Monday to Friday 09:00 - 18:00
+> All SME account types come with access to our dedicated support team which you can contact by emailing [support@bookingbug.com](mailto:support@bookingbug.com) or calling +44 (0)20 3287 9111 the support desk is open Monday to Friday 09:00 - 18:00
 
 # Enterprise
 Enterprise accounts offer fully custom solutions for our largest, multi-location clients, developed in conjunction with their in house teams. If you are in need of an enterprise account then you will need to contact [sales@bookingbug.co.uk](mailto:sales@bookingbug.co.uk) for a quote. At this point we will assess wheather or not you qualify for an enterprise account.
