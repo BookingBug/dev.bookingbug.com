@@ -40,7 +40,7 @@ We will be looking at these stages of the user flow and which API calls to make 
 - Confirmation
 
 ## Store Locator
-The first call you will need to make to the API is to `GET <company-_d>` to retrieve the company object. This shows the parent company and a list of child companies. You can then use this company object to find the nearest branch/location to the location your user has entered.
+The first call you will need to make to the API is to `GET <company-id>` to retrieve the company object. This shows the parent company and a list of child companies. You can then use this company object to find the nearest branch/location to the location your user has entered.
 
 ## List Stores
 With the company object, you can display the nearest locations to the user that are available. The user can then choose from one of these stores.
