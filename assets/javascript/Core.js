@@ -12,7 +12,7 @@ class Core {
 
 		this.tabsInit();
 		this.highlightCode();
-		this.log(this.highlightCode());
+		
 		this.historyPop();
 
 		this.disqusLoad(window.location['href'], window.location.pathname);
@@ -54,7 +54,6 @@ class Core {
 	}
 
 	switchContent(path) {
-		this.log(path)
 		$('.content > .container').fadeOut(() => {
 			this.disqusHide();
 			$('.content > .container').load( path + ' .content > .container',() => {
@@ -63,7 +62,6 @@ class Core {
 					//refreash dom binded elements
 					this.tabsInit();
 					this.highlightCode();
-					this.log(this.highlightCode());
 				});
 				$('body').animate({scrollTop:0}, '500', 'swing');
 			});

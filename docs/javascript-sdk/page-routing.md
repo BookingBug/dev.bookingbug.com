@@ -55,7 +55,7 @@ You may want to combine multiple steps. You can do this using `when: route.event
 - Company
 - Category
 - Service 
-- Person 
+- Person
 - Resource
 - Duration
 - Date
@@ -68,12 +68,27 @@ You may want to combine multiple steps. You can do this using `when: route.event
 - Event
 - Login
 
-> Editors Note: the above list needs descriptions alongside these options
-
 However, we do have an issue here. If we define `when: route.event[slot, person]` on confirmation it will try to call `$Scope.defineNextPage` twice. We also may want to change the available slots when the user chooses a person.
 
 to overcome this we can use the `bb-page` page controller. This controller allows you to route steps back and forth when combining steps. You can attach `checkReady()` to the step DOM element. And it will wait until all of the steps in a single template have been completed.
 
 Let's look at a complete example
 
-> Editors Note: Need to create brief example
+```
+<div bb-page>
+
+  <div bb-item-details>
+    <!-- template -->
+  </div>
+
+  <div bb-client-details>
+    <!-- template -->
+  </div>
+
+  <button type="button" ng-click="checkReady() && routeReady()">
+    Next
+  </button>
+
+
+</div>
+```
