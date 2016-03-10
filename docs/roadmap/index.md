@@ -6,7 +6,7 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 ## Version 1.2
 - ~~**Add overview page to SDK** highlighting why to use it etc. looking after the core API heavy lifting~~
 - ~~**Revise choosing a plan** Revise in line with feedback.~~
-- **Page Routing Guide** how the JS SDK routes pages and logic
+- ~~**Page Routing Guide** how the JS SDK routes pages and logic~~
 - **REST API Event Booking** a tutorial similar to the [service booking](rest-api/service-booking) documentation with user flow diagrams and end point examples
 - **Single Sign On** A tutorial showing developers how to Single Sign-on (SSO) via the API and the ~~JS SDK~~
 
