@@ -18,6 +18,7 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 - **Hook back button on History API** currently hitting the browsers back button will take you to the last page but no further. The forward button is also disabled, This needs to be accounted for.
 
 ## Version 1.4
+- **Postman Template**
 - **Useful Tools** A page in the documentation highlighting tools that will be of use to a developer working on the platform
 - **JavaScript SDK Reference** Review the SDK reference and expand code examples.
 - **JavaScript SDK Examples** Publicly accessible example code bases for 3<sup>rd</sup> party Developers to use.
