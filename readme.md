@@ -35,7 +35,7 @@ run the following commands.
 
 `npm install` To install all the node and bower dependencies. It also then builds all the assets with grunt.
 
-then run `npm start` This launches the app and watches the `javascript/, css/` and `views/` directories for a change and then reboots/rebuilds where necessary.
+then run `npm start` This launches the app and watches the `javascript/, css/, views/` and `index.js` directories for a change and then reboots/rebuilds where necessary.
 
 # Heroku Support
 > Heroku is the nuts. If you've not heard of it check it out. like now.... why are you still reading this?
@@ -44,7 +44,7 @@ So to deploy to Heroku. We have to do a couple of things. Firstly go get the too
 
 Then run `heroku login` and enter your heroku account details.
 
-Now its time to create the app. run `heroku create myApp` or whatever you want in place of 'myApp'. Now before you push, you must run a build-pack command to tell heroku to run a node instance, the reason for this is that our feature UI tests are in ruby. this is problematic as heroku picks this up and sets ruby as the framework rather than node.
+Now its time to create the app. run `heroku create myApp` or whatever you want in place of 'myApp'. Now before you push, you must run a build-pack command to tell heroku to run a node instance. Heroku can do this automatically but its a good idea to set it as well just in case.ssssss
 
 So you'll need to run `heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs`
 
