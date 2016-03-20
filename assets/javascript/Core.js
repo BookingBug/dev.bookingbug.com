@@ -42,7 +42,20 @@ class Core {
 	}
 
 	historyPush(url) {
-		history.pushState(url, null, url);
+		let pathArray = url.split( '/' );
+
+		console.log(pathArray)
+
+		var title = pathArray[0];
+
+		if (pathArray[1]) {
+			var title = pathArray[1];
+		}
+
+		history.pushState(url, title, url);
+
+		document.title = title.charAt(0).toUpperCase() + title.slice(1) + " | Developer Docs - BookingBug"
+
 		this.switchContent(url);
 	}
 

@@ -25,15 +25,19 @@ app.get('/', (req, res) => {
   const index = "docs/index.md";
 
   res.send(indexTpl.render({
-    content: marked(fs.readFileSync(index).toString())
+    content: marked(fs.readFileSync(index).toString()),
+    pageTitle: "Developer Docs - BookingBug"
   }));
 });
 
 app.get('/:category/:page?', (req, res) => {
   const doc = "docs/" + req.params.category + "/" + (req.params.page || "index") + ".md";
 
+  const title = req.params.page || req.params.category
+
   res.send(indexTpl.render({
-    content: marked(fs.readFileSync(doc).toString())
+    content: marked(fs.readFileSync(doc).toString()),
+    pageTitle: title.charAt(0).toUpperCase() + title.slice(1) + " | Developer Docs - BookingBug"
   }));
 });
 
