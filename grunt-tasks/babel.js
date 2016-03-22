@@ -10,7 +10,7 @@ module.exports = function(grunt, options) {
    return {
       options: {
          sourceMap: true,
-         presets: ['es2015']
+         presets: ['es2015', 'stage-0']
       },
       dist: {
          files: files
