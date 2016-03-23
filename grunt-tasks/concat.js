@@ -12,7 +12,7 @@ module.exports = function(grunt, options) {
 
 	tasks["build.concat.js"] = {
 		src: "tmp/babel/assets/javascript/**/*.js",
-		dest: "dist/build.concat.js"
+		dest: "dist/assets/build.concat.js"
 	};
 
 	return tasks;

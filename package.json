@@ -5,7 +5,8 @@
   "main": "Gruntfile.js",
   "scripts": {
     "start": "node entrypoint.js",
-    "lint": "eslint app/"
+    "lint": "eslint app/",
+    "build": "babel --optional runtime -d dist/ app/"
   },
   "author": "",
   "license": "",
