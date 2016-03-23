@@ -29,7 +29,7 @@
               <input type="text" placeholder="host url">
             </li>
           </ul>
-          <a href="" class="btn btn-primary">Create Company</a>
+          <a href="https://www.bookingbug.co.uk/pricing" target="_blank" class="btn btn-primary">Create Company</a>
           <a href="" class="btn btn-primary">Request Access to Company</a>
         </div>
         <div class="card account__forum-posts">
@@ -63,6 +63,8 @@
         <div class="card account__profile">
           <h2>My Developer Profile</h2>
           <img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="">
+          <p>My AppID: {{ user.appKey }}</p>
+          <span class="help-block">Use the above AppID to make requests to the public API</span>
           <input type="text" placeholder="username">
           <input type="text" placeholder="email">
           <input type="text" placeholder="organisation">
