@@ -4,7 +4,7 @@ import request from 'request';
 function flarum({ identification, password }) {
   return {
     method: 'POST',
-    url: process.env.FLARUM_URL,
+    url: `${process.env.FLARUM_URL}/api/token`,
     headers: {
       'cache-control': 'no-cache',
       'content-type': 'application/x-www-form-urlencoded',
