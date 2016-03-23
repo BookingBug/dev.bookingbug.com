@@ -9,9 +9,7 @@ export default class Page {
 
   render() {
     const { templatePath, content } = this;
-    return this
-      .getTemplate(templatePath)
-      .render(templatePath, { content });
+    return this.getTemplate(templatePath).render({ content });
   }
 
   getTemplate() {
