@@ -1,21 +1,36 @@
 import request from 'request';
 
-export default (req, res) => {
-  const options = {
+function flarum({ identification, password }) {
+  return {
     method: 'POST',
-    url: 'https://discuss.flarum.org/api/token',
+    url: process.env.FLARUM_URL,
     headers: {
       'cache-control': 'no-cache',
       'content-type': 'application/x-www-form-urlencoded',
     },
-    form: {
-      identification: req.body.username,
-      password: req.body.password,
-    },
+    form: { password, identification },
   };
+}
 
-  request(options, (error, response, body) => {
+function clientsService(forumId) {
+  return {
+    method: 'PUT',
+    url: `${process.env.CLIENTS_SERVICE_URL}/user`,
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({ forumId }),
+  };
+}
+
+export default (req, res) => {
+  request(flarum(req.body), (error, response, body) => {
     if (error) throw new Error(error);
-    res.send(body);
+    const payload = JSON.parse(body);
+    const forumId = payload.userId;
+
+    request(clientsService(forumId), (err, resp, userBody) => {
+      res.json(userBody);
+    });
   });
 };
