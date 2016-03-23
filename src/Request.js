@@ -1,10 +1,8 @@
 'use strict'
 
-const PortalCore = require('./Core.js');
-
-class PortalRequest extends PortalCore {
+class PortalRequest {
 	constructor() {
-		super('loaded');
+		
 	}
 
 	getCompanies(args) {
@@ -20,6 +18,10 @@ class PortalRequest extends PortalCore {
 	}
 
 	loginUser(args) {
+
+	}
+
+	postUser(args) {
 
 	}
 }
