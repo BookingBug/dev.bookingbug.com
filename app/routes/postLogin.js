@@ -30,7 +30,8 @@ export default (req, res) => {
     const forumId = payload.userId;
 
     request(clientsService(forumId), (err, resp, userBody) => {
-      res.json(userBody);
+      const userPayload = JSON.parse(userBody);
+      res.json(userPayload);
     });
   });
 };
