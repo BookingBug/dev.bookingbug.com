@@ -1,3 +1,4 @@
+import { merge } from 'lodash';
 import request from 'request';
 
 function flarum({ identification, password }) {
@@ -31,7 +32,8 @@ export default (req, res) => {
 
     request(clientsService(forumId), (err, resp, userBody) => {
       const userPayload = JSON.parse(userBody);
-      res.json(userPayload);
+      merge(req.session, userPayload);
+      res.redirect('/account');
     });
   });
 };
