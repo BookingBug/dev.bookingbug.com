@@ -4,8 +4,7 @@
   "description": "This project is a default front end start point. Made for LemonDigits.com fr use on client projects.",
   "main": "Gruntfile.js",
   "scripts": {
-    "start": "grunt concurrent",
-    "postinstall": "bower install && grunt",
+    "start": "node entrypoint.js",
     "lint": "eslint app/"
   },
   "author": "",

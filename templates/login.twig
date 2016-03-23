@@ -1,0 +1,11 @@
+{% include 'bbug::components/header.twig' %}
+
+<form action="/auth/login" method="POST">
+	<label for="username">email</label>
+	<input type="email" name="username">
+	<label for="password">password</label>
+	<input type="password" name="password">
+	<input type="submit">
+</form>
+
+{% include 'bbug::components/footer.twig' %}
