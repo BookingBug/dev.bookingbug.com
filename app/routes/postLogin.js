@@ -15,7 +15,7 @@ function flarum({ identification, password }) {
 
 function clientsService(forumId) {
   return {
-    method: 'PUT',
+    method: 'POST',
     url: `${process.env.CLIENTS_SERVICE_URL}/user`,
     headers: {
       'content-type': 'application/json',
