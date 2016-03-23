@@ -1,29 +1,28 @@
-'use strict'
+'use strict';
 
 class PortalRequest {
-	constructor() {
-		
-	}
+  // constructor() {
+  // }
 
-	getCompanies(args) {
+  getCompanies() {
 
-	}
+  }
 
-	getUser(args) {
+  getUser() {
 
-	}
+  }
 
-	putHost(args) {
+  putHost() {
 
-	}
+  }
 
-	loginUser(args) {
+  loginUser() {
 
-	}
+  }
 
-	postUser(args) {
+  postUser() {
 
-	}
+  }
 }
 
 export default PortalRequest;
