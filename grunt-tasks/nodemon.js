@@ -2,7 +2,7 @@ module.exports = function(grunt, options) {
 
   return {
     nodemon: {
-		script: 'index.js',
+		script: 'entrypoint.js',
 		options: {
 			nodeArgs: ['--debug'],
 			callback: function (nodemon) {
@@ -13,7 +13,7 @@ module.exports = function(grunt, options) {
 			cwd: './',
 			ext: 'twig',
 			ignore: ['node_modules/**'],
-			watch: ['views', 'index.js', 'docs']
+			watch: ['views', 'entrypoint.js', 'docs', 'src']
     	}
 	}
   };
