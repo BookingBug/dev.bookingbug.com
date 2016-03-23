@@ -1,28 +1,96 @@
 .account {
+  width:100%;
+  margin-top:0.5em;
+  padding:1em;
+
+  &__logo {
+    padding: .75rem 3rem 0 1.5rem !important;
+    span {
+      letter-spacing: 2.689px !important;
+    }
+  }
+  ul {
+    padding:0;
+    list-style: none;
+  }
+  .card {
+    background-color:darken(#fff, 1%);
+
+    display: block;
+    border-radius: 0.25em;
+    border:1px solid lighten(@color-black, 80%);
+    h2 {
+      margin-top:0;
+      margin-bottom:0.5em;
+    }
+    margin-bottom: 1.5em;
+    padding:1em;
+  }
+
   &__column {
-    width:50%;
+    width:49.84%;
     display: inline-block;
+    vertical-align: top;
     padding:0.5em;
   }
 
   &__companies {
-
+    display: block;
+    width:100%;
+    a {
+      margin-bottom: 0.25em;
+      display: inline-block;
+    }
   }
 
   &__company {
-    
+    display: block;
+    width:100%;
+    input {
+      width:100%;
+    }
   }
 
   &__forum-posts {
-
+    display: block;
+    width:100%;
+    li {
+      display: block;
+      border-bottom:1px solid lighten(@color-black, 80%);
+      padding-bottom: 0.5em;
+    }
+    a {
+      text-decoration: none;
+      display: block;
+    }
   }
 
   &__profile {
+    display: block;
+    width:100%;
+    img {
+      width:10em;
+      display: none;
+    }
+
+    input {
+      width:100%;
+    }
 
   }
 
   &__doc-links {
+    display: block;
+    margin-bottom:1.5em;
+    width:100%;
+    a {
+      display: inline block;
+    }
+  }
 
+  &__developer-news {
+    display: block;
+    width:100%;
   }
 
 }

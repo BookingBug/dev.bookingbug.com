@@ -1,68 +1,87 @@
 {% include 'bbug::components/header.twig' %}
 
-<div class="account">
-  <div class="content">
-    <div class="account__column">
-      <div class="card account__companies">
-        <ul>
-          <li class="account__company">
-            <span>company name</span>
-            <input type="text" placeholder="host url">
-          </li>
-          <li class="account__company">
-            <span>company name</span>
-            <input type="text" placeholder="host url">
-          </li>
-          <li class="account__company">
-            <span>company name</span>
-            <input type="text" placeholder="host url">
-          </li>
-        </ul>
-        <a href="">create company</a>
-        <a href="">request access to company</a>
-      </div>
-      <div class="card account__forum-posts">
-        <ul>
-          <li>
-            <a href="">
-              <p><b>Post title</b><br>
-              @user commented: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vel enim suscipit, natus inventore odio eligendi delectus fugit cum ut blanditiis quis voluptates maxime neque quae, et illum velit excepturi?
-              </p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <p><b>Post title</b><br>
-              @user commented: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vel enim suscipit, natus inventore odio eligendi delectus fugit cum ut blanditiis quis voluptates maxime neque quae, et illum velit excepturi?
-              </p>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <p><b>Post title</b><br>
-              @user commented: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vel enim suscipit, natus inventore odio eligendi delectus fugit cum ut blanditiis quis voluptates maxime neque quae, et illum velit excepturi?
-              </p>
-            </a>
-          </li>
-        </ul>
-      </div>
+<div class="wrapper">
+  <header>
+    <div class="logo account__logo">
+      <a href="/"><img src="/images/bblogo.svg" alt=""></a>
+      <span class="tagline">Platform Developer Portal</span>
     </div>
-    <div class="column">
-      <div class="card account__profile">
-        <img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="">
-        <input type="text" placeholder="username">
-        <input type="text" placeholder="email">
-        <input type="text" placeholder="organisation">
-        <input type="text" placeholder="location">
-        <input type="text" placeholder="change password">
-        <input type="text" placeholder="confirm new password">
+    <div class="menu-toggle"></div>
+    <div class="clearfix"></div>
+  </header>
+
+  <div class="account">
+    <div class="container">
+      <div class="account__column">
+        <div class="card account__companies">
+        <h2>My Companies</h2>
+          <ul>
+            <li class="account__company">
+              <span>company name</span>
+              <input type="text" placeholder="host url">
+            </li>
+            <li class="account__company">
+              <span>company name</span>
+              <input type="text" placeholder="host url">
+            </li>
+            <li class="account__company">
+              <span>company name</span>
+              <input type="text" placeholder="host url">
+            </li>
+          </ul>
+          <a href="" class="btn btn-primary">Create Company</a>
+          <a href="" class="btn btn-primary">Request Access to Company</a>
+        </div>
+        <div class="card account__forum-posts">
+          <h2>Forum Activity</h2>
+          <ul>
+            <li>
+              <a href="">
+                <p><b>Post title</b><br>
+                @user commented: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vel enim suscipit, natus inventore odio eligendi delectus fugit cum ut blanditiis quis voluptates maxime neque quae, et illum velit excepturi?
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <p><b>Post title</b><br>
+                @user commented: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vel enim suscipit, natus inventore odio eligendi delectus fugit cum ut blanditiis quis voluptates maxime neque quae, et illum velit excepturi?
+                </p>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <p><b>Post title</b><br>
+                @user commented: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vel enim suscipit, natus inventore odio eligendi delectus fugit cum ut blanditiis quis voluptates maxime neque quae, et illum velit excepturi?
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="card account__doc-links">
-        <a href="">developer docs</a>
-        <a href="">API refereance</a>
-        <a href="">SDK refereance</a>
-        <a href="">forum</a>
-        <a href="">support</a>
+      <div class="account__column">
+        <div class="card account__profile">
+          <h2>My Developer Profile</h2>
+          <img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="">
+          <input type="text" placeholder="username">
+          <input type="text" placeholder="email">
+          <input type="text" placeholder="organisation">
+          <input type="text" placeholder="location">
+          <input type="text" placeholder="change password">
+          <input type="text" placeholder="confirm new password">
+        </div>
+
+        <div class="account__doc-links">
+          <a href="" class="btn btn-primary">Developer Docs</a>
+          <a href="" class="btn btn-primary">API reference</a>
+          <a href="" class="btn btn-primary">SDK reference</a>
+          <a href="" class="btn btn-primary">Forum</a>
+          <a href="" class="btn btn-primary">Support</a>
+        </div>
+
+        <div class="card account__developer-news">
+          <h2>Developer News</h2>
+        </div>
       </div>
     </div>
   </div>
