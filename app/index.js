@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cookieSession from 'cookie-session';
 
 import getIndexRoute from './routes/getIndex';
 import getDocsRoute from './routes/getDocs';
@@ -16,6 +17,13 @@ app.set('port', (process.env.PORT || 5000));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.set('trust proxy', 1);
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2'],
+}));
 
 app.use('/images', express.static('assets/images'));
 app.use('/assets', express.static('dist/assets'));

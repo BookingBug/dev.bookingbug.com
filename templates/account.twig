@@ -6,82 +6,77 @@
       <a href="/"><img src="/images/bblogo.svg" alt=""></a>
       <span class="tagline">Platform Developer Portal</span>
     </div>
-    <div class="menu-toggle"></div>
-    <div class="clearfix"></div>
+    <div class="account__doc-links">
+      <a href="https://dev.bookingbug.com" target="_blank">Developer Docs</a>
+      <a href="http://apidocs.bookingbug.com/" target="_blank">API reference</a>
+      <a href="http://platform.bookingbug.com/sdkdocs/#/api" target="_blank">SDK reference</a>
+      <a href="https://forum.bookingbug.com" target="_blank">Forum</a>
+      <a href="mailto:support@bookingbug.com" target="_blank">Support</a>
+      <a href="/logout">Logout</a>
+    </div>
   </header>
-
+<div class="clearfix"></div>
   <div class="account">
     <div class="container">
       <div class="account__column">
-        <div class="card account__companies">
-        <h2>My Companies</h2>
-          <ul>
-            <li class="account__company">
-              <span>company name</span>
-              <input type="text" placeholder="host url">
-            </li>
-            <li class="account__company">
-              <span>company name</span>
-              <input type="text" placeholder="host url">
-            </li>
-            <li class="account__company">
-              <span>company name</span>
-              <input type="text" placeholder="host url">
-            </li>
-          </ul>
-          <a href="" class="btn btn-primary">Create Company</a>
-          <a href="" class="btn btn-primary">Request Access to Company</a>
-        </div>
         <div class="card account__forum-posts">
-          <h2>Forum Activity</h2>
+          <h2>Latest Forum Discussions</h2>
+          {% if flarumDiscussions|length > 0 %}
           <ul>
+            {% for discussion in flarumDiscussions.data %}           
             <li>
-              <a href="">
-                <p><b>Post title</b><br>
-                @user commented: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vel enim suscipit, natus inventore odio eligendi delectus fugit cum ut blanditiis quis voluptates maxime neque quae, et illum velit excepturi?
+              <a href="{{ flarumURL }}/d/{{ discussion.id }}-{{ discussion.attributes.slug }}" target="_blank">
+                <h3>{{ discussion.attributes.title }}</h3>
+                <p>
+                <b>Total Participants:</b> {{ discussion.attributes.participantsCount }}<br>
+                <b>Total Comments:</b> {{ discussion.attributes.commentsCount }}<br>
                 </p>
               </a>
             </li>
-            <li>
-              <a href="">
-                <p><b>Post title</b><br>
-                @user commented: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vel enim suscipit, natus inventore odio eligendi delectus fugit cum ut blanditiis quis voluptates maxime neque quae, et illum velit excepturi?
-                </p>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <p><b>Post title</b><br>
-                @user commented: Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vel enim suscipit, natus inventore odio eligendi delectus fugit cum ut blanditiis quis voluptates maxime neque quae, et illum velit excepturi?
-                </p>
-              </a>
-            </li>
+            {% endfor %}
           </ul>
+          {% else %}
+            There are no discussions available
+          {% endif %}
         </div>
       </div>
       <div class="account__column">
         <div class="card account__profile">
           <h2>My Developer Profile</h2>
           <img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="">
-          <input type="text" placeholder="username">
-          <input type="text" placeholder="email">
-          <input type="text" placeholder="organisation">
-          <input type="text" placeholder="location">
-          <input type="text" placeholder="change password">
-          <input type="text" placeholder="confirm new password">
+          <p>My AppID: {{ user.appId }}</p>
+          <span class="help-block">Use the above AppID to make requests to the public API</span><br>
+          <label for="username">Username</label>
+          <input type="text" placeholder="{{ flarumUser.data.attributes.username }}" disabled>
+          <label for="email">Email</label>
+          <input type="text" placeholder="{{ flarumUser.data.attributes.email }}" disabled>
+          <!--input type="text" placeholder="organisation" disabled>
+          <input type="text" placeholder="location" disabled>
+          <input type="text" placeholder="change password" disabled>
+          <input type="text" placeholder="confirm new password" disabled-->
         </div>
 
-        <div class="account__doc-links">
-          <a href="" class="btn btn-primary">Developer Docs</a>
-          <a href="" class="btn btn-primary">API reference</a>
-          <a href="" class="btn btn-primary">SDK reference</a>
-          <a href="" class="btn btn-primary">Forum</a>
-          <a href="" class="btn btn-primary">Support</a>
+        <div class="card account__companies">
+        <h2>My Companies</h2>
+          {% if companies|length > 0 %}
+          <ul>
+            {% for company in companies %}
+            <li class="account__company">
+              <span>{{ company.name }} <b>admin:</b> {{ company.adminName }} | {{ company.adminEmail }}</span>
+              <input type="text" placeholder="host url">
+            </li>
+            {% endfor %}
+          </ul>
+          {% else %}
+            There are no discussions available
+          {% endif %}
+          <a href="https://www.bookingbug.co.uk/pricing" target="_blank" class="btn btn-primary">Create Company</a>
+          <a href="" class="btn btn-primary">Request Access to Company</a>
         </div>
 
-        <div class="card account__developer-news">
+        <!-- <div class="card account__developer-news">
           <h2>Developer News</h2>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

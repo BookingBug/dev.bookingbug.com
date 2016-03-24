@@ -2,14 +2,14 @@ import fs from 'fs';
 import { twig } from 'twig';
 
 export default class Page {
-  constructor({ templatePath, content }) {
+  constructor({ templatePath, templateVariables }) {
     this.templatePath = templatePath;
-    this.content = content;
+    this.templateVariables = templateVariables;
   }
 
   render() {
-    const { templatePath, content } = this;
-    return this.getTemplate(templatePath).render({ content });
+    const { templatePath, templateVariables } = this;
+    return this.getTemplate(templatePath).render(templateVariables);
   }
 
   getTemplate() {

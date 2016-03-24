@@ -14,7 +14,9 @@ export default (req, res) => {
 
     const page = new Page({
       templatePath,
-      content,
+      templateVariables: {
+        content,
+      },
     });
 
     res.send(page.render());

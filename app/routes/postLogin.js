@@ -1,9 +1,10 @@
+import { merge } from 'lodash';
 import request from 'request';
 
 function flarum({ identification, password }) {
   return {
     method: 'POST',
-    url: process.env.FLARUM_URL,
+    url: `${process.env.FLARUM_URL}/api/token`,
     headers: {
       'cache-control': 'no-cache',
       'content-type': 'application/x-www-form-urlencoded',
@@ -14,7 +15,7 @@ function flarum({ identification, password }) {
 
 function clientsService(forumId) {
   return {
-    method: 'PUT',
+    method: 'POST',
     url: `${process.env.CLIENTS_SERVICE_URL}/user`,
     headers: {
       'content-type': 'application/json',
@@ -28,10 +29,12 @@ export default (req, res) => {
     if (error) throw new Error(error);
     const payload = JSON.parse(body);
     const forumId = payload.userId;
+    const forumToken = payload.token;
 
     request(clientsService(forumId), (err, resp, userBody) => {
       const userPayload = JSON.parse(userBody);
-      res.json(userPayload);
+      merge(req.session, userPayload, { forumToken });
+      res.redirect('/account');
     });
   });
 };
