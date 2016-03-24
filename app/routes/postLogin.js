@@ -29,10 +29,11 @@ export default (req, res) => {
     if (error) throw new Error(error);
     const payload = JSON.parse(body);
     const forumId = payload.userId;
+    const forumToken = payload.token;
 
     request(clientsService(forumId), (err, resp, userBody) => {
       const userPayload = JSON.parse(userBody);
-      merge(req.session, userPayload);
+      merge(req.session, userPayload, { forumToken });
       res.redirect('/account');
     });
   });

@@ -63,6 +63,10 @@
       text-decoration: none;
       display: block;
     }
+    h3 {
+      margin:0.5em 0 0.25em 0;
+      color:@color-primary;
+    }
   }
 
   &__profile {
@@ -81,10 +85,17 @@
 
   &__doc-links {
     display: block;
-    margin-bottom:1.5em;
-    width:100%;
+    float:right;
+    margin-top:0.35em;
+    margin-right: 1em;
     a {
-      display: inline block;
+      padding: 1.45em 0.5em;
+      display: inline-block;
+      text-decoration: none;
+      color:@color-black;
+    }
+    a:hover {
+      color: lighten(@color-black, 10%);
     }
   }
 
