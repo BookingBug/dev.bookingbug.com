@@ -1,5 +1,6 @@
 import Page from '../classes/Page';
 import request from 'request';
+import { merge } from 'lodash';
 
 function getCompanies() {
   // not yet associated with user
