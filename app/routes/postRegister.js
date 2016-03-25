@@ -32,7 +32,7 @@ export default (req, res) => {
     if (error) throw new Error(error);
     const payload = JSON.parse(body);
     if (payload.errors) {
-      merge(req.session, { errors: payload.errors });
+      merge(req.session, payload.errors);
       res.redirect('/register');
       return;
     }

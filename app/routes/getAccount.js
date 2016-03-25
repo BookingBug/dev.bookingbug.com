@@ -1,6 +1,5 @@
 import Page from '../classes/Page';
 import request from 'request';
-import { merge } from 'lodash';
 
 function getCompanies() {
   // not yet associated with user
@@ -38,11 +37,14 @@ function getFlarumDiscussions(forumToken) {
 }
 
 export default (req, res) => {
+  if (!req.session) {
+    res.redirect('/login');
+    return;
+  }
   request(getCompanies(), (error, response, body) => {
     const companies = JSON.parse(body);
     const user = req.session;
     const { forumId, forumToken } = req.session;
-
     request(
       getFlarumUser({ forumId, forumToken }),
       (userError, userResponse, userBody) => {

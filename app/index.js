@@ -6,6 +6,7 @@ import getIndexRoute from './routes/getIndex';
 import getDocsRoute from './routes/getDocs';
 import postLoginRoute from './routes/postLogin';
 import getLoginRoute from './routes/getLogin';
+import postLogoutRoute from './routes/postLogout';
 import postRegisterRoute from './routes/postRegister';
 import getRegisterRoute from './routes/getRegister';
 import getAccountRoute from './routes/getAccount';
@@ -36,6 +37,7 @@ app.get('/login', getLoginRoute);
 app.post('/login', postLoginRoute);
 app.get('/register', getRegisterRoute);
 app.post('/register', postRegisterRoute);
+app.get('/logout', postLogoutRoute);
 app.get('/account', getAccountRoute);
 
 app.listen(app.get('port'), () => {

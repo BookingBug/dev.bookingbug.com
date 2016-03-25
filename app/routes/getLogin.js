@@ -1,14 +1,17 @@
 import Page from '../classes/Page';
 
 export default (req, res) => {
-  let errors = req.session.errors;
+  const { session = {} } = req;
   const templatePath = '/templates/login.twig';
-  const page = new Page({
+  const pageDetails = {
     templatePath,
     templateVariables: {
-      errors,
+      errors: session.errors,
     },
-  });
-  errors = null;
+  };
+  if (session.errors) {
+    delete session.errors;
+  }
+  const page = new Page(pageDetails);
   res.send(page.render());
 };

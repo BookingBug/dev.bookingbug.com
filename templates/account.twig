@@ -27,10 +27,8 @@
             <li>
               <a href="{{ flarumURL }}/d/{{ discussion.id }}-{{ discussion.attributes.slug }}" target="_blank">
                 <h3>{{ discussion.attributes.title }}</h3>
-                <p>
-                <b>Total Participants:</b> {{ discussion.attributes.participantsCount }}<br>
-                <b>Total Comments:</b> {{ discussion.attributes.commentsCount }}<br>
-                </p>
+                <span class="help-block"><b><i class="fa fa-users fa-fw"></i>&nbsp;Total Participants:</b> {{ discussion.attributes.participantsCount }}&nbsp;&nbsp;<b><i class="fa fa-comment fa-fw"></i>&nbsp;Total Comments:</b> {{ discussion.attributes.commentsCount }}
+                </span>
               </a>
             </li>
             {% endfor %}

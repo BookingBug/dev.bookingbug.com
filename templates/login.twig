@@ -1,11 +1,11 @@
 {% include 'bbug::components/header.twig' %}
 
 <form action="/login" method="POST" class="login">
-  {% for error in errors %}
-    <div class="errors">
-      {{ error.detail }}
-    </div>
-  {% endfor %}
+  {% if errors %}
+      <div class="errors">
+        Unable to login please check your email and password. You can reset your password via <a href="forum.bookingbug.com">forum.bookingbug.com</a>
+      </div>
+  {% endif %}
 	<label for="identification">Email</label>
 	<input type="email" name="identification">
 	<label for="password">Password</label>
