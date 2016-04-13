@@ -1,11 +1,13 @@
-module.exports = function(grunt, options) {
+'use strict';
 
-  return {    
+module.exports = function (grunt, options) {
+
+  return {
     target: {
-        tasks: ['nodemon', 'watch'],
-        options: {
-            logConcurrentOutput: true
-        }
-    }
+      tasks: ['nodemon', 'watch'],
+      options: {
+        logConcurrentOutput: true,
+      },
+    },
   };
 };

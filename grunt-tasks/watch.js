@@ -1,10 +1,12 @@
-module.exports = function(grunt, options) {
+'use strict';
 
-	return {
-		local: {
-			files: ['assets/javascript/**', 'assets/less/**'],
-			tasks: ['compile-local'],
-			options: {spawn: false, nonull: false}
-		},
-	};
+module.exports = function (grunt, options) {
+
+  return {
+    local: {
+      files: ['assets/javascript/**', 'assets/less/**'],
+      tasks: ['compile-local'],
+      options: { spawn: false, nonull: false },
+    },
+  };
 };
