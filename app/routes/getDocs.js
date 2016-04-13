@@ -3,9 +3,9 @@ import marked from 'marked';
 import Page from '../classes/Page';
 
 export default (req, res) => {
-  const { category, doc = 'index' } = req.params;
-  const docsPath = `${process.cwd()}/docs/${category}/${doc}.md`;
-
+  const { category, page = 'index' } = req.params;
+  const docsPath = `${process.cwd()}/docs/${category}/${page}.md`;
+  
   fs.readFile(docsPath, (err, data) => {
     if (err) return res.sendStatus(500);
 
