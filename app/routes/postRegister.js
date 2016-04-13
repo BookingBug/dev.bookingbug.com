@@ -1,15 +1,18 @@
 import { merge } from 'lodash';
 import request from 'request';
 
-function flarum({ identification, password }) {
+function flarumPostUser({ username, email, password }) {
   return {
     method: 'POST',
-    url: `${process.env.FLARUM_URL}/api/token`,
+    url: `${process.env.FLARUM_URL}/api/users`,
     headers: {
-      'cache-control': 'no-cache',
-      'content-type': 'application/x-www-form-urlencoded',
+      'content-type': 'application/json',
     },
-    form: { password, identification },
+    body: JSON.stringify({
+      data: {
+        attributes: { username, email, password },
+      },
+    }),
   };
 }
 
@@ -25,14 +28,15 @@ function clientsService(forumId) {
 }
 
 export default (req, res) => {
-  request(flarum(req.body), (error, response, body) => {
+  request(flarumPostUser(req.body), (error, response, body) => {
     if (error) throw new Error(error);
     const payload = JSON.parse(body);
     if (payload.errors) {
-      merge(req.session, { errors: payload.errors });
-      res.redirect('/login');
+      merge(req.session, payload.errors);
+      res.redirect('/register');
       return;
     }
+
     const forumId = payload.userId;
     const forumToken = payload.token;
 

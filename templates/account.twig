@@ -27,16 +27,14 @@
             <li>
               <a href="{{ flarumURL }}/d/{{ discussion.id }}-{{ discussion.attributes.slug }}" target="_blank">
                 <h3>{{ discussion.attributes.title }}</h3>
-                <p>
-                <b>Total Participants:</b> {{ discussion.attributes.participantsCount }}<br>
-                <b>Total Comments:</b> {{ discussion.attributes.commentsCount }}<br>
-                </p>
+                <span class="help-block"><b><i class="fa fa-users fa-fw"></i>&nbsp;Total Participants:</b> {{ discussion.attributes.participantsCount }}&nbsp;&nbsp;<b><i class="fa fa-comment fa-fw"></i>&nbsp;Total Comments:</b> {{ discussion.attributes.commentsCount }}
+                </span>
               </a>
             </li>
             {% endfor %}
           </ul>
           {% else %}
-            There are no discussions available
+            No forum discussions available <br>
           {% endif %}
         </div>
       </div>
@@ -50,10 +48,6 @@
           <input type="text" placeholder="{{ flarumUser.data.attributes.username }}" disabled>
           <label for="email">Email</label>
           <input type="text" placeholder="{{ flarumUser.data.attributes.email }}" disabled>
-          <!--input type="text" placeholder="organisation" disabled>
-          <input type="text" placeholder="location" disabled>
-          <input type="text" placeholder="change password" disabled>
-          <input type="text" placeholder="confirm new password" disabled-->
         </div>
 
         <div class="card account__companies">
@@ -68,15 +62,11 @@
             {% endfor %}
           </ul>
           {% else %}
-            There are no discussions available
+            You have no companies available <br><br>
           {% endif %}
           <a href="https://www.bookingbug.co.uk/pricing" target="_blank" class="btn btn-primary">Create Company</a>
           <a href="" class="btn btn-primary">Request Access to Company</a>
         </div>
-
-        <!-- <div class="card account__developer-news">
-          <h2>Developer News</h2>
-        </div> -->
       </div>
     </div>
   </div>
