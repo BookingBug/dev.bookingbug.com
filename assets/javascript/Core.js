@@ -55,20 +55,21 @@ class Core {
   switchContent(path) {
     $('.content > .container').fadeOut(() => {
       this.disqusHide();
-      $('.content > .container').load( path + ' .content > .container',() => {
+      $('.content > .container').load(path + ' .content > .container', () => {
         $('.content > .container').fadeIn(() => {
           this.disqusReload(path);
           //refreash dom binded elements
           this.tabsInit();
           this.highlightCode();
         });
-        $('body').animate({scrollTop:0}, '500', 'swing');
+        $('body').animate({ scrollTop:0 }, '500', 'swing');
       });
     });
   }
 
   menuBind($target, $toggle) {
     $toggle.on('click', (e) => {
+      e.preventDefault();
       if ($target.hasClass('active')) {
         this.menuClose($target, $toggle);
       } else {
@@ -88,14 +89,14 @@ class Core {
   }
 
   tabsInit() {
-    $(".tabs__menu a").on('click', function(event) {
-          event.preventDefault();
-          $(this).parent().addClass("current");
-          $(this).parent().siblings().removeClass("current");
-          var tab = $(this).attr("href");
-          $(".tab__content").not(tab).css("display", "none");
-          $(tab).fadeIn();
-      });
+    $('.tabs__menu a').on('click', function(event) {
+      event.preventDefault();
+      $(this).parent().addClass('current');
+      $(this).parent().siblings().removeClass('current');
+      const tab = $(this).attr('href');
+      $('.tab__content').not(tab).css('display', 'none');
+      $(tab).fadeIn();
+    });
   }
 
   disqusLoad(url, path) {
@@ -111,8 +112,8 @@ class Core {
       DISQUS.reset({
         reload: true,
         config: function () {
-          this.page.identifier = path;  
-          this.page.url =  window.location.protocol + '://' + window.location.host + path;
+          this.page.identifier = path;
+          this.page.url = window.location.protocol + '://' + window.location.host + path;
         }
       });
     });

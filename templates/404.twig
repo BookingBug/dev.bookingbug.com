@@ -1,0 +1,29 @@
+{% include 'bbug::components/header.twig' %}
+
+<div class="wrapper">
+  <header>
+    <div class="logo">
+      <a href="/"><img src="/images//bblogo.svg" alt=""></a>
+      <span class="tagline">Developer Documentation</span>
+    </div>
+    <div class="menu-toggle"></div>
+    {# <div class="account__doc-links">
+      <a href="/login">Login</a>
+    </div> #}
+    <div class="clearfix"></div>
+  </header>
+
+  {% include 'bbug::components/menu.twig' %}
+
+  <div class="content markdown-body">
+    <div class="container">
+      <h1>404 oops..</h1>
+      <p>Sorry we can't find that page right now. Try checking the URL or visiting another page.</p>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+</div>
+
+{% include 'bbug::components/footer.twig' %}

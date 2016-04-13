@@ -10,6 +10,7 @@ import postLogoutRoute from './routes/postLogout';
 import postRegisterRoute from './routes/postRegister';
 import getRegisterRoute from './routes/getRegister';
 import getAccountRoute from './routes/getAccount';
+import getErrorRoute from './routes/get404';
 
 const app = express();
 
@@ -39,6 +40,14 @@ app.get('/register', getRegisterRoute);
 app.post('/register', postRegisterRoute);
 app.get('/logout', postLogoutRoute);
 app.get('/account', getAccountRoute);
+app.get('/404', getErrorRoute);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(res.redirect('/404'));
+});
 
 app.listen(app.get('port'), () => {
   console.log('Node app is running on port', app.get('port'));
