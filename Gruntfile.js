@@ -22,8 +22,10 @@ module.exports = function (grunt) {
 
   require('time-grunt')(grunt);
 
+  console.log(path.join(process.cwd(), '/grunt-tasks'));
+
   loadGruntConfig(grunt, {
-    configPath: path.join(process.cwd(), 'grunt-tasks'),
+    configPath: path.join(process.cwd(), '/grunt-tasks'),
     data: projectConfig,
   });
 };
