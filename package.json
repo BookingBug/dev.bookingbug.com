@@ -5,6 +5,7 @@
   "main": "entrypoint.js",
   "scripts": {
     "start": "node entrypoint.js",
+    "preinstall": "babel --optional runtime -d dist/ app/",
     "postinstall": "bower install && grunt",
     "lint": "eslint app/",
     "build": "babel --optional runtime -d dist/ app/"
