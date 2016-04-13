@@ -5,6 +5,7 @@
   "main": "Gruntfile.js",
   "scripts": {
     "start": "node entrypoint.js",
+    "postinstall": "bower install && grunt",
     "lint": "eslint app/",
     "build": "babel --optional runtime -d dist/ app/"
   },
