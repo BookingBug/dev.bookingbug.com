@@ -1,13 +1,16 @@
 {
   "name": "FrontEndSeed",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "description": "This project is a default front end start point. Made for LemonDigits.com fr use on client projects.",
-  "main": "Gruntfile.js",
+  "main": "entrypoint.js",
   "scripts": {
     "start": "node entrypoint.js",
     "postinstall": "bower install && grunt",
     "lint": "eslint app/",
     "build": "babel --optional runtime -d dist/ app/"
+  },
+  "engines": {
+    "node": "5.0.0"
   },
   "author": "",
   "license": "",
