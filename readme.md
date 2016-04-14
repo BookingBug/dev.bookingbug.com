@@ -40,7 +40,7 @@ then run `npm start` This launches the app and watches the `javascript/, css/, v
 
 ## direnv
 
-Direnv is an environment switcher for the shell. It will keep track of the environment variables you'll need for the project. You can find an example .envrc in the root of the project, you may need to alter it to fit your environment. For more information, read the documentation.
+[Direnv](http://direnv.net/) is an environment switcher for the shell. It will keep track of the environment variables you'll need for the project. You can find an example .envrc in the root of the project, you may need to alter it to fit your environment. For more information, [read the documentation](http://direnv.net/).
 
 To allow the environment variables run the below command
 
