@@ -22,6 +22,7 @@ you need to have the below installed for this project.
 
 - Node https://nodejs.org/
 - Bower http://bower.io/
+- Direnv
 
 # Docs
 - Wiki [https://github.com/maxmckenzie/FrontEndSeed/wiki](https://github.com/maxmckenzie/FrontEndSeed/wiki) - built on FrontEndSeed
@@ -36,6 +37,18 @@ run the following commands.
 `npm install` To install all the node and bower dependencies. It also then builds all the assets with grunt.
 
 then run `npm start` This launches the app and watches the `javascript/, css/, views/` and `index.js` directories for a change and then reboots/rebuilds where necessary.
+
+## direnv
+
+Direnv is an environment switcher for the shell. It will keep track of the environment variables you'll need for the project. You can find an example .envrc in the root of the project, you may need to alter it to fit your environment. For more information, read the documentation.
+
+To allow the environment variables run the below command
+
+```
+direnv allow
+```
+
+To build the /app directory to /dist ready for production use run `npm run build` this will compile all the code using Babel stage 0
 
 # Heroku Support
 > Heroku is the nuts. If you've not heard of it check it out. like now.... why are you still reading this?
