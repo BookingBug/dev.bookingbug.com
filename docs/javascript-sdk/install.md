@@ -31,7 +31,7 @@ you will be asked the following so make sure to have all the info you need.
 
 - What is the name of your project?
 - What type of application do you want? (Public-bookings application, allows for an end user to book without logging in, the member application is naturally opposite to this).
-- What is your BookingBug company id? (The `company_id` variable is the number you'll see at the top right of the screen when you log into your BookingBug account. E.g: ukw12345).
-- What is the API URL? (this can be left as is unless you have been told to use another specific end point).
+- What is your BookingBug company id? (The `company_id` can be obtained from the API Settings under BookingBug Advanced Settings E.g: ukw12345).
+- What is the API URL? (This can be obtained from the API Settings under BookingBug Advanced Settings).
 
 Once all of the above has installed. Run `gulp` in the root of the directory to watch files for changes and to serve your application on [http://localhost:8000](http://localhost:8000)

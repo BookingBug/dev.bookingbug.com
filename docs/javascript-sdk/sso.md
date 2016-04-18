@@ -12,6 +12,8 @@ The typical method for using the single sign-on token is to wrap the widget with
 
 You will need to generate the SSO token server side. Then print this to the DOM as the value of the `member-sso-login` attribute.
 
+> The API Settings under BookingBug Advanced Settings can be used to generate a secure key for use with SSO token generation.
+
 <div class="tabs">
     <ul class="tabs__menu">
         <li class="current"><a href="#tab-1">Ruby</a></li>
