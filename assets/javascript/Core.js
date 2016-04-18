@@ -41,6 +41,8 @@ class Core {
 
   historyPush(url) {
     history.pushState(url, null, url);
+    var pageTitle = url.split('/').pop();
+    document.title = 'Developer Docs - ' + pageTitle.replace(/-/g, ' ');
     this.switchContent(url);
   }
 

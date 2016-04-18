@@ -8,12 +8,12 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 - ~~**Revise choosing a plan** Revise in line with feedback.~~
 - ~~**Page Routing Guide** how the JS SDK routes pages and logic~~
 - ~~**JavaScript SDK Examples** Publicly accessible example code bases for 3<sup>rd</sup> party Developers to use.~~
-- **Developer Forum** Set up and launch a developer forum where people can ask questions and find answers from previously asked questions.
-- **REST API Event Booking** a tutorial similar to the [service booking](rest-api/service-booking) documentation with user flow diagrams and end point examples
+- **Better page title support** need to add better page title support to the application
 - **Single Sign On** A tutorial showing developers how to Single Sign-on (SSO) via the API and the ~~JS SDK~~
 
 ## Version 2.2
-- **Better page title support** need to add better page title support to the application
+- **Developer Forum** Set up and launch a developer forum where people can ask questions and find answers from previously asked questions.
+- **REST API Event Booking** a tutorial similar to the [service booking](rest-api/service-booking) documentation with user flow diagrams and end point examples
 - **Extending Directives Guide** the number of ways that you can extend controllers
 - **Affiliate Push Notifications** A tutorial showing developers how to use affiliate push notifications via the API and the JS SDK
 - **Full integrations Directory** a full list of integrations ordered by category to be created and added to the docs
