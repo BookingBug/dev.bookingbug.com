@@ -8,7 +8,7 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 - ~~**Revise choosing a plan** Revise in line with feedback.~~
 - ~~**Page Routing Guide** how the JS SDK routes pages and logic~~
 - ~~**JavaScript SDK Examples** Publicly accessible example code bases for 3<sup>rd</sup> party Developers to use.~~
-- **Better page title support** need to add better page title support to the application
+- ~~**Better page title support** need to add better page title support to the application~~
 - **Single Sign On** A tutorial showing developers how to Single Sign-on (SSO) via the API and the ~~JS SDK~~
 
 ## Version 2.2
