@@ -12,7 +12,6 @@ class Core {
 
     this.tabsInit();
     this.highlightCode();
-
     this.historyPop();
 
     this.disqusLoad(window.location.href, window.location.pathname);
