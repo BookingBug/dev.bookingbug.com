@@ -1,7 +1,12 @@
 # Featured Integrations
-You can integrate the booking bug platform with many of your favourite applications such as Xero accounting, sage, Paypal, stripe and more.
+You can integrate the BookingBug platform with many of your favourite applications such as Xero accounting, sage, Paypal, stripe and more.
 
-Below are some of our featured integrations. The full list of integrations can be found [here](https://www.bookingbug.co.uk/partners)
+<ul>
+	<li><a href="docs/integrations/enterprise">Enterprise platforms &amp; services</a></li>
+	<li><a href="docs/integrations/business-intelligence">Business intelligence, data &amp; accounting</a></li>
+	<li><a href="docs/integrations/mobile-payment">Mobile &amp; on-line payments</a></li>
+	<li><a href="docs/integrations/sme-social">SME &amp; social</a></li>
+</ul>
 
 
 <div class="card">
