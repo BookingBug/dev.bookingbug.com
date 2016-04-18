@@ -1,7 +1,7 @@
 # Features
 - ECMA6 ready with babel.js for browser support.
 - Github Flavoured Markdown
-- Dynamic markdown doc loading via `app.set('/:categories/:pages')`
+- Dynamic markdown doc loading via `app.set('docs/:categories/:pages')`
 - highlight.js syntax highlighting
 - Modular Grunt Tasks
 - LESS
@@ -20,7 +20,7 @@
 # Prerequisites
 you need to have the below installed for this project.
 
-- Node https://nodejs.org/
+- Node 5 > https://nodejs.org/
 - Bower http://bower.io/
 - Direnv
 
