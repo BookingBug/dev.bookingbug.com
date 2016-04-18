@@ -57,7 +57,7 @@ So to deploy to Heroku. We have to do a couple of things. Firstly go get the too
 
 Then run `heroku login` and enter your heroku account details.
 
-Now its time to create the app. run `heroku create myApp` or whatever you want in place of 'myApp'. Now before you push, you must run a build-pack command to tell heroku to run a node instance. Heroku can do this automatically but its a good idea to set it as well just in case.ssssss
+Now its time to create the app. run `heroku create myApp` or whatever you want in place of 'myApp'. Now before you push, you must run a build-pack command to tell heroku to run a node instance. Heroku can do this automatically but its a good idea to set it as well just in case.
 
 So you'll need to run `heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs`
 

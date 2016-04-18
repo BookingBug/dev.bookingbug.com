@@ -7,6 +7,7 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 - ~~**Add overview page to SDK** highlighting why to use it etc. looking after the core API heavy lifting~~
 - ~~**Revise choosing a plan** Revise in line with feedback.~~
 - ~~**Page Routing Guide** how the JS SDK routes pages and logic~~
+- ~~**JavaScript SDK Examples** Publicly accessible example code bases for 3<sup>rd</sup> party Developers to use.~~
 - **Developer Forum** Set up and launch a developer forum where people can ask questions and find answers from previously asked questions.
 - **REST API Event Booking** a tutorial similar to the [service booking](rest-api/service-booking) documentation with user flow diagrams and end point examples
 - **Single Sign On** A tutorial showing developers how to Single Sign-on (SSO) via the API and the ~~JS SDK~~
@@ -22,7 +23,6 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 - **Postman Template**
 - **Useful Tools** A page in the documentation highlighting tools that will be of use to a developer working on the platform
 - **JavaScript SDK Reference** Review the SDK reference and expand code examples.
-- **JavaScript SDK Examples** Publicly accessible example code bases for 3<sup>rd</sup> party Developers to use.
 
 ## Version 2.4
 - **Internationalisation** Guide on translations what directives need to be added
