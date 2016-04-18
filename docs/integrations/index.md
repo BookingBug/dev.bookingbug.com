@@ -1,7 +1,12 @@
 # Featured Integrations
-You can integrate the booking bug platform with many of your favourite applications such as Xero accounting, sage, Paypal, stripe and more.
+You can integrate the BookingBug platform with many of your favourite applications such as Xero accounting, sage, Paypal, stripe and more.
 
-Below are some of our featured integrations. The full list of integrations can be found [here](https://www.bookingbug.co.uk/partners)
+<ul>
+	<li><a href="docs/integrations/enterprise">Enterprise platforms &amp; services</a></li>
+	<li><a href="docs/integrations/business-intelligence">Business intelligence, data &amp; accounting</a></li>
+	<li><a href="docs/integrations/mobile-payment">Mobile &amp; on-line payments</a></li>
+	<li><a href="docs/integrations/sme-social">SME &amp; social</a></li>
+</ul>
 
 
 <div class="card">
@@ -32,7 +37,7 @@ Below are some of our featured integrations. The full list of integrations can b
 	<div>
 		<img src="https://www.bookingbug.co.uk/pictures/841/show/stripe+logo+sq+new.png?sh=67514556736b42d2" alt="">
 		<p><b>Stripe</b><br>
-		Take booking payments on-line using Stripe<br>
+		Take booking payments online using Stripe<br>
 		<a href="https://stripe.com" target="_blank">Find out more<i class="fa fa-angle-right"></i></a></p>
 	</div>
 </div>
@@ -40,7 +45,7 @@ Below are some of our featured integrations. The full list of integrations can b
 	<div>
 		<img src="https://www.bookingbug.co.uk/pictures/826/show/New-Sage-One-logo-sq+new.png?sh=575083fd12af2e6f" alt="">
 		<p><b>Sage One</b><br>
-		Simple on-line accounting and payroll software<br>
+		Simple online accounting and payroll software<br>
 		<a href="http://www.sageone.com/" target="_blank">Find out more<i class="fa fa-angle-right"></i></a></p>
 	</div>
 </div>
@@ -56,7 +61,7 @@ Below are some of our featured integrations. The full list of integrations can b
 	<div>
 		<img src="https://www.bookingbug.co.uk/pictures/803/show/braintree+logo+sq+new.png?sh=e0afa21475ee9fde" alt="">
 		<p><b>Braintree</b><br>
-		Take booking payments on-line using Braintree<br>
+		Take booking payments online using Braintree<br>
 		<a href="https://www.braintreepayments.com/" target="_blank">Find out more<i class="fa fa-angle-right"></i></a></p>
 	</div>
 </div>
