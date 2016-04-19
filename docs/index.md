@@ -3,7 +3,7 @@
 The BookingBug Platform is an extensive tool-set that allows web developers and designers of all skill levels, backgrounds and experience to make the best use of the broad range of functionality, flexibility and power that BookingBug offers businesses.
 
 ## Set up your platform
-The first thing you will need to do is choose the right plan for your needs. If its enterprise. Then you will want to contact booking bug for a quote. Once you have your plan you can start setting up your account.
+The first thing you will need to do is choose the right plan for your needs. If you are an enterprise client. Then you will need to contact BookingBug for a quote. Once you have your plan set up you can start setting up your account.
 
 [Get Started by choosing a plan](/getting-started/choosing-a-plan)
 
