@@ -1,0 +1,18 @@
+.ui-mprogress .deter-bar,
+.ui-mprogress .indeter-bar,
+.ui-mprogress .query-bar,
+.ui-mprogress .bar-bg,
+.ui-mprogress .buffer-bg,
+.ui-mprogress .mp-ui-dashed {
+  background: lighten(@color-primary, 10%) !important;
+}
+.ui-mprogress .bar-bg,
+.ui-mprogress .buffer-bg {
+  background: fade(@color-primary, 20%) !important;
+}
+.ui-mprogress .mp-ui-dashed:before {
+  background: radial-gradient(fade(@color-primary, 20%) 0%, fade(@color-primary, 20%) 16%, transparent 42%) !important;
+}
+.ui-mprogress .peg {
+  box-shadow: 0 0 10px @color-primary, 0 0 5px @color-primary;
+}

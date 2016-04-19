@@ -54,16 +54,25 @@ class Core {
   }
 
   switchContent(path) {
+    let mprogress = new Mprogress();
+    mprogress.start();
     $('.content > .container').fadeOut(() => {
       this.disqusHide();
+      mprogress.set(0.25);
+      mprogress.set(0.35);
       $('.content > .container').load(path + ' .content > .container', () => {
+        mprogress.set(0.45);
         $('.content > .container').fadeIn(() => {
           this.disqusReload(path);
+          mprogress.set(0.50);
           //refreash dom binded elements
           this.tabsInit();
+          mprogress.set(0.75);
           this.highlightCode();
+          mprogress.set(0.85);
         });
         $('body').animate({ scrollTop:0 }, '500', 'swing');
+        mprogress.end();
       });
     });
   }
