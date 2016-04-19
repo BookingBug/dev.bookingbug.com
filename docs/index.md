@@ -19,11 +19,11 @@ BookingBug has many integrations that you can use to tie all your on-line servic
 
 [Get Started with the JavaScript Check out our integrations](/integrations)
 
-## Designer
+<!-- ## Designer
 
 The designer allows you to customise your booking journey with ease. You can add text to your booking journey change the colours and the layout. You can then export your final code and place it on your website.
 
-[Get Started with the REST SDK](/designer)
+[Get Started with the REST SDK](/designer) -->
 
 ## JavaScript SDK
 
