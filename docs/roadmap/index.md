@@ -25,6 +25,7 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 - **JavaScript SDK Reference** Review the SDK reference and expand code examples.
 
 ## Version 2.4
+- **BookingBug Widget Designer** Deployed and guides written in the documentation on how to use the widget designer
 - **Internationalisation** Guide on translations what directives need to be added
 - **REST API Discounts** A tutorial on how to work with the discounts on offer via the REST API
 - **REST API Packages and Bulk Purchases** A tutorial showing developers how to apply packages and bulk purchases via the API
