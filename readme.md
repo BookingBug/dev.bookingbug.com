@@ -17,6 +17,10 @@
 - Desktop Notifications
 - IE and no JS user warnings
 
+# Important Reading
+- [Style guide](https://github.com/BookingBug/dev.bookingbug.com/wiki/Style-Guide)
+- [Contribution guide](https://github.com/BookingBug/dev.bookingbug.com/wiki/Contributing)
+
 # Prerequisites
 you need to have the below installed for this project.
 
