@@ -2,9 +2,9 @@
 
 If the company has an affiliate, the affiliate can set up the push notifications that will be sent whenever a company makes, updates, or cancels a booking.
 
-Prerequsites:
+Prerequisites:
 
-In order to get an affiliate account with a Full API accesss please Contact us at affiliates@bookingbug.com
+In order to get an affiliate account with a Full API access please Contact us at affiliates@bookingbug.com
 
 Affiliate Setting Configuration:
 

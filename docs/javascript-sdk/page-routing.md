@@ -2,7 +2,7 @@
 
 The JavaScript SDK has a page routing system that automatically follows a set of steps. These steps make up your user journey. These page directives can be customised via the `bb-breadcrumb` directive.
 
-In this guide, we will be taking our newly initialised widget that we created in install and getting started, and customise the default templates which it invokes.
+In this guide, we will be taking a newly initialised widget that we created and customise the default templates which it invokes.
 
 To start let's look at our `bb-widget` directive
 
@@ -34,7 +34,7 @@ The SDK calls `$Scope.defineNextPage` to automatically take you through the defa
 
 This allows you to set up custom page routes for your user journey. The `page:''` attributes allows you to set the template that is used for each step, so `page:'event_list'` would load the `events_list.html` template for that step. The `title:` allows you to change the `<title>` meta tag for the page.
 
-You can also pass `disable_breadcrumbs: true` to disable a step once the user has loaded the step in question. This means that they cannot go back once its set.
+You can also pass `disable_breadcrumbs: true` to disable a step once the user has loaded the step in question. This means that they cannot go back once it has been set.
 
 ```js
 <div bb-breadcrumbs class="breadcrumbs_holder" ng-init="setRoute([
@@ -54,7 +54,7 @@ You may want to combine multiple steps. You can do this using `when: route.event
 
 - Company
 - Category
-- Service 
+- Service
 - Person
 - Resource
 - Duration
@@ -70,9 +70,7 @@ You may want to combine multiple steps. You can do this using `when: route.event
 
 However, we do have an issue here. If we define `when: route.event[slot, person]` on confirmation it will try to call `$Scope.defineNextPage` twice. We also may want to change the available slots when the user chooses a person.
 
-to overcome this we can use the `bb-page` page controller. This controller allows you to route steps back and forth when combining steps. You can attach `checkReady()` to the step DOM element. And it will wait until all of the steps in a single template have been completed.
-
-Let's look at a complete example
+to overcome this we can use the `bb-page` controller. This controller allows you to route steps back and forth when combining steps. You can attach `checkReady()` to the step DOM element. And it will wait until all of the steps in a single template have been completed as per the below example.
 
 ```
 <div bb-page>

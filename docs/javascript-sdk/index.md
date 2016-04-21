@@ -1,5 +1,5 @@
 # JavaScript SDK Overview
-The JavaScript SDK provides an Angular based set of tools that allows you to set up custom user journeys in your application.
+The JavaScript SDK provides an AngularJS based set of tools that allows you to set up custom user journeys in your application.
 
 It is designed to be extremely simple to use, even for someone with only basic HTML skills and no JavaScript experience. It is also designed to be flexible and powerful enough to enable even the most demanding or sophisticated use cases.
 
