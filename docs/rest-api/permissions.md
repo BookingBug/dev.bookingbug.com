@@ -1,4 +1,5 @@
 # Working with the role-based permissions system.
+
 The BookingBug API has three levels of role-based permissions available. These role-based permissions allow you to access different levels of the booking journey depending on your needs.
 
 - [**Admin** The administrator of your platform](http://apidocs.bookingbug.com/admin.html)
