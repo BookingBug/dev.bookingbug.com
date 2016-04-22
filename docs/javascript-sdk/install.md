@@ -12,7 +12,7 @@ you will need to install the following dependencies via the terminal before gett
 
 > If your not familiar with the terminal don't despair. You should take a look, as its very powerful. [Codecademy do a really good interactive tutorial](https://www.codecademy.com/ru/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) on it that will introduce you to the basics.
 
-## Create you project
+## Create your project
 Once you have your dependencies installed you can download our Yeoman generator.
 
 ```
