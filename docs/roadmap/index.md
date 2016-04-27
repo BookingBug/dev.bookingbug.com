@@ -15,8 +15,8 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 Completion around the 28/04/16
 
 - **Developer Forum** Set up and launch a developer forum where people can ask questions and find answers from previously asked questions.
-- **REST API Event Booking** a tutorial similar to the [service booking](rest-api/service-booking) documentation with user flow diagrams and end point examples
-- **Extending Directives Guide** the number of ways that you can extend controllers
+- ~~**REST API Event Booking** a tutorial similar to the [service booking](rest-api/service-booking) documentation with user flow diagrams and end point examples~~
+- ~~**Extending Directives Guide** the number of ways that you can extend controllers~~
 - ~~**Affiliate Push Notifications** A tutorial showing developers how to use affiliate push notifications via the API and the JS SDK~~
 - ~~**Full integrations Directory** a full list of integrations ordered by category to be created and added to the docs~~
 - **Hook back button on History API** currently hitting the browsers back button will take you to the last page but no further. The forward button is also disabled, This needs to be accounted for.
