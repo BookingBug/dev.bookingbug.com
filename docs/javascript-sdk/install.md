@@ -10,7 +10,7 @@ you will need to install the following dependencies via the terminal before gett
 - Gulp `npm install -g gulp-cli`
 - Bower `npm install -g bower`
 
-> If you're not familiar with the terminal don't despair. You should take a look, as it's very powerful. [Codecademy do a really good interactive tutorial](https://www.codecademy.com/ru/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command)that will introduce you to the basics.
+> If you're not familiar with the terminal don't despair. You should take a look, as it's very powerful. [Codecademy do a really good interactive tutorial](https://www.codecademy.com/ru/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) that will introduce you to the basics.
 
 ## Create your project
 Once you have your dependencies installed you can download our Yeoman generator.
