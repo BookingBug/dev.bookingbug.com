@@ -34,4 +34,6 @@ you will be asked the following so make sure to have all the info you need.
 - What is your BookingBug company id? (The `company_id` can be obtained from the API Settings under BookingBug Advanced Settings e.g: ukw12345).
 - What is the API URL? (This can be obtained from the API Settings menu in your BookingBug account). (Need clairificaiton) 
 
-Once all of the above has installed. Run `gulp` in the root of the directory to watch files for changes and to serve your application on [http://localhost:8000](http://localhost:8000)
+Once all of the above has installed - cd to the folder [project_name] and run gulp
+`cd project_name`
+`gulp` to watch files for changes and to serve your application on [http://localhost:8000](http://localhost:8000)
