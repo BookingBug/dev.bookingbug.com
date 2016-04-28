@@ -3,7 +3,7 @@
 Using Node and Yeoman, you can create a stand-alone booking service that includes the JavaScript SDK. This will create a directory with all of the templates, styles and scripts you may need.
 
 ## Dependencies
-you will need to install the following dependencies via the terminal before getting started. Once you've installed node you can install the rest of the dependencies with `npm install -g name_of_dependency`
+you will need to install the following dependencies via the terminal before getting started. Once you've installed node [+ git] you can install the rest of the dependencies with `npm install -g name_of_dependency`
 
 - [node.js](https://nodejs.org/en/)
 - Yeoman Generator `npm install -g yo`
