@@ -1,5 +1,3 @@
-See commit comment
-
 # How it Works
 
 The BookingBug JavaScript API is in fact built on top of the Google library [AngularJS](https://angularjs.org/).
