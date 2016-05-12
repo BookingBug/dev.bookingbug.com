@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/maxmckenzie/cucumber-submodule.git
+	branch = master
+	commit = ffe3ab40a063c4ff1f75b2b96d3943610bdc7eb9
+	parent = 746c7ae638d90aff5e7c59deace67701ed3ed7d5
+	cmdver = 0.3.0
