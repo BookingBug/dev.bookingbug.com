@@ -4,3 +4,6 @@ Feature: Home page test
 
     Background:
         Given I open the site "/"
+
+    Scenario: as a user I want to view the homepage
+      Then I expect that the title is "Developer Docs - BookingBug"
