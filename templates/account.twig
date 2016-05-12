@@ -7,12 +7,12 @@
       <span class="tagline">Platform Developer Portal</span>
     </div>
     <div class="account__doc-links">
-      <a href="https://dev.bookingbug.com" target="_blank">Developer Docs</a>
-      <a href="http://apidocs.bookingbug.com/" target="_blank">API reference</a>
-      <a href="http://platform.bookingbug.com/sdkdocs/#/api" target="_blank">SDK reference</a>
-      <a href="https://forum.bookingbug.com" target="_blank">Forum</a>
-      <a href="mailto:support@bookingbug.com" target="_blank">Support</a>
-      <a href="/logout">Logout</a>
+      <a href="/" class="dev-docs">Developer Docs</a>
+      <a href="http://apidocs.bookingbug.com/" target="_blank" class="api-ref">API reference</a>
+      <a href="http://platform.bookingbug.com/sdkdocs/#/api" target="_blank" class="sdk-ref">SDK reference</a>
+      <a href="https://forum.bookingbug.com/" target="_blank" class="forum">Forum</a>
+      <a href="mailto:support@bookingbug.com" target="_blank" class="support">Support</a>
+      <a href="/logout" class="logout">Logout</a>
     </div>
   </header>
 <div class="clearfix"></div>
@@ -42,7 +42,9 @@
         <div class="card account__profile">
           <h2>My Developer Profile</h2>
           <img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="">
-          <p>My AppID: {{ user.appId }}</p>
+          {% if user.appId %}
+            <p class="appkey">My AppID: {{ user.appId }}</p>
+          {% endif %}
           <span class="help-block">Use the above AppID to make requests to the public API</span><br>
           <label for="username">Username</label>
           <input type="text" placeholder="{{ flarumUser.data.attributes.username }}" disabled>
