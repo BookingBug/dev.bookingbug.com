@@ -26,7 +26,8 @@ This will make the `yo bookingbug` command available globally on your local deve
 yo bookingbug
 ```
 
-> You can see a screen-cast of this [here](https://drive.google.com/file/d/0BySZotrqAKdcWFdjM0tVLUVkUjA/view)
+> You can see a screen-cast of this here:
+[![asciicast](https://asciinema.org/a/1ik46ji01fgxyfs5j669knvs6.png)](https://asciinema.org/a/1ik46ji01fgxyfs5j669knvs6?speed=2)
 
 you will be asked the following so make sure to have all the info you need.
 
