@@ -48,7 +48,7 @@ then run `npm start`
 I'm yet to mock the flarum and clients service API end points in the test suite. So for the sake of using the developer portal locally. You will need to get the following repos and install them on your machine.
 
 https://github.com/BookingBug/clients-service
-https://github.com/flarum/flarum
+https://github.com/flarum/flarum make sure to set default user to username `admin` password `test`. As the forum authentication is the one that gets used when logging in.
 
 > depending on the locahost port you serve these apps on you'll need to update these values in the .envrc file
 

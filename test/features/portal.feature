@@ -4,8 +4,8 @@ Feature: Developer Portal
 
   Scenario: As a user I want to login
     Given I open the site "/login"
-    When I set "max@lemondigits.com" to the inputfield "#identification" 
-    When I set "joe" to the inputfield "#password"
+    When I set "admin" to the inputfield "#identification" 
+    When I set "test" to the inputfield "#password"
     When I submit the form ".login"
     Then I expect that the path is "/account"
 
