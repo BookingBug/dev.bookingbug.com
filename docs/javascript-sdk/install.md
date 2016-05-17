@@ -31,7 +31,6 @@ yo bookingbug
 you will be asked the following so make sure to have all the info you need.
 
 - What is the name of your project? (No spaces in project name are allowed - use hyphens / underscores etc.)
-- What type of application do you want? (Public-bookings application, allows for an end user to book without logging in, the member application is naturally opposite to this).
 - What is your BookingBug company id? (The `company_id` can be obtained from the API Settings under BookingBug Advanced Settings e.g: ukw12345).
 - What is the API URL? (This can be obtained from the API Settings menu in your BookingBug account).
 
