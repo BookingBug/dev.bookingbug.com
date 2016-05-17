@@ -27,6 +27,7 @@ you need to have the below installed for this project.
 - Node 5 > https://nodejs.org/
 - Bower http://bower.io/
 - Direnv
+- npm install -g concurrently
 
 # Docs
 - Wiki [https://github.com/maxmckenzie/FrontEndSeed/wiki](https://github.com/maxmckenzie/FrontEndSeed/wiki) - built on FrontEndSeed

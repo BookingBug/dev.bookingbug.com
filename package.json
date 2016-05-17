@@ -11,7 +11,7 @@
     "build": "babel --optional runtime -d dist/ app/",
     "selenium-server": "selenium-standalone install && selenium-standalone start",
     "phantomjs": "phantomjs",
-    "test": "./test/run.js"
+    "test": "concurrently --raw 'npm start' './test/run.js'"
   },
   "engines": {
     "node": "5.0.0"
