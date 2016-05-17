@@ -41,7 +41,26 @@ run the following commands.
 
 `npm install` To install all the node and bower dependencies. It also then builds all the assets with grunt.
 
-then run `npm start` This launches the app and watches the `javascript/, css/, views/` and `index.js` directories for a change and then reboots/rebuilds where necessary.
+then run `npm start`
+
+# API Dependencies
+
+I'm yet to mock the flarum and clients service API end points in the test suite. So for the sake of using the developer portal locally. You will need to get the following repos and install them on your machine.
+
+https://github.com/BookingBug/clients-service
+https://github.com/flarum/flarum
+
+> depending on the locahost port you serve these apps on you'll need to update these values in the .envrc file
+
+```
+export FLARUM_URL="http://localhost/"
+export CLIENTS_SERVICE_URL="http://localhost:5555"
+export PATH="./node_modules/.bin:$PATH"
+export NODE_ENV="development"
+```
+
+# Tests
+Given you have the above apps running locally and you've updated your direnv by hitting `direnv allow` then in the root of this application you can enter `npm test` and it will run the `npm start` command concurrently and then the tests.
 
 ## direnv
 
