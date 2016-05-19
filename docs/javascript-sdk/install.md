@@ -31,7 +31,7 @@ yo bookingbug
 
 you will be asked the following so make sure to have all the info you need.
 
-- What is the name of your project? (No spaces in project name are allowed - use hyphens / underscores etc.)
+- What is the name of your project? (Letters a-Z numbers 0-9 only, please.)
 - What is your BookingBug company id? (The `company_id` can be obtained from the API Settings under BookingBug Advanced Settings e.g: ukw12345).
 - What is the API URL? (This can be obtained from the API Settings menu in your BookingBug account).
 
