@@ -6,6 +6,6 @@
 [subrepo]
 	remote = https://github.com/maxmckenzie/cucumber-submodule.git
 	branch = master
-	commit = ffe3ab40a063c4ff1f75b2b96d3943610bdc7eb9
-	parent = 746c7ae638d90aff5e7c59deace67701ed3ed7d5
+	commit = 24a9bb2bd9a8d1d2f692964acb5d44ad0bb573bf
+	parent = 7eae89d3d8fba88ea96c587ef4b681cc960ada94
 	cmdver = 0.3.0

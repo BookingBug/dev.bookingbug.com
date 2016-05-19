@@ -1,5 +1,7 @@
 # Cucumber Boilerplate git submodule
 
+> NOte this is now done with subrepo https://github.com/ingydotnet/git-subrepo docs to follow
+
 This repository is a copy of the cucumber boilerplate `tests` directory.
 
 The reason to chain these repos together is so we can develop the main repo https://github.com/maxmckenzie/cucumber-boilerplate with linting, babel etc and then pull in only the `tests` directory for separate projects.
