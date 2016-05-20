@@ -10,9 +10,56 @@ exports.config = {
      * set selenium host and port
      */
     selenium: {
-        host: '127.0.0.1',
-        port: 4444
+        host: 'ondemand.saucelabs.com',
+        port: 80,
+        user: process.env.SAUCE_USERNAME,
+        key: process.env.SAUCE_ACCESS_KEY,
     },
+    // sauceConnectOpts: {
+    //     doctor: true,
+    //     logger: function (message) {},
+    //     verbose: true,
+    //     username: process.env.SAUCE_USERNAME,
+    //     accessKey: process.env.SAUCE_ACCESS_KEY,
+    //     tunnelIdentifier: true,
+    // },
+
+    // desiredCapabilities: {
+    //     browserName: 'chrome',
+    //     version: '27',
+    //     platform: 'XP',
+    //     tags: ['examples'],
+    //     name: 'This is an example test',
+    //    'public': false
+    // },
+    // host: 'ondemand.saucelabs.com',
+    // port: 80,
+    // user: process.env.SAUCE_USERNAME,
+    // key: process.env.SAUCE_ACCESS_KEY,
+    // sauceConnect: true,
+    // sauceConnectOpts: {
+    //     doctor: true,
+    //     logger: function (message) {},
+    //     verbose: true,
+    //     username: process.env.SAUCE_USERNAME,
+    //     accessKey: process.env.SAUCE_ACCESS_KEY,
+    //     tunnelIdentifier: true,
+    // },
+
+    // services: ['sauce'],
+    // user: process.env.SAUCE_USERNAME,
+    // key: process.env.SAUCE_ACCESS_KEY,
+    // host: 'ondemand.saucelabs.com',
+    // // port: 80,
+    // sauceConnect: true,
+    // sauceConnectOpts: {
+    //     doctor: true,
+    //     logger: function (message) {},
+    //     verbose: true,
+    //     username: process.env.SAUCE_USERNAME,
+    //     accessKey: process.env.SAUCE_ACCESS_KEY,
+    //     tunnelIdentifier: true,
+    // },
 
     /**
      * webdriverio options
@@ -30,7 +77,7 @@ exports.config = {
      *   default: 500
      */
     options: {
-        logLevel: 'silent'
+        logLevel: 'verbose'
     },
 
     /**
@@ -53,7 +100,7 @@ exports.config = {
      * - baseUrl: sets base url for `Given I open the site "/some/url.html"`
      */
     env: {
-        baseUrl: 'http://127.0.0.1:8080'
+        baseUrl: 'http://localhost:8080'
     },
 
     /**
@@ -64,8 +111,8 @@ exports.config = {
         reporter: 'spec',
         timeout: 10000,
         require: 'chai',
-        watch: './test/steps',
-        'watch-extensions': 'js,feature',
+        // watch: './test/steps',
+        // 'watch-extensions': 'js,feature',
         compilers: ['js:babel-core/register'],
-    }
+    },
 };
