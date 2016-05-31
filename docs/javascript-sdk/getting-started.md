@@ -3,6 +3,11 @@
 The BookingBug JavaScript API is in fact built on top of the Google library [AngularJS](https://angularjs.org/).
 It then, in turn, uses the BookingBug REST API to access data, which means that you can also use the REST API and extend the JavaScript SDK as much as you need for different business use cases.
 
+## Yeoman
+
+Yeoman is a set of tools used to simplify and streamline the app building process. Yeoman generates the folders and files that make up your widget so that you can edit it.
+
+
 # HTML in-line attribute based mark-up (Angular Directives)
 
 The API makes use of HTML attributes to identify important sections of your page in which to add data or respond to actions. These special attributes derive different meaning, such as specifying the data you wish to load, controlling a loop around a list of items, or deciding which HTML elements to show or hide in different circumstances.
