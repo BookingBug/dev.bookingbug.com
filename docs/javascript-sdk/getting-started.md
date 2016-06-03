@@ -23,7 +23,6 @@ Now that you’ve got your widget downloaded onto your system, you can begin edi
 
 **[Atom](https://atom.io/)**
 
-
 Once you have installed a text editor, open the widget folder within the text editor. From here you can edit all aspects of your widget.
 
 ##Folder breakdown
@@ -41,7 +40,6 @@ To edit the widget, navigate to the src folder. The src folder holds everything 
 **Templates** - This is where you can edit the content of each page. You can also edit your journey’s path in the main.html file within the Templates folder. The files here are HTML files.
 
 To create a simple, customised widget you should only need to edit files in the Templates and Stylesheets folders. To do this, you will need to know basic HTML and CSS. If you do not know these coding languages, Codecademy have some very good free tutorials on basic HTML and CSS that will teach you enough to be able to fully edit your widget.
-
 
 ## Using Angular in HTML
 
