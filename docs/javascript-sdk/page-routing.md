@@ -6,7 +6,7 @@ Page Routing is the most important aspect of editing your widget through the Jav
 
 Find this section of code at the top of your main.html file:
 
-```
+```js
  <!-- BREADCRUMB ROUTE
   <div bb-breadcrumbs class="breadcrumbs_holder" ng-init="setRoute([
     {page:'event_list', title: 'Select an event'},
@@ -32,7 +32,7 @@ This is the page route. At present, the page route is a comment and is not being
 
 Now that your widget is pointing to the correct route, it’s time to customise your journey’s steps. You should only need to edit this portion of code:
 
-```
+```js
 <div bb-breadcrumbs class="breadcrumbs_holder" ng-init="setRoute([
     {page:'event_list', title: 'Select an event'},
     {page:'event', title: 'Event'},
@@ -82,27 +82,27 @@ This step will be disabled after the customer has loaded it once. This means it 
 
 You may want to combine multiple steps. You can do this using `when: route.event[slot, person]` or `when: route.event[date, time]`. This combines the directives into one step allowing you to create a custom template to suit your needs. The different steps available are as follows.
 
-- *Company*
-- *Category*
-- *Service*
-- *Person*
-- *Resource*
-- *Duration*
-- *Date*
-- *Time*
-- *Client*
-- *Summary*
-- *Basket* 
-- *Checkout* 
-- *Slot*
-- *Event*
-- *Login*
+- **Company**
+- **Category**
+- **Service**
+- **Person**
+- **Resource**
+- **Duration**
+- **Date**
+- **Time**
+- **Client**
+- **Summary**
+- **Basket** 
+- **Checkout** 
+- **Slot**
+- **Event**
+- **Login**
 
 However, we do have an issue here. If we define `when: route.event[slot, person]` on confirmation it will try to call `$Scope.defineNextPage` twice. We also may want to change the available slots when the user chooses a person.
 
 to overcome this we can use the `bb-page` controller. This controller allows you to route steps back and forth when combining steps. You can attach `checkReady()` to the step DOM element. And it will wait until all of the steps in a single template have been completed as per the below example.
 
-```
+```js
 <div bb-page>
 
   <div bb-item-details>
