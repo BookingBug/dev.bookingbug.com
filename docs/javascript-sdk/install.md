@@ -32,7 +32,7 @@ This will begin creating your booking widget's directory on your local computer.
 - What is your BookingBug company id? - The `company_id` can be obtained from the API Settings under BookingBug Advanced Settings e.g ukw12345.
 - What is the API environment URL? - This can be obtained in the API Settings menu in your BookingBug account e.g. https://uk.bookingbug.com/
 
-Once all of the above has been installed, navigate to the new folder that yeoman created (your answer to the "What is the name of your project?" question) and run `gulp` to watch files for changes and to host your application locally on [http://localhost:8000](http://localhost:8000)
+Once all of the above has been installed, navigate to the new folder that yeoman created (named after your project) and run `gulp` to watch files for changes and to host your application locally on [http://localhost:8000](http://localhost:8000)
 
 > You can see a screen-cast of this entire process here:
 [![asciicast](https://asciinema.org/a/1ik46ji01fgxyfs5j669knvs6.png)](https://asciinema.org/a/1ik46ji01fgxyfs5j669knvs6?speed=2)
