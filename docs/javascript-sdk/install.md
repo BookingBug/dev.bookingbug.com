@@ -1,6 +1,6 @@
 # Install the JavaScript SDK
 
-Using Node and Yeoman, you can create a stand-alone booking service that includes the JavaScript SDK. This will create a directory with all of the templates, styles and scripts you may need.
+Using Node and Yeoman, you can create a stand-alone booking widget that includes the JavaScript SDK. This will create a directory with all of the templates, styles and scripts you may need to extensively edit your booking widget.
 
 ## Dependencies
 you will need to install the following dependencies via the terminal before getting started. Once you've installed node & git you can install the rest of the dependencies with `npm install -g name_of_dependency`
@@ -11,10 +11,10 @@ you will need to install the following dependencies via the terminal before gett
 - Gulp `npm install -g gulp-cli`
 - Bower `npm install -g bower`
 
-> If you're not familiar with the terminal don't despair. You should take a look, as it's very powerful. [Codecademy do a really good interactive tutorial](https://www.codecademy.com/ru/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) that will introduce you to the basics.
+> If you're not familiar with the terminal [Codecademy do a really good interactive tutorial](https://www.codecademy.com/ru/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) that will introduce you to the basics.
 
 ## Create your project
-Once you have your dependencies installed you can download our Yeoman generator.
+Once you have your dependencies installed you can download the Yeoman generator.
 
 ```
 npm install -g generator-bookingbug
@@ -26,15 +26,13 @@ This will make the `yo bookingbug` command available globally on your local deve
 yo bookingbug
 ```
 
-> You can see a screen-cast of this here:
+This will begin creating your booking widget's directory on your local computer. Before it starts, you will need to give the generator your Bookingbug company's information:
+
+- What is the name of your project? - This will create the folder your widget's files will be placed in (lowercase letters A-Z and numbers 0-9 only).
+- What is your BookingBug company id? - The `company_id` can be obtained from the API Settings under BookingBug Advanced Settings e.g ukw12345.
+- What is the API environment URL? - This can be obtained in the API Settings menu in your BookingBug account e.g. https://uk.bookingbug.com/
+
+Once all of the above has been installed, navigate to the new folder that yeoman created (your answer to the "What is the name of your project?" question) and run `gulp` to watch files for changes and to host your application locally on [http://localhost:8000](http://localhost:8000)
+
+> You can see a screen-cast of this entire process here:
 [![asciicast](https://asciinema.org/a/1ik46ji01fgxyfs5j669knvs6.png)](https://asciinema.org/a/1ik46ji01fgxyfs5j669knvs6?speed=2)
-
-you will be asked the following so make sure to have all the info you need.
-
-- What is the name of your project? (Letters a-Z numbers 0-9 only, please.)
-- What is your BookingBug company id? (The `company_id` can be obtained from the API Settings under BookingBug Advanced Settings e.g: ukw12345).
-- What is the API URL? (This can be obtained from the API Settings menu in your BookingBug account).
-
-Once all of the above has installed - Navigate to the new folder yeoman created (this will be named after your project) and run:
-
-`gulp` to watch files for changes and to serve your application on [http://localhost:8000](http://localhost:8000)
