@@ -14,7 +14,7 @@ you will need to install the following dependencies via the terminal before gett
 > If you're not familiar with the terminal [Codecademy do a really good interactive tutorial](https://www.codecademy.com/ru/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) that will introduce you to the basics.
 
 ## Create your project
-Once you have your dependencies installed you can download the Yeoman generator.
+Once you have your dependencies installed you can download the BookingBug Yeoman generator.
 
 ```
 npm install -g generator-bookingbug
