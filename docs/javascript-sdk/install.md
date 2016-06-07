@@ -28,7 +28,7 @@ yo bookingbug
 
 This will begin creating your booking widget's directory on your local computer. Before it starts, you will need to give the generator your Bookingbug company's information:
 
-- What is the name of your project? - This will create the folder your widget's files will be placed in (lowercase letters A-Z and numbers 0-9 only).
+- What is the name of your project? - This will create the folder your widget's files will be placed in (letters a-Z and numbers 0-9 only).
 - What is your BookingBug company id? - The `company_id` can be obtained from the API Settings under BookingBug Advanced Settings e.g ukw12345.
 - What is the API environment URL? - This can be obtained in the API Settings menu in your BookingBug account e.g. https://uk.bookingbug.com/
 
