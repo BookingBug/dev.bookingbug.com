@@ -65,10 +65,10 @@ port: process.env.PORT||8000,
 
 ### Other important things
 
-⋅⋅* “ps:scale web=1” lets you check if your app is running
+- “ps:scale web=1” lets you check if your app is running
 
-⋅⋅* “heroku logs --tail” lets you check the logs of your app while it is running
+- “heroku logs --tail” lets you check the logs of your app while it is running
 
-⋅⋅* “heroku destroy” will delete the host address you are currently using. If you are not using a host address, it will provide you with a way to destroy other host addresses
+- “heroku destroy” will delete the host address you are currently using. If you are not using a host address, it will provide you with a way to destroy other host addresses
 
 Once you’ve got your widget deployed to Heroku, everyone will be able to access it. Heroku is a simple and effective method for quickly hosting your widget online.
