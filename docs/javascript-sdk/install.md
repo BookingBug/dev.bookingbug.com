@@ -1,6 +1,6 @@
 # Install the JavaScript SDK
 
-Using Node and Yeoman, you can create a stand-alone booking widget that includes the JavaScript SDK. This will create a directory with all of the templates, styles and scripts you may need to extensively edit your booking widget.
+Using Node and Yeoman, you can create a stand-alone booking widget that includes the JavaScript SDK. This will create a directory with all of the templates, styles and config options you need to extensively edit your booking widget.
 
 ## Dependencies
 you will need to install the following dependencies via the terminal before getting started. Once you've installed node & git you can install the rest of the dependencies with `npm install -g name_of_dependency`
