@@ -13,7 +13,7 @@ It then, in turn, uses the BookingBug REST API to access data, which means that 
 
 **SDK** - An SDK (Software Development Kit) is a set of tools that will allow you to create a fully functional web application. The Bookingbug Javascript SDK specifically allows you to create and edit your Bookingbug widget to create custom booking journeys tailormade for your own company.
 
-##Editing your widget
+## Editing your widget
 
 Now that you’ve got your widget downloaded onto your system, you can begin editing it however you like. Your widget is written in HTML and CSS. To edit this code we recommend you use a text editor. This will make it easier to view and edit the code of your widget. Bookingbug recommends one of these:
 
@@ -25,7 +25,7 @@ Now that you’ve got your widget downloaded onto your system, you can begin edi
 
 Once you have installed a text editor, open the widget folder within the text editor. From here you can edit all aspects of your widget.
 
-##Folder breakdown
+## Folder breakdown
 
 To edit the widget, navigate to the src folder. The src folder holds everything you need to edit your widget. You should not need to change anything in the other folders. The src folder consists of 6 folders which contain the HTML, CSS and Javascript files that make up your widget. These are the folders in the src folder:
 
