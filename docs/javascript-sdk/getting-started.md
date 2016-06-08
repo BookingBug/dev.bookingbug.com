@@ -1,6 +1,6 @@
-#Getting Started
+# Getting Started
 
-The BookingBug JavaScript API is in fact built on top of the Google library [AngularJS](https://angularjs.org/).
+The BookingBug JavaScript SDK is in fact built on top of the Google library [AngularJS](https://angularjs.org/).
 It then, in turn, uses the BookingBug REST API to access data, which means that you can also use the REST API and extend the JavaScript SDK as much as you need for different business use cases.
 
 ## What you've installed
@@ -39,7 +39,7 @@ To edit the widget, navigate to the src folder. The src folder holds everything 
 
 **Templates** - This is where you can edit the content of each page. You can also edit your journey’s path in the main.html file within the Templates folder. The files here are HTML files.
 
-To create a simple, customised widget you should only need to edit files in the Templates and Stylesheets folders. To do this, you will need to know basic HTML and CSS. If you do not know these coding languages, Codecademy have some very good free tutorials on basic HTML and CSS that will teach you enough to be able to fully edit your widget.
+To create a simple, customised widget you should only need to edit files in the Templates and Stylesheets folders. To do this, you will need to know basic HTML and CSS. If you do not know these coding languages, [Codecademy](http://codecademy.com) have some very good free tutorials on basic HTML and CSS that will teach you enough to be able to fully edit your widget.
 
 ## Using Angular in HTML
 
