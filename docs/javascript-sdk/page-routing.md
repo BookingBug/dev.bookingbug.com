@@ -26,7 +26,7 @@ Find this section of code at the top of your main.html file:
   -->
 ```
 
-This is the page route. At present, the page route is a comment and is not being read by the widget. Your widget is currently loading a default page route through the use of $Scope.defineNextPage. To override this and begin creating your own page route, delete the comment and comment tags (<!-- BREADCRUMB ROUTE -->). Now, your widget should be loading the page route in the bb-breadcrumbs directive.
+This is the page route. At present, the page route is a comment and is not being read by the widget. Your widget is currently loading a default page route through the use of $Scope.defineNextPage. To override this and begin creating your own page route, delete the comment and comment tags `(<!-- BREADCRUMB ROUTE -->)`. Now, your widget should be loading the page route in the bb-breadcrumbs directive.
 
 ## Creating your own journey
 
@@ -80,27 +80,22 @@ This step will be disabled after the customer has loaded it once. This means it 
 
 ### Combining Steps
 
-You may want to combine multiple steps. You can do this using `when: route.event[slot, person]` or `when: route.event[date, time]`. This combines the directives into one step allowing you to create a custom template to suit your needs. The different steps available are as follows.
+Combining steps into a single page is a simple and effective way of streamlining your booking journey. To combine two steps into a single page, copy and paste the template of the second page’s HTML into the first page’s template. The templates are found in the src folder. Then, surround the separate sections with the relevant div bb tags. For example:
 
-- **Company**
-- **Category**
-- **Service**
-- **Person**
-- **Resource**
-- **Duration**
-- **Date**
-- **Time**
-- **Client**
-- **Summary**
-- **Basket** 
-- **Checkout** 
-- **Slot**
-- **Event**
-- **Login**
+```js
+<div bb-page>
+  <div bb-item-details>
+    <!-- template -->
+  </div>
 
-However, we do have an issue here. If we define `when: route.event[slot, person]` on confirmation it will try to call `$Scope.defineNextPage` twice. We also may want to change the available slots when the user chooses a person.
+  <div bb-client-details>
+    <!-- template -->
+  </div>
+</div>
+```
 
-to overcome this we can use the `bb-page` controller. This controller allows you to route steps back and forth when combining steps. You can attach `checkReady()` to the step DOM element. And it will wait until all of the steps in a single template have been completed as per the below example.
+With this, you can combine multiple steps into one page. You can combine any steps you like. However, combining steps can cause problems such as steps being skipped. If we combine the slots and person pages, on confirmation it will try to call $Scope.defineNextPage twice. We also may want to change the available slots when the user chooses a person.
+To overcome this we can use the bb-page controller. This controller allows you to route steps back and forth when combining steps. You can use `checkReady() && routeReady()` to do this. For example:
 
 ```js
 <div bb-page>
@@ -117,6 +112,7 @@ to overcome this we can use the `bb-page` controller. This controller allows you
     Next
   </button>
 
-
 </div>
 ```
+
+By adding `checkReady() && routeReady()` to the Next button, customers will be unable to progress with their booking unless all steps on the page are completed. 
