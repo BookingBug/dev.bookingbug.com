@@ -29,7 +29,8 @@ yo bookingbug
 This will begin creating your booking widget's directory on your local computer. Before it starts, you will need to give the generator your Bookingbug company's information:
 
 - What is the name of your project? - This will create the folder your widget's files will be placed in (letters a-Z and numbers 0-9 only).
-- What is your BookingBug company id / API URL? - The `company_id` and `API URL`  can be obtained from the API Settings under BookingBug Advanced Settings e.g 12345 & https://uk.bookingbug.com/.
+- What is your BookingBug company id / API URL? - The `company_id` and `API URL`  can be obtained from the API Settings under BookingBug Advanced Settings (Click the settings Cog in the top right corner, and Advance Settings in the left side column) 
+**e.g** 12345 & https://uk.bookingbug.com/.
 
 
 Once all of the above has been installed, navigate to the new folder that yeoman created (named after your project) and run `gulp` to watch files for changes and to host your application locally on [http://localhost:8000](http://localhost:8000)
