@@ -3,18 +3,18 @@
 Using Node and Yeoman, you can create a stand-alone booking widget that includes the JavaScript SDK. This will create a directory with all of the templates, styles and config options you need to extensively edit your booking widget.
 
 ## Dependencies
-you will need to install the following dependencies via the terminal before getting started. Once you've installed node & git you can install the rest of the dependencies with `npm install -g name_of_dependency`
+You will need to install the following dependencies before getting started. Once you've installed node and git via their respective sites you can install the rest of the dependencies using the terminal. You will need to install:
 
 - [git](github.com)
 - [node.js](https://nodejs.org/en/)
-- Yeoman Generator `npm install -g yo`
+- Yeoman Generator `npm install -g yo` 
 - Gulp `npm install -g gulp-cli`
 - Bower `npm install -g bower`
 
-> If you're not familiar with the terminal [Codecademy do a really good interactive tutorial](https://www.codecademy.com/ru/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) that will introduce you to the basics.
+> If you're not familiar with the terminal [Codecademy have a really good interactive tutorial](https://www.codecademy.com/ru/courses/learn-the-command-line/lessons/navigation/exercises/your-first-command) that will introduce you to the basics.
 
 ## Create your project
-Once you have your dependencies installed you can download the BookingBug Yeoman generator.
+Once you have your dependencies installed you can download the BookingBug Yeoman generator via the terminal.
 
 ```
 npm install -g generator-bookingbug
