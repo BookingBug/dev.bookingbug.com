@@ -4,8 +4,27 @@ There are two main types of booking that can be done through via the BookingBug 
 > Our full API reference can be found here [http://apidocs.bookingbug.com/](http://apidocs.bookingbug.com/)
 
 ## User Flow
-Before you start building an integration with the REST API it is important to plan out your user flow. Below is a UML Diagram of an example event booking user flow. Each stage has an action that the user carries out and each stage requires certain API calls. 
+Before you start building an integration with the REST API it is important to plan out your user flow. Below is a UML Diagram of an example event booking user flow. Each stage has an action that the user carries out and each stage requires certain API calls.
 
+<img src='http://g.gravizo.com/g?
+@startuml;
+actor User;
+participant "Store Locator" as A;
+participant "List Events" as B;
+participant "Collect User Details" as C;
+participant "Confirmation" as D;
+User -> A: Start;
+activate A;
+A -> B: Locate Store;
+activate B;
+B -> C: Choose Event;
+activate C;
+C -> D: Enter Details;
+activate D;
+@enduml;
+'>
+
+## API Authentication
 To make API calls, you will need an `App-Key` and `App-ID`. You will also need an `Auth-Token`to make a booking which can be acquired by logging in as an admin using the API.
 
 <div class="tabs">
@@ -277,24 +296,6 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
         </div>
     </div>
 </div>
-
-<img src='http://g.gravizo.com/g?
-@startuml;
-actor User;
-participant "Store Locator" as A;
-participant "List Events" as B;
-participant "Collect User Details" as C;
-participant "Confirmation" as D;
-User -> A: Start;
-activate A;
-A -> B: Locate Store;
-activate B;
-B -> C: Choose Event;
-activate C;
-C -> D: Enter Details;
-activate D;
-@enduml;
-'>
 
 We will be looking at these stages of the user flow and which API calls to make at each stage.
 
