@@ -2,7 +2,7 @@
 
 At the moment BookingBug is changing the way in which we distribute API Keys. Previously and at the time of last revision to this documentation this is done via 3Scale where you can set up an account and get your own dedicated API keys.
 
-> To access your existing 3Scale account or to set up an account for API access go to [http://3scale.bookingbug.com](http://3scale.bookingbug.com)
+> To access your existing 3Scale account or to set up an account for API access go to [https://bookingbug.3scale.net](https://bookingbug.3scale.net)
 
 ### Get notifications about when we release this change by signing up to our developer newsletter.
 
