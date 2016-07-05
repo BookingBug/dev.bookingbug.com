@@ -9,18 +9,15 @@ Before you start building an integration with the REST API it is important to pl
 <img src='http://g.gravizo.com/g?
 @startuml;
 actor User;
-participant "Store Locator" as A;
-participant "List Events" as B;
-participant "Collect User Details" as C;
-participant "Confirmation" as D;
+participant "List Events" as A;
+participant "Collect User Details" as B;
+participant "Confirmation" as C;
 User -> A: Start;
 activate A;
-A -> B: Locate Store;
+A -> B: Choose Event;
 activate B;
-B -> C: Choose Event;
+B -> C: Enter Details;
 activate C;
-C -> D: Enter Details;
-activate D;
 @enduml;
 '>
 
