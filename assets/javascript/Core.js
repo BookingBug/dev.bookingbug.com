@@ -99,13 +99,24 @@ class Core {
   }
 
   tabsInit() {
-    $('.tabs__menu a').on('click', function(event) {
-      event.preventDefault();
-      $(this).parent().addClass('current');
-      $(this).parent().siblings().removeClass('current');
-      const tab = $(this).attr('href');
-      $('.tab__content').not(tab).css('display', 'none');
-      $(tab).fadeIn();
+    let $tabs = $('.tabs');
+    $tabs.each(function (index, value) {
+      let $this = $(this);
+      let $links = $this.find('a');
+      let $tabContent = $this.find('.tab__content');
+
+      $links.each((index, value) => {
+        $(value).on('click', event => {
+          event.preventDefault();
+          $(value).parent().addClass('current');
+          $(value).parent().siblings().removeClass('current');
+          const tab = $(value).attr('href');
+
+          $tabContent.not(tab).css('display', 'none');
+
+          $this.find(tab).fadeIn();
+        });
+      });
     });
   }
 
