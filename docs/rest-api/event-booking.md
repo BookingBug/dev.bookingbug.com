@@ -25,7 +25,7 @@ activate D;
 '>
 
 ## API Authentication
-To make API calls, you will need an `App-Key` and `App-ID`. You will also need an `Auth-Token`to make a booking which can be acquired by logging in as an admin using the API.
+To make API calls, you will need an `App-Key` and `App-ID` [info here](/docs/rest-api/api-keys). You will also need an `Auth-Token`to make a booking which can be acquired by logging in as an admin using the API.
 
 <div class="tabs">
     <ul class="tabs__menu">
