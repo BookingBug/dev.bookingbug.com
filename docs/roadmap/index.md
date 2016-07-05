@@ -4,7 +4,6 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 > currently on Version 2.2.1 of the documentation see [Semantic Versioning 2.0.0](http://semver.org/) for more information
 
 ## Version 2.3
-Completion around the 10/06/16
 
 - **Postman Template**
 - **Developer Forum** Set up and launch a developer forum where people can ask questions and find answers from previously asked questions.
@@ -14,7 +13,6 @@ Completion around the 10/06/16
 - **JavaScript SDK Reference** Review the SDK reference and expand code examples.
 
 ## Version 2.4
-Completion around the 26/06/16
 
 - **BookingBug Widget Designer** Deployed and guides written in the documentation on how to use the widget designer
 - **Internationalisation** Guide on translations what directives need to be added
