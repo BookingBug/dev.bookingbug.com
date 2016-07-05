@@ -683,7 +683,7 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/eab0485e5c9fb3054f64)
 
 ## Store Locator
-The first call you will need to make to the API is to `GET GET https://<host>.bookingbug.com/api/v1/admin/<company-id>/addresses` to retrieve the company object. This shows the parent company and a list of child companies.
+The first call you will need to make to the API is to `GET https://<host>.bookingbug.com/api/v1/admin/<company-id>/addresses` to retrieve the company object. This shows the parent company and a list of child companies.
 
 ## List Stores
 With the list of companies now available, your user can choose which store they want to make the service booking with. Find the store you want to use in the list to access the specific 'company-id' you need to use.
