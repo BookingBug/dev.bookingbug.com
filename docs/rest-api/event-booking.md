@@ -300,7 +300,6 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
 
 We will be looking at these stages of the user flow and which API calls to make at each stage.
 
-- Store Locator
 - List Events
 - Collect User Details
 - Confirmation
@@ -674,12 +673,247 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/eab0485e5c9fb3054f64)
 
 ## List Events
-Once your user has chosen a location then you can list the events available at that location. This can be done with `GET https://<host>.bookingbug.com/api/v1/<company-id>/events{?start_date,end_date,page,per_page,resource_id,person_id,event_group_id,event_chain_id,summary,member_level_id,embed,include_non_bookable}` method. This will return all available events. To book an event, you will need the `event_id`, `event_chain_id`, `date` and `time` parameters.
+The next step is to list the avalible events to your user. This can be done with `GET https://<host>.bookingbug.com/api/v1/<company-id>/events`. 
 
-You can also list only chained or grouped events. 
-Using `GET https://<host>.bookingbug.com/api/v1/admin/<company-id>/event_chains` will return a list of courses and recurring events available.
+This will return all available events. To book an event, you will need the `event_id`, `event_chain_id`, `date` and `time` parameters.
 
-Using `GET https://<host>.bookingbug.com/api/v1/<company-id>/event_groups` will return a list of event groups from which you can select your events.
+optionally you can append the following options to the request
+
+```
+?start_date,end_date,page,per_page,resource_id,person_id,event_group_id,event_chain_id,summary,member_level_id,embed,include_non_bookable
+```
+
+The below code examples request all the available events that a company has.
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Node.js</a></li>
+        <li><a href="#tab-3">Ruby</a></li>
+        <li><a href="#tab-4">PHP</a></li>
+        <li><a href="#tab-5">Go</a></li>
+        <li><a href="#tab-6">Swift</a></li>
+        <li><a href="#tab-7">Java</a></li>
+        <li><a href="#tab-8">Sample Response Data</a></li>
+    </ul>
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+curl -X GET -H "App-Id: <app-id>" -H "App-Key: <app-key>" -H "Auth-Token: <auth-token>" -H "Cache-Control: no-cache" "https://<host>.bookingbug.com/api/v1/<company-id>/events"
+```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+var request = require("request");
+
+var options = { method: 'GET',
+  url: 'https://<host>.bookingbug.com/api/v1/<company-id>/events',
+  headers: 
+   { 'cache-control': 'no-cache',
+     'auth-token': '<auth-token>',
+     'app-key': '<app-key>',
+     'app-id': '<app-id>' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+
+
+```
+</pre>
+        </div>
+        <div id="tab-3" class="tab__content">
+<pre>
+```
+require 'uri'
+require 'net/http'
+
+url = URI("https://<host>.bookingbug.com/api/v1/<company-id>/events")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["app-id"] = '<app-id>'
+request["app-key"] = '<app-key>'
+request["auth-token"] = '<auth-token>'
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+</pre>
+        </div>
+        <div id="tab-4" class="tab__content">
+<pre>
+```
+<?php
+
+$request = new HttpRequest();
+$request->setUrl('https://<host>.bookingbug.com/api/v1/<company-id>/events');
+$request->setMethod(HTTP_METH_GET);
+
+$request->setHeaders(array(
+  'cache-control' => 'no-cache',
+  'auth-token' => '<auth-token>',
+  'app-key' => '<app-key>',
+  'app-id' => '<app-id>'
+));
+
+try {
+  $response = $request->send();
+
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
+}
+```
+</pre>
+        </div>
+        <div id="tab-5" class="tab__content">
+<pre>
+```
+package main
+
+import (
+  "fmt"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://<host>.bookingbug.com/api/v1/<company-id>/events"
+
+  req, _ := http.NewRequest("GET", url, nil)
+
+  req.Header.Add("app-id", "<app-id>")
+  req.Header.Add("app-key", "<app-key>")
+  req.Header.Add("auth-token", "<auth-token>")
+  req.Header.Add("cache-control", "no-cache")
+
+  res, _ := http.DefaultClient.Do(req)
+
+  defer res.Body.Close()
+  body, _ := ioutil.ReadAll(res.Body)
+
+  fmt.Println(res)
+  fmt.Println(string(body))
+
+}
+```
+</pre>
+        </div>
+        <div id="tab-6" class="tab__content">
+<pre>
+```
+import Foundation
+
+let headers = [
+  "app-id": "<app-id>",
+  "app-key": "<app-key>",
+  "auth-token": "<auth-token>",
+  "cache-control": "no-cache"
+]
+
+var request = NSMutableURLRequest(URL: NSURL(string: "https://<host>.bookingbug.com/api/v1/<company-id>/events")!,
+                                        cachePolicy: .UseProtocolCachePolicy,
+                                    timeoutInterval: 10.0)
+request.HTTPMethod = "GET"
+request.allHTTPHeaderFields = headers
+
+let session = NSURLSession.sharedSession()
+let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+  if (error != nil) {
+    println(error)
+  } else {
+    let httpResponse = response as? NSHTTPURLResponse
+    println(httpResponse)
+  }
+})
+
+dataTask.resume()
+```
+</pre>
+        </div>
+        <div id="tab-7" class="tab__content">
+<pre>
+```
+HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v1/<company-id>/events")
+  .header("app-id", "<app-id>")
+  .header("app-key", "<app-key>")
+  .header("auth-token", "<auth-token>")
+  .header("cache-control", "no-cache")
+  .asString();
+```
+</pre>
+        </div>
+        <div id="tab-8" class="tab__content">
+<pre>
+```
+{
+  "total_entries": 4,
+  "_embedded": {
+    "events": [
+      {
+        "id": 12345,
+        "datetime": "2016-07-11T00:00:00+00:00",
+        "description": "Binding Books 101",
+        "status": 4,
+        "spaces_booked": 0,
+        "spaces_reserved": 0,
+        "spaces_blocked": 0,
+        "spaces_held": 0,
+        "num_spaces": 1,
+        "spaces_wait": 0,
+        "event_chain_id": 1234,
+        "service_id": 12345,
+        "duration": 60,
+        "price": 0,
+        "ticket_spaces": {},
+        "units": "minute",
+        "company_id": <company-id>,
+        "_links": {
+          "self": {
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/events/12345{?embed}"
+          },
+          "event_group": {
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/event_groups/12345"
+          },
+          "event_chain": {
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/1050{?member_level_id}",
+            "templated": true
+          },
+          "book": {
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/basket/add_item?event_id=12345&event_chain_id=1234{&member_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}",
+            "templated": true
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://<host>.bookingbug.com/api/v1/<company-id>/events?start_date=2016-07-05&end_date=2016-08-05&page=1&per_page=100"
+    }
+  }
+}
+```
+</pre>
+        </div>
+    </div>
+</div>
+
+You can also list only chained or grouped events.
+Using `GET https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/1050{?member_level_id}` will return a list of courses and recurring events available.
+
+Using `GET https://<host>.bookingbug.com/api/v1/<company-id>/event_groups/<event-id>` will return a list of event groups from which you can select your events.
 
 ## Collect User Details
 The First call is `GET https://<host>.bookingbug.com/api/v1/<company_id>/events?event_id=<event_id>/questions` This returns the questions that relate to that particular event. For example, if we were to be creating a booking appointment for a financial event, then at this point we could ask if the user has a standard or business account or if they have already started the process of finding a mortgage with other financial providers.
