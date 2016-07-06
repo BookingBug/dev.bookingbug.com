@@ -6,7 +6,7 @@ There are two main types of booking that can be done through via the BookingBug 
 ## User Flow
 Before you start building an integration with the REST API it is important to plan out your user flow. Below is a UML Diagram of our standard user flow. Each stage has an action that the user carries out and each stage requires certain API calls.
 
-<img src='http://g.gravizo.com/g?
+<img src='https://g.gravizo.com/g?
 @startuml;
 actor User;
 participant "Store Locator" as A;
