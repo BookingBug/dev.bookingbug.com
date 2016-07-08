@@ -1476,13 +1476,13 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
 Once you have gathered the required information to create an event booking, you can add the item to their basket. This is achieved with a post request to the book endpoint
 
 ```
-https://eu1.bookingbug.com/api/v1/37228/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}
+https://<host>.bookingbug.com/api/v1/<company-id>/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}
 ```
 
 You will need to pass the required information about the event into the body of the API call. Once you are ready to put the booking through the system you will need to call
 
 ```
-https://eu1.bookingbug.com/api/v1/37228/basket/checkout{?member_id,take_from_wallet}
+https://<host>.bookingbug.com/api/v1/<company-id>/basket/checkout{?member_id,take_from_wallet}
 ```
 
 > `member_id = client_id`
