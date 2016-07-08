@@ -887,7 +887,7 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
             "href": "https://<host>.bookingbug.com/api/v1/<company-id>/event_groups/12345"
           },
           "event_chain": {
-            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/1050{?member_level_id}",
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>{?member_level_id}",
             "templated": true
           },
           "book": {
@@ -910,19 +910,579 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
     </div>
 </div>
 
-You can also list only chained or grouped events.
-Using `GET https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/1050{?member_level_id}` will return a list of courses and recurring events available.
-
-Using `GET https://<host>.bookingbug.com/api/v1/<company-id>/event_groups/<event-id>` will return a list of event groups from which you can select your events.
+You can also list chained or grouped events.
+Using `GET https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>` will return a list further details regarding the event and if the event has multiple recurring events associated these wil also be displayed
 
 ## Collect User Details
-The First call is `GET https://<host>.bookingbug.com/api/v1/<company_id>/events?event_id=<event_id>/questions` This returns the questions that relate to that particular event. For example, if we were to be creating a booking appointment for a financial event, then at this point we could ask if the user has a standard or business account or if they have already started the process of finding a mortgage with other financial providers.
+You will need to query the event chain end point to pull in the full details regarding the event As per the below code example
 
-The Second call is `GET https://<host>.bookingbug.com/api/v1/<company_id>/client_details` As well as returning the 'member_id' that you will need to create a booking, this also returns the default client details you may need to collect, such as age, first name, last name, email, phone number, etc.
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Node.js</a></li>
+        <li><a href="#tab-3">Ruby</a></li>
+        <li><a href="#tab-4">PHP</a></li>
+        <li><a href="#tab-5">Go</a></li>
+        <li><a href="#tab-6">Swift</a></li>
+        <li><a href="#tab-7">Java</a></li>
+        <li><a href="#tab-8">Sample Response Data</a></li>
+    </ul>
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+curl -X GET -H "App-Id: <app-id>" -H "App-Key: <app-key>" -H "Auth-Token: <auth-token>" -H "Cache-Control: no-cache" "https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>"
+```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+var request = require("request");
 
-You can also create or edit a user using `POST https://<host>.bookingbug.com/api/v1/<company_id>/client` Pass in the client's information (`first_name`, `last_name`, `email`, etc.) in the body of your API call and this will either create or update a client's information depending on what information you entered.
+var options = { method: 'GET',
+  url: 'https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>',
+  headers: 
+   { 'cache-control': 'no-cache',
+     'auth-token': '<auth-token>',
+     'app-key': '<app-key>',
+     'app-id': '<app-id>' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+
+
+```
+</pre>
+        </div>
+        <div id="tab-3" class="tab__content">
+<pre>
+```
+require 'uri'
+require 'net/http'
+
+url = URI("https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["app-id"] = '<app-id>'
+request["app-key"] = '<app-key>'
+request["auth-token"] = '<auth-token>'
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+</pre>
+        </div>
+        <div id="tab-4" class="tab__content">
+<pre>
+```
+<?php
+
+$request = new HttpRequest();
+$request->setUrl('https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>');
+$request->setMethod(HTTP_METH_GET);
+
+$request->setHeaders(array(
+  'cache-control' => 'no-cache',
+  'auth-token' => '<auth-token>',
+  'app-key' => '<app-key>',
+  'app-id' => '<app-id>'
+));
+
+try {
+  $response = $request->send();
+
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
+}
+```
+</pre>
+        </div>
+        <div id="tab-5" class="tab__content">
+<pre>
+```
+package main
+
+import (
+  "fmt"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>"
+
+  req, _ := http.NewRequest("GET", url, nil)
+
+  req.Header.Add("app-id", "<app-id>")
+  req.Header.Add("app-key", "<app-key>")
+  req.Header.Add("auth-token", "<auth-token>")
+  req.Header.Add("cache-control", "no-cache")
+
+  res, _ := http.DefaultClient.Do(req)
+
+  defer res.Body.Close()
+  body, _ := ioutil.ReadAll(res.Body)
+
+  fmt.Println(res)
+  fmt.Println(string(body))
+
+}
+```
+</pre>
+        </div>
+        <div id="tab-6" class="tab__content">
+<pre>
+```
+import Foundation
+
+let headers = [
+  "app-id": "<app-id>",
+  "app-key": "<app-key>",
+  "auth-token": "<auth-token>",
+  "cache-control": "no-cache"
+]
+
+var request = NSMutableURLRequest(URL: NSURL(string: "https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>")!,
+                                        cachePolicy: .UseProtocolCachePolicy,
+                                    timeoutInterval: 10.0)
+request.HTTPMethod = "GET"
+request.allHTTPHeaderFields = headers
+
+let session = NSURLSession.sharedSession()
+let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+  if (error != nil) {
+    println(error)
+  } else {
+    let httpResponse = response as? NSHTTPURLResponse
+    println(httpResponse)
+  }
+})
+
+dataTask.resume()
+```
+</pre>
+        </div>
+        <div id="tab-7" class="tab__content">
+<pre>
+```
+HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>")
+  .header("app-id", "<app-id>")
+  .header("app-key", "<app-key>")
+  .header("auth-token", "<auth-token>")
+  .header("cache-control", "no-cache")
+  .asString();
+```
+</pre>
+        </div>
+        <div id="tab-8" class="tab__content">
+<pre>
+```
+{
+  "id": <event-chain-id>,
+  "name": "Sample Event",
+  "description": "",
+  "duration": 120,
+  "group": "Course Group 1",
+  "time": "2000-01-01T15:00:00+00:00",
+  "long_description": "",
+  "capacity_view": 3,
+  "start_date": "2016-07-20",
+  "end_date": "2016-07-20",
+  "spaces": 1,
+  "price": 0,
+  "max_num_bookings": 1,
+  "min_advance_time": "2016-07-08T10:50:01+00:00",
+  "min_advance": 0,
+  "min_advance_unit": "day",
+  "min_cancel": 5,
+  "min_cancel_unit": "day",
+  "ticket_type": "multi_space",
+  "email_per_ticket": false,
+  "questions_per_ticket": false,
+  "course": false,
+  "recurrence_type": "",
+  "company_id": <company-id>,
+  "_embedded": {
+    "questions": {
+      "company_id": <company-id>,
+      "questions": [],
+      "_links": {
+        "self": {
+          "href": "/<company-id>/questions?detail_group_id=<detail-group-id>"
+        }
+      }
+    }
+  },
+  "_links": {
+    "self": {
+      "href": "https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>"
+    },
+    "questions": {
+      "href": "https://<host>.bookingbug.com/api/v1/<company-id>/questions?detail_group_id=<detail-group-id>"
+    },
+    "events": {
+      "href": "https://<host>.bookingbug.com/api/v1/<company-id>/events?event_chain_id=<event-chain-id>{&start_date,end_date,page,per_page,resource_id,person_id,event_group_id,summary,member_level_id,embed,include_non_bookable}"
+    },
+    "event_group": {
+      "href": "https://<host>.bookingbug.com/api/v1/<company-id>/event_groups/<event-groups-id>"
+    }
+  }
+}
+```
+</pre>
+        </div>
+    </div>
+</div>
+
+
+Within that response you are given the end point for the questions related to your event `https://<host>.bookingbug.com/api/v1/<company-id>/questions?detail_group_id=<detail-group-id>`. This returns the questions that relate to that particular event. For example, if we were to be creating a booking appointment for a financial event, then at this point we could ask if the user has a standard or business account or if they have already started the process of finding a mortgage with other financial providers.
+
+In response you will get a object back with an array of questions
+```
+{
+  "company_id": <company-id>,
+  "questions": [<questions-array>],
+  "_links": {
+    "self": {
+      "href": "https://<host>.bookingbug.com/api/v1/<company-id>/questions?detail_group_id=<detail-group-id>"
+    }
+  }
+}
+```
+
+Next you want to either create a new client or retrieve an existing client. In the response from get company `https://<host>.bookingbug.com/api/v1/<company-id>/company` you will find endpoints for working with the companies clients.
+
+### GET existing clients
+```
+"client": {
+  "href": "https://<host>.bookingbug.com/api/v1/admin/<company-id>/client{?page,per_page}",
+  "templated": true
+}
+```
+
+Find client by email
+```
+"client_by_email": {
+  "href": "https://<host>.bookingbug.com/api/v1/<company-id>/client/find_by_email/{email}",
+  "templated": true
+}
+```
+
+### POST Client
+You can also create or edit a user using `POST https://<host>.bookingbug.com/api/v1/<company_id>/client` Pass in the client's information (`first_name`, `last_name`, `email`) in the body of your API call and this will either create or update a client's information depending on what information you entered.
+
+The following entries can be posted to the client end point.
+
+```
+  "first_name": "<first-name>",
+  "last_name": "<last-name>",
+  "email": "<email>",
+  "country": "United Kingdom",
+  "files": [],
+  "answers": [],
+  "phone_prefix": "44",
+  "mobile_prefix": "44",
+```
+
+If you've asked the user questions then at this point you want to pass those in to the POST client end point
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Node.js</a></li>
+        <li><a href="#tab-3">Ruby</a></li>
+        <li><a href="#tab-4">PHP</a></li>
+        <li><a href="#tab-5">Go</a></li>
+        <li><a href="#tab-6">Swift</a></li>
+        <li><a href="#tab-7">Java</a></li>
+        <li><a href="#tab-8">Sample Response Data</a></li>
+    </ul>
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+curl -X POST -H "App-Id: <app-id>" -H "App-Key: <app-key>" -H "Auth-Token: <auth-token>" -H "Cache-Control: no-cache" -H "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" -F "first_name=<first-name>" -F "last_name=<last-name>" -F "email=<email>" "https://<host>.bookingbug.com/api/v1/admin/<company-id>/client"
+```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+var request = require("request");
+
+var options = { method: 'POST',
+  url: 'https://<host>.bookingbug.com/api/v1/admin/<company-id>/client',
+  headers: 
+   { 'cache-control': 'no-cache',
+     'auth-token': '<auth-token>',
+     'app-key': '<app-key>',
+     'app-id': '<app-id>',
+     'content-type': 'multipart/form-data; boundary=---011000010111000001101001' },
+  formData: 
+   { first_name: '<first-name>',
+     last_name: '<last-name>',
+     email: '<email>' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
+</pre>
+        </div>
+        <div id="tab-3" class="tab__content">
+<pre>
+```
+require 'uri'
+require 'net/http'
+
+url = URI("https://<host>.bookingbug.com/api/v1/admin/<company-id>/client")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'multipart/form-data; boundary=---011000010111000001101001'
+request["app-id"] = '<app-id>'
+request["app-key"] = '<app-key>'
+request["auth-token"] = '<auth-token>'
+request["cache-control"] = 'no-cache'
+request.body = "-----011000010111000001101001\r\nContent-Disposition: form-data; name=\"first_name\"\r\n\r\n<first-name>\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name=\"last_name\"\r\n\r\n<last-name>\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name=\"email\"\r\n\r\n<email>\r\n-----011000010111000001101001--"
+
+response = http.request(request)
+puts response.read_body
+```
+</pre>
+        </div>
+        <div id="tab-4" class="tab__content">
+<pre>
+```
+<?php
+
+$request = new HttpRequest();
+$request->setUrl('https://<host>.bookingbug.com/api/v1/admin/<company-id>/client');
+$request->setMethod(HTTP_METH_POST);
+
+$request->setHeaders(array(
+  'cache-control' => 'no-cache',
+  'auth-token' => '<auth-token>',
+  'app-key' => '<app-key>',
+  'app-id' => '<app-id>',
+  'content-type' => 'multipart/form-data; boundary=---011000010111000001101001'
+));
+
+$request->setBody('-----011000010111000001101001
+Content-Disposition: form-data; name="first_name"
+
+<first-name>
+-----011000010111000001101001
+Content-Disposition: form-data; name="last_name"
+
+<last-name>
+-----011000010111000001101001
+Content-Disposition: form-data; name="email"
+
+<email>
+-----011000010111000001101001--');
+
+try {
+  $response = $request->send();
+
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
+}
+```
+</pre>
+        </div>
+        <div id="tab-5" class="tab__content">
+<pre>
+```
+package main
+
+import (
+  "fmt"
+  "strings"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://<host>.bookingbug.com/api/v1/admin/<company-id>/client"
+
+  payload := strings.NewReader("-----011000010111000001101001\r\nContent-Disposition: form-data; name=\"first_name\"\r\n\r\n<first-name>\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name=\"last_name\"\r\n\r\n<<last-name>\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name=\"email\"\r\n\r\n<email>\r\n-----011000010111000001101001--")
+
+  req, _ := http.NewRequest("POST", url, payload)
+
+  req.Header.Add("content-type", "multipart/form-data; boundary=---011000010111000001101001")
+  req.Header.Add("app-id", "<app-id>")
+  req.Header.Add("app-key", "<app-key>")
+  req.Header.Add("auth-token", "<auth-token>")
+  req.Header.Add("cache-control", "no-cache")
+
+  res, _ := http.DefaultClient.Do(req)
+
+  defer res.Body.Close()
+  body, _ := ioutil.ReadAll(res.Body)
+
+  fmt.Println(res)
+  fmt.Println(string(body))
+
+}
+```
+</pre>
+        </div>
+        <div id="tab-6" class="tab__content">
+<pre>
+```
+import Foundation
+
+let headers = [
+  "content-type": "multipart/form-data; boundary=---011000010111000001101001",
+  "app-id": "<app-id>",
+  "app-key": "<app-key>",
+  "auth-token": "<auth-token>",
+  "cache-control": "no-cache"
+]
+let parameters = [
+  [
+    "name": "first_name",
+    "value": "<first-name>"
+  ],
+  [
+    "name": "last_name",
+    "value": "<last-name>"
+  ],
+  [
+    "name": "email",
+    "value": "<email>"
+  ]
+]
+
+let boundary = "---011000010111000001101001"
+
+var body = ""
+var error: NSError? = nil
+for param in parameters {
+  let paramName = param["name"]!
+  body += "--\(boundary)\r\n"
+  body += "Content-Disposition:form-data; name=\"\(paramName)\""
+  if let filename = param["fileName"] {
+    let contentType = param["content-type"]!
+    let fileContent = String(contentsOfFile: filename, encoding: NSUTF8StringEncoding, error: &error)
+    if (error != nil) {
+      println(error)
+    }
+    body += "; filename=\"\(filename)\"\r\n"
+    body += "Content-Type: \(contentType)\r\n\r\n"
+    body += fileContent!
+  } else if let paramValue = param["value"] {
+    body += "\r\n\r\n\(paramValue)"
+  }
+}
+
+var request = NSMutableURLRequest(URL: NSURL(string: "https://<host>.bookingbug.com/api/v1/admin/<company-id>/client")!,
+                                        cachePolicy: .UseProtocolCachePolicy,
+                                    timeoutInterval: 10.0)
+request.HTTPMethod = "POST"
+request.allHTTPHeaderFields = headers
+request.HTTPBody = postData
+
+let session = NSURLSession.sharedSession()
+let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+  if (error != nil) {
+    println(error)
+  } else {
+    let httpResponse = response as? NSHTTPURLResponse
+    println(httpResponse)
+  }
+})
+
+dataTask.resume()
+```
+</pre>
+        </div>
+        <div id="tab-7" class="tab__content">
+<pre>
+```
+HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/v1/admin/<company-id>/client")
+  .header("content-type", "multipart/form-data; boundary=---011000010111000001101001")
+  .header("app-id", "<app-id>")
+  .header("app-key", "<app-key>")
+  .header("auth-token", "<auth-token>")
+  .header("cache-control", "no-cache")
+  .body("-----011000010111000001101001\r\nContent-Disposition: form-data; name=\"first_name\"\r\n\r\n<first-name>\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name=\"last_name\"\r\n\r\n<last-name>\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name=\"email\"\r\n\r\n<email>\r\n-----011000010111000001101001--")
+  .asString();
+```
+</pre>
+        </div>
+        <div id="tab-8" class="tab__content">
+<pre>
+```
+{
+  "first_name": "<first-name>",
+  "last_name": "<last-name>",
+  "email": "<email>",
+  "country": "United Kingdom",
+  "id": <member-id>,
+  "member_type": 2,
+  "files": [],
+  "answers": [],
+  "deleted": false,
+  "phone_prefix": "44",
+  "mobile_prefix": "44",
+  "q": {},
+  "_links": {
+    "self": {
+      "href": "https://<host>.bookingbug.com/api/v1/admin/<company-id>/client/29229"
+    },
+    "bookings": {
+      "href": "https://<host>.bookingbug.com/api/v1/admin/<company-id>/bookings{/id}?client_id=29229{&start_date,end_date,page,per_page,include_cancelled,modified_since,slot_id,event_id,resource_id,service_id,person_id,filter_by_fields,order_by,order_by_reverse}",
+      "templated": true
+    },
+    "pre_paid_bookings": {
+      "href": "https://<host>.bookingbug.com/api/v1/<company-id>/members/29229/pre_paid_bookings{?include_invalid,event_id}",
+      "templated": true
+    },
+    "questions": {
+      "href": "https://<host>.bookingbug.com/api/v1/<company-id>/client_details"
+    },
+    "edit": {
+      "href": "https://<host>.bookingbug.com/api/v1/admin/<company-id>/client/29229/edit"
+    }
+  }
+}
+```
+</pre>
+        </div>
+    </div>
+</div>
 
 ## Confirmation
-Once you have gathered to required information to create an event booking, you can add the item to their basket. This is achieved with `POST https://<host>.bookingbug.com/api/v1/<company-id>/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}` You will need to enter the required information about the event into the body of the API call. Typically, you will need to enter the `event_id`, `event_chain_id`, `date` and `time` relevant to the event you are booking as well as the `ticket_qty`.
+Once you have gathered the required information to create an event booking, you can add the item to their basket. This is achieved with a post request to the book endpoint
 
-Once you are ready to put the booking through the system you will need to call `POST https://<host>.bookingbug.com/api/v1/<company-id>/basket/checkout{?member_id,take_from_wallet}` This will need the event information and the client's `member_id` entered in the body to be successful. Once this is done, your booking is complete.
+```
+https://eu1.bookingbug.com/api/v1/37228/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}
+```
+
+You will need to pass the required information about the event into the body of the API call. Once you are ready to put the booking through the system you will need to call
+
+```
+https://eu1.bookingbug.com/api/v1/37228/basket/checkout{?member_id,take_from_wallet}
+```
+
+> `member_id = client_id`
