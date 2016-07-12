@@ -4,7 +4,7 @@ There are two core booking user journeys that can be done via the BookingBug API
 We will be looking at the following stages of the user flow and which API calls to make at each stage.
 
 - List Events
-- Custom Information
+- Customer Information
 - Confirmation
 - Checkout
 
@@ -17,7 +17,7 @@ Before you start building an integration with the REST API it is important to pl
 @startuml;
 actor User;
 participant "List Events" as A;
-participant "Custom Information" as B;
+participant "Customer Information" as B;
 participant "Confirmation" as C;
 participant "Checkout" as D;
 User -> A: GET <company-id>/events;
@@ -927,7 +927,7 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 You can also list chained or grouped events.
 Using `GET https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>` will return a list further details regarding the event and if the event has multiple recurring events associated, these will also be returned.
 
-## Custom Information
+## Customer Information
 You will need to query the event chain end point to pull in the full details regarding the event As per the below code example.
 
 <div class="tabs">

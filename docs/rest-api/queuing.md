@@ -5,9 +5,13 @@ The queuing system is built to allow for the management of walk-in clients, the 
 The queuing system has five main aspects to it.
 
 - **Services:** These are the services you have on offer, for example, mortgage advice and savings advice.
+
 - **Queues:** These are the different types of queues that you have, for example if you are offering the previous services for two types of client (standard and business) you can split the clients into two queues. Serving each interdependently.
+
 - **Person:** You can also manage multiple staff members and the current queue that is assigned to them. What services they can handle, when they are on break and how long it is until they are free.
+
 - **Queuers:** These are your clients, waiting in the current queue. If you have a client that has made a booking, then on arrival they will be checked in and converted into a queuer.
+
 - **Serving:** This is the section of the API where you can manage the client who is currently being served.
 
 > Note that the layout of the methods in the API differs from the layout of this documentation. Which aims to give you an overview of what is available. For more details on the endpoints in use. Check out the [API Reference](http://apidocs.bookingbug.com/#!/queue/put_admin_company_id_people_id_attendance)
