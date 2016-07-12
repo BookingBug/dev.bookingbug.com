@@ -5,9 +5,7 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 
 ## Version 2.3
 
-- **Postman Template**
 - **Developer Forum** Set up and launch a developer forum where people can ask questions and find answers from previously asked questions.
-- **REST API Event Booking** a tutorial similar to the [service booking](https://dev.bookingbug.com/docs/rest-api/service-booking)  documentation with user flow diagrams and end point examples
 - **Extending Directives Guide** the number of ways that you can extend controllers
 - **Useful Tools** A page in the documentation highlighting tools that will be of use to a developer working on the platform
 - **JavaScript SDK Reference** Review the SDK reference and expand code examples.
