@@ -1,5 +1,14 @@
 # Service Booking
-There are two main types of booking that can be done through via the BookingBug platform. These are split into service bookings and event bookings. In this section we will be looking at service bookings.
+There are two core booking user journeys that can be done via the BookingBug API. These are split into service bookings and event bookings. In this section we will be looking at service bookings.
+
+We will be looking at the following stages of the user flow and which API calls to make at each stage.
+
+- Store Locator
+- List Stores
+- List Service
+- List Available Slots
+- Collect User Details
+- Confirmation
 
 > Our full API reference can be found here [http://apidocs.bookingbug.com/](http://apidocs.bookingbug.com/)
 
@@ -306,15 +315,6 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
 </div>
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c1d4330701034bffb1fd)
-
-We will be looking at these stages of the user flow and which API calls to make at each stage.
-
-- Store Locator
-- List Stores
-- List Service
-- List Available Slots
-- Collect User Details
-- Confirmation
 
 Now that we are Authenticated with the API we can make a request for the company object. This returns the company information and each end point available for that company.
 

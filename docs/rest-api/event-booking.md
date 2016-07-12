@@ -1,23 +1,43 @@
 # Event Booking
-There are two main types of booking that can be done through via the BookingBug platform. These are split into service bookings and event bookings. In this section, we will be looking at event bookings.
+There are two core booking user journeys that can be done via the BookingBug API. These are split into service bookings and event bookings. In this section, we will be looking at event bookings.
+
+We will be looking at the following stages of the user flow and which API calls to make at each stage.
+
+- List Events
+- Custom Information
+- Confirmation
+- Checkout
 
 > Our full API reference can be found here [http://apidocs.bookingbug.com/](http://apidocs.bookingbug.com/)
 
 ## User Flow
 Before you start building an integration with the REST API it is important to plan out your user flow. Below is a UML Diagram of an example event booking user flow. Each stage has an action that the user carries out and each stage requires certain API calls.
 
-<img src='https://g.gravizo.com/g?
+<img src='http://g.gravizo.com/g?
 @startuml;
 actor User;
 participant "List Events" as A;
-participant "Collect User Details" as B;
+participant "Custom Information" as B;
 participant "Confirmation" as C;
-User -> A: Start;
+participant "Checkout" as D;
+User -> A: GET <company-id>/events;
 activate A;
-A -> B: Choose Event;
+User -> A: GET <company-id>/event_chains/<event-chain-id>;
+A -> User: Select Event;
+deactivate A;
+User -> B: GET <company-id>/questions?detail_group_id=<detail-group-id>;
 activate B;
-B -> C: Enter Details;
+B -> User: Event Questions;
+User -> B: POST <company_id>/client;
+deactivate B;
+User -> C: POST <company-id>/basket/add_item;
 activate C;
+C -> User: User Confirmation;
+deactivate C;
+User -> D: POST <company-id>/basket/checkout;
+activate D;
+D -> User: Booking Complete;
+deactivate D;
 @enduml;
 '>
 
@@ -297,12 +317,6 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
 </div>
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c1d4330701034bffb1fd)
-
-We will be looking at these stages of the user flow and which API calls to make at each stage.
-
-- List Events
-- Collect User Details
-- Confirmation
 
 Now that we are Authenticated with the API we can make a request for the company object. This returns the company information and each end point available for that company.
 
@@ -911,10 +925,10 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 </div>
 
 You can also list chained or grouped events.
-Using `GET https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>` will return a list further details regarding the event and if the event has multiple recurring events associated these wil also be displayed
+Using `GET https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>` will return a list further details regarding the event and if the event has multiple recurring events associated, these will also be returned.
 
-## Collect User Details
-You will need to query the event chain end point to pull in the full details regarding the event As per the below code example
+## Custom Information
+You will need to query the event chain end point to pull in the full details regarding the event As per the below code example.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -1148,7 +1162,7 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 
 Within that response you are given the end point for the questions related to your event `https://<host>.bookingbug.com/api/v1/<company-id>/questions?detail_group_id=<detail-group-id>`. This returns the questions that relate to that particular event. For example, if we were to be creating a booking appointment for a financial event, then at this point we could ask if the user has a standard or business account or if they have already started the process of finding a mortgage with other financial providers.
 
-In response you will get a object back with an array of questions
+In response you will get a object back with an array of questions.
 ```
 {
   "company_id": <company-id>,
@@ -1479,6 +1493,7 @@ Once you have gathered the required information to create an event booking, you 
 https://<host>.bookingbug.com/api/v1/<company-id>/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}
 ```
 
+## Checkout
 You will need to pass the required information about the event into the body of the API call. Once you are ready to put the booking through the system you will need to call
 
 ```
