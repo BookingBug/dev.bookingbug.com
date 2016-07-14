@@ -3,6 +3,26 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 
 > currently on Version 2.2.2 of the documentation see [Semantic Versioning 2.0.0](http://semver.org/) for more information
 
+## Version 2.2.3
+- **Service Booking Guide** Code Examples and copy review
+
+- **New UML Diagrams** for Booking and Service Guide
+
+## Version 2.2.4
+
+- **Queueing** Code examples for the guide
+
+- **Checkout Guide** Code examples and detailed explanation
+
+## Version 2.2.5
+
+- **Permissions** Code Examples and rename to API Authentication
+
+- **Testing** Information on setting up test accounts and using the API in development mode
+
+- **Security Info** Information regarding the security that BookingBug implements and any requirements a server may need.
+
+<!-- 
 ## Version 2.3
 
 - **Developer Forum** Set up and launch a developer forum where people can ask questions and find answers from previously asked questions.
@@ -16,3 +36,4 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 - **Internationalisation** Guide on translations what directives need to be added
 - **REST API Discounts** A tutorial on how to work with the discounts on offer via the REST API
 - **REST API Packages and Bulk Purchases** A tutorial showing developers how to apply packages and bulk purchases via the API
+ -->
