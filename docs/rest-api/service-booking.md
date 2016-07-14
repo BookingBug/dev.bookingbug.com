@@ -898,7 +898,7 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 </div>
 
 ## List Stores
-With the list of companies now available, your user can choose which store they want to make the service booking with. Find the store you want to use in the list to access the specific 'company-id' you need to use.
+With the list of companies now available, your user can choose which store they want to make the service booking with.
 
 ## List Services
 Once your user has chosen a location then you can list the services available at that location. This can be done with `GET https://<host>.bookingbug.com/api/v1/admin/<company-id>/services` method. This will return the service object. 
