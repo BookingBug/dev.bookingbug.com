@@ -687,6 +687,216 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 ## Store Locator
 The first call you will need to make to the API is to `GET https://<host>.bookingbug.com/api/v1/admin/<company-id>/addresses` to retrieve the company object. This shows the parent company and a list of child companies.
 
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Node.js</a></li>
+        <li><a href="#tab-3">Ruby</a></li>
+        <li><a href="#tab-4">PHP</a></li>
+        <li><a href="#tab-5">Go</a></li>
+        <li><a href="#tab-6">Swift</a></li>
+        <li><a href="#tab-7">Java</a></li>
+        <li><a href="#tab-8">Sample Response Data</a></li>
+    </ul>
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+curl -X GET -H "App-Id: <app-id>" -H "App-Key: <app-key>" -H "Auth-Token: <auth-token>" -H "Cache-Control: no-cache"  "https://<host>.bookingbug.com/api/v1/<company-id>/addresses"
+```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+var request = require("request");
+
+var options = { method: 'GET',
+  url: 'https://<host>.bookingbug.com/api/v1/<company-id>/addresses',
+  headers: 
+   { 'cache-control': 'no-cache',
+     'auth-token': '<auth-token>',
+     'app-key': '<app-key>',
+     'app-id': '<app-id>' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
+</pre>
+        </div>
+        <div id="tab-3" class="tab__content">
+<pre>
+```
+require 'uri'
+require 'net/http'
+
+url = URI("https://<host>.bookingbug.com/api/v1/<company-id>/addresses")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["app-id"] = '<app-id>'
+request["app-key"] = '<app-key>'
+request["auth-token"] = '<auth-token>'
+request["cache-control"] = 'no-cache'
+
+response = http.request(request)
+puts response.read_body
+```
+</pre>
+        </div>
+        <div id="tab-4" class="tab__content">
+<pre>
+```
+<?php
+
+$request = new HttpRequest();
+$request->setUrl('https://<host>.bookingbug.com/api/v1/<company-id>/addresses');
+$request->setMethod(HTTP_METH_GET);
+
+$request->setHeaders(array(
+  'cache-control' => 'no-cache',
+  'auth-token' => '<auth-token>',
+  'app-key' => '<app-key>',
+  'app-id' => '<app-id>'
+));
+
+try {
+  $response = $request->send();
+
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
+}
+```
+</pre>
+        </div>
+        <div id="tab-5" class="tab__content">
+<pre>
+```
+package main
+
+import (
+  "fmt"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://<host>.bookingbug.com/api/v1/<company-id>/addresses"
+
+  req, _ := http.NewRequest("GET", url, nil)
+
+  req.Header.Add("app-id", "<app-id>")
+  req.Header.Add("app-key", "<app-key>")
+  req.Header.Add("auth-token", "<auth-token>")
+  req.Header.Add("cache-control", "no-cache")
+
+  res, _ := http.DefaultClient.Do(req)
+
+  defer res.Body.Close()
+  body, _ := ioutil.ReadAll(res.Body)
+
+  fmt.Println(res)
+  fmt.Println(string(body))
+
+}
+```
+</pre>
+        </div>
+        <div id="tab-6" class="tab__content">
+<pre>
+```
+import Foundation
+
+let headers = [
+  "app-id": "<app-id>",
+  "app-key": "<app-key>",
+  "auth-token": "<auth-token>",
+  "cache-control": "no-cache"
+]
+
+var request = NSMutableURLRequest(URL: NSURL(string: "https://<host>.bookingbug.com/api/v1/<company-id>/addresses")!,
+                                        cachePolicy: .UseProtocolCachePolicy,
+                                    timeoutInterval: 10.0)
+request.HTTPMethod = "GET"
+request.allHTTPHeaderFields = headers
+
+let session = NSURLSession.sharedSession()
+let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+  if (error != nil) {
+    println(error)
+  } else {
+    let httpResponse = response as? NSHTTPURLResponse
+    println(httpResponse)
+  }
+})
+
+dataTask.resume()
+```
+</pre>
+        </div>
+        <div id="tab-7" class="tab__content">
+<pre>
+```
+HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v1/<company-id>/addresses")
+  .header("app-id", "<app-id>")
+  .header("app-key", "<app-key>")
+  .header("auth-token", "<auth-token>")
+  .header("cache-control", "no-cache")
+  .asString();
+```
+</pre>
+        </div>
+        <div id="tab-8" class="tab__content">
+<pre>
+```
+{
+  "total_entries": 1,
+  "_embedded": {
+    "addresses": [
+      {
+        "id": <address-id>,
+        "name": "",
+        "address1": "",
+        "address2": "",
+        "address3": "",
+        "address4": "",
+        "address5": "",
+        "postcode": "",
+        "country": "United Kingdom",
+        "lat": <lat>,
+        "long": <lang>,
+        "map_url": "",
+        "map_marker": "United+Kingdom",
+        "phone": "",
+        "homephone": "",
+        "_links": {
+          "self": {
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/addresses/<address-id>"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://<host>.bookingbug.com/api/v1/<company-id>/addresses"
+    }
+  }
+}
+```
+</pre>
+        </div>
+    </div>
+</div>
+
 ## List Stores
 With the list of companies now available, your user can choose which store they want to make the service booking with. Find the store you want to use in the list to access the specific 'company-id' you need to use.
 
@@ -896,28 +1106,28 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
             "href": "https://<host>.bookingbug.com/api/v1/admin/<company-id>/services/<service-id>"
           },
           "items": {
-            "href": "https://eu1.bookingbug.com/api/v1/admin/<company-id>/items?service_id=<service-id>"
+            "href": "https://<host>.bookingbug.com/api/v1/admin/<company-id>/items?service_id=<service-id>"
           },
           "questions": {
-            "href": "https://eu1.bookingbug.com/api/v1/<company-id>/questions?detail_group_id=18750"
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/questions?detail_group_id=18750"
           },
           "days": {
-            "href": "https://eu1.bookingbug.com/api/v1/<company-id>/day_data?service_id=<service-id>{&month,week,date,edate,location,event_id,person_id,resource_id}",
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/day_data?service_id=<service-id>{&month,week,date,edate,location,event_id,person_id,resource_id}",
             "templated": true
           },
           "times": {
-            "href": "https://eu1.bookingbug.com/api/v1/<company-id>/time_data?service_id=<service-id>{&event_id,date,end_date,location,person_id,resource_id,duration,single,num_resources,group_id,resource_ids,time_zone}",
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/time_data?service_id=<service-id>{&event_id,date,end_date,location,person_id,resource_id,duration,single,num_resources,group_id,resource_ids,time_zone}",
             "templated": true
           },
           "book": {
-            "href": "https://eu1.bookingbug.com/api/v1/<company-id>/basket/add_item?service_id=<service-id>{&event_id,member_id,event_chain_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}",
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/basket/add_item?service_id=<service-id>{&event_id,member_id,event_chain_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}",
             "templated": true
           },
           "all_children": {
-            "href": "https://eu1.bookingbug.com/api/v1/<company-id>/services/<service-id>/all_children"
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/services/<service-id>/all_children"
           },
           "company": {
-            "href": "https://eu1.bookingbug.com/api/v1/company/<company-id>"
+            "href": "https://<host>.bookingbug.com/api/v1/company/<company-id>"
           },
           "edit": {
             "href": "https://<host>.bookingbug.com/api/v1/admin/<company-id>/services/<service-id>/edit"
@@ -958,28 +1168,28 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
             "href": "https://<host>.bookingbug.com/api/v1/admin/<company-id>/services/<service-id>"
           },
           "items": {
-            "href": "https://eu1.bookingbug.com/api/v1/admin/<company-id>/items?service_id=<service-id>"
+            "href": "https://<host>.bookingbug.com/api/v1/admin/<company-id>/items?service_id=<service-id>"
           },
           "questions": {
-            "href": "https://eu1.bookingbug.com/api/v1/<company-id>/questions?detail_group_id=18750"
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/questions?detail_group_id=18750"
           },
           "days": {
-            "href": "https://eu1.bookingbug.com/api/v1/<company-id>/day_data?service_id=<service-id>{&month,week,date,edate,location,event_id,person_id,resource_id}",
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/day_data?service_id=<service-id>{&month,week,date,edate,location,event_id,person_id,resource_id}",
             "templated": true
           },
           "times": {
-            "href": "https://eu1.bookingbug.com/api/v1/<company-id>/time_data?service_id=<service-id>{&event_id,date,end_date,location,person_id,resource_id,duration,single,num_resources,group_id,resource_ids,time_zone}",
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/time_data?service_id=<service-id>{&event_id,date,end_date,location,person_id,resource_id,duration,single,num_resources,group_id,resource_ids,time_zone}",
             "templated": true
           },
           "book": {
-            "href": "https://eu1.bookingbug.com/api/v1/<company-id>/basket/add_item?service_id=<service-id>{&event_id,member_id,event_chain_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}",
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/basket/add_item?service_id=<service-id>{&event_id,member_id,event_chain_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}",
             "templated": true
           },
           "all_children": {
-            "href": "https://eu1.bookingbug.com/api/v1/<company-id>/services/<service-id>/all_children"
+            "href": "https://<host>.bookingbug.com/api/v1/<company-id>/services/<service-id>/all_children"
           },
           "company": {
-            "href": "https://eu1.bookingbug.com/api/v1/company/<company-id>"
+            "href": "https://<host>.bookingbug.com/api/v1/company/<company-id>"
           },
           "edit": {
             "href": "https://<host>.bookingbug.com/api/v1/admin/<company-id>/services/<service-id>/edit"
