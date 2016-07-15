@@ -13,7 +13,7 @@ class Core {
     this.tabsInit();
     this.highlightCode();
     this.historyPop();
-
+    
     // this.disqusLoad(window.location.href, window.location.pathname);
     // TODO if url matches menu item href add class active  to said menu item
   }
