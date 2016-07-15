@@ -1,16 +1,17 @@
 # Event Booking
-There are two core booking user journeys that can be done via the BookingBug API. These are split into service bookings and event bookings. In this section, we will be looking at event bookings.
-
-We will be looking at the following stages of the user flow and which API calls to make at each stage.
-
-- List Events
-- Customer Information
-- Confirmation
-- Checkout
+There are two core booking user journeys that can be done via the BookingBug API. These are split into service bookings and event bookings. In this section, we will be looking at event bookings. We will be looking at the following stages of the user flow and which API calls to make at each stage.
 
 > Our full API reference can be found here [http://apidocs.bookingbug.com/](http://apidocs.bookingbug.com/)
 
-## User Flow
+- **List Events** You can call a list of all events your company has on offer and display the to the user.
+
+- **Customer Information** Once the user has selected an event you can ask them any custom questions that you have assigned to the event.
+
+- **Confirmation** This step will be the confirmation stage for your user to check the details of their booking. Once confirmed you can proceed to the checkout
+
+- **Checkout** The user can then make a payment with one of your set up payment providers.
+  
+<!-- ## User Flow
 Before you start building an integration with the REST API it is important to plan out your user flow. Below is a UML Diagram of an example event booking user flow. Each stage has an action that the user carries out and each stage requires certain API calls.
 
 <img src='http://g.gravizo.com/g?
@@ -39,13 +40,14 @@ activate D;
 D -> User: Booking Complete;
 deactivate D;
 @enduml;
-'>
+'> -->
 
 ## API Authentication
 To make API calls, you will need an `App-Key` and `App-ID`. You will also need an `Auth-Token`to make a booking which can be acquired by logging in as an admin using the API.
 
 [Find out how to obtain your API keys here](docs/rest-api/api-keys)
 
+### Auth Token
 <div class="tabs">
     <ul class="tabs__menu">
         <li class="current"><a href="#tab-1">cURL</a></li>
@@ -318,6 +320,7 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c1d4330701034bffb1fd)
 
+### Company Object
 Now that we are Authenticated with the API we can make a request for the company object. This returns the company information and each end point available for that company.
 
 <div class="tabs">
@@ -1489,8 +1492,14 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
 ## Confirmation
 Once you have gathered the required information to create an event booking, you can add the item to their basket. This is achieved with a post request to the book endpoint
 
+### Add to Basket
 ```
 https://<host>.bookingbug.com/api/v1/<company-id>/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}
+```
+
+### View Basket
+```
+https://<host>.bookingbug.com/api/v1/<company-id>/basket
 ```
 
 ## Checkout
@@ -1500,4 +1509,6 @@ You will need to pass the required information about the event into the body of 
 https://<host>.bookingbug.com/api/v1/<company-id>/basket/checkout{?member_id,take_from_wallet}
 ```
 
-> `member_id = client_id`
+Your member id is the id of the client that you would have had in the response from `POST /client`
+
+the wallet object is used if the user has available credit to make the purchase. If set to false it will pass the user to checkout.

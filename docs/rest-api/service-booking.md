@@ -1,18 +1,21 @@
 # Service Booking
-There are two core booking user journeys that can be done via the BookingBug API. These are split into service bookings and event bookings. In this section we will be looking at service bookings.
-
-We will be looking at the following stages of the user flow and which API calls to make at each stage.
-
-- Store Locator
-- List Stores
-- List Service
-- List Available Slots
-- Collect User Details
-- Confirmation
+There are two core booking user journeys that can be done via the BookingBug API. These are split into service bookings and event bookings. In this section we will be looking at service bookings. We will be looking at the following stages of the user flow and which API calls to make at each stage.
 
 > Our full API reference can be found here [http://apidocs.bookingbug.com/](http://apidocs.bookingbug.com/)
 
-## User Flow
+- **Enter Location** When booking a service the user will need to enter their location so that you can calculate the nearest address.
+
+- **List Stores** Once you've displayed the results, your user can then choose one of your business addresses.
+
+- **List Services** The next step is to list out the services available at that address.
+
+- **List Available Slots** The API makes it easy to find availability of staff members and resources
+
+- **Collect User Details** You can set custom questions for your services and collect user details
+
+- **Confirmation and Checkout** This step will be the confirmation stage for your user to check the details of their booking. Once confirmed you can proceed to the checkout
+
+<!-- ## User Flow
 Before you start building an integration with the REST API it is important to plan out your user flow. Below is a UML Diagram of our standard user flow. Each stage has an action that the user carries out and each stage requires certain API calls.
 
 <img src='https://g.gravizo.com/g?
@@ -54,13 +57,14 @@ activate G;
 G -> User: Booking Complete;
 deactivate G;
 @enduml;
-'>
+'> -->
 
 ## API Authentication
 To make API calls, you will need an `App-Key` and `App-ID`. You will also need an `Auth-Token`to make a booking which can be acquired by logging in as an admin using the API.
 
 [Find out how to obtain your API keys here](docs/rest-api/api-keys)
 
+### Auth Token
 <div class="tabs">
     <ul class="tabs__menu">
         <li class="current"><a href="#tab-1">cURL</a></li>
@@ -333,6 +337,7 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c1d4330701034bffb1fd)
 
+### Company Object
 Now that we are Authenticated with the API we can make a request for the company object. This returns the company information and each end point available for that company.
 
 <div class="tabs">
@@ -701,7 +706,7 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/eab0485e5c9fb3054f64)
 
-## Store Locator
+## Enter Location
 The first call you will need to make to the API is to `GET https://<host>.bookingbug.com/api/v1/admin/<company-id>/addresses` to retrieve the company object. This shows the parent company and a list of child companies.
 
 <div class="tabs">
@@ -1802,14 +1807,23 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
 ## Confirmation
 Once you have gathered the required information to create an event booking, you can add the item to their basket. This is achieved with a post request to the book endpoint
 
+### Add to Basket
 ```
 https://<host>.bookingbug.com/api/v1/<company-id>/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}
 ```
 
+### View Basket
+```
+https://<host>.bookingbug.com/api/v1/<company-id>/basket
+```
+
+## Checkout
 You will need to pass the required information about the event into the body of the API call. Once you are ready to put the booking through the system you will need to call
 
 ```
 https://<host>.bookingbug.com/api/v1/<company-id>/basket/checkout{?member_id,take_from_wallet}
 ```
 
-> `member_id = client_id`
+Your member id is the id of the client that you would have had in the response from `POST /client`
+
+the wallet object is used if the user has available credit to make the purchase. If set to false it will pass the user to checkout.
