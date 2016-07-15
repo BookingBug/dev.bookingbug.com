@@ -1,7 +1,7 @@
 # Documentation Roadmap
 This is the public roadmap for the documentation found at dev.bookingbug.com It goes over the items to be included with each release.
 
-> currently on Version 2.2.4 of the documentation see [Semantic Versioning 2.0.0](http://semver.org/) for more information
+> currently on Version 2.2.3 of the documentation see [Semantic Versioning 2.0.0](http://semver.org/) for more information
 
 ## Version 2.2.4
 
