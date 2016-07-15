@@ -56,8 +56,8 @@ The BookingBug Platform is an extensive tool-set that allows web developers and 
   <div class="card__link">
     <a href="/docs/integrations/enterprise">
       <i class="fa fa-4x fa-fw fa-plug"></i>
-      <h3>Intergrations</h3>
-      <p>ookingBug has many integrations that you can use to tie all of your online services together.</p>
+      <h3>Integrations</h3>
+      <p>BookingBug has many integrations that you can use to tie all of your online services together.</p>
     </a>
   </div>
 </div>
