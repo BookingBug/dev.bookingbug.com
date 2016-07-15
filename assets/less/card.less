@@ -35,6 +35,42 @@
 		position: relative;
 		top: 0.0645rem;
 	}
+
+	&__link {
+		text-align: center;
+		a,
+		a:hover {
+    	text-decoration: none;
+    	display: block;
+    	color: @color-black;
+		}
+		a:hover {
+			color: #357ebd;
+		}
+		.fa {
+			color: lighten(@color-black, 70%);
+			padding:0.5em 0 0.5em 0;
+		}
+	}
+}
+
+.card.card-large {
+	width:33%;
+	@media (max-width:45rem) {
+		width:49%;
+	}
+	@media (max-width:25rem) {
+		width:99%;
+	}
+
+	div {
+		padding:0 1.5em 1em 1.5em;
+		// border: 0 !important;
+	}
+}
+
+.card.card-large::nth-child(3n) {
+	padding-left:0;
 }
 
 .card.experts-apply {
@@ -52,6 +88,10 @@
 
 .card:nth-child(4n) {
 	padding-left:0;
+}
+
+.card.card-large:nth-child(4n) {
+	padding-left:0.5rem;
 }
 
 @media (max-width:45rem) {
