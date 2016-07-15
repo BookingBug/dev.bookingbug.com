@@ -3,27 +3,15 @@
 The BookingBug Platform is an extensive tool-set that allows web developers and designers of all skill levels, backgrounds and experience to make the best use of the broad range of functionality, flexibility and power that BookingBug offers businesses.
 
 ## Set up your platform
-To start using the platform the first thing you will need to do is choose a plan that suits your needs. If none of the service levels available meet your needs, then you may require an enterprise account. You will need to contact [BookingBug for a quote](https://www.bookingbug.co.uk/contact).
+To start using the platform the first thing you will need to do is choose a plan that suits your needs. If none of the service levels available meet your needs, then you may require an enterprise account. To find out more contact [BookingBug for a quote](https://www.bookingbug.co.uk/contact).
 
 [Get Started by choosing a plan](docs/getting-started/choosing-a-plan)
 
 ## Widget
 
-The easiest way to implement the BookingBug platform into your website is to use the widget. This widget is a snippet of code that can be embedded in your web page.
+The easiest way to implement the BookingBug platform into your website is to use the widget. This widget is a snippet of code that can be embedded into any web page.
 
 [Get Started with the Widget](docs/widget)
-
-## Integrations
-
-BookingBug has many integrations that you can use to tie all of your online services together. These include SagePay, PayPal, Stripe, Sales Force and more.
-
-[Get Started with the JavaScript Check out our integrations](docs/integrations/enterprise)
-
-<!-- ## Designer
-
-The designer allows you to customise your booking journey with ease. You can add text to your booking journey change the colours and the layout. You can then export your final code and place it on your website.
-
-[Get Started with the REST SDK](/designer) -->
 
 ## JavaScript SDK
 
@@ -36,6 +24,18 @@ The BookingBug JavaScript SDK is built on AngularJS and runs on BookingBug’s u
 Our REST API allows you to integrate the BookingBug system into your application. You have more power over the way it integrates compared to the JavaScipt SDK. This is great if you want to integrate the platform with a native mobile app. However for most websites the JavaScript SDK should provide you with all that you need.
 
 [Get Started with the REST SDK](docs/rest-api)
+
+## Integrations
+
+BookingBug has many integrations that you can use to tie all of your online services together. These include SagePay, PayPal, Stripe, Sales Force and more.
+
+[View all Integrations](docs/integrations/enterprise)
+
+<!-- ## Designer
+
+The designer allows you to customise your booking journey with ease. You can add text to your booking journey change the colours and the layout. You can then export your final code and place it on your website.
+
+[Get Started with the REST SDK](/designer) -->
 
 ## Experts
 
