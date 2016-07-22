@@ -4,7 +4,7 @@
   "description": "This project is a default front end start point. Made for LemonDigits.com fr use on client projects.",
   "main": "entrypoint.js",
   "scripts": {
-    "start": "node entrypoint.js",
+    "start": "concurrently 'node entrypoint.js' 'grunt watch'",
     "preinstall": "babel --optional runtime -d dist/ app/",
     "postinstall": "bower install && grunt -v",
     "lint": "eslint app/",
