@@ -13,6 +13,16 @@ class Core {
     this.tabsInit();
     this.highlightCode();
     this.historyPop();
+
+    $('.content').anchorific({
+      navigation: '.anchorific', // position of navigation
+      speed: 200, // speed of sliding back to top
+      anchorClass: 'anchor', // class of anchor links
+      anchorText: '#', // prepended or appended to anchor headings
+      top: '.top', // back to top button or link class
+      spy: true, // highlight active links as you scroll
+      position: 'append' // position of anchor text
+    });
     
     // this.disqusLoad(window.location.href, window.location.pathname);
     // TODO if url matches menu item href add class active  to said menu item
