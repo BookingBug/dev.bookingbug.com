@@ -36,4 +36,5 @@ This will begin creating your booking widget's directory on your local computer.
 Once all of the above has been installed, navigate to the new folder that yeoman created (named after your project) and run `gulp` to watch files for changes and to host your application locally on [http://localhost:8000](http://localhost:8000)
 
 > You can see a screen-cast of this entire process here:
-[![asciicast](https://asciinema.org/a/1ik46ji01fgxyfs5j669knvs6.png)](https://asciinema.org/a/1ik46ji01fgxyfs5j669knvs6?speed=2)
+
+<script type="text/javascript" src="https://asciinema.org/a/45879.js" id="asciicast-45879" async></script>
