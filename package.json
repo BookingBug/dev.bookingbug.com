@@ -5,6 +5,7 @@
   "main": "entrypoint.js",
   "scripts": {
     "start": "concurrently 'node entrypoint.js' 'grunt watch'",
+    "dev": "concurrently 'nodemon entrypoint.js' 'grunt watch'",
     "preinstall": "babel --optional runtime -d dist/ app/",
     "postinstall": "bower install && grunt -v",
     "lint": "eslint app/",
@@ -46,6 +47,7 @@
     "load-grunt-config": "^0.19.1",
     "marked": "^0.3.5",
     "mocha": "2.3.3",
+    "nodemon": "^1.10.0",
     "phantomjs": "1.9.19",
     "q": "~1.4.1",
     "request": "^2.69.0",
