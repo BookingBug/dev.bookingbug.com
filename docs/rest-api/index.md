@@ -6,4 +6,4 @@ This documentation will cover the main aspects of the API and how you can use it
 
 For a full list of end points and methods see the [API Reference](http://apidocs.bookingbug.com/)
 
-> The company_id and API URL can be obtained from the API Settings under BookingBug Advanced Settings (Click the settings Cog in the top right corner, and Advance Settings in the left side column) e.g 12345
+> The company_id e.g 12345 and API URL can be obtained from the API Settings under BookingBug Advanced Settings (Click the settings Cog in the top right corner, and Advance Settings in the left side column)

@@ -2,21 +2,21 @@
 
 The queuing system is built to allow for the management of walk-in clients, the services that you provide these walk-in clients and the staff that you have available to serve these clients.
 
-Queues also allow you to split your walk-in/appointment based clients up into different queues. This would be useful if you had member based services such as business and standard account customers. or services based on language.
+Queues also allow you to split your walk-in/appointment based clients into different queues. This is useful if you have member based services such as business and standard account customers. or services based on language.
 
 For example. If you had a business customer and a standard customer tier available, then you can break these into two different queues. Allowing each queue to be progressed independently of each other.
 
-Additionally, you could have multiple queues based on language. Someone who needs to see a staff member who speaks fluent Spanish can then be added to a specific queue separate from the staff members who cannot speak fluent Spanish.
+Additionally, you could have multiple queues based on language. Someone who needs to see a staff member who speaks fluent Spanish, can then be added to a specific queue separate from the staff members who cannot speak fluent Spanish.
 
 The queuing system has five main aspects to it.
 
 - **Services:** These are the services you have on offer, for example, mortgage advice and savings advice. The <a href="docs/rest-api/service-booking#list-services">Service Booking Guide</a> has examples regarding this end point.
 
-- **Queues:** These are the different types of queues that you have, for example if you are offering the previous services for two types of client (standard and business) you can split the clients into two queues. Serving each interdependently.
+- **Queues:** These are the different types of queues that you have, for example if you are offering the previous services for two types of client (standard and business) you can split the clients into two queues. Serving each independently.
 
-- **Person:** You can also manage multiple staff members and the current queue that is assigned to them. What services they can handle, when they are on break and how long it is until they are free.
+- **Person:** You can also manage multiple staff members and the current queue that is assigned to them. What services they can handle, when they are on break and how long it is until they are free to see the next customer in the Queue.
 
-- **Queuers:** These are your clients, waiting in the current queue. If you have a client that has made a booking, then on arrival they will be checked in and converted into a queuer.
+- **Queuers:** These are your clients waiting in the current queue. If you have a client that has made a booking, then on arrival they will be checked in and converted into a queuer.
 
 - **Serving:** This is the section of the API where you can manage the client who is currently being served.
 
@@ -26,9 +26,9 @@ The queuing system has five main aspects to it.
 
 The managing of queues is done via an endpoint that allows for CRUD operations. This is contained within the admin API role.
 
-You can create, list, edit and delete the different queues via [these endpoints](http://apidocs.bookingbug.com/#!/admin/get_admin_company_id_client_queues) This will also pull in relation data such as a person, services, and queues.
+You can create, list, edit and delete the different queues via [these endpoints](http://apidocs.bookingbug.com/#!/admin/get_admin_company_id_client_queues) This will also pull in relational data such as person, services, and queues.
 
-> Services need to be enabled to work with queues via the service API endpoints. When the API returns the services you will be able to see `queuing_disabled: false` or `queuing_disabled: true` in the response.
+Services need to be enabled to work with queues via the service API endpoints. When the API returns the services you will be able to see `queuing_disabled: false` or `queuing_disabled: true` in the response.
 
 **GET Queuers Read** <br>
 Read a list of currently waiting and being server queuers <br>
@@ -37,14 +37,12 @@ Read a list of currently waiting and being server queuers <br>
 See more about [these endpoints](http://apidocs.bookingbug.com/#!/admin/get_admin_company_id_client_queues)
 
 ## Person
-Staff you have available to see your clients
 
 Here you can manage the different aspects of the staff you have available to see your clients (named `person` in the API). You can manage your staff members calendar and assign the walk-in clients around the clients that have pre-booked an appointment.
 
 **GET New Person** <br>
 Person Read Using Reference ID <br>
 `https://uk.bookingbug.com/api/v1/admin/:company_id/people/find_by_ref/{ref}`
-
 
 The API endpoints and Methods can be found [here](http://apidocs.bookingbug.com/#!/person/post_admin_company_id_people)
 
