@@ -18,15 +18,15 @@ https://<host>.bookingbug.com/api/v1/<company-id>/basket/add_item{?event_id,memb
 
 - ** service_id ** This is the id of the service id retrieved with <a href="/docs/rest-api/service-booking#list-services">List Services</a> endpoint
 
-- ** product_id ** 
+- ** product_id ** is for purchasable items that aren't bookings
 
-- ** attachment_id ** 
+- ** attachment_id ** attachment_id is for any file uploads that may have been attached
 
 - ** deal_id ** This is the ID of any discounts that you can choose to set up and offer a customer
 
 - ** package_id ** If the event is part of a package then you will need to pass in the package_id.
 
-- ** bulk_purchase_id ** If the event has been purchased in bulk then you will need to pass in the ID of the bulk purchase.
+- ** bulk_purchase_id ** If the event has been purchased in bulk then you will need to pass in the ID of the bulk purchase
 
 ## View Basket
 
