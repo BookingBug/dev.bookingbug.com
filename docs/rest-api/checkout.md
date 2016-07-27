@@ -22,11 +22,11 @@ https://<host>.bookingbug.com/api/v1/<company-id>/basket/add_item{?event_id,memb
 
 - ** attachment_id ** 
 
-- ** deal_id ** 
+- ** deal_id ** This is the ID of any discounts that you can choose to set up and offer a customer
 
-- ** package_id ** 
+- ** package_id ** If the event is part of a package then you will need to pass in the package_id.
 
-- ** bulk_purchase_id ** 
+- ** bulk_purchase_id ** If the event has been purchased in bulk then you will need to pass in the ID of the bulk purchase.
 
 ## View Basket
 
@@ -46,3 +46,11 @@ https://<host>.bookingbug.com/api/v1/<company-id>/basket/checkout{?member_id,tak
 Your member id is the id of the client that you would have had in the response from `POST /client`
 
 the wallet object is used if the user has available credit to make the purchase. If set to false it will pass the user to checkout.
+
+### Using Wallets
+
+Wallets enable your customers to credit their account with real or virtual currency which they can then use to pay for bookings.  To use wallets, you must have online payments setup.
+
+for more information about setting wallets up see [this guide](http://feedback.bookingbug.com/hc/en-gb/articles/204119572-How-to-setup-wallet-credit-that-my-customers-can-buy-)
+
+for more information regarding setting up payments you can take a look at our [payment guides](http://feedback.bookingbug.com/hc/en-gb/sections/201679355-Payments)
