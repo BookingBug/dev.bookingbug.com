@@ -24,7 +24,7 @@ The BookingBug Platform is an extensive tool-set that allows web developers and 
 
 <div class="card card-large">
   <div class="card__link">
-    <a href="http://localhost:8080/docs/javascript-sdk">
+    <a href="/docs/javascript-sdk">
       <i class="fa fa-4x fa-fw fa-code-fork"></i>
       <h3>JavaScript SDK</h3>
       <p>The BookingBug JavaScript SDK is built on AngularJS and runs on BookingBug’s underlying REST API.</p>
@@ -34,7 +34,7 @@ The BookingBug Platform is an extensive tool-set that allows web developers and 
 
 <div class="card card-large">
   <div class="card__link">
-    <a href="http://localhost:8080/docs/rest-api">
+    <a href="/docs/rest-api">
       <i class="fa fa-4x fa-fw fa-terminal"></i>
       <h3>REST API</h3>
       <p>Our REST API allows you to integrate the BookingBug system into your application.</p>
@@ -44,7 +44,7 @@ The BookingBug Platform is an extensive tool-set that allows web developers and 
 
 <div class="card card-large">
   <div class="card__link">
-    <a href="http://localhost:8080/docs/newsletter">
+    <a href="/docs/newsletter">
       <i class="fa fa-4x fa-fw fa-support"></i>
       <h3>Tools and Support</h3>
       <p>We've also collected some useful tools and support that will help to get up and running with our Platform.</p>
