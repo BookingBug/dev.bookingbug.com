@@ -6,8 +6,7 @@
   "scripts": {
     "start": "concurrently 'node entrypoint.js' 'grunt watch'",
     "dev": "concurrently 'nodemon entrypoint.js' 'grunt watch'",
-    "preinstall": "babel --optional runtime -d dist/ app/",
-    "postinstall": "bower install && grunt -v",
+    "postinstall": "bower install && grunt -v && babel --optional runtime -d dist/ app/",
     "lint": "eslint app/",
     "build": "babel --optional runtime -d dist/ app/",
     "selenium-server": "selenium-standalone install && selenium-standalone start",
