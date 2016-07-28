@@ -6,8 +6,7 @@
   "scripts": {
     "start": "concurrently 'node entrypoint.js' 'grunt watch'",
     "dev": "concurrently 'nodemon entrypoint.js' 'grunt watch'",
-    "preinstall": "babel --optional runtime -d dist/ app/",
-    "postinstall": "bower install && grunt -v",
+    "postinstall": "bower install && grunt -v && babel --optional runtime -d dist/ app/",
     "lint": "eslint app/",
     "build": "babel --optional runtime -d dist/ app/",
     "selenium-server": "selenium-standalone install && selenium-standalone start",
@@ -45,6 +44,7 @@
     "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-clean-css": "^1.5.1",
     "load-grunt-config": "^0.19.1",
+    "lodash": "^4.14.0",
     "marked": "^0.3.5",
     "mocha": "2.3.3",
     "nodemon": "^1.10.0",
