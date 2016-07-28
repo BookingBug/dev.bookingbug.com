@@ -6,7 +6,7 @@ This is the public roadmap for the documentation found at dev.bookingbug.com It 
 
 ## Version 2.2.5
 
-- **Checkout Guide** Code examples and detailed explanation
+- ~~**Checkout Guide** Code examples and detailed explanation~~
 
 - **Testing** Information on setting up test accounts and using the API in development mode
 
