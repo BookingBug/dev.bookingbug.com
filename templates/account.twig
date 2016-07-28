@@ -40,11 +40,17 @@
       </div>#}
       <div class="account__column">
         <div class="card account__profile">
-          <h2>Developer Profile</h2>
-          {# img src="http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt=""> #}
+          <h1>Developer Profile</h1>
+          <label for="username">Username</label>
+          <input type="text" placeholder="{{ flarumUser.data.attributes.username }}" disabled>
+          <label for="email">Email</label>
+          <input type="text" placeholder="{{ flarumUser.data.attributes.email }}" disabled>
+          <a href="{{flarumURL}}" target="_blank" style="float:right;">Change Your Details</a>
+          <br><br>
+          <hr>
           {% if user.appId %}
             <p class="appkey">Your Public App Key: 
-              <input type="text" id="public-key" value="{{ user.appId }}">
+              <input type="text" id="public-key" value="{{ user.appId }}" readonly="true">
               <button class="cp-btn btn" data-clipboard-target="#public-key">
                   <img src="images/clippy.svg" alt="Copy to clipboard" style="width:1em;">
               </button>
@@ -52,12 +58,8 @@
             <span class="help-block">Use the above App Key to make requests to the public API</span>
           {% endif %}
             <p class="appkey">Your Admin API Keys: <a href="https://bookingbug.3scale.net/admin/access_details" target="_blank">Create/Retrieve</a></p>
-            <span class="help-block">To authenticate with admin level permissions. You will also need to use your email and password that you used to create your account on our <a href="https://bookingbug.com" target="_blank">main site</a></span><br><br>
-          <label for="username">Username</label>
-          <input type="text" placeholder="{{ flarumUser.data.attributes.username }}" disabled>
-          <label for="email">Email</label>
-          <input type="text" placeholder="{{ flarumUser.data.attributes.email }}" disabled>
-          <a href="{{flarumURL}}" target="_blank" style="float:right;">Change Your Details</a>
+            <span class="help-block">To authenticate with admin level permissions. You will also need to use your email and password that you used to create your account on our <a href="https://bookingbug.com" target="_blank">main site</a>. <br><br>
+            If you have not set-up a company or account you will need to <a href="https:/bookingbug.com/pricing" target="_blank">set up a new company</a></span><br><br>
         </div>
 
         {# <div class="card account__companies">
