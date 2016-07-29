@@ -40,36 +40,46 @@ client.setTagsContext({
 
 // Hook all event level types and expose them as a node module export pattern
 exports.info = (data) => {
-  client.captureMessage(data, {
-    level: 'info',
-  });
+  if (process.env.NODE_ENV === 'production') {
+    client.captureMessage(data, {
+      level: 'info',
+    });
+  }
   console.log(data);
 };
 
 exports.error = (data) => {
-  client.captureException(data, {
-    level: 'error',
-  });
+  if (process.env.NODE_ENV === 'production') {
+    client.captureException(data, {
+      level: 'error',
+    });
+  }
   console.log(data);
 };
 
 exports.warning = (data) => {
-  client.captureMessage(data, {
-    level: 'warning',
-  });
+  if (process.env.NODE_ENV === 'production') {
+    client.captureMessage(data, {
+      level: 'warning',
+    });
+  }
   console.log(data);
 };
 
 exports.debug = (data) => {
-  client.captureMessage(data, {
-    level: 'debug',
-  });
+  if (process.env.NODE_ENV === 'production') {
+    client.captureMessage(data, {
+      level: 'debug',
+    });
+  }
   console.log(data);
 };
 
 exports.fatal = (data) => {
-  client.captureMessage(data, {
-    level: 'fatal',
-  });
+  if (process.env.NODE_ENV === 'production') {
+    client.captureMessage(data, {
+      level: 'fatal',
+    });
+  }
   console.log(data);
 };
