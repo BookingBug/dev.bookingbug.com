@@ -11,8 +11,19 @@ import postRegisterRoute from './routes/postRegister';
 import getRegisterRoute from './routes/getRegister';
 import getAccountRoute from './routes/getAccount';
 import getErrorRoute from './routes/get404';
+import raven from 'raven';
+
+const client = new raven.Client('https://729e7cc359a747b3bf892b92f2d307ca:6e3e509a59034a56a3c0a9581791b0df@app.getsentry.com/85688');
+client.patchGlobal();
 
 const app = express();
+
+app.use(raven.middleware.express.requestHandler('https://729e7cc359a747b3bf892b92f2d307ca:6e3e509a59034a56a3c0a9581791b0df@app.getsentry.com/85688'));
+app.use(raven.middleware.express.errorHandler('https://729e7cc359a747b3bf892b92f2d307ca:6e3e509a59034a56a3c0a9581791b0df@app.getsentry.com/85688'));
+
+raven.config({
+  environment: process.env.NODE_ENV,
+});
 
 app.set('views', `${process.cwd} views`);
 app.set('view engine', 'twig');
