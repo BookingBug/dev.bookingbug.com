@@ -55,5 +55,7 @@ app.use((req, res) => {
 });
 
 app.listen(app.get('port'), () => {
-  logger.info(`Node app is running on port ${app.get('port')}`);
+  if (process.env.NODE_ENV != 'production') {
+    logger.info(`Node app is running on port ${app.get('port')}`);
+  }
 });
