@@ -306,3 +306,7 @@ The response will include the auth token and a link to the member which can be u
 curl "https://bookingbug.com/api/v1/members/{id}" -H App-Id:{app_id} -H
 App-Key:{app_key} -H Auth-Token:{auth_token}
 ```
+
+If your login is associated with a single company and the credentials provided are correct the returned status code will be 201 and the auth token will be included in the body of the response.
+
+If your login is associated with multiple companies and you have not specified which company you want to log in as the returned status code will 400 and the auth token will not be present in the response. Instead there will be a list of administrators in the response each with a login link that can be used to create an auth token for that particular administrator.
