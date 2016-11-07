@@ -28,7 +28,7 @@ The examples provided in the docs are cURL statements. You can run the statement
 
 ### API Keys
 
-The Bookingbug API requires `App-id` and `App-key` to be parsed in the `HTTP` header for each call. These keys can be obtained by regestering on [3Scale website](https://bookingbug.3scale.net/). If you already have an account, login and reterive this information.
+The Bookingbug API requires `App-id` and `App-key` to be parsed in the `HTTP` header for each call. These keys can be obtained by contacting your BookingBug Account manager or primary contact.
 
 <pre>
 -H "App-id: {app-id}" -H "App-key: {app-key}"	
@@ -36,14 +36,14 @@ The Bookingbug API requires `App-id` and `App-key` to be parsed in the `HTTP` he
 
 ### Permission
 
-The Bookingbug API has three permisisons.
+The Bookingbug platform is separated into three different APIs:
 
 1. **Public** - The public API does not require authentications and it enbales you to get information of services, resources, events, add items to basket, view basket and checkout. 
 2. **Member** - The member API enables you to login as a member, make bookings and amend or cancel their previously made bookings.
 3. **Admin** - The admin API enables you to administer the account, such us create or amend people, resources or clients and view bookings.
 
 
-The API format of the three permissions are:
+The request format of the three APIs are:
 
 ##### Public
 
@@ -67,7 +67,7 @@ The API format of the three permissions are:
 
 The company ID is a unique identifier that identifies the company. To find your company ID please follow the steps below:
 
-1. Login to your account 
+1. Login to your BookingBug Environment using an account with parent-level privileges
 2. Click on the cog icon on top right hand corner
 3. Click on **Advanced Settigns** on the left hand side
 4. Click on **API Settings**
