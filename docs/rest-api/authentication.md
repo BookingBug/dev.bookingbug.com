@@ -17,7 +17,7 @@ To authenticate with the API, you will require an auth token. This can be obtain
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X POST -H "App-Key: <app-key>" -H "App-Id: <app-id>" -H "Cache-Control: no-cache" -H "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" -F "email=<admin-email>" -F "password=<admin-password>" "https://<host>.bookingbug.com/api/v1/login"
+curl -X POST -H "App-Key: {app-key}" -H "App-Id: {app-id}" -H "Cache-Control: no-cache" -H "Content-Type: application/json -d '{ "email": "{email}", "password": "{password}" }' "https://{host}.bookingbug.com/api/v1/login"
 ```
 </pre>
         </div>
@@ -275,16 +275,59 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c1d4330701034bffb1fd)
 
 
-## Generating API keys
+## Parent/Child Authentication
 
-At the moment BookingBug is changing the way in which we distribute API Keys. Previously and at the time of last revision to this documentation this is done via 3Scale where you can set up an account and get your own dedicated API keys.
+If you have a parent/child setup the authentiction is slightly different. The login endpoint needs to know
+which company you're logging in against and for that you'll need to pass in the company ID. See below an example cURL call.
 
-> To access your existing 3Scale account or to set up an account for API access go to [https://bookingbug.3scale.net](https://bookingbug.3scale.net)
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <!-- <li><a href="#tab-2">Sample Response Data</a></li> -->
+    </ul>
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d 
+  '{
+    "email": "{email}",
+    "password": "{password}",
+    "id": {company_id}
+  }' "https://{host}.bookingbug.com/api/v1/login"
+  ```
+</pre>
+        </div>
+    </div>
+</div>
 
-## Permissions
+## Company
 
-You can also connect to the BookingBug API with different permissions. Using the token method as described above you will have access to all of the API. However for any front end only implementations such as our JavaScript SDk Bookings and information can be retrieved via the public permission.
+Once you've authenticated and retrieved your `Auth-Token`, you can now view the details of the company you've logged in against. See an example cURL call below.
 
-Further to this when dealing with user accounts you will need to use the `members_id` endpoint. For example to sign in your users and retrieve their booking details.
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <!-- <li><a href="#tab-2">Sample Response Data</a></li> -->
+    </ul>
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" - H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" -H "Cache-Control: no-cache"
+  "https://{host}.bookingbug.com/api/v1/admin/{company_id}/company"
+  ```
+</pre>
+        </div>
+    </div>
+</div>
 
-<a href="docs/rest-api/permissions">Working with permissions</a>
+For every admin endpoint you must authenticate or if you have already authenticated you must pass the `Auth-Token` in the header, otherwise you will get back a `401` error in the response.
+
+<pre>
+  {
+  "error": "401 Unauthorized"
+  }
+</pre> 
+
