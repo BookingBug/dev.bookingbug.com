@@ -69,7 +69,7 @@ The company ID is a unique identifier that identifies the company. To find your 
 
 1. Login to your BookingBug Environment using an account with parent-level privileges
 2. Click on the cog icon on top right hand corner
-3. Click on **Advanced Settigns** on the left hand side
+3. Click on **Advanced Settings** on the left hand side
 4. Click on **API Settings**
 
 
