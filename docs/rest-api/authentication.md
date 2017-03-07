@@ -1,6 +1,6 @@
 # Authentication
 
-To authenticate with the API, you will require an auth token. This can be obtained by a `POST` request with an administrator's email and password to the login endpoint.
+To authenticate with the API, you will require an auth token along with the App-Id and App-Key. This can be obtained by a `POST` request with an administrator's email and password to the login endpoint.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -272,6 +272,8 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
     </div>
 </div>
 
+The Auth-Token is generated when the login end-point is executed and can be found in the body response. This is than required in the header for every call made using the admin end-points.
+
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c1d4330701034bffb1fd)
 
 
@@ -295,6 +297,30 @@ which company you're logging in against and for that you'll need to pass in the 
     "password": "{password}",
     "id": {company_id}
   }' "https://{host}.bookingbug.com/api/v1/login"
+  ```
+</pre>
+        </div>
+    </div>
+</div>
+
+## Admin Authentication
+
+To authenticate as an administrator you can call the admin login end-point.
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <!-- <li><a href="#tab-2">Sample Response Data</a></li> -->
+    </ul>
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d 
+  '{
+    "email": "{email}",
+    "password": "{password}"
+  }' "https://{host}.bookingbug.com/api/v1/login/admin/{company_id}"
   ```
 </pre>
         </div>
