@@ -22,7 +22,7 @@
 - [Contribution guide](https://github.com/BookingBug/dev.bookingbug.com/wiki/Contributing)
 
 # Prerequisites
-you need to have the below installed for this project.
+You need to have the below installed for this project.
 
 - Node 5 > https://nodejs.org/
 - Bower http://bower.io/
@@ -34,23 +34,24 @@ you need to have the below installed for this project.
 - Express [http://expressjs.com/](http://expressjs.com/)
 - Twig [http://twig.sensiolabs.org/](http://expressjs.com/)
 
-> We use the JavaScript version of Twig for this application so bare in mind that the docs are for PHP. Same syntax. Just remember that some features are not available before you start hitting your head against a wall.
+> We use the JavaScript version of Twig for this application so bare in mind that the docs are for PHP. Same syntax. Just remember that some features are not available.
 
 # Install and Start
-run the following commands.
+To install the documentation portal, run:
 
-`npm install` To install all the node and bower dependencies. It also then builds all the assets with grunt.
+    `npm install` To install all the node and bower dependencies. It also then builds all the assets with grunt.
+    
+To start the applicatuion, run:
 
-then run `npm start`
+    `npm start`
 
 # API Dependencies
-
-I'm yet to mock the flarum and clients service API end points in the test suite. So for the sake of using the developer portal locally. You will need to get the following repos and install them on your machine.
+The flarum and clients service API end points have yet to be mocked in the test suite, meaning in order to run the developer portal locally, you will need to install the following repositries:
 
 https://github.com/BookingBug/clients-service
-https://github.com/flarum/flarum make sure to set default user to username `admin` password `test`. As the forum authentication is the one that gets used when logging in.
+https://github.com/flarum/flarum - make sure to set default user to username `admin` password `test`. As the form authentication is the one that gets used when logging in.
 
-> depending on the locahost port you serve these apps on you'll need to update these values in the .envrc file
+> Depending on the localhost port the applications are served on, you may need to update these values in the .envrc file:
 
 ```
 export FLARUM_URL="http://localhost/"
@@ -60,7 +61,7 @@ export NODE_ENV="development"
 ```
 
 # Tests
-Given you have the above apps running locally and you've updated your direnv by hitting `direnv allow` then in the root of this application you can enter `npm test` and it will run the `npm start` command concurrently and then the tests.
+With clients-service and flarum running locally, update direnv (see below) by running  `direnv allow`, then in the root of the application run `npm test`.
 
 ## direnv
 
@@ -75,18 +76,16 @@ direnv allow
 To build the /app directory to /dist ready for production use run `npm run build` this will compile all the code using Babel stage 0
 
 # Heroku Support
-> Heroku is the nuts. If you've not heard of it check it out. like now.... why are you still reading this?
-
-So to deploy to Heroku. We have to do a couple of things. Firstly go get the tool-belt from there site https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+To deploy to Heroku. First install, [tool-belt](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
 
 Then run `heroku login` and enter your heroku account details.
 
-Now its time to create the app. run `heroku create myApp` or whatever you want in place of 'myApp'. Now before you push, you must run a build-pack command to tell heroku to run a node instance. Heroku can do this automatically but its a good idea to set it as well just in case.
+Now its time to create the app. Run `heroku create myApp` ('myApp' can be replaced with a different name). Now before you push, you must run a build-pack command to tell heroku to run a node instance. Heroku can do this automatically but its a good idea to set it as well just in case.
 
-So you'll need to run `heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs`
+    `heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs`
 
-I usually open a new shell (terminal window) at this point and run `heroku logs --tail` in the app directory. Cause we all love commands flying past right... oh yeah and that's where the error messages appear.
+> To moinitor heroku log output, run `heroku logs --tail` in the app directory
 
-Once you're through the above run `git push heroku master` and watch that sweet sweet auto deploy unfold.
+Once everything is done, run `git push heroku master` to initiate the deploy.
 
 You can then run `heroku open` to open the application in a browser.
