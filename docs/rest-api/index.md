@@ -1,6 +1,6 @@
 # Introduction
 
-Bookingbug is a booking platform used by various businesses across the globe. Many of the businesses use the Bookingbug API to automate and enhance their booking journeies with Bookingbug.
+Bookingbug is a booking platform used by various businesses across the globe. Many of the businesses use the Bookingbug API to automate and enhance their booking journeys with Bookingbug.
 
 ### The API
 
