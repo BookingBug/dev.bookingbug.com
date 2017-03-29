@@ -40,10 +40,14 @@ You need to have the below installed for this project.
 To install the documentation portal, run:
 
     `npm install` To install all the node and bower dependencies. It also then builds all the assets with grunt.
-    
-To start the applicatuion, run:
+
+To start the application, run:
 
     `npm start`
+
+## direnv
+
+[Direnv](http://direnv.net/) is an environment switcher for the shell. It will keep track of the environment variables you'll need for the project. You can find an example .envrc-example in the root of the project. Once you have install direnv `cp .envrc-example .envrc` and add the necessary environment variables to the .envrc file and `run direnv allow` to enable them in your shell.
 
 # API Dependencies
 The flarum and clients service API end points have yet to be mocked in the test suite, meaning in order to run the developer portal locally, you will need to install the following repositries:
@@ -62,16 +66,6 @@ export NODE_ENV="development"
 
 # Tests
 With clients-service and flarum running locally, update direnv (see below) by running  `direnv allow`, then in the root of the application run `npm test`.
-
-## direnv
-
-[Direnv](http://direnv.net/) is an environment switcher for the shell. It will keep track of the environment variables you'll need for the project. You can find an example .envrc in the root of the project, you may need to alter it to fit your environment. For more information, [read the documentation](http://direnv.net/).
-
-To allow the environment variables run the below command
-
-```
-direnv allow
-```
 
 To build the /app directory to /dist ready for production use run `npm run build` this will compile all the code using Babel stage 0
 
