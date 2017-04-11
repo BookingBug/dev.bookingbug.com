@@ -444,7 +444,7 @@ Below is a cURL example on how to retrieve bookings for a given date range and a
 
 ## List Child Bookings
 
-If you have a parent/child company setup, you can list bookings by calling the parent company ID by appending `child=true` 
+If you have a parent/child company setup, you can list bookings by calling the parent company ID by appending `children=true` 
 
 <pre>GET /api/v1/admin/{parent_company_id}/bookings?children=true</pre>
 
