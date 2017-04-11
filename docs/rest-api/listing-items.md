@@ -355,7 +355,7 @@ You can list the clients (customers) registered against your company. Listing al
 
 ### find by email
 
-You can query the client end-point to find a particular customer with their email address.
+You can query the client end-point to find a particular customer with their email address. You must be authenticated as an administrator. 
 
 <pre>GET /api/v1/{company_id}/client/find_by_email/{email}</pre>
 
