@@ -327,28 +327,6 @@ To authenticate as an administrator you can call the admin login end-point.
     </div>
 </div>
 
-## Company
-
-Once you've authenticated and retrieved your `Auth-Token`, you can now view the details of the company you've logged in against. See an example cURL call below.
-
-<div class="tabs">
-    <ul class="tabs__menu">
-        <li class="current"><a href="#tab-1">cURL</a></li>
-        <!-- <li><a href="#tab-2">Sample Response Data</a></li> -->
-    </ul>
-    <div class="tab">
-        <div id="tab-1" class="tab__content">
-<pre>
-```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" - H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" -H "Cache-Control: no-cache"
-  "https://{host}.bookingbug.com/api/v1/admin/{company_id}/company"
-  ```
-</pre>
-        </div>
-    </div>
-</div>
-
 For every admin endpoint you must authenticate or if you have already authenticated you must pass the `Auth-Token` in the header, otherwise you will get back a `401` error in the response.
 
 <pre>
