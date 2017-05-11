@@ -17,7 +17,7 @@ To authenticate with the API, you will require an auth token along with the App-
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X POST -H "App-Key: {app-key}" -H "App-Id: {app-id}" -H "Cache-Control: no-cache" -H "Content-Type: application/json -d '{ "email": "{email}", "password": "{password}" }' "https://{host}.bookingbug.com/api/v1/login"
+curl -X POST -H "App-Key: {app-key}" -H "App-Id: {app-id}" -H "Cache-Control: no-cache" -H "Content-Type: application/json" -d '{ "email": "{email}", "password": "{password}" }' "https://{host}.bookingbug.com/api/v1/login"
 ```
 </pre>
         </div>
