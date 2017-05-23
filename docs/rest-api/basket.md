@@ -439,7 +439,7 @@ To complete the booking you must checkout the basket before the basket session e
         </tbody>
     </table>
 
-<pre> POST /api/vi/{company_id}/basket/checkout </pre>
+<pre> POST /api/v1/{company_id}/basket/checkout </pre>
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -450,7 +450,7 @@ To complete the booking you must checkout the basket before the basket session e
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
   -H "Cache-Control: no-cache" -H "Auth-Token: Boq2lgDNQLAFTmiJQaABRA" 
   -d '{"member_id": "232323", "take_from_wallet": "false"}'
 "https://{host}.bookingbug.com/api/v1/{company_id}/basket/checkout"
