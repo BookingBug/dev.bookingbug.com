@@ -297,10 +297,10 @@ You can retrieve settings block for a company. This is useful for checking if th
 
 Get all addresses for a company. A company can be configured to have many addresses. 
 
-<pre>GET /api/vi/admin/{company_id}/addresses</pre>
+<pre>GET /api/vi/{company_id}/addresses</pre>
 
 Read one address
-<pre>GET /api/vi/admin/{company_id}/addresses/{address_id}</pre>
+<pre>GET /api/vi/{company_id}/addresses/{address_id}</pre>
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -315,7 +315,7 @@ Read one address
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
   -H "Content-Type: application/json" 
   -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/addresses"
+"https://{host}.bookingbug.com/api/v1/{company_id}/addresses"
   ```
 </pre>
         </div>
@@ -369,10 +369,10 @@ Read one address
         },
         "_links": {
           "self": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/50666/addresses/57120"
+            "href": "https://{host}.bookingbug.com/api/v1/50666/addresses/57120"
           },
           "edit": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/50666/addresses/57120/edit"
+            "href": "https://{host}.bookingbug.com/api/v1/50666/addresses/57120/edit"
           }
         }
       }
@@ -380,10 +380,10 @@ Read one address
   },
   "_links": {
     "self": {
-      "href": "https://{host}.bookingbug.com/api/v1/admin/50666/addresses"
+      "href": "https://{host}.bookingbug.com/api/v1/50666/addresses"
     },
     "new": {
-      "href": "https://{host}.bookingbug.com/api/v1/admin/50666/addresses/new",
+      "href": "https://{host}.bookingbug.com/api/v1/50666/addresses/new",
       "templated": true
     }
   }
