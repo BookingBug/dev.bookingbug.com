@@ -107,4 +107,4 @@ When the response exceeds the per-page maximum, you can paginate through the rec
 
 This documentation will cover the main aspects of the API and how you can use it within your application. There are many different features within the API and we will only be covering some of the aspects that you will need to get set up. If you have further questions regarding the use of the API then you can email apisupport@bookingbug.com
 
-For a full list of end points and methods see the [API Reference](http://uk.bookingbug.com/apidocs/v1/index.html)
+For a full list of end points and methods see the [API Reference](http://apidocs.bookingbug.com/)
