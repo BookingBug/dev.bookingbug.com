@@ -1,10 +1,10 @@
 # Admin Bookings
 
-The REST API enables the administrator to administer bookings for their company/business. As an administrator you can reterive all bookings made against your company, create new bookings on behalf of your customers or even cancel/amend bookings if requried. 
+The REST API enables the administrator to administer bookings for their company/business. As an administrator you can retrieve all bookings made against your company, create new bookings on behalf of your customers or even cancel/amend bookings if requried. 
 
 ## List Bookings
 
-You can list all the bookings/appointment or filter from the below parameters to achieve your desiered results.
+You can list all the bookings/appointment or filter from the below parameters to achieve your desired results.
 
 ### Parameters
 <table class="pure-table">
@@ -35,7 +35,7 @@ You can list all the bookings/appointment or filter from the below parameters to
             <tr>
                 <td>include_cancelled</td>
                 <td>boolean</td>
-                <td>true/falase</td>
+                <td>true/false</td>
             </tr>
             <tr>
                 <td>event_id</td>
@@ -816,7 +816,7 @@ curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "auth-token: {auth-
 
 ## Cancel Booking
 
-Cancel a booking using the admin booking end-point. When caneclling a booking you can supply cancel reason with `"cancel_reason": "string"` and notify the user/admin with `"notify": true`
+Cancel a booking using the admin booking end-point. When caneclling a booking you can supply cancellation reason with `"cancel_reason": "string"` and notify the user/admin with `"notify": true`
 
 <pre>POST /api/v1/admin/{company_id}/bookings/{id}/cancel</pre>
 
