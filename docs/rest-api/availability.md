@@ -1,6 +1,6 @@
 # Availability
 
-This section will outline how you can use the REST API to get the available slots for a bookable item (Services & Events). Below we will explain each of these endpoint in more detail. 
+This section will outline how you can use the REST API to get the available slots for a bookable item (Services & Events). Below we will explain each of these endpoints in more detail. 
 
 ## Day
 
@@ -57,7 +57,7 @@ The Day end-point will load a list of bookable event items for a particular date
 
 ## Day Data
 
-The Day Data gets data for a range of days. This end-point retreives a set of day date for a bookable service items. Bookable items in BookingBug are a service with either or both of a Resource and a Person. These are combined into a single EventID.
+The Day Data gets data for a range of days. This end-point retrieves a set of day date for a bookable service items. Bookable items in BookingBug are a service with either or both of a Resource and a Person. These are combined into a single EventID.
 
 #### Parameters
 

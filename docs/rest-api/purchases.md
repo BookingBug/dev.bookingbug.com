@@ -52,7 +52,7 @@ You can get a list of purchases for a given date range using the `created_from` 
 
 <pre>GET /api/v1/admin/{company_id}/purchases</pre>
 
-Below is a cURL example listing all purchases cereated after 2017-03-01 and before 2017-04-08. This is an admin API call so you'll need to authenticate and provide the auth-token in the header.
+Below is a cURL example listing all purchases created after 2017-03-01 and before 2017-04-08. This is an admin API call so you'll need to authenticate and provide the auth-token in the header.
 
 <div class="tabs">
     <ul class="tabs__menu">

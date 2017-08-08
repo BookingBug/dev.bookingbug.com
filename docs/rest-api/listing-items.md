@@ -3,7 +3,7 @@
 The REST API enables you to list items you've configured in your Bookingbug platform. These items are visible to your end-users, enabling them to select from the various services you provide as a business. 
 
 ## Example
-Assume you're a owner of a Pet store offering in-store serivces that can be booked online. 
+Assume you are an owner of a Pet store offering in-store services that can be booked online. 
 
 <table class="pure-table">
         <thead>
@@ -353,7 +353,7 @@ You can list the clients (customers) registered against your company. Listing al
         </div>
         </div>
 
-### find by email
+### Find by email
 
 You can query the client end-point to find a particular customer with their email address. You must be authenticated as an administrator. 
 
@@ -369,7 +369,8 @@ You can query the client end-point to find a particular customer with their emai
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
+  -H "Content-Type: application/json" 
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/client/find_by_email/j.oliver@test.com"
   ```

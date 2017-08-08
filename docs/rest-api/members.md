@@ -9,7 +9,7 @@ The contact type is like a guest, and does not need an account. The member has a
 
 ## Authenticate Member
 
-The authentication process is the same as explain under the [Authentication](docs/rest-api/authentication) section. Auth Token must be supplied to all subsequent member API calls.
+The authentication process is the same as explained under the [Authentication](docs/rest-api/authentication) section. Auth Token must be supplied to all subsequent member API calls.
 
 ## View Member
 

@@ -272,7 +272,7 @@ HttpResponse<String> response = Unirest.post("https://<host>.bookingbug.com/api/
     </div>
 </div>
 
-The Auth-Token is generated when the login end-point is executed and can be found in the body response. This is than required in the header for every call made using the admin end-points.
+The Auth-Token is generated when the login end-point is executed and can be found in the body response. This is then required in the header for every call made using the admin end-points.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c1d4330701034bffb1fd)
 
@@ -335,3 +335,27 @@ For every admin endpoint you must authenticate or if you have already authentica
   }
 </pre> 
 
+## Logout
+
+If you need to logout the authenitcated user you can do this by calling the logout API.
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <!-- <li><a href="#tab-2">Sample Response Data</a></li> -->
+    </ul>
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache" 
+  "https://{host}.bookingbug.com/api/v1/login"
+  ```
+</pre>
+        </div>
+    </div>
+</div>
+
+The `Auth-Token` in the headers must be the same auth-token from the login call. Once executed this will invalidate the auth-token and kill the session, logging the current user out.
