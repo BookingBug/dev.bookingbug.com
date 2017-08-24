@@ -107,8 +107,9 @@ Below is a cURL example on how to retrieve bookings for a given date range and a
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
-  -H "Cache-Control: no-cache" -H "Auth-Token: {auth-token}"
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings?start_date=2017-02-27&end_date=2017-03-01&include_cancelled=true"
   ```
 </pre>
@@ -515,7 +516,10 @@ Below is a cURL example on how to create a new admin bookings for a given dateti
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "auth-token: {auth-token}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d 
+curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}" 
+-H "Content-Type: application/json" 
+-H "Cache-Control: no-cache" 
+-d 
 '{
 	"datetime": "2017-03-01T11:00:00",
 	"service_id": 104747,
@@ -523,7 +527,7 @@ curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "auth-token: {auth
 	"member_id": 2897097,
 	"person_id": 30553,
 	"notification": true
-}' "https://{host}.bookingbug.com/api/v1/admin/50666/bookings"
+}' "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings"
   ```
 </pre>
         </div>
@@ -676,10 +680,13 @@ Below is a cURL example on how to update an existing booking to a new datetime. 
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "auth-token: {auth-token}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d 
+curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-token: {auth-token}" 
+-H "Content-Type: application/json" 
+-H "Cache-Control: no-cache" 
+-d 
 '{
 	"datetime": "2017-03-02T11:00:00"
-}' "https://{host}.bookingbug.com/api/v1/admin/50666/bookings/13543734"
+}' "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings/{booking_id}"
   ```
 </pre>
         </div>
@@ -831,11 +838,14 @@ Below is an example of cancelling a booking.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "auth-token: {auth-token}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d 
+curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}" 
+-H "Content-Type: application/json" 
+-H "Cache-Control: no-cache" 
+-d 
 '{
 	"notify": true,
 	"cancel_reason": "String"
-}' "https://{host}.bookingbug.com/api/v1/admin/50666/bookings/13543734/cancel"
+}' "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings/{booking_id}/cancel"
   ```
 </pre>
         </div>
@@ -863,11 +873,14 @@ Below is an example of adding a private note on a booking.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "auth-token: {auth-token}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d 
+curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}" 
+-H "Content-Type: application/json" 
+-H "Cache-Control: no-cache" 
+-d 
 	'{
 		"note": "This is a private note"
 	}' 
-"https://{host}.bookingbug.com/api/v1/admin/50666/bookings/13543734/private_notes"
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings/{booking_id}/private_notes"
   ```
 </pre>
 
