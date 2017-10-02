@@ -502,7 +502,7 @@ The person read method enables you to view a particular staff's information. Onc
 
 Above is an example admin cURL call for viewing a person. 
 
-### Find by reference
+## Find by reference
 
 You can query the people end-point to find a particular staff with their reference. You must be authenticated as an administrator. 
 

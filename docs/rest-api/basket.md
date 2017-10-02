@@ -182,7 +182,7 @@ The `member_id` is optional at `add_item` stage but is required upon checkout.
 ```
   curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
   -H "Cache-Control: no-cache"
-  -d '{"event_id": "104748", "event_chain_id": "3432423", "date": "2017-02-01", "time": "630"}'
+  -d '{"event_id": "104748", "event_chain_id": "3432423"}'
 "https://{host}.bookingbug.com/api/v1/{company_id}/basket/add_item"
   ```
 </pre>
