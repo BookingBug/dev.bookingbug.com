@@ -602,6 +602,8 @@ You can query the people end-point to find a particular staff with their referen
 
 ## Block time for person
 
+You can block a time slot for a person in their calendar. The following parameters are required `start_time` and `end_time`.
+
 <pre>PUT /api/v1/admin/{company_id}/people/{id}/block</pre>
 
 <div class="tabs">
@@ -664,3 +666,4 @@ You can query the people end-point to find a particular staff with their referen
         </div>
         </div>
 
+Above is an example admin cURL call blocking time for a given staff from 11am to 12pm on 7th September 2017. 
