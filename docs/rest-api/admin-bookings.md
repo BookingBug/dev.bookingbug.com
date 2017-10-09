@@ -118,325 +118,147 @@ Below is a cURL example on how to retrieve bookings for a given date range and a
 <pre>
 ```
 {
-  "total_entries": 1,
-  "_embedded": {
-    "bookings": [
-      {
-        "id": 13244892,
-        "full_describe": "Swimming lessons at Waqas Ahmad Child",
-        "service_name": "Tennis Course",
-        "member_id": 3056937,
-        "client_name": "Test Gladden",
-        "client_email": "test@bookingbug.com",
-        "client_phone": "",
-        "client_mobile": "+44 (0)1234 5678910",
-        "service_id": 107615,
-        "datetime": "2017-02-27T17:00:00+00:00",
-        "end_datetime": "2017-02-27T18:00:00+00:00",
-        "duration": 60,
-        "duration_span": 3600,
-        "listed_duration": 60,
-        "on_waitlist": false,
-        "company_id": 50666,
-        "attended": true,
-        "booking_updated": "2017-02-11T01:32:59Z",
-        "updated_at": "2017-02-10T16:48:00Z",
-        "created_at": "2017-02-10T16:44:19Z",
-        "client_id": 3056937,
-        "price": 2500,
-        "paid": 0,
-        "quantity": 1,
-        "is_cancelled": false,
-        "multi_status": {},
-        "purchase_id": 11418579,
-        "purchase_ref": "2xzx3njfq3VGSDz1MTE0MTg1Nzk%3D",
-        "event_chain_id": 274101,
-        "notes": {
-          "public": [],
-          "private": []
-        },
-        "channel": "Administrator",
-        "user_id": 29273,
-        "status": 4,
-        "_embedded": {
-          "client": {
-            "first_name": "Test",
-            "last_name": "Gladden",
-            "email": "test@bookingbug.com",
-            "address1": "null",
-            "address2": "null",
-            "address3": "",
-            "address4": "",
-            "address5": ".",
-            "postcode": "null",
-            "country": "null",
-            "mobile": "12345678910",
-            "id": 3056937,
-            "member_type": 1,
-            "reference": "QWERTY123",
-            "files": [],
-            "answers": [],
-            "deleted": false,
-            "phone_prefix": "44",
-            "mobile_prefix": "44",
-            "q": {},
-            "_links": {
-              "self": {
-                "href": "https://{host}.bookingbug.com/api/v1/admin/50666/client/3056937"
-              },
-              "bookings": {
-                "href": "https://{host}.bookingbug.com/api/v1/admin/50666/bookings{/id}?client_id=3056937{&start_date,end_date,page,per_page,include_cancelled,modified_since,slot_id,event_id,resource_id,service_id,person_id,filter_by_fields,order_by,order_by_reverse,start_time,end_time,locale,clinic_id}",
-                "templated": true
-              },
-              "pre_paid_bookings": {
-                "href": "https://{host}.bookingbug.com/api/v1/50666/members/3056937/pre_paid_bookings{?include_invalid,event_id}",
-                "templated": true
-              },
-              "questions": {
-                "href": "https://{host}.bookingbug.com/api/v1/50666/client_details"
-              },
-              "edit": {
-                "href": "https://{host}.bookingbug.com/api/v1/admin/50666/client/3056937/edit"
-              }
-            }
-          },
-          "answers": [
+    "total_entries": 191,
+    "_embedded": {
+        "bookings": [
             {
-              "id": 16551345,
-              "value": "Yes",
-              "price": 0,
-              "question_id": 31501,
-              "admin_only": false,
-              "important": false,
-              "_embedded": {
-                "question": {
-                  "id": 31501,
-                  "name": "Are you looking for a new career",
-                  "required": false,
-                  "important": false,
-                  "admin_only": false,
-                  "applies_to": 0,
-                  "ask_member": true,
-                  "detail_type": "text_field",
-                  "default": "Yes",
-                  "options": [
-                    {
-                      "name": "Yes",
-                      "price": 0,
-                      "is_default": false,
-                      "id": 57418
+                "id": 11242802,
+                "full_describe": "Microchipping with Test Person  - Consultation Room 1 at Pet Store UK",
+                "resource_name": "Consultation Room 1",
+                "person_name": "Test Person ",
+                "service_name": "Microchipping",
+                "resource_id": 43049,
+                "member_id": 2897097,
+                "client_name": "Jamie Oliver",
+                "client_email": "test@outlook.com",
+                "client_phone": "",
+                "client_mobile": "+44 (0)7989 898989",
+                "service_id": 104747,
+                "datetime": "2016-07-23T03:30:00+02:00",
+                "end_datetime": "2016-07-23T04:00:00+02:00",
+                "duration": 30,
+                "duration_span": 1800,
+                "listed_duration": 30,
+                "on_waitlist": false,
+                "company_id": 50666,
+                "attended": true,
+                "booking_updated": "2016-07-21T00:29:59Z",
+                "updated_at": "2016-07-20T16:26:37Z",
+                "created_at": "2016-07-20T16:26:37Z",
+                "client_id": 2897097,
+                "person_id": 30553,
+                "price": 1500,
+                "paid": 0,
+                "quantity": 1,
+                "is_cancelled": false,
+                "multi_status": {},
+                "purchase_id": 9732356,
+                "purchase_ref": "6obUAooI__TVdBQVOTczMjM1Ng%3D%3D",
+                "notes": {
+                    "public": [],
+                    "private": []
+                },
+                "channel": "Client",
+                "status": 4,
+                "_embedded": {
+                    "client": {
+                        "first_name": "Jamie",
+                        "last_name": "Oliver",
+                        "wallet_amount": 15,
+                        "email": "test@outlook.com",
+                        "address1": "",
+                        "address2": "",
+                        "address3": "",
+                        "address4": "",
+                        "address5": "",
+                        "postcode": "",
+                        "country": "United Kingdom",
+                        "phone": "",
+                        "mobile": "7989898989",
+                        "id": 2897097,
+                        "member_type": 1,
+                        "reference": "",
+                        "files": [],
+                        "deleted": false,
+                        "phone_prefix": "44",
+                        "mobile_prefix": "44",
+                        "default_company_id": 50666,
+                        "q": {},
+                        "join_date": "2016-07-11",
+                        "time_zone": "Africa/Cairo",
+                        "answers": [],
+                        "_links": {
+                            "self": {
+                                "href": "https://{host}.bookingbug.com/api/v1/admin/50666/client/2897097"
+                            },
+                            "bookings": {
+                                "href": "https://{host}.bookingbug.com/api/v1/admin/50666/bookings{/id}?client_id=2897097{&start_date,end_date,page,per_page,include_cancelled,modified_since,slot_id,event_id,resource_id,service_id,person_id,filter_by_fields,order_by,order_by_reverse,start_time,end_time,locale,clinic_id}",
+                                "templated": true
+                            },
+                            "pre_paid_bookings": {
+                                "href": "https://{host}.bookingbug.com/api/v1/50666/members/2897097/pre_paid_bookings{?include_invalid,event_id}",
+                                "templated": true
+                            },
+                            "questions": {
+                                "href": "https://{host}.bookingbug.com/api/v1/50666/client_details"
+                            },
+                            "edit": {
+                                "href": "https://{host}.bookingbug.com/api/v1/admin/50666/client/2897097/edit"
+                            },
+                            "interactions": {
+                                "href": "https://{host}.bookingbug.com/api/v1/admin/50666/auditlog/interactions/2897097",
+                                "templated": true
+                            }
+                        }
                     },
-                    {
-                      "name": "No",
-                      "price": 0,
-                      "is_default": false,
-                      "id": 57419
-                    }
-                  ],
-                  "settings": {},
-                  "price": 0,
-                  "price_per_booking": false,
-                  "outcome": false,
-                  "_links": {
-                    "self": {
-                      "href": "https://{host}.bookingbug.com/api/v1/50579/questions/31501"
-                    }
-                  }
-                }
-              },
-              "question_text": "Are you looking for a new career",
-              "outcome": false,
-              "company_id": 50579,
-              "_links": {
-                "self": {
-                  "href": "https://{host}.bookingbug.com/api/v1/50579/answers/16551345"
+                    "answers": []
                 },
-                "question": {
-                  "title": "Are you looking for a new career",
-                  "href": "https://{host}.bookingbug.com/api/v1/50579/questions/31501"
-                }
-              }
-            },
-            {
-              "id": 16551346,
-              "value": "",
-              "price": 0,
-              "question_id": 31718,
-              "admin_only": false,
-              "important": false,
-              "_embedded": {
-                "question": {
-                  "id": 31718,
-                  "name": "What is your age",
-                  "required": false,
-                  "important": false,
-                  "admin_only": false,
-                  "applies_to": 0,
-                  "ask_member": true,
-                  "detail_type": "text_field",
-                  "settings": {},
-                  "price": 0,
-                  "price_per_booking": false,
-                  "outcome": false,
-                  "_links": {
+                "slot_id": 14804598,
+                "settings": {},
+                "slot_settings": {},
+                "answers_summary": [],
+                "survey_answers_summary": [],
+                "questions": {},
+                "min_cancellation_time": "2016-07-22T10:30:00+10:00",
+                "mobile": "+44 (0)7989 898989",
+                "_links": {
                     "self": {
-                      "href": "https://{host}.bookingbug.com/api/v1/50579/questions/31718"
-                    }
-                  }
-                }
-              },
-              "question_text": "What is your age",
-              "outcome": false,
-              "company_id": 50579,
-              "_links": {
-                "self": {
-                  "href": "https://{host}.bookingbug.com/api/v1/50579/answers/16551346"
-                },
-                "question": {
-                  "title": "What is your age",
-                  "href": "https://{host}.bookingbug.com/api/v1/50579/questions/31718"
-                }
-              }
-            },
-            {
-              "id": 16551347,
-              "value": "",
-              "price": 0,
-              "question_id": 32891,
-              "admin_only": false,
-              "important": false,
-              "_embedded": {
-                "question": {
-                  "id": 32891,
-                  "name": "have you been here before?",
-                  "required": false,
-                  "important": false,
-                  "admin_only": false,
-                  "applies_to": 0,
-                  "ask_member": true,
-                  "detail_type": "text_field",
-                  "options": [
-                    {
-                      "name": "yes",
-                      "price": 0,
-                      "is_default": false,
-                      "id": 59581
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/50666/bookings/11242802?locale=en"
                     },
-                    {
-                      "name": "no",
-                      "price": 0,
-                      "is_default": false,
-                      "id": 59582
+                    "client": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/50666/client/2897097"
+                    },
+                    "comms": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/50666/bookings/11242802/comms"
+                    },
+                    "check_in": {
+                        "href": "https://{host}.bookingbug.com/api/v1/bookings/11242802/check_in"
+                    },
+                    "questions": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/50666/questions?detail_group_id=32705"
+                    },
+                    "edit": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/50666/bookings/11242802/edit{?locale}",
+                        "templated": true
+                    },
+                    "cancel": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/50666/bookings/11242802/cancel{?notify,cancel_reason}",
+                        "templated": true
+                    },
+                    "address": {
+                        "href": "https://{host}.bookingbug.com/api/v1/50666/addresses/52355"
+                    },
+                    "person": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/50666/people/30553"
+                    },
+                    "resource": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/50666/resources/43049"
+                    },
+                    "service": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/50666/services/104747"
                     }
-                  ],
-                  "settings": {},
-                  "price": 0,
-                  "price_per_booking": false,
-                  "outcome": false,
-                  "_links": {
-                    "self": {
-                      "href": "https://{host}.bookingbug.com/api/v1/50579/questions/32891"
-                    }
-                  }
                 }
-              },
-              "question_text": "have you been here before?",
-              "outcome": false,
-              "company_id": 50579,
-              "_links": {
-                "self": {
-                  "href": "https://{host}.bookingbug.com/api/v1/50579/answers/16551347"
-                },
-                "question": {
-                  "title": "have you been here before?",
-                  "href": "https://{host}.bookingbug.com/api/v1/50579/questions/32891"
-                }
-              }
             }
-          ]
-        },
-        "slot_id": 16938544,
-        "settings": {
-          "obfuscated_id": "bn{host}Fmt8CbzTLib2"
-        },
-        "slot_settings": {},
-        "answers_summary": [
-          {
-            "question_id": 31501,
-            "name": "Are you looking for a new career",
-            "answer": "Yes"
-          },
-          {
-            "question_id": 31718,
-            "name": "What is your age",
-            "answer": ""
-          },
-          {
-            "question_id": 32891,
-            "name": "have you been here before?",
-            "answer": ""
-          }
-        ],
-        "survey_answers_summary": [],
-        "questions": {
-          "31501": {
-            "answer": "Yes",
-            "name": "Are you looking for a new career"
-          },
-          "31718": {
-            "answer": "",
-            "name": "What is your age"
-          },
-          "32891": {
-            "answer": "",
-            "name": "have you been here before?"
-          }
-        },
-        "min_cancellation_time": "2017-02-25T17:00:00+00:00",
-        "mobile": "+44 (0)1234 5678910",
-        "_links": {
-          "self": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/50666/bookings/13244892?locale=en"
-          },
-          "client": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/50666/client/3056937"
-          },
-          "check_in": {
-            "href": "https://{host}.bookingbug.com/api/v1/bookings/13244892/check_in"
-          },
-          "event_groups": {
-            "title": "Tennis Course",
-            "href": "https://{host}.bookingbug.com/api/v1/50666/event_groups/107615"
-          },
-          "event_chain": {
-            "title": "Swimming lessons",
-            "href": "https://{host}.bookingbug.com/api/v1/50666/event_chains/274101{?member_level_id,embed}",
-            "templated": true
-          },
-          "edit": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/50666/bookings/13244892/edit{?locale}",
-            "templated": true
-          },
-          "cancel": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/50666/bookings/13244892/cancel{?notify,cancel_reason}",
-            "templated": true
-          },
-          "address": {
-            "href": "https://{host}.bookingbug.com/api/v1/50666/addresses/52355"
-          },
-          "service": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/50666/services/107615"
-          }
-        }
-      }
-    ]
-  },
-  "_links": {
-    "self": {
-      "href": "https://{host}.bookingbug.com/api/v1/admin/50666/bookings?start_date=2017-02-27&end_date=2017-03-01&page=1&per_page=30&locale=en"
-    }
-  }
-}
   ```
 </pre>
         </div>
