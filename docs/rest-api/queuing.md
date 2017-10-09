@@ -1,88 +1,653 @@
-# Working with the queuing system
+# Queuing
 
-The queuing system is built to allow for the management of walk-in clients, the services that you provide these walk-in clients and the staff that you have available to serve these clients.
+The Bookingbug queue system is a poweful and robust solution built for your walk-in clients. It allows them to check in for a service and join a digital queue, eliminating the guess work and constant questioning on when will they be served next. For more infomation about the queue feature please read more [here](https://www.bookingbug.co.uk/queuing).
 
-Queues also allow you to split your walk-in/appointment based clients into different queues. This is useful if you have member based services such as business and standard account customers. or services based on language.
+Before we dive into the APIs for the queue let's take a look at a typical use case example. 
 
-For example. If you had a business customer and a standard customer tier available, then you can break these into two different queues. Allowing each queue to be progressed independently of each other.
+Our famous Pet Store offers many services such as pet grooming, microchipping and walk-in health check. Customers can bring in their pets for a 30 minutes health check. There is only one staff at the pet store who will carry out this service. Customers report at the recepition desk, details of the customer are taken and joined the digital queue. 
 
-Additionally, you could have multiple queues based on language. Someone who needs to see a staff member who speaks fluent Spanish, can then be added to a specific queue separate from the staff members who cannot speak fluent Spanish.
+This section is aimed for managining the queue via the APIs. You must be an administrator to perform all actions listed below. 
 
-The queuing system has five main aspects to it.
+## Listing queues
 
-- **Services:** These are the services you have on offer, for example, mortgage advice and savings advice. The <a href="docs/rest-api/service-booking#list-services">Service Booking Guide</a> has examples regarding this end point.
+You can list the queues configured against your Bookingbug company.
 
-- **Queues:** These are the different types of queues that you have, for example if you are offering the previous services for two types of client (standard and business) you can split the clients into two queues. Serving each independently.
+<pre>GET /api/v1/admin/{company_id}/client_queues</pre>
 
-- **Person:** You can also manage multiple staff members and the current queue that is assigned to them. What services they can handle, when they are on break and how long it is until they are free to see the next customer in the Queue.
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Sample Response Data</a></li>
+    </ul>
 
-- **Queuers:** These are your clients waiting in the current queue. If you have a client that has made a booking, then on arrival they will be checked in and converted into a queuer.
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client_queues"
+  ```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+{
+    "_embedded": {
+        "client_queues": [
+            {
+                "id": 1,
+                "name": "Queue 1",
+                "priority": 1,
+                "length": 4,
+                "wait_time": 14520,
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client_queues/1"
+                    },
+                    "company": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/company"
+                    },
+                    "services": [
+                        {
+                            "title": "Pet Health Check",
+                            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48323"
+                        }
+                    ],
+                    "people": [
+                        {
+                            "title": "Staff Two",
+                            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15289"
+                        }
+                    ],
+                    "queuers": {
+                        "href": "https://{host}.bookingbug.com/api/v1/queuers/1"
+                    }
+                }
+            },
+    "_links": {
+        "self": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client_queues"
+        }
+    }
+}
+  ```
+</pre>
+        </div>
+        </div>
+        </div>
 
-- **Serving:** This is the section of the API where you can manage the client who is currently being served.
+Looking at the sample response we can tell which services and people are also configured for the queue. 
+<b>Note:</b> You can have multiple queues but only one is supported in the front-end at present. 
 
-> Note that the layout of the methods in the API differs from the layout of this documentation. Which aims to give you an overview of what is available. For more details on the endpoints in use. Check out the [API Reference](http://apidocs.bookingbug.com/#!/queue/put_admin_company_id_people_id_attendance)
+## Read queue 
 
-## The Queuers endpoint
+You can read a particular queue's information by passing in it's queue ID. 
 
-The managing of queues is done via an endpoint that allows for CRUD operations. This is contained within the admin API role.
+<pre>GET /api/v1/admin/{company_id}/client_queues/{id}</pre>
 
-You can create, list, edit and delete the different queues via [these endpoints](http://apidocs.bookingbug.com/#!/admin/get_admin_company_id_client_queues) This will also pull in relational data such as person, services, and queues.
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Sample Response Data</a></li>
+    </ul>
 
-Services need to be enabled to work with queues via the service API endpoints. When the API returns the services you will be able to see `queuing_disabled: false` or `queuing_disabled: true` in the response.
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client_queues/{id}"
+  ```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+{
+    "_embedded": {
+        "client_queues": [
+            {
+                "id": 1,
+                "name": "Queue 1",
+                "priority": 1,
+                "length": 4,
+                "wait_time": 14520,
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client_queues/1"
+                    },
+                    "company": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/company"
+                    },
+                    "services": [
+                        {
+                            "title": "Pet Health Check",
+                            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48323"
+                        }
+                    ],
+                    "people": [
+                        {
+                            "title": "Staff Two",
+                            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15289"
+                        }
+                    ],
+                    "queuers": {
+                        "href": "https://{host}.bookingbug.com/api/v1/queuers/1"
+                    }
+                }
+            }
+  ```
+</pre>
+        </div>
+        </div>
+        </div>
 
-**GET Queuers Read** <br>
-Read a list of currently waiting and being server queuers <br>
-`https://uk.bookingbug.com/api/v1/admin/:company_id/queuers?client_queue_ids={{client_queue_ids}}`
+## Queuers 
 
-See more about [these endpoints](http://apidocs.bookingbug.com/#!/admin/get_admin_company_id_client_queues)
+The default live queue (queuers) is where all the action happens. The API method below will show you all your customers (queuers) being served or in the queue in the queue.
 
-## Person
+<pre>GET /api/v1/admin/{company_id}/queuers</pre>
 
-Here you can manage the different aspects of the staff you have available to see your clients (named `person` in the API). You can manage your staff members calendar and assign the walk-in clients around the clients that have pre-booked an appointment.
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Sample Response Data</a></li>
+    </ul>
 
-**GET New Person** <br>
-Person Read Using Reference ID <br>
-`https://uk.bookingbug.com/api/v1/admin/:company_id/people/find_by_ref/{ref}`
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers"
+  ```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+{
+    "_embedded": {
+        "queuers": [
+            {
+                "id": 6,
+                "first_name": "Philip",
+                "last_name": "Duncan",
+                "mobile": "7440118875",
+                "mobile_prefix": "44",
+                "email": "",
+                "locale": "en",
+                "service_id": 48324,
+                "ticket_number": 616,
+                "position": 0,
+                "pusher_channel": "DS8JN4ViV_e9wRloMDAxMTY=",
+                "due": "2017-10-03T13:57:36+01:00",
+                "space_id": 16,
+                "service_name": "Service Two",
+                "created_at": "2017-09-06T17:37:39+01:00",
+                "long_id": "DS8JN4ViV_e9wRloMDAxMTY%3D",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/6"
+                    },
+                    "service": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48324"
+                    },
+                    "space": {
+                        "href": "https://{host}.bookingbug.com/api/v1/{company_id}/spaces/16"
+                    },
+                    "client_queue": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client_queues/1"
+                    },
+                    "finish_serving": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/6/finish_serving"
+                    },
+                    "return_to_queue": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/6/return_to_queue/{?position,first,last,service_id}",
+                        "templated": true
+                    },
+                    "person": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15289"
+                    },
+                    "booking": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings/16{?locale}",
+                        "templated": true
+                    },
+                    "client": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/9"
+                    }
+                },
+                "person_id": 15289,
+                "client_queue_id": 1,
+                "multi_status": {
+                    "checked_in": "2017-09-06T16:37:39+00:00",
+                    "being_seen": "2017-10-03T12:58:11+00:00"
+                },
+                "person_name": "Staff Two",
+                "start": "2017-10-03T13:55:00+01:00",
+                "duration": 60,
+                "client_id": 9,
+                "notes": "Dolores anim occaecat et atque"
+            },
+            {
+                "id": 7,
+                "first_name": "David",
+                "last_name": "Bell",
+                "mobile": "",
+                "mobile_prefix": "44",
+                "email": "",
+                "locale": "en",
+                "service_id": 48323,
+                "ticket_number": 454,
+                "position": 1,
+                "pusher_channel": "Z93Qjv6Y7wqg_p7MMDAxNDE=",
+                "due": "2017-10-03T16:18:06+01:00",
+                "space_id": 41,
+                "service_name": "Pet Health Check",
+                "created_at": "2017-10-03T10:54:37+01:00",
+                "long_id": "Z93Qjv6Y7wqg_p7MMDAxNDE%3D",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/7"
+                    },
+                    "service": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48323"
+                    },
+                    "space": {
+                        "href": "https://{host}.bookingbug.com/api/v1/{company_id}/spaces/41"
+                    },
+                    "client_queue": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client_queues/1"
+                    },
+                    "start_serving": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/start_serving?queuer_id=7{&person_id}",
+                        "templated": true
+                    },
+                    "booking": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings/41{?locale}",
+                        "templated": true
+                    },
+                    "client": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/16"
+                    }
+                },
+                "client_queue_id": 1,
+                "multi_status": {
+                    "checked_in": "2017-10-03T09:54:37+00:00"
+                },
+                "duration": 60,
+                "client_id": 16
+            },
+    "_links": {
+        "self": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers"
+        }
+    }
+}         
+  ```
+</pre>
+        </div>
+        </div>
+        </div>
 
-The API endpoints and Methods can be found [here](http://apidocs.bookingbug.com/#!/person/post_admin_company_id_people)
+Looking at the sample response from the queuers API we can determine the `position` of a customer in the queue, their `ticket_number` and a lot more. The `position: 0` means the customer is currently being served and `position: 1` is next on the queue and so on. 
 
-## Restrictions
-If you are using our Administration GUI then there are restrictions set up. For example, if you try and assign someone in the Spanish queue to a member of staff that does not speak Spanish, or you assign a business client to a member of staff who deals exclusively with standard accounts. Then the GUI will restrict you from doing this.
+## Add client to queue
 
-However... there are no restrictions when calling the API directly. Therefore, if you want to create these restrictions and you are not using the Administration GUI. Then you will have to build your own restrictions.
+The API enables you to add your walk-in clients to the queue. 
 
-## Staff Attendance
-Within each staff member, you can manage their availability via the `attendance` method on the API. This method has the following flags.
+### Parameters
 
-- `0` not on shift or shift ended
-- `1` currently on shift
-- `2` currently on break
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td>first_name</td>
+            <td>string</td>
+            <td>First Name of the client</td>
+        </tr>
+        <tr>
+            <td>last_name</td>
+            <td>string</td>
+            <td>Last name of the client</td>
+        </tr>
+        <tr>
+            <td>service_id</td>
+            <td>integer</td>
+            <td>The service ID</td>
+        </tr>
+    </tbody>
+</table>
 
-**PUT Set an attendance status for a person** <br>
-Set an attendance status for a person <br>
-`https://uk.bookingbug.com/api/v1/admin/:company_id/people/{id}/attendance`
+<pre>POST /api/v1/admin/{company_id}/queuers</pre>
 
-The API endpoints and Methods can be found [here](http://apidocs.bookingbug.com/#!/person/post_admin_company_id_people)
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+    </ul>
 
-## Queuers
-This is the currently awaiting clients in your queuing system. The API among other things allows you to store information relating to the `position` of the client in the queue. Including when they are due to be seen and the service they are awaiting.
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+  -d '{
+  "first_name":"Peter",
+  "last_name":"James",
+  "service_id":48323
+}'
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers"
+  ```
+</pre>
+        </div>
+        </div>
 
-You can also push them back in the queue or remove them completely.
+## Read queuer
 
-## Queuers Position
-The position allows you to reference where in the queue your customer is. The position is set to `0` when they are currently being served by a member of staff. It then increments up. You can have multiple queuers with the position of `0` if they are all being seen by a member of staff e.g
+You can read individual queuer's information that are currently in the queue. 
 
-3 staff members = maximum 3 queuers with the position `0`
+<pre>GET /api/v1/admin/{company_id}/queuers/{id}</pre>
 
-You can also have duplicate positions for queues waiting to be seen when you have multiple queues set up. So if you have two queues, business, and standard, then the next to be seen in both queues will both have the position of `1` then next in the queue would have `2` and so on and so on.
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Sample Response Data</a></li>
+    </ul>
 
-You can check out queuers in the [API reference](http://apidocs.bookingbug.com/#!/queue/get_admin_company_id_queuers_id)
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/{id}"
+  ```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+{
+    "id": 6,
+    "first_name": "Philip",
+    "last_name": "Duncan",
+    "mobile": "7440118875",
+    "mobile_prefix": "44",
+    "email": "",
+    "locale": "en",
+    "service_id": 48324,
+    "ticket_number": 616,
+    "position": 0,
+    "pusher_channel": "DS8JN4ViV_e9wRloMDAxMTY=",
+    "due": "2017-10-03T13:57:36+01:00",
+    "space_id": 16,
+    "service_name": "Service Two",
+    "created_at": "2017-09-06T17:37:39+01:00",
+    "long_id": "DS8JN4ViV_e9wRloMDAxMTY%3D",
+    "_links": {
+        "self": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/6"
+        },
+        "service": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48324"
+        },
+        "space": {
+            "href": "https://{host}.bookingbug.com/api/v1/{company_id}/spaces/16"
+        },
+        "client_queue": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client_queues/1"
+        },
+        "finish_serving": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/6/finish_serving"
+        },
+        "return_to_queue": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/6/return_to_queue/{?position,first,last,service_id}",
+            "templated": true
+        },
+        "person": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15289"
+        },
+        "booking": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings/16{?locale}",
+            "templated": true
+        },
+        "client": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/9"
+        }
+    },
+    "person_id": 15289,
+    "client_queue_id": 1,
+    "multi_status": {
+        "checked_in": "2017-09-06T16:37:39+00:00",
+        "being_seen": "2017-10-03T12:58:11+00:00"
+    },
+    "person_name": "Staff Two",
+    "start": "2017-10-03T13:55:00+01:00",
+    "duration": 60,
+    "client_id": 9,
+    "notes": "Does not have all his paperwork"
+}       
+  ```
+</pre>
+        </div>
+        </div>
+        </div>
 
-## Serving
-This aspect returns information about a client currently being served.
+## Finish serving a client 
 
-For example, a staff member will be serving the client Mr. Smith. Regarding your mortgages service. You can see when the consultation started and when it's due to end. This allows for the calculation of when the next client in the queue will be seen.
+The staff/agent can finish serving the client once they are done. The API method below is an example of how to achieve this. You'll need the queuers ID, which can be obtained from the above read queuers method.
 
-The client currently being served will then be removed from the queue completely when they have finished being served.
+<pre>POST /api/v1/admin/{company_id}/queuers/{id}/finish_serving</pre>
 
-You can find out more on this by [referencing the API docs](http://apidocs.bookingbug.com/#!/queue/post_admin_company_id_queuers_start_serving)
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/{id}/finish_serving"
+  ```
+</pre>
+        </div>
+        </div>
+
+## Serve next client
+
+The API enables you to server the next client in the queue. This end-point takes in two parameters, which are `queuers_id` and `person_id`. The next client in the queue would be the one with the `position: 1`. 
+
+<pre>POST /api/v1/admin/{company_id}/queuers/start_serving</pre>
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+  -d '{
+  "queuers_id": 10, 
+  "person_id": 12345
+}'
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/start_serving"
+  ```
+</pre>
+        </div>
+        </div>
+
+## Leave queue
+
+You can delete a client from the queue if they wish/decide to leave. 
+
+<pre>DELETE /api/v1/admin/{company_id}/queuers/{id}</pre>
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/{id}"
+  ```
+</pre>
+        </div>
+        </div>
+
+# Staff actions 
+
+The staff/agent have few actions that they can take, below is a list of the actions.
+
+- End Shift - Will no longer be serving clients in the queue
+- Take a break - Take break for given duration
+- Mark themself as busy - Mark themself as busy for a given duration 
+- End break/become available 
+
+## Staff on break 
+
+Mark the staff to go a break for a given duration. During this duration the staff will not be serving any clients in the queue. 
+
+### Paremeters
+
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td>status</td>
+            <td>integer</td>
+            <td>0 = not on shift or shift ended
+			1 = currently on shift/ available
+			2 = currently on break
+			4 = busy
+		</td>
+        </tr>
+        <tr>
+            <td>estimate_duration</td>
+            <td>integer</td>
+            <td>number of minutes e.g. 15, 30, 45, 60</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<pre>PUT /api/v1/admin/{company_id}/people/{id}/attendance</pre>
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <!-- <li><a href="#tab-2">Sample Response Data</a></li> -->
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+  -d '{
+  "status": 2
+  "estimate_duration": 15
+}'
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}/attendance"
+  ```
+</pre>
+        </div>
+        </div>
+
+## End staff shift
+
+A staff shift can be ended. This will make them unavailable.
+
+<pre>PUT /api/v1/admin/{company_id}/people/{id}/attendance</pre>
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <!-- <li><a href="#tab-2">Sample Response Data</a></li> -->
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+  -d '{
+  "status": 0
+}'
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}/attendance"
+  ```
+</pre>
+        </div>
+        </div>
+
+## Mark staff as free
+
+You can mark the staff as free/available. 
+
+<pre>PUT /api/v1/admin/{company_id}/people/{id}/attendance</pre>
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <!-- <li><a href="#tab-2">Sample Response Data</a></li> -->
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+  -d '{
+  "status": 1
+}'
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}/attendance"
+  ```
+</pre>
+        </div>
+        </div>
+
+
