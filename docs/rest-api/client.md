@@ -2,7 +2,7 @@
 
 The client API enables you to list, create, update and query the clients (customers) registered against your company. You must be authenticated as an administrator to perform the API calls for client. 
 
-## Create client
+## Create Client
 
 The API enables an admin to create a client (customer). The following parameters listed below are supported.
  
@@ -153,7 +153,7 @@ The API enables an admin to create a client (customer). The following parameters
 
 Above is an example cURL call creating a new client. If you would like to update the same client, the method will be `PUT` and you will need to append the client ID in the URL. 
 
-## List clients
+## List Clients
 
 <pre>GET /api/v1/admin/{company_id}/client</pre>
 
@@ -228,7 +228,7 @@ Above is an example cURL call creating a new client. If you would like to update
 
 Above is an example cURL call for listing all the clients. By default it will list 30 clients per page. You can use the `per_page` and `page` params for pagination. 
 
-## Read client
+## Read Client
 
 <pre>GET /api/v1/admin/{company_id}/client/{client_id}</pre>   
 
@@ -253,6 +253,32 @@ Above is an example cURL call for listing all the clients. By default it will li
         </div> 
 
 The above cURL call is an example of reading a client. 
+
+## Delete Client
+
+You can delete a client. 
+
+<pre>DELETE /api/v1/admin/{company_id}/client/{client_id}</pre>   
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <!-- <li><a href="#tab-2">Sample Response Data</a></li> -->
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/{id}"
+  ```
+</pre>
+        </div>
+        </div>
+        </div> 
 
 ## Disable/Enable Client 
 

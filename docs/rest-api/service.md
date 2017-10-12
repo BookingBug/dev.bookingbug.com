@@ -1,4 +1,4 @@
-# Service
+# Services
 
 The API enables you to create a service. You must be an administrator to create, update and delete a services. The parameters listed below are supported. 
 
