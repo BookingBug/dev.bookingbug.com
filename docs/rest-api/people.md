@@ -1,8 +1,8 @@
 # People
 
-The people API enables you to list, create, update and query the staff registered against your company. You must be authenticated as an administrator to perform the `creation`, `update`, `find by reference` and `block time for person`.
+The people API enables you to list, create, update, delete and query the staff registered against your company. You must be authenticated as an administrator to perform the `creation`, `update`, `deletion`, `find by reference` and `block time for person`.
 
-## Create person
+## Create Person
 
 The API enables an admin to create a person. The following parameters listed below are supported.
  
@@ -103,7 +103,7 @@ The API enables an admin to create a person. The following parameters listed bel
 
 Above is an example cURL call for creating a new person.
 
-## Update person
+## Update Person
 
 You can update information of a person. The parameters stated below are supported. You must be authenicated as an administrator to make this call. 
 
@@ -201,7 +201,7 @@ You can update information of a person. The parameters stated below are supporte
         </div>
         </div>  
 
-## List people
+## List People
 
 There are two different ways of listing people. The first method is using the admin end-point and the second method is using the public end-point. The admin method of listing will return more data compared to the public. 
 
@@ -269,52 +269,52 @@ There are two different ways of listing people. The first method is using the ad
                 "type": "person",
                 "deleted": false,
                 "disabled": false,
-                "company_id": 37004,
+                "company_id": {company_id},
                 "order": 15288,
                 "phone_prefix": "44",
                 "_links": {
                     "self": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15288"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15288"
                     },
                     "items": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/items?person_id=15288"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/items?person_id=15288"
                     },
                     "images": {
-                        "href": "https://host.bookingbug.com/api/v1/37004/media/person_images/15288"
+                        "href": "https://{host}.bookingbug.com/api/v1/{company_id}/media/person_images/15288"
                     },
                     "companies": [
                         {
                             "title": "Company Name",
-                            "href": "https://host.bookingbug.com/api/v1/admin/37004/company"
+                            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/company"
                         }
                     ],
                     "edit": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15288/edit"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15288/edit"
                     },
                     "attendance": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15288/attendance"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15288/attendance"
                     },
                     "block": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15288/block"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15288/block"
                     },
                     "cal": {
-                        "href": "http://host.bookingbug.com/ical/person/15288?calid=4060413678"
+                        "href": "http://{host}.bookingbug.com/ical/person/15288?calid=4060413678"
                     },
                     "overlay_cal": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/cal/5"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/cal/5"
                     },
                     "schedule": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/schedules/48315{?start_date,end_date}",
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/schedules/48315{?start_date,end_date}",
                         "templated": true
                     },
                     "enabled_services": [
                         {
                             "title": "Service One",
-                            "href": "https://host.bookingbug.com/api/v1/admin/37004/services/48323"
+                            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48323"
                         },
                         {
                             "title": "Service Two",
-                            "href": "https://host.bookingbug.com/api/v1/admin/37004/services/48324"
+                            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48324"
                         }
                     ],
                     "enabled_resources": []
@@ -324,7 +324,7 @@ There are two different ways of listing people. The first method is using the ad
                 "mobile": "",
                 "queuing_disabled": true,
                 "person_companies": [
-                    37004
+                    {company_id}
                 ],
                 "ical_link": ""
             },
@@ -334,52 +334,52 @@ There are two different ways of listing people. The first method is using the ad
                 "type": "person",
                 "deleted": false,
                 "disabled": false,
-                "company_id": 37004,
+                "company_id": {company_id},
                 "order": 15289,
                 "phone_prefix": "44",
                 "_links": {
                     "self": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15289"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15289"
                     },
                     "items": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/items?person_id=15289"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/items?person_id=15289"
                     },
                     "images": {
-                        "href": "https://host.bookingbug.com/api/v1/37004/media/person_images/15289"
+                        "href": "https://{host}.bookingbug.com/api/v1/{company_id}/media/person_images/15289"
                     },
                     "companies": [
                         {
                             "title": "Company Name",
-                            "href": "https://host.bookingbug.com/api/v1/admin/37004/company"
+                            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/company"
                         }
                     ],
                     "edit": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15289/edit"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15289/edit"
                     },
                     "attendance": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15289/attendance"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15289/attendance"
                     },
                     "block": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15289/block"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15289/block"
                     },
                     "cal": {
-                        "href": "http://host.bookingbug.com/ical/person/15289?calid=9739617323"
+                        "href": "http://{host}.bookingbug.com/ical/person/15289?calid=9739617323"
                     },
                     "overlay_cal": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/cal/6"
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/cal/6"
                     },
                     "schedule": {
-                        "href": "https://host.bookingbug.com/api/v1/admin/37004/schedules/48316{?start_date,end_date}",
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/schedules/48316{?start_date,end_date}",
                         "templated": true
                     },
                     "enabled_services": [
                         {
                             "title": "Service One",
-                            "href": "https://host.bookingbug.com/api/v1/admin/37004/services/48323"
+                            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48323"
                         },
                         {
                             "title": "Service Two",
-                            "href": "https://host.bookingbug.com/api/v1/admin/37004/services/48324"
+                            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48324"
                         }
                     ],
                     "enabled_resources": []
@@ -389,7 +389,7 @@ There are two different ways of listing people. The first method is using the ad
                 "mobile": "",
                 "queuing_disabled": true,
                 "person_companies": [
-                    37004
+                    {company_id}
                 ],
                 "ical_link": ""
             }
@@ -397,10 +397,10 @@ There are two different ways of listing people. The first method is using the ad
     },
     "_links": {
         "self": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/people?page=1&per_page=300"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people?page=1&per_page=300"
         },
         "new": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/people/new{?signup}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/new{?signup}",
             "templated": true
         }
     }
@@ -421,18 +421,18 @@ There are two different ways of listing people. The first method is using the ad
                 "type": "person",
                 "deleted": false,
                 "disabled": false,
-                "company_id": 37004,
+                "company_id": {company_id},
                 "order": 15288,
                 "phone_prefix": "44",
                 "_links": {
                     "self": {
-                        "href": "https://host.bookingbug.com/api/v1/37004/people/15288"
+                        "href": "https://{host}.bookingbug.com/api/v1/{company_id}/people/15288"
                     },
                     "items": {
-                        "href": "https://host.bookingbug.com/api/v1/37004/items?person_id=15288"
+                        "href": "https://{host}.bookingbug.com/api/v1/{company_id}/items?person_id=15288"
                     },
                     "images": {
-                        "href": "https://host.bookingbug.com/api/v1/37004/media/person_images/15288"
+                        "href": "https://{host}.bookingbug.com/api/v1/{company_id}/media/person_images/15288"
                     }
                 }
             },
@@ -442,18 +442,18 @@ There are two different ways of listing people. The first method is using the ad
                 "type": "person",
                 "deleted": false,
                 "disabled": false,
-                "company_id": 37004,
+                "company_id": {company_id},
                 "order": 15289,
                 "phone_prefix": "44",
                 "_links": {
                     "self": {
-                        "href": "https://host.bookingbug.com/api/v1/37004/people/15289"
+                        "href": "https://{host}.bookingbug.com/api/v1/{company_id}/people/15289"
                     },
                     "items": {
-                        "href": "https://host.bookingbug.com/api/v1/37004/items?person_id=15289"
+                        "href": "https://{host}.bookingbug.com/api/v1/{company_id}/items?person_id=15289"
                     },
                     "images": {
-                        "href": "https://host.bookingbug.com/api/v1/37004/media/person_images/15289"
+                        "href": "https://{host}.bookingbug.com/api/v1/{company_id}/media/person_images/15289"
                     }
                 }
             }
@@ -461,7 +461,7 @@ There are two different ways of listing people. The first method is using the ad
     },
     "_links": {
         "self": {
-            "href": "https://host.bookingbug.com/api/v1/37004/people"
+            "href": "https://{host}.bookingbug.com/api/v1/{company_id}/people"
         }
     }
 }
@@ -502,6 +502,32 @@ The person read method enables you to view a particular staff's information. Onc
 
 Above is an example admin cURL call for viewing a person. 
 
+## Delete Person
+
+You can delete a person using the API method below.
+
+<pre>DELETE /api/v1/admin/{company_id}/people/{id}</pre>
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <!-- <li><a href="#tab-2">Sample Response Data</a></li> -->
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}"
+  ```
+</pre>
+        </div>
+        </div>
+        </div>
+
 ## Find by reference
 
 You can query the people end-point to find a particular staff with their reference. You must be authenticated as an administrator. 
@@ -534,52 +560,52 @@ You can query the people end-point to find a particular staff with their referen
     "type": "person",
     "deleted": false,
     "disabled": false,
-    "company_id": 37004,
+    "company_id": {company_id},
     "order": 15288,
     "phone_prefix": "44",
     "_links": {
         "self": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15288"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15288"
         },
         "items": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/items?person_id=15288"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/items?person_id=15288"
         },
         "images": {
-            "href": "https://host.bookingbug.com/api/v1/37004/media/person_images/15288"
+            "href": "https://{host}.bookingbug.com/api/v1/{company_id}/media/person_images/15288"
         },
         "companies": [
             {
                 "title": "Company Name",
-                "href": "https://host.bookingbug.com/api/v1/admin/37004/company"
+                "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/company"
             }
         ],
         "edit": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15288/edit"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15288/edit"
         },
         "attendance": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15288/attendance"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15288/attendance"
         },
         "block": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15288/block"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15288/block"
         },
         "cal": {
-            "href": "http://host.bookingbug.com/ical/person/15288?calid=4060413678"
+            "href": "http://{host}.bookingbug.com/ical/person/15288?calid=4060413678"
         },
         "overlay_cal": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/cal/5"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/cal/5"
         },
         "schedule": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/schedules/48315{?start_date,end_date}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/schedules/48315{?start_date,end_date}",
             "templated": true
         },
         "enabled_services": [
             {
                 "title": "Service One",
-                "href": "https://host.bookingbug.com/api/v1/admin/37004/services/48323"
+                "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48323"
             },
             {
                 "title": "Service Two",
-                "href": "https://host.bookingbug.com/api/v1/admin/37004/services/48324"
+                "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/48324"
             }
         ],
         "enabled_resources": []
@@ -590,7 +616,7 @@ You can query the people end-point to find a particular staff with their referen
     "queuing_disabled": true,
     "reference": "123456",
     "person_companies": [
-        37004
+        {company_id}
     ],
     "ical_link": ""
 }
@@ -644,19 +670,19 @@ You can block a time slot for a person in their calendar. The following paramete
     "person_id": 15288,
     "duration": 60,
     "duration_span": 3600,
-    "company_id": 37004,
+    "company_id": {company_id},
     "_links": {
         "self": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/slots/22"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/slots/22"
         },
         "person": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/people/15288"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/15288"
         },
         "bookings": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/bookings?slot_id=22"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings?slot_id=22"
         },
         "booking_details": {
-            "href": "https://host.bookingbug.com/api/v1/admin/37004/booking_details/?slot_id=22"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/{company_id}/booking_details/?slot_id=22"
         }
     }
 }
@@ -667,3 +693,54 @@ You can block a time slot for a person in their calendar. The following paramete
         </div>
 
 Above is an example admin cURL call blocking time for a given staff from 11am to 12pm on 7th September 2017. 
+
+## Read image for person
+
+You can read a person's image. The image must be uploaded first from the backend. Once done this can be grabbed via the API using the method below. Alternatively you can list or read a person and you'll find the image link within the response. 
+
+<pre>GET /api/v1/{company_id}/media/person_images/{person_id}</pre>
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Sample Response Data</a></li>
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
+  -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+"https://{host}.bookingbug.com/api/v1/{company_id}/media/person_images/{person_id}"
+  ```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+{
+    "_embedded": {
+        "images": [
+            {
+                "id": 3,
+                "company_id": {company_id},
+                "name": "20171012-29566-1uk09jn.png",
+                "image_file_name": "20171012-29566-1uk09jn.png",
+                "foreign_key": {person_id},
+                "url": "{URL OF IMAGE HOSTED}",
+                "_links": {
+                    "self": {
+                        "href": "/{company_id}/media/person_images/{person_id}/3"
+                    }
+                }
+            }
+        ]
+    }
+}
+  ```
+</pre>
+        </div>
+        </div>
+        </div>
