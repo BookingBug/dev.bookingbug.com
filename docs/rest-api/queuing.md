@@ -1,12 +1,12 @@
 # Queuing
 
-The Bookingbug queue system is a poweful and robust solution built for your walk-in clients. It allows them to check in for a service and join a digital queue, eliminating the guess work and constant questioning on when will they be served next. For more infomation about the queue feature please read more [here](https://www.bookingbug.co.uk/queuing).
+The Bookingbug queue system is a powerful and robust solution built for your walk-in clients. It allows them to check in for a service and join a digital queue, eliminating the guess work and constant questioning on when will they be served next. For more information about the queue feature please read more [here](https://www.bookingbug.co.uk/queuing).
 
-Before we dive into the APIs for the queue let's take a look at a typical use case example. 
+Before we dive into the APIs for the queue let's take a look at a typical use case example.
 
-Our famous Pet Store offers many services such as pet grooming, microchipping and walk-in health check. Customers can bring in their pets for a 30 minutes health check. There is only one staff at the pet store who will carry out this service. Customers report at the recepition desk, details of the customer are taken and joined the digital queue. 
+Our famous Pet Store offers many services such as pet grooming, microchipping and walk-in health check. Customers can bring in their pets for a 30 minutes health check. There is only one staff at the pet store who will carry out this service. Customers report at the recepition desk, details of the customer are taken and joined the digital queue.
 
-This section is aimed for managining the queue via the APIs. You must be an administrator to perform all actions listed below. 
+This section is aimed for managining the queue via the APIs. You must be an administrator to perform all actions listed below.
 
 ## Listing queues
 
@@ -25,7 +25,7 @@ You can list the queues configured against your Bookingbug company.
 <pre>
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json" 
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client_queues"
   ```
@@ -79,12 +79,12 @@ You can list the queues configured against your Bookingbug company.
         </div>
         </div>
 
-Looking at the sample response we can tell which services and people are also configured for the queue. 
-<b>Note:</b> You can have multiple queues but only one is supported in the front-end at present. 
+Looking at the sample response we can tell which services and people are also configured for the queue.
+<b>Note:</b> You can have multiple queues but only one is supported in the front-end at present.
 
-## Read queue 
+## Read queue
 
-You can read a particular queue's information by passing in it's queue ID. 
+You can read a particular queue's information by passing in it's queue ID.
 
 <pre>GET /api/v1/admin/{company_id}/client_queues/{id}</pre>
 
@@ -99,7 +99,7 @@ You can read a particular queue's information by passing in it's queue ID.
 <pre>
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json" 
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client_queues/{id}"
   ```
@@ -147,7 +147,7 @@ You can read a particular queue's information by passing in it's queue ID.
         </div>
         </div>
 
-## Queuers 
+## Queuers
 
 The default live queue (queuers) is where all the action happens. The API method below will show you all your customers (queuers) being served or in the queue in the queue.
 
@@ -163,8 +163,8 @@ The default live queue (queuers) is where all the action happens. The API method
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers"
   ```
@@ -297,11 +297,11 @@ The default live queue (queuers) is where all the action happens. The API method
         </div>
         </div>
 
-Looking at the sample response from the queuers API we can determine the `position` of a customer in the queue, their `ticket_number` and a lot more. The `position: 0` means the customer is currently being served and `position: 1` is next on the queue and so on. 
+Looking at the sample response from the queuers API we can determine the `position` of a customer in the queue, their `ticket_number` and a lot more. The `position: 0` means the customer is currently being served and `position: 1` is next on the queue and so on.
 
 ## Add client to queue
 
-The API enables you to add your walk-in clients to the queue. 
+The API enables you to add your walk-in clients to the queue.
 
 ### Parameters
 
@@ -313,7 +313,7 @@ The API enables you to add your walk-in clients to the queue.
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>first_name</td>
@@ -344,8 +344,8 @@ The API enables you to add your walk-in clients to the queue.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
   "first_name":"Peter",
@@ -360,7 +360,7 @@ The API enables you to add your walk-in clients to the queue.
 
 ## Read queuer
 
-You can read individual queuer's information that are currently in the queue. 
+You can read individual queuer's information that are currently in the queue.
 
 <pre>GET /api/v1/admin/{company_id}/queuers/{id}</pre>
 
@@ -374,8 +374,8 @@ You can read individual queuer's information that are currently in the queue.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/{id}"
   ```
@@ -450,7 +450,7 @@ You can read individual queuer's information that are currently in the queue.
         </div>
         </div>
 
-## Finish serving a client 
+## Finish serving a client
 
 The staff/agent can finish serving the client once they are done. The API method below is an example of how to achieve this. You'll need the queuers ID, which can be obtained from the above read queuers method.
 
@@ -465,8 +465,8 @@ The staff/agent can finish serving the client once they are done. The API method
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/{id}/finish_serving"
   ```
@@ -476,7 +476,7 @@ The staff/agent can finish serving the client once they are done. The API method
 
 ## Serve next client
 
-The API enables you to server the next client in the queue. This end-point takes in two parameters, which are `queuers_id` and `person_id`. The next client in the queue would be the one with the `position: 1`. 
+The API enables you to server the next client in the queue. This end-point takes in two parameters, which are `queuers_id` and `person_id`. The next client in the queue would be the one with the `position: 1`.
 
 <pre>POST /api/v1/admin/{company_id}/queuers/start_serving</pre>
 
@@ -489,11 +489,11 @@ The API enables you to server the next client in the queue. This end-point takes
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
-  "queuers_id": 10, 
+  "queuers_id": 10,
   "person_id": 12345
 }'
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/start_serving"
@@ -504,7 +504,7 @@ The API enables you to server the next client in the queue. This end-point takes
 
 ## Leave queue
 
-You can delete a client from the queue if they wish/decide to leave. 
+You can delete a client from the queue if they wish/decide to leave.
 
 <pre>DELETE /api/v1/admin/{company_id}/queuers/{id}</pre>
 
@@ -517,8 +517,8 @@ You can delete a client from the queue if they wish/decide to leave.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/queuers/{id}"
   ```
@@ -526,18 +526,18 @@ You can delete a client from the queue if they wish/decide to leave.
         </div>
         </div>
 
-# Staff actions 
+# Staff actions
 
 The staff/agent have few actions that they can take, below is a list of the actions.
 
 - End Shift - Will no longer be serving clients in the queue
 - Take a break - Take break for given duration
-- Mark themself as busy - Mark themself as busy for a given duration 
-- End break/become available 
+- Mark themself as busy - Mark themself as busy for a given duration
+- End break/become available
 
-## Staff on break 
+## Staff on break
 
-Mark the staff to go a break for a given duration. During this duration the staff will not be serving any clients in the queue. 
+Mark the staff to go a break for a given duration. During this duration the staff will not be serving any clients in the queue.
 
 ### Paremeters
 
@@ -549,7 +549,7 @@ Mark the staff to go a break for a given duration. During this duration the staf
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>status</td>
@@ -581,8 +581,8 @@ Mark the staff to go a break for a given duration. During this duration the staf
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
   "status": 2
@@ -610,8 +610,8 @@ A staff shift can be ended. This will make them unavailable.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
   "status": 0
@@ -624,7 +624,7 @@ A staff shift can be ended. This will make them unavailable.
 
 ## Mark staff as free
 
-You can mark the staff as free/available. 
+You can mark the staff as free/available.
 
 <pre>PUT /api/v1/admin/{company_id}/people/{id}/attendance</pre>
 
@@ -638,8 +638,8 @@ You can mark the staff as free/available.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
   "status": 1
@@ -649,5 +649,3 @@ You can mark the staff as free/available.
 </pre>
         </div>
         </div>
-
-
