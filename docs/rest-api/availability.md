@@ -101,7 +101,7 @@ End Date in ISO-8601</td>
                 <td>month</td>
                 <td>integer</td>
                 <td>
-TA Month in MMYY format - returns an exact month</td>
+A Month in MMYY format - returns an exact month</td>
             </tr>
             <tr>
                 <td>cal_month</td>
