@@ -4,9 +4,9 @@ The Bookingbug queue system is a powerful and robust solution built for your wal
 
 Before we dive into the APIs for the queue let's take a look at a typical use case example.
 
-Our famous Pet Store offers many services such as pet grooming, microchipping and walk-in health check. Customers can bring in their pets for a 30 minutes health check. There is only one staff at the pet store who will carry out this service. Customers report at the recepition desk, details of the customer are taken and joined the digital queue.
+Our famous Pet Store offers many services such as pet grooming, microchipping and walk-in health check. Customers can bring in their pets for a 30 minutes health check. There is only one staff at the pet store who will carry out this service. Customers report at the reception desk, details of the customer are taken and joined the digital queue.
 
-This section is aimed for managining the queue via the APIs. You must be an administrator to perform all actions listed below.
+This section is aimed for managing the queue via the APIs. You must be an administrator to perform all actions listed below.
 
 ## Listing queues
 
