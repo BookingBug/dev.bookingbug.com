@@ -149,7 +149,7 @@ You can read a particular queue's information by passing in it's queue ID.
 
 ## Queuers
 
-The default live queue (queuers) is where all the action happens. The API method below will show you all your customers (queuers) being served or in the queue in the queue.
+The default live queue (queuers) is where all the action happens. The API method below will show you all your customers (queuers) being served or in the queue.
 
 <pre>GET /api/v1/admin/{company_id}/queuers</pre>
 
