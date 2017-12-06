@@ -1,6 +1,6 @@
 # Services
 
-The API enables you to create a service. You must be an administrator to create, update and delete a services. The parameters listed below are supported. 
+The API enables you to create a service. You must be an administrator to create, update and delete a services. The parameters listed below are supported.
 
 ### Parameters
 
@@ -12,7 +12,7 @@ The API enables you to create a service. You must be an administrator to create,
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>name</td>
@@ -50,8 +50,8 @@ The API enables you to create a service. You must be an administrator to create,
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
     "name": "Test Service",
@@ -70,7 +70,7 @@ Above is an example cURL call for creating a new service.
 
 ## List services
 
-You can list services configured in your company in your bookingbug account. There are two different ways of listing services. The first way is using the public API end-point and the second way is using the admin API end-point. The difference is that using the admin method will retun the disabled and deleted services. This also applies for when reading a service using the admin method. 
+You can list services configured in your company in your bookingbug account. There are two different ways of listing services. The first way is using the public API end-point and the second way is using the admin API end-point. The difference is that using the admin method will retun the disabled and deleted services. This also applies for when reading a service using the admin method.
 
 <pre>GET /api/v1/{company_id}/services</pre>
 <pre>GET /api/v1/admin/{company_id}/services</pre>
@@ -85,8 +85,8 @@ You can list services configured in your company in your bookingbug account. The
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/services"
   ```
@@ -173,11 +173,17 @@ You can list services configured in your company in your bookingbug account. The
         </div>
         </div>
 
-The example cURL call above is listing all services using the public end-point. 
+The example cURL call above is listing all services using the public end-point.
+
+## List Child Services
+
+If you have a parent/child company setup, you can list services by calling the parent company ID by appending `children=true`
+
+<pre>GET /api/v1/admin/{parent_company_id}/services?children=true</pre>
 
 ## Read service
 
-The service read method enables you to view a particular service. Once again there are two different ways, the admin and the public. 
+The service read method enables you to view a particular service. Once again there are two different ways, the admin and the public.
 
 <pre>GET /api/v1/{company_id}/services/{id}</pre>
 <pre>GET /api/v1/admin/{company_id}/services/{id}</pre>
@@ -192,8 +198,8 @@ The service read method enables you to view a particular service. Once again the
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/services/{id}"
   ```
@@ -202,11 +208,11 @@ The service read method enables you to view a particular service. Once again the
         </div>
         </div>
 
-The example cURL call above is reading a particular service using the public end-point. 
+The example cURL call above is reading a particular service using the public end-point.
 
 ## Update service
 
-You can update the service. The parameters stated below are supported. You must be authenicated as an administrator to make this call. 
+You can update the service. The parameters stated below are supported. You must be authenicated as an administrator to make this call.
 
 ### Parameters
 
@@ -218,7 +224,7 @@ You can update the service. The parameters stated below are supported. You must 
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>name</td>
@@ -243,7 +249,7 @@ You can update the service. The parameters stated below are supported. You must 
     </tbody>
 </table>
 
-<pre>PUT /api/v1/admin/{company_id}/services/{id}</pre> 
+<pre>PUT /api/v1/admin/{company_id}/services/{id}</pre>
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -255,8 +261,8 @@ You can update the service. The parameters stated below are supported. You must 
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
     "name": "Test Service",
@@ -273,7 +279,7 @@ You can update the service. The parameters stated below are supported. You must 
 
 ## Delete service
 
-You can delete a service. You must be authenticated as an admininistrator. 
+You can delete a service. You must be authenticated as an admininistrator.
 
 <pre>DELETE /api/v1/admin/{company_id}/services/{id}</pre>
 
@@ -287,8 +293,8 @@ You can delete a service. You must be authenticated as an admininistrator.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/{id}"
   ```
@@ -297,11 +303,11 @@ You can delete a service. You must be authenticated as an admininistrator.
         </div>
         </div>
 
-The example cURL call above is for deleting a service. 
+The example cURL call above is for deleting a service.
 
 ## Find by reference
 
-You can query the service end-point to find a particular service with their reference. You must be authenticated as an administrator. 
+You can query the service end-point to find a particular service with their reference. You must be authenticated as an administrator.
 
 <pre>GET /api/v1/admin/{company_id}/services/find_by_ref/{reference}</pre>
 
@@ -316,7 +322,7 @@ You can query the service end-point to find a particular service with their refe
 <pre>
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json" 
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/find_by_ref/TA123456"
   ```
@@ -427,5 +433,4 @@ You can query the service end-point to find a particular service with their refe
         </div>
         </div>
 
-The example cURL call above is to find a service by reference. 
-
+The example cURL call above is to find a service by reference.
