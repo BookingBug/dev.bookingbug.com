@@ -35,7 +35,7 @@ You can get a list of purchases for a given date range using the `created_from` 
             <tr>
                 <td>admin_bookings_only</td>
                 <td>boolean</td>
-                <td>If true will only return pruchases made be admins</td>
+                <td>If true will only return purchases made by admins</td>
             </tr>
             <tr>
                 <td>order_by</td>
