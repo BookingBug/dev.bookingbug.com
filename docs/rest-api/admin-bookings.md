@@ -317,6 +317,81 @@ You can create a new booking/appointment in the Bookingbug platform on behalf of
                 <td> Resource id</td>
             </tr>
             <tr>
+                <td>client[first_name]</td>
+                <td>string</td>
+                <td> Client's first name</td>
+            </tr>
+            <tr>
+                <td>client[last_name]</td>
+                <td>string</td>
+                <td> Client's last name</td>
+            </tr>
+            <tr>
+                <td>client[email]</td>
+                <td>string</td>
+                <td> Client's email</td>
+            </tr>
+            <tr>
+                <td>client[mobile_prefix]</td>
+                <td>string</td>
+                <td> Mobile prefix</td>
+            </tr>
+            <tr>
+                <td>client[mobile]</td>
+                <td>string</td>
+                <td> Client's Mobile</td>
+            </tr>
+            <tr>
+                <td>client[phone_prefix]</td>
+                <td>string</td>
+                <td> Phone prefix</td>
+            </tr>
+            <tr>
+                <td>client[phone]</td>
+                <td>string</td>
+                <td> Client's phone</td>
+            </tr>
+            <tr>
+                <td>client[client_type]</td>
+                <td>integer</td>
+                <td> Client's type</td>
+            </tr>
+            <tr>
+                <td>client[address1]</td>
+                <td>string</td>
+                <td> Client's address line 1</td>
+            </tr>
+            <tr>
+                <td>client[address2]</td>
+                <td>string</td>
+                <td> Client's address line 2</td>
+            </tr>
+            <tr>
+                <td>client[address3]</td>
+                <td>string</td>
+                <td> Client's address line 3</td>
+            </tr>
+            <tr>
+                <td>client[address4]</td>
+                <td>string</td>
+                <td> Client's address line 4</td>
+            </tr>
+            <tr>
+                <td>client[address5]</td>
+                <td>string</td>
+                <td> Client's address line 5</td>
+            </tr>
+            <tr>
+                <td>client[postcode]</td>
+                <td>string</td>
+                <td> Client's postcode</td>
+            </tr>
+            <tr>
+                <td>client[country]</td>
+                <td>string</td>
+                <td> Client's country</td>
+            </tr>
+            <tr>
                 <td>notifications</td>
                 <td>boolean</td>
                 <td> Send email to customer/admin (true/false) </td>
@@ -483,6 +558,38 @@ curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth
         </div>
         </div>
         </div> 
+
+## New Booking With Client Creation
+
+You can create a new booking/appointment and create the client. The cURL call example below creates a new booking and a new client. All the listed client parameters above are supported.
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}" 
+-H "Content-Type: application/json" 
+-H "Cache-Control: no-cache" 
+-d 
+'{
+  "service_id": 48323,
+  "datetime": "2017-12-09T13:30:00+03:00",
+  "client":{
+    "first_name":"Bookingbug",
+    "last_name":"Client",
+    "email":"booking@email.com"
+  }
+}' "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings"
+  ```
+</pre>
+        </div>
+        </div>
+        </div>
 
 ## Update Booking
 
