@@ -124,12 +124,12 @@ An event chain describes the events setup in your company. An event can have man
             <tr>
                 <td>include_disabled</td>
                 <td>boolean</td>
-                <td>true to include disabled event chains</td>
+                <td>true to include disabled event chains. For admin end-point only</td>
             </tr>
             <tr>
                 <td>include_deleted</td>
                 <td>boolean</td>
-                <td>true to include deleted event chains. Requires admin permisison</td>
+                <td>true to include deleted event chains. For admin end-point only</td>
             </tr>
         </tbody>
     </table>
