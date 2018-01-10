@@ -93,7 +93,7 @@ The cURL call below will list all the event groups with pagination of 100 per pa
 
 ## Event Chain
 
-An event chain describes the events setup in your company. An event can have many occurrences, depending on if the event is setup as a single or regular (recurring). This method will list all of the events. The following parameters below can be appended.
+An event chain describes the events setup in your company. An event can have many occurrences, depending on if the event is setup as a single or regular (recurring). This method will list all of the event chains. The following parameters below can be appended.
 
 ### Parameters
 <table class="pure-table">
@@ -124,13 +124,17 @@ An event chain describes the events setup in your company. An event can have man
             <tr>
                 <td>include_disabled</td>
                 <td>boolean</td>
-                <td>true to include disabled events</td>
+                <td>true to include disabled event chains. For admin end-point only</td>
+            </tr>
+            <tr>
+                <td>include_deleted</td>
+                <td>boolean</td>
+                <td>true to include deleted event chains. For admin end-point only</td>
             </tr>
         </tbody>
     </table>
 
 <pre>GET /api/v1/{company_id}/event_chains</pre>
-<pre>GET /api/v1/{company_id}/event_chains/{id}</pre>
 
 The cURL call below will list all the events with pagination of 100 per page.
 
@@ -216,7 +220,7 @@ The cURL call below will list all the events with pagination of 100 per page.
 
 ## Events
 
-The events method will list all bookable events. The following parameters below can be appended to filter the bookable events.
+The events method will list all bookable events. The following parameters below can be appended to filter the bookable events. By default the events API will only list up to one months of bookable events.
 
 ### Parameters
 <table class="pure-table">
@@ -357,6 +361,29 @@ The cURL call below will list all bookable events from the 1st of Jan 2016 to th
     }
   }
 }
+  ```
+</pre>
+        </div>
+        </div>
+        </div>
+
+### Adding an event to the basket
+
+Looking at the results from the events API we can add the events to the basket. Below is an example of adding an event. 
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  -H "Cache-Control: no-cache"
+  -d '{"event_id": "104748", "event_chain_id": "3432423"}'
+"https://{host}.bookingbug.com/api/v1/{company_id}/basket/add_item"
   ```
 </pre>
         </div>

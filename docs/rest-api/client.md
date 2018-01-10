@@ -312,7 +312,7 @@ You can disable/enable a client using the API. The following paremeters listed b
         </tbody>
         </table>
 
-<pre>PUT /api/v1/{company_id}/client/</pre>
+<pre>PUT /api/v1/admin/{company_id}/client/</pre>
 
 <div class="tabs">
     <ul class="tabs__menu">
