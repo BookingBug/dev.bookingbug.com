@@ -2,10 +2,10 @@
 There are two implementation types for SSO. Either BookingBug acts as the SSO server, or BookingBug acts as the Client.
 
 ## BookingBug as the Server
-When BookingBug is the server you'll integrate with BookingBugs current SSO implementation. This implementation method supports SSO for two member types, Administrators, and Clients (Consumers). This method allows you to generate tokens to authenticate against the JavaScript SDK or use the REST API as a new/existing client or as an existing Administrator. 
+When BookingBug is the server you'll integrate with BookingBugs current SSO implementation. This implementation method supports SSO for two member types, Administrators, and Clients (Consumers). This method allows you to generate tokens to authenticate against the JavaScript SDK or use the REST API as a new/existing client or as an existing Administrator.
 The high-level BookingBug process is as follows.
 
-BookingBug configures an SSO account which generates the Administrators/Clients SSO credentials. We'll send the over the credentials you'll need to do the encryption. 
+BookingBug configures an SSO account which generates the Administrators/Clients SSO credentials. We'll send the over the credentials you'll need to do the encryption.
 
 Once you've received these details, generate an SSO sign in token using the below code examples
 
@@ -130,12 +130,12 @@ public class TokenGenerator {
   private void encrypt(InputStream in, OutputStream out) throws Exception {
     try {
       byte[] buf = new byte[1024];
-      
+
       Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
       cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivSpec);
-      
+
       out = new CipherOutputStream(out, cipher);
-      
+
       int numRead = 0;
       while ((numRead = in.read(buf)) >= 0) {
         out.write(buf, 0, numRead);
@@ -176,7 +176,7 @@ public class TokenGenerator {
       jsonObj.put("last_name", "Smith");
       jsonObj.put("email", "smith@example.com");
       jsonObj.put("mobile", "0123456789");
-      
+
       System.out.println( TokenGenerator.getInstance().create(jsonObj) );
 
     } catch (Exception e) {
@@ -192,7 +192,7 @@ public class TokenGenerator {
 ```
 namespace BookingBug {
   public class TokenGenerator {
-    public static string create(JsonObject data) { 
+    public static string create(JsonObject data) {
       string CompanyId = "{Your Company ID or Affiliate ID}";
       string SecureKey = "{Your Secure Key}";        
       string initVector = "OpenSSL for Ruby"; // DO NOT CHANGE
@@ -215,7 +215,7 @@ namespace BookingBug {
 
       // Encrypt the string to an array of bytes
       byte[] encrypted = encryptStringToBytes_AES(textBytes, keyBytes, initVectorBytes);
-      string encoded = Convert.ToBase64String(encrypted); 
+      string encoded = Convert.ToBase64String(encrypted);
       return HttpUtility.UrlEncode(encoded);
     }
 
@@ -242,7 +242,7 @@ namespace BookingBug {
           csEncrypt.FlushFinalBlock();
         }
 
-        byte[] encrypted = msEncrypt.ToArray(); 
+        byte[] encrypted = msEncrypt.ToArray();
         // Return the encrypted bytes from the memory stream.
         return encrypted;
       }
@@ -269,12 +269,12 @@ class MainClass
 </div>
 
 With this token you've generated, you can:
-- initialize the 'Client Booking Journey' and 'Manage My Appointments' interfaces by passing this token into the angular directive or as a URL param when you initialize these interfaces.
+- initialise the 'Client Booking Journey' and 'Manage My Appointments' interfaces by passing this token into the angular directive or as a URL param when you initialise these interfaces.
 - or use the login API to get an Auth-Token that allows you to use the API as that Administrator or Client
 
 ## BookingBug as the client
 The second option is for BookingBug to integrate with your SSO server. We are open to integrating to any standard SSO protocols including LDAP, OAuth, and OpenID or integrating with a custom SSO mechanism.
 
 ## Alternatives to SSO
-SSO products(for example Oracle SSO) software that remembers forms and automatically signs in when it recognizes a web form. Put the interface behind an another form of authentication, so people can not see the page unless they've signed in.
+SSO products(for example Oracle SSO) software that remembers forms and automatically signs in when it recognises a web form. Put the interface behind an another form of authentication, so people can not see the page unless they've signed in.
 Remember me checkboxes on login forms. The user will only have to log in once and on that device.

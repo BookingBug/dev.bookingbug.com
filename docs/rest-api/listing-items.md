@@ -1,9 +1,9 @@
-# Listing Items 
+# Listing Items
 
-The REST API enables you to list items you've configured in your Bookingbug platform. These items are visible to your end-users, enabling them to select from the various services you provide as a business. 
+The REST API enables you to list items you've configured in your Bookingbug platform. These items are visible to your end-users, enabling them to select from the various services you provide as a business.
 
 ## Example
-Assume you are an owner of a Pet store offering in-store services that can be booked online. 
+Assume you are an owner of a Pet store offering in-store services that can be booked online.
 
 <table class="pure-table">
         <thead>
@@ -15,7 +15,7 @@ Assume you are an owner of a Pet store offering in-store services that can be bo
                 <th>Price</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>Nutrition Consultation</td>
@@ -24,7 +24,7 @@ Assume you are an owner of a Pet store offering in-store services that can be bo
                 <td>only Barry and Kate can provide this service</td>
                 <td>FREE</td>
             </tr>
-    
+
             <tr>
                 <td>Pet Grooming</td>
                 <td>1 hour</td>
@@ -32,7 +32,7 @@ Assume you are an owner of a Pet store offering in-store services that can be bo
                 <td>Luke and Ed</td>
                 <td>£20</td>
             </tr>
-    
+
             <tr>
                 <td>Microchipping</td>
                 <td>30 mins</td>
@@ -68,7 +68,7 @@ You can list the staff (people) members configured for a company. These are peop
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/people"
   ```
@@ -119,9 +119,9 @@ You can list the staff (people) members configured for a company. These are peop
         </div>
         </div>
 
-## Service 
+## Service
 
-You can list the services configured for a company. As per our exampple above there are four services setup that the pet store provides.
+You can list the services configured for a company. As per our example above there are four services setup that the pet store provides.
 
 <pre>GET /api/v1/{company_id}/services</pre>
 <pre>GET /api/v1/{company_id}/services/{service_id}</pre>
@@ -136,7 +136,7 @@ You can list the services configured for a company. As per our exampple above th
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/services"
   ```
@@ -216,9 +216,9 @@ You can list the services configured for a company. As per our exampple above th
         </div>
         </div>
 
-## Resource 
+## Resource
 
-You can list resources configured for a company. Resources are physical bookable items such as meeting rooms, event halls, tennis courts etc. 
+You can list resources configured for a company. Resources are physical bookable items such as meeting rooms, event halls, tennis courts etc.
 
 <pre>GET /api/v1/{company_id}/resources</pre>
 <pre>GET /api/v1/{company_id}/resources/{resource_id}</pre>
@@ -233,7 +233,7 @@ You can list resources configured for a company. Resources are physical bookable
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/services"
   ```

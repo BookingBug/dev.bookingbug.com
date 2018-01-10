@@ -1,11 +1,11 @@
 # Members
 
-Members in Bookingbug is refered to as clients (your consumers). There are two types of clients.
+Members in Bookingbug is referred to as clients (your consumers). There are two types of clients.
 
-1. Contact 
-2. Member 
+1. Contact
+2. Member
 
-The contact type is like a guest, and does not need an account. The member has an account, where they can login to view their upcoming/past bookings, edit personal details and view invoices. A member needs to authenticate to access thier account. 
+The contact type is like a guest, and does not need an account. The member has an account, where they can login to view their upcoming/past bookings, edit personal details and view invoices. A member needs to authenticate to access their account.
 
 ## Authenticate Member
 
@@ -27,8 +27,8 @@ Once authenticated you can view the members details with the following method.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
-  -H "Cache-Control: no-cache" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
+  -H "Cache-Control: no-cache"
   -H "Auth-Token: {auth-token}"
 "https://{host}.bookingbug.com/api/v1/{company_id}/members/{member_id}"
   ```
@@ -88,7 +88,7 @@ Members can update their personal details. The following parameters are availabl
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>first_name</td>
@@ -150,7 +150,7 @@ Members can update their personal details. The following parameters are availabl
 
 <pre> PUT /api/v1/{company_id}/members/{member_id} </pre>
 
-Below is a cURL call updating first and last name of a member. 
+Below is a cURL call updating first and last name of a member.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -161,11 +161,11 @@ Below is a cURL call updating first and last name of a member.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Auth-token: {auth-token}"
   -H "Cache-Control: no-cache"
   -d '{
-  "first_name": "Bookingbug", 
+  "first_name": "Bookingbug",
   "last_name": "User"
   }'
 "https://{host}.bookingbug.com/api/v1/{company_id}/members/{member_id}"
@@ -190,7 +190,7 @@ A member can view thier bookings using the following API method.
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>company_id</td>
@@ -239,7 +239,7 @@ A member can view thier bookings using the following API method.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Auth-Token: {auth-token}"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/members/{member_id}/bookings?per_page=50&page=1"

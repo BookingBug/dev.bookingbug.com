@@ -5,7 +5,7 @@ The resource API enables you to list, create, update and delete the resources ag
 ## Create Resource
 
 The API enables an admin to create a resource. The following parameters listed below are supported.
- 
+
 ### Parameters
 <table class="pure-table">
     <thead>
@@ -15,7 +15,7 @@ The API enables an admin to create a resource. The following parameters listed b
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>name</td>
@@ -122,8 +122,8 @@ The API enables an admin to create a resource. The following parameters listed b
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
     "name": "Consultation room 1",
@@ -150,13 +150,13 @@ The API enables an admin to create a resource. The following parameters listed b
         </div>
         </div>  
 
-Above is an example cURL call for creating a new resource with an address. When adding an address whilst creating a new resource, you'll need to find the `address_id` in the response and make another API call to the address end-point to view the address or alternatively you can grab the address link in the response. 
+Above is an example cURL call for creating a new resource with an address. When adding an address whilst creating a new resource, you'll need to find the `address_id` in the response and make another API call to the address end-point to view the address or alternatively you can grab the address link in the response.
 
 ## Update Resource
 
-You can update information of a resource. The parameters stated above can be used. You must be authenicated as an administrator to make this call. 
+You can update information of a resource. The parameters stated above can be used. You must be authenticated as an administrator to make this call.
 
-<pre>PUT /api/v1/admin/{company_id}/resources/{id}</pre> 
+<pre>PUT /api/v1/admin/{company_id}/resources/{id}</pre>
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -168,8 +168,8 @@ You can update information of a resource. The parameters stated above can be use
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
     "name": "Consultation room 1",
@@ -198,7 +198,7 @@ You can update information of a resource. The parameters stated above can be use
 
 ## List Resources
 
-There are two different ways of listing resources. The first method is using the admin end-point and the second method is using the public end-point. The admin method of listing will return more data compared to the public. 
+There are two different ways of listing resources. The first method is using the admin end-point and the second method is using the public end-point. The admin method of listing will return more data compared to the public.
 
 ### Parameters
 <table class="pure-table">
@@ -209,7 +209,7 @@ There are two different ways of listing resources. The first method is using the
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>page</td>
@@ -239,8 +239,8 @@ There are two different ways of listing resources. The first method is using the
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/resource?page=1&per_page=50"
   ```
@@ -356,11 +356,11 @@ There are two different ways of listing resources. The first method is using the
         </div>
         </div>
 
-The above is an admin cURL call for listing all resources 50 per page. 
+The above is an admin cURL call for listing all resources 50 per page.
 
 ## Read Resource
 
-The resource read method enables you to view a particular resource's information. Once again there are two different ways, the admin and the public. 
+The resource read method enables you to view a particular resource's information. Once again there are two different ways, the admin and the public.
 
 <pre>GET /api/v1/admin/{company_id}/resources/{id}</pre>
 <pre>GET /api/v1/{company_id}/resources/{id}</pre>
@@ -375,8 +375,8 @@ The resource read method enables you to view a particular resource's information
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/resources/{id}"
   ```
@@ -385,7 +385,7 @@ The resource read method enables you to view a particular resource's information
         </div>
         </div>
 
-Above is an example admin cURL call for reading a resource. 
+Above is an example admin cURL call for reading a resource.
 
 ## Delete Resource
 
@@ -403,8 +403,8 @@ You can delete a resource using the API method below.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/resources/{id}"
   ```
@@ -430,7 +430,7 @@ You can block a time slot for a resource in their calendar. The following parame
 <pre>
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json" 
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
   	"start_time": "2017-09-07T11:00:00",
@@ -479,4 +479,4 @@ You can block a time slot for a resource in their calendar. The following parame
         </div>
         </div>
 
-Above is an example admin cURL call blocking time for a given staff from 11am to 12pm on 7th September 2017. 
+Above is an example admin cURL call blocking time for a given staff from 11am to 12pm on 7th September 2017.

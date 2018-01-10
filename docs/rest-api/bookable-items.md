@@ -1,10 +1,10 @@
 # Bookable items
 
-In the [listing items](docs/rest-api/listing-items) section we explained how you can list configured items in your company. In this section we will explain how you can use the REST API to query bookable items based on another item. 
+In the [listing items](docs/rest-api/listing-items) section we explained how you can list configured items in your company. In this section we will explain how you can use the REST API to query bookable items based on another item.
 
-You can give a single, or combination of service, resource, person and calculatate what the sub-items are bookable.
+You can give a single, or combination of service, resource, person and calculate what the sub-items are bookable.
 
-<pre> GET /api/v1/{company_id}/items </pre> 
+<pre> GET /api/v1/{company_id}/items </pre>
 
 ### Parameters
 
@@ -16,7 +16,7 @@ You can give a single, or combination of service, resource, person and calculata
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>company_id</td>
@@ -51,7 +51,7 @@ You can give a single, or combination of service, resource, person and calculata
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/items?service_id=104749"
   ```
@@ -138,4 +138,4 @@ You can give a single, or combination of service, resource, person and calculata
         </div>
         </div>
 
-In the cURL call example above we are listing all sub-bookable items for a particlualr service. You can append other parameters listed above.
+In the cURL call example above we are listing all sub-bookable items for a particular service. You can append other parameters listed above.

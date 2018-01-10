@@ -15,7 +15,7 @@ GET /api/v1/1234/services
 Prepend your Bookingbug URL to the resource identifier to get the full endpoint URL:
 
 <pre>
-https://uk.bookingbug.com/api/v1/1234/services	
+https://uk.bookingbug.com/api/v1/1234/services
 </pre>
 
 Curly braces, `{}`, indicate values you have to replace. Example:
@@ -31,14 +31,14 @@ The examples provided in the docs are cURL statements. You can run the statement
 The Bookingbug API requires `App-id` and `App-key` to be parsed in the `HTTP` header for each call. These keys can be obtained by contacting your BookingBug Account manager or primary contact.
 
 <pre>
--H "App-id: {app-id}" -H "App-key: {app-key}"	
+-H "App-id: {app-id}" -H "App-key: {app-key}"
 </pre>
 
 ### Permission
 
 The Bookingbug platform is separated into three different APIs:
 
-1. **Public** - The public API does not require authentications and it enbales you to get information of services, resources, events, add items to basket, view basket and checkout. 
+1. **Public** - The public API does not require authentications and it enables you to get information of services, resources, events, add items to basket, view basket and checkout. 
 2. **Member** - The member API enables you to login as a member, make bookings and amend or cancel their previously made bookings.
 3. **Admin** - The admin API enables you to administer the account, such us create or amend people, resources or clients and view bookings.
 
@@ -54,13 +54,13 @@ The request format of the three APIs are:
 ##### Member
 
 <pre>
-/api/v1/{company_id}/members/	
+/api/v1/{company_id}/members/
 </pre>
 
 ##### Admin
 
 <pre>
-/api/v1/admin/{company_id}	
+/api/v1/admin/{company_id}
 </pre>
 
 ### Company ID
