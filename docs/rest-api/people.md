@@ -5,7 +5,7 @@ The people API enables you to list, create, update, delete and query the staff r
 ## Create Person
 
 The API enables an admin to create a person. The following parameters listed below are supported.
- 
+
 ### Parameters
 <table class="pure-table">
     <thead>
@@ -15,7 +15,7 @@ The API enables an admin to create a person. The following parameters listed bel
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>name</td>
@@ -82,8 +82,8 @@ The API enables an admin to create a person. The following parameters listed bel
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
     "name": "Test Staff",
@@ -105,7 +105,7 @@ Above is an example cURL call for creating a new person.
 
 ## Update Person
 
-You can update information of a person. The parameters stated below are supported. You must be authenicated as an administrator to make this call. 
+You can update information of a person. The parameters stated below are supported. You must be authenticated as an administrator to make this call. 
 
 ### Parameters
 <table class="pure-table">
@@ -116,7 +116,7 @@ You can update information of a person. The parameters stated below are supporte
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>name</td>
@@ -171,7 +171,7 @@ You can update information of a person. The parameters stated below are supporte
     </tbody>
 </table>
 
-<pre>PUT /api/v1/admin/{company_id}/people/{id}</pre> 
+<pre>PUT /api/v1/admin/{company_id}/people/{id}</pre>
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -183,8 +183,8 @@ You can update information of a person. The parameters stated below are supporte
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
     "name": "Test Staff 1",
@@ -203,7 +203,7 @@ You can update information of a person. The parameters stated below are supporte
 
 ## List People
 
-There are two different ways of listing people. The first method is using the admin end-point and the second method is using the public end-point. The admin method of listing will return more data compared to the public. 
+There are two different ways of listing people. The first method is using the admin end-point and the second method is using the public end-point. The admin method of listing will return more data compared to the public.
 
 ### Parameters
 <table class="pure-table">
@@ -214,7 +214,7 @@ There are two different ways of listing people. The first method is using the ad
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>page</td>
@@ -249,8 +249,8 @@ There are two different ways of listing people. The first method is using the ad
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people?page=1&per_page=50&include_disabled=false"
   ```
@@ -471,11 +471,11 @@ There are two different ways of listing people. The first method is using the ad
         </div>
         </div>
 
-Above is an example admin cURL call for listing all the staff, 50 per page and only those which are active. 
+Above is an example admin cURL call for listing all the staff, 50 per page and only those which are active.
 
 ## Read Person
 
-The person read method enables you to view a particular staff's information. Once again there are two different ways, the admin and the public. 
+The person read method enables you to view a particular staff's information. Once again there are two different ways, the admin and the public.
 
 <pre>GET /api/v1/admin/{company_id}/people/{id}</pre>
 <pre>GET /api/v1/{company_id}/people/{id}</pre>
@@ -490,8 +490,8 @@ The person read method enables you to view a particular staff's information. Onc
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}"
   ```
@@ -500,7 +500,7 @@ The person read method enables you to view a particular staff's information. Onc
         </div>
         </div>
 
-Above is an example admin cURL call for viewing a person. 
+Above is an example admin cURL call for viewing a person.
 
 ## Delete Person
 
@@ -518,8 +518,8 @@ You can delete a person using the API method below.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}"
   ```
@@ -530,7 +530,7 @@ You can delete a person using the API method below.
 
 ## Find by reference
 
-You can query the people end-point to find a particular staff with their reference. You must be authenticated as an administrator. 
+You can query the people end-point to find a particular staff with their reference. You must be authenticated as an administrator.
 
 <pre>GET /api/v1/admin/{company_id}/people/find_by_ref/{reference}</pre>
 
@@ -545,7 +545,7 @@ You can query the people end-point to find a particular staff with their referen
 <pre>
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json" 
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/find_by_ref/{ref}"
   ```
@@ -643,7 +643,7 @@ You can block a time slot for a person in their calendar. The following paramete
 <pre>
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json" 
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
   	"start_time": "2017-09-07T11:00:00",
@@ -692,11 +692,11 @@ You can block a time slot for a person in their calendar. The following paramete
         </div>
         </div>
 
-Above is an example admin cURL call blocking time for a given staff from 11am to 12pm on 7th September 2017. 
+Above is an example admin cURL call blocking time for a given staff from 11am to 12pm on 7th September 2017.
 
 ## Read image for person
 
-You can read a person's image. The image must be uploaded first from the backend. Once done this can be grabbed via the API using the method below. Alternatively you can list or read a person and you'll find the image link within the response. 
+You can read a person's image. The image must be uploaded first from the backend. Once done this can be grabbed via the API using the method below. Alternatively you can list or read a person and you'll find the image link within the response.
 
 <pre>GET /api/v1/{company_id}/media/person_images/{person_id}</pre>
 
@@ -711,7 +711,7 @@ You can read a person's image. The image must be uploaded first from the backend
 <pre>
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json" 
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/media/person_images/{person_id}"
   ```

@@ -10,7 +10,7 @@ There are two core booking user journeys that can be done via the BookingBug API
 - **Confirmation** This step will be the confirmation stage for your user to check the details of their booking. Once confirmed you can proceed to the checkout
 
 - **Checkout** The user can then make a payment with one of your set up payment providers.
-  
+
 <!-- ## User Flow
 Before you start building an integration with the REST API it is important to plan out your user flow. Below is a UML Diagram of an example event booking user flow. Each stage has an action that the user carries out and each stage requires certain API calls.
 
@@ -43,7 +43,7 @@ deactivate D;
 '> -->
 
 ## API Authentication
-To make API calls, you will need an `App-Key` and `App-ID`. You will also need an `Auth-Token`to make a booking which can be acquired by logging in as an admin using the API.
+To make API calls, you will need an `App-Key` and `App-ID`. You will also need an `Auth-Token` to make a booking which can be acquired by logging in as an admin using the API.
 
 <!--[Find out how to obtain your API keys here](docs/rest-api/api-keys)-->
 
@@ -74,7 +74,7 @@ var request = require("request");
 
 var options = { method: 'POST',
   url: 'https://<host>.bookingbug.com/api/v1/login',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'app-id': '<app-key>',
      'app-key': '<app-id>',
@@ -349,7 +349,7 @@ var request = require("request");
 
 var options = { method: 'GET',
   url: 'https://<host>.bookingbug.com/api/v1/admin/<company-id>/company',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'auth-token': '<auth-token>',
      'app-key': '<app-key>',
@@ -690,7 +690,7 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/eab0485e5c9fb3054f64)
 
 ## List Events
-The next step is to list the avalible events to your user. This can be done with `GET https://<host>.bookingbug.com/api/v1/<company-id>/events`. 
+The next step is to list the avalible events to your user. This can be done with `GET https://<host>.bookingbug.com/api/v1/<company-id>/events`.
 
 This will return all available events. To book an event, you will need the `event_id`, `event_chain_id`, `date` and `time` parameters.
 
@@ -728,7 +728,7 @@ var request = require("request");
 
 var options = { method: 'GET',
   url: 'https://<host>.bookingbug.com/api/v1/<company-id>/events',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'auth-token': '<auth-token>',
      'app-key': '<app-key>',
@@ -959,7 +959,7 @@ var request = require("request");
 
 var options = { method: 'GET',
   url: 'https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'auth-token': '<auth-token>',
      'app-key': '<app-key>',
@@ -1240,13 +1240,13 @@ var request = require("request");
 
 var options = { method: 'POST',
   url: 'https://<host>.bookingbug.com/api/v1/admin/<company-id>/client',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'auth-token': '<auth-token>',
      'app-key': '<app-key>',
      'app-id': '<app-id>',
      'content-type': 'multipart/form-data; boundary=---011000010111000001101001' },
-  formData: 
+  formData:
    { first_name: '<first-name>',
      last_name: '<last-name>',
      email: '<email>' } };

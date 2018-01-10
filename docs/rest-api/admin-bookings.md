@@ -1,6 +1,6 @@
 # Admin Bookings
 
-The REST API enables the administrator to administer bookings for their company/business. As an administrator you can retrieve all bookings made against your company, create new bookings on behalf of your customers or even cancel/amend bookings if requried. 
+The REST API enables the administrator to administer bookings for their company/business. As an administrator you can retrieve all bookings made against your company, create new bookings on behalf of your customers or even cancel/amend bookings if required.
 
 ## List Bookings
 
@@ -15,7 +15,7 @@ You can list all the bookings/appointment or filter from the below parameters to
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>company_id</td>
@@ -95,7 +95,7 @@ You can list all the bookings/appointment or filter from the below parameters to
 
 <pre>GET /api/v1/admin/{company_id}/bookings/id</pre>
 
-Below is a cURL example on how to retrieve bookings for a given date range and also includes any cancelled bookings. This is an admin API call so you'll need to authenticate and provide the auth-token in the header. If no parameters are appended all bookings will be returned. 
+Below is a cURL example on how to retrieve bookings for a given date range and also includes any cancelled bookings. This is an admin API call so you'll need to authenticate and provide the auth-token in the header. If no parameters are appended all bookings will be returned.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -107,8 +107,8 @@ Below is a cURL example on how to retrieve bookings for a given date range and a
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings?start_date=2017-02-27&end_date=2017-03-01&include_cancelled=true"
   ```
@@ -263,17 +263,17 @@ Below is a cURL example on how to retrieve bookings for a given date range and a
 </pre>
         </div>
         </div>
-        </div> 
+        </div>
 
 ## List Child Bookings
 
-If you have a parent/child company setup, you can list bookings by calling the parent company ID by appending `children=true` 
+If you have a parent/child company setup, you can list bookings by calling the parent company ID by appending `children=true`
 
 <pre>GET /api/v1/admin/{parent_company_id}/bookings?children=true</pre>
 
 ## New Booking
 
-You can create a new booking/appointment in the Bookingbug platform on behalf of the customer or if bookings are only created by an administrator. 
+You can create a new booking/appointment in the Bookingbug platform on behalf of the customer or if bookings are only created by an administrator.
 
 ### Parameters
 <table class="pure-table">
@@ -284,7 +284,7 @@ You can create a new booking/appointment in the Bookingbug platform on behalf of
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>company_id</td>
@@ -338,10 +338,10 @@ Below is a cURL example on how to create a new admin bookings for a given dateti
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}" 
--H "Content-Type: application/json" 
--H "Cache-Control: no-cache" 
--d 
+curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}"
+-H "Content-Type: application/json"
+-H "Cache-Control: no-cache"
+-d
 '{
 	"datetime": "2017-03-01T11:00:00",
 	"service_id": 104747,
@@ -482,11 +482,11 @@ curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth
 </pre>
         </div>
         </div>
-        </div> 
+        </div>
 
 ## Update Booking
 
-You can update a booking if required. A booking can be moved to a new date/time (if available) or can be moved to a different staff/resource. 
+You can update a booking if required. A booking can be moved to a new date/time (if available) or can be moved to a different staff/resource.
 
 <pre>PUT /api/v1/admin/{company_id}/bookings/id</pre>
 
@@ -502,10 +502,10 @@ Below is a cURL example on how to update an existing booking to a new datetime. 
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-token: {auth-token}" 
--H "Content-Type: application/json" 
--H "Cache-Control: no-cache" 
--d 
+curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-token: {auth-token}"
+-H "Content-Type: application/json"
+-H "Cache-Control: no-cache"
+-d
 '{
 	"datetime": "2017-03-02T11:00:00"
 }' "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings/{booking_id}"
@@ -641,15 +641,15 @@ curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-token: {auth-
 </pre>
         </div>
         </div>
-        </div> 
+        </div>
 
 ## Cancel Booking
 
-Cancel a booking using the admin booking end-point. When caneclling a booking you can supply cancellation reason with `"cancel_reason": "string"` and notify the user/admin with `"notify": true`
+Cancel a booking using the admin booking end-point. When cancelling a booking you can supply cancellation reason with `"cancel_reason": "string"` and notify the user/admin with `"notify": true`
 
 <pre>POST /api/v1/admin/{company_id}/bookings/{id}/cancel</pre>
 
-Below is an example of cancelling a booking. 
+Below is an example of cancelling a booking.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -660,10 +660,10 @@ Below is an example of cancelling a booking.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}" 
--H "Content-Type: application/json" 
--H "Cache-Control: no-cache" 
--d 
+curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}"
+-H "Content-Type: application/json"
+-H "Cache-Control: no-cache"
+-d
 '{
 	"notify": true,
 	"cancel_reason": "String"
@@ -672,18 +672,18 @@ curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth
 </pre>
         </div>
         </div>
-        </div> 
+        </div>
 
 ## Add Private Note
 
-Insert private notes directly on a booking. Private notes are only visible to administrator and not customers. 
+Insert private notes directly on a booking. Private notes are only visible to administrator and not customers.
 
-<pre>PUT /api/v1/admin/{company_id}/bookings/{id}/private_notes</pre> 
+<pre>PUT /api/v1/admin/{company_id}/bookings/{id}/private_notes</pre>
 
 To update an existing private note
 <pre>PUT /api/v1/admin/{company_id}/bookings/{id}/private_notes/{id}</pre>
 
-Below is an example of adding a private note on a booking. 
+Below is an example of adding a private note on a booking.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -695,13 +695,13 @@ Below is an example of adding a private note on a booking.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}" 
--H "Content-Type: application/json" 
--H "Cache-Control: no-cache" 
--d 
+curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}"
+-H "Content-Type: application/json"
+-H "Cache-Control: no-cache"
+-d
 	'{
 		"note": "This is a private note"
-	}' 
+	}'
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings/{booking_id}/private_notes"
   ```
 </pre>
@@ -730,4 +730,4 @@ Status 200 OK
 </pre>
         </div>
         </div>
-        </div> 
+        </div>

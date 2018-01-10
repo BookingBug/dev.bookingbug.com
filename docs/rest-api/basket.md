@@ -3,15 +3,15 @@
 The basket method is the process which enables end-users to make a booking (appointment). The basket acts like a shopping cart where a typical user flow consist of the following:
 
 1. Add items to the basket
-2. View full basket or view an item in a basket 
+2. View full basket or view an item in a basket
 3. Remove an item from the basket
-4. Checkout to complete the booking. 
+4. Checkout to complete the booking.
 
 This section will explain how you can add services/events to the basket and checkout.
 
 ## Add Item
 
-To be able to add items to the basket we need to check the avalibility for a service or an event, which was explained [here](docs/rest-api/availability).
+To be able to add items to the basket we need to check the availability for a service or an event, which was explained [here](docs/rest-api/availability).
 
 ### Parameters
 <table class="pure-table">
@@ -22,7 +22,7 @@ To be able to add items to the basket we need to check the avalibility for a ser
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>service_id</td>
@@ -37,7 +37,7 @@ To be able to add items to the basket we need to check the avalibility for a ser
             <tr>
                 <td>event_id</td>
                 <td>integer</td>
-                <td>The underlying Bookable 'event ID' - that descripbes this bookable service combination</td>
+                <td>The underlying Bookable 'event ID' - that describes this bookable service combination</td>
             </tr>
             <tr>
                 <td>event_chain_id</td>
@@ -72,7 +72,7 @@ Below is an example of adding a service to the basket. In the header response we
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{"service_id": "104748", "date": "2017-02-01", "time": "630"}'
 "https://{host}.bookingbug.com/api/v1/{company_id}/basket/add_item"
@@ -167,7 +167,7 @@ Content-Length: 1511
         </div>
         </div>
 
-The `member_id` is optional at `add_item` stage but is required upon checkout. 
+The `member_id` is optional at `add_item` stage but is required upon checkout.
 
 ### Adding an event
 
@@ -180,7 +180,7 @@ The `member_id` is optional at `add_item` stage but is required upon checkout.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{"event_id": "104748", "event_chain_id": "3432423"}'
 "https://{host}.bookingbug.com/api/v1/{company_id}/basket/add_item"
@@ -190,7 +190,7 @@ The `member_id` is optional at `add_item` stage but is required upon checkout.
         </div>
         </div>
 
-If a space is taken or trying to book the space again, the API will give you the following error. 
+If a space is taken or trying to book the space again, the API will give you the following error.
 
 <pre>
 {
@@ -206,7 +206,7 @@ If a space is taken or trying to book the space again, the API will give you the
 
 ## View Basket
 
-You can view the basket using this method. Notice we are passing in the same `Auth-Token` retervied from the `add_item` in the header here. The response will be identical to the one we get when adding to basket. 
+You can view the basket using this method. Notice we are passing in the same `Auth-Token` retrieved from the `add_item` in the header here. The response will be identical to the one we get when adding to basket. 
 
 <pre> GET /api/v1/{company_id}/basket </pre>
 
@@ -220,7 +220,7 @@ You can view the basket using this method. Notice we are passing in the same `Au
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache" -H "Auth-Token: Boq2lgDNQLAFTmiJQaABRA"
 "https://{host}.bookingbug.com/api/v1/{company_id}/basket"
   ```
@@ -304,7 +304,7 @@ You can view the basket using this method. Notice we are passing in the same `Au
 
 ## View Basket Item
 
-If you have more than one items in your basket you can view the basket item. Each item has a basket ID. 
+If you have more than one items in your basket you can view the basket item. Each item has a basket ID.
 
 <pre> GET /api/v1/{company_id}/basket/{id} </pre>
 
@@ -318,7 +318,7 @@ If you have more than one items in your basket you can view the basket item. Eac
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache" -H "Auth-Token: Boq2lgDNQLAFTmiJQaABRA"
 "https://{host}.bookingbug.com/api/v1/{company_id}/basket/5c733ffc20bc6b24"
   ```
@@ -390,7 +390,7 @@ You can delete an item from the basket. Basket item ID is required with `DELETE`
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache" -H "Auth-Token: Boq2lgDNQLAFTmiJQaABRA"
 "https://{host}.bookingbug.com/api/v1/{company_id}/basket/5c733ffc20bc6b24"
   ```
@@ -409,7 +409,7 @@ To complete the booking you must checkout the basket before the basket session e
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>member_id</td>
@@ -450,8 +450,8 @@ To complete the booking you must checkout the basket before the basket session e
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
-  -H "Cache-Control: no-cache" -H "Auth-Token: Boq2lgDNQLAFTmiJQaABRA" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
+  -H "Cache-Control: no-cache" -H "Auth-Token: Boq2lgDNQLAFTmiJQaABRA"
   -d '{"member_id": "232323", "take_from_wallet": "false"}'
 "https://{host}.bookingbug.com/api/v1/{company_id}/basket/checkout"
   ```

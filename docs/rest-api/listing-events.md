@@ -1,10 +1,10 @@
 # Listing Events
 
-The REST API enables you to list bookable events and recurring events. This section of the guide will explain what is an event, event_chains and event group. 
+The REST API enables you to list bookable events and recurring events. This section of the guide will explain what is an event, event_chains and event group.
 
 ## Event group
 
-Events can be grouped together using event group (category). This method will list all the groups you have configured in your company. For example an event called "Pilates" can be categoried as "Fitness".
+Events can be grouped together using event group (category). This method will list all the groups you have configured in your company. For example an event called "Pilates" can be categorised as "Fitness".
 
 ### Parameters
 <table class="pure-table">
@@ -15,7 +15,7 @@ Events can be grouped together using event group (category). This method will li
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>company_id</td>
@@ -38,7 +38,7 @@ Events can be grouped together using event group (category). This method will li
 <pre>GET /api/v1/{company_id}/event_groups</pre>
 <pre>GET /api/v1/{company_id}/event_groups/{id}</pre>
 
-The cURL call below will list all the event groups with pagination of 100 per page. 
+The cURL call below will list all the event groups with pagination of 100 per page.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -50,7 +50,7 @@ The cURL call below will list all the event groups with pagination of 100 per pa
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/event_chains?page=1&per_page=100"
   ```
@@ -93,7 +93,7 @@ The cURL call below will list all the event groups with pagination of 100 per pa
 
 ## Event Chain
 
-An event chain describes the events setup in your company. An event can have many occurrences, depending on if the event is setup as a single or regular (recurring). This method will list all of the events. The following parameters below can be appended. 
+An event chain describes the events setup in your company. An event can have many occurrences, depending on if the event is setup as a single or regular (recurring). This method will list all of the events. The following parameters below can be appended.
 
 ### Parameters
 <table class="pure-table">
@@ -104,7 +104,7 @@ An event chain describes the events setup in your company. An event can have man
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>company_id</td>
@@ -132,7 +132,7 @@ An event chain describes the events setup in your company. An event can have man
 <pre>GET /api/v1/{company_id}/event_chains</pre>
 <pre>GET /api/v1/{company_id}/event_chains/{id}</pre>
 
-The cURL call below will list all the events with pagination of 100 per page. 
+The cURL call below will list all the events with pagination of 100 per page.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -144,7 +144,7 @@ The cURL call below will list all the events with pagination of 100 per page.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/event_chains?page=1&per_page=100"
   ```
@@ -216,7 +216,7 @@ The cURL call below will list all the events with pagination of 100 per page.
 
 ## Events
 
-The events method will list all bookable events. The following parameters below can be appended to filter the bookable events. 
+The events method will list all bookable events. The following parameters below can be appended to filter the bookable events.
 
 ### Parameters
 <table class="pure-table">
@@ -227,7 +227,7 @@ The events method will list all bookable events. The following parameters below 
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>company_id</td>
@@ -285,7 +285,7 @@ The events method will list all bookable events. The following parameters below 
 <pre>GET /api/v1/{company_id}/events</pre>
 <pre>GET /api/v1/{company_id}/events/{id}</pre>
 
-The cURL call below will list all bookable events from the 1st of Jan 2016 to the 10th of Jan 2016. 
+The cURL call below will list all bookable events from the 1st of Jan 2016 to the 10th of Jan 2016.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -297,7 +297,7 @@ The cURL call below will list all bookable events from the 1st of Jan 2016 to th
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/events?start_date=2016-01-01&end_date=2016-01-10"
   ```
@@ -362,4 +362,3 @@ The cURL call below will list all bookable events from the 1st of Jan 2016 to th
         </div>
         </div>
         </div>
-
