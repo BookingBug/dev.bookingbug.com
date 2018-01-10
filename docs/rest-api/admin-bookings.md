@@ -645,7 +645,7 @@ curl -X PUT -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-token: {auth-
 
 ## Cancel Booking
 
-Cancel a booking using the admin booking end-point. When cancelling a booking you can supply cancellation reason with `"cancel_reason": "string"` and notify the user/admin with `"notify": true`
+Cancel a booking using the admin booking end-point. When cancelling a booking you can supply cancellation reason with `"cancel_reason": "string"` and notify the user/admin with `"notify": true` parameter.
 
 <pre>POST /api/v1/admin/{company_id}/bookings/{id}/cancel</pre>
 
