@@ -1,10 +1,10 @@
 # Availability
 
-This section will outline how you can use the REST API to get the available slots for a bookable item (Services & Events). Below we will explain each of these endpoints in more detail. 
+This section will outline how you can use the REST API to get the available slots for a bookable item (Services & Events). Below we will explain each of these endpoints in more detail.
 
 ## Day
 
-The Day end-point will load a list of bookable event items for a particular date. 
+The Day end-point will load a list of bookable event items for a particular date.
 
 
 #### Parameters
@@ -17,7 +17,7 @@ The Day end-point will load a list of bookable event items for a particular date
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>company_id</td>
@@ -69,7 +69,7 @@ The Day Data gets data for a range of days. This end-point retrieves a set of da
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>company_id</td>
@@ -149,7 +149,7 @@ The cURL below is an example that will return back all available slots for a giv
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/company_id/day_data?service_id=xxx&date=2016-13-12&edate=2016-20-12"
   ```
@@ -196,11 +196,11 @@ The cURL below is an example that will return back all available slots for a giv
         </div>
         </div>
 
-**Note:** We recommend that you use shorter date range for better performance. 
+**Note:** We recommend that you use shorter date range for better performance.
 
 ## Time Data
 
-Time Data end-point gets available time slots for events for a date. You can also combine the date with any of the listed parameters below to filter the results. 
+Time Data end-point gets available time slots for events for a date. You can also combine the date with any of the listed parameters below to filter the results.
 
 #### Parameters
 
@@ -212,7 +212,7 @@ Time Data end-point gets available time slots for events for a date. You can als
                 <th>Description</th>
             </tr>
         </thead>
-    
+
         <tbody>
             <tr>
                 <td>company_id</td>
@@ -281,7 +281,7 @@ Additional resources/rooms to block out with this booking</td>
         </tbody>
     </table>
 
-The cURL call below will list all available time slots for a particular date and for a particular staff (person). You can even pass in the service_id if you need the availbility for a particular service. 
+The cURL call below will list all available time slots for a particular date and for a particular staff (person). You can even pass in the service_id if you need the availability for a particular service. 
 
 <div class="tabs">
     <ul class="tabs__menu">

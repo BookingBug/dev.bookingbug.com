@@ -60,7 +60,7 @@ deactivate G;
 '> -->
 
 ## API Authentication
-To make API calls, you will need an `App-Key` and `App-ID`. You will also need an `Auth-Token`to make a booking which can be acquired by logging in as an admin using the API.
+To make API calls, you will need an `App-Key` and `App-ID`. You will also need an `Auth-Token` to make a booking which can be acquired by logging in as an admin using the API.
 
 [Find out how to obtain your API keys here](docs/rest-api/api-keys)
 
@@ -91,7 +91,7 @@ var request = require("request");
 
 var options = { method: 'POST',
   url: 'https://<host>.bookingbug.com/api/v1/login',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'app-id': '<app-key>',
      'app-key': '<app-id>',
@@ -366,7 +366,7 @@ var request = require("request");
 
 var options = { method: 'GET',
   url: 'https://<host>.bookingbug.com/api/v1/admin/<company-id>/company',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'auth-token': '<auth-token>',
      'app-key': '<app-key>',
@@ -735,7 +735,7 @@ var request = require("request");
 
 var options = { method: 'GET',
   url: 'https://<host>.bookingbug.com/api/v1/<company-id>/addresses',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'auth-token': '<auth-token>',
      'app-key': '<app-key>',
@@ -923,7 +923,7 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 With the list of companies now available, your user can choose which store they want to make the service booking with.
 
 ## List Services
-Once your user has chosen a location then you can list the services available at that location. This can be done with `GET https://<host>.bookingbug.com/api/v1/admin/<company-id>/services` method. This will return the service object. 
+Once your user has chosen a location then you can list the services available at that location. This can be done with `GET https://<host>.bookingbug.com/api/v1/admin/<company-id>/services` method. This will return the service object.
 
 > append `?page=1&per_page=300` to return the paginated services on this end point.
 
@@ -953,7 +953,7 @@ var request = require("request");
 
 var options = { method: 'GET',
   url: 'https://<host>.bookingbug.com/api/v1/admin/<company-id>/services',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'auth-token': '<auth-token>',
      'app-key': '<app-key>',
@@ -1245,7 +1245,7 @@ HttpResponse<String> response = Unirest.get("https://<host>.bookingbug.com/api/v
 
 ## List Available Slots
 Listing the available slots uses the `GET https://<host>.bookingbug.com/api/v1/<company_id>/services/time_data` API method. You can then pass in different parameters such as your time frame on the end of the API call for example `https://<host>.bookingbug.com/api/v1/<company_id>/services?service_id=<service_id>&date=YYYY-MM-DD&end_date=YYYY-MM-DD&duration=60`
-You can also pass in a `person_id` or a `resource_id`to receive information about the staff and resources linked to the services, respectively.
+You can also pass in a `person_id` or a `resource_id` to receive information about the staff and resources linked to the services, respectively.
 
 ## Collect User Details
 You will need to query the event chain end point to pull in the full details regarding the event As per the below code example
@@ -1276,7 +1276,7 @@ var request = require("request");
 
 var options = { method: 'GET',
   url: 'https://<host>.bookingbug.com/api/v1/<company-id>/event_chains/<event-chain-id>',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'auth-token': '<auth-token>',
      'app-key': '<app-key>',
@@ -1557,13 +1557,13 @@ var request = require("request");
 
 var options = { method: 'POST',
   url: 'https://<host>.bookingbug.com/api/v1/admin/<company-id>/client',
-  headers: 
+  headers:
    { 'cache-control': 'no-cache',
      'auth-token': '<auth-token>',
      'app-key': '<app-key>',
      'app-id': '<app-id>',
      'content-type': 'multipart/form-data; boundary=---011000010111000001101001' },
-  formData: 
+  formData:
    { first_name: '<first-name>',
      last_name: '<last-name>',
      email: '<email>' } };

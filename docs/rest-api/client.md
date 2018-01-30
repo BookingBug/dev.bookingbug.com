@@ -1,11 +1,11 @@
 # Client
 
-The client API enables you to list, create, update and query the clients (customers) registered against your company. You must be authenticated as an administrator to perform the API calls for client. 
+The client API enables you to list, create, update and query the clients (customers) registered against your company. You must be authenticated as an administrator to perform the API calls for client. Please note that the client API endpoint is a protected Business Entity and therefore only available via Admin API.
 
 ## Create Client
 
 The API enables an admin to create a client (customer). The following parameters listed below are supported.
- 
+
 ### Parameters
 <table class="pure-table">
     <thead>
@@ -15,7 +15,7 @@ The API enables an admin to create a client (customer). The following parameters
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>first_name</td>
@@ -132,8 +132,8 @@ The API enables an admin to create a client (customer). The following parameters
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{
     "first_name": "Test Name",
@@ -151,7 +151,7 @@ The API enables an admin to create a client (customer). The following parameters
         </div>
         </div>  
 
-Above is an example cURL call creating a new client. If you would like to update the same client, the method will be `PUT` and you will need to append the client ID in the URL. 
+Above is an example cURL call creating a new client. If you would like to update the same client, the method will be `PUT` and you will need to append the client ID in the URL.
 
 ## List Clients
 
@@ -167,8 +167,8 @@ Above is an example cURL call creating a new client. If you would like to update
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client"
   ```
@@ -226,7 +226,7 @@ Above is an example cURL call creating a new client. If you would like to update
         </div>
         </div>
 
-Above is an example cURL call for listing all the clients. By default it will list 30 clients per page. You can use the `per_page` and `page` params for pagination. 
+Above is an example cURL call for listing all the clients. By default it will list 30 clients per page. You can use the `per_page` and `page` params for pagination.
 
 ## Read Client
 
@@ -242,21 +242,21 @@ Above is an example cURL call for listing all the clients. By default it will li
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/{id}"
   ```
 </pre>
         </div>
         </div>
-        </div> 
+        </div>
 
-The above cURL call is an example of reading a client. 
+The above cURL call is an example of reading a client.
 
 ## Delete Client
 
-You can delete a client. 
+You can delete a client.
 
 <pre>DELETE /api/v1/admin/{company_id}/client/{client_id}</pre>   
 
@@ -270,19 +270,19 @@ You can delete a client.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/{id}"
   ```
 </pre>
         </div>
         </div>
-        </div> 
+        </div>
 
-## Disable/Enable Client 
+## Disable/Enable Client
 
-You can disable/enable a client using the API. The following paremeters listed below are supported. You only need to specify either the ID or the email of a client in the body payload. 
+You can disable/enable a client using the API. The following paremeters listed below are supported. You only need to specify either the ID or the email of a client in the body payload.
 
 <table class="pure-table">
     <thead>
@@ -292,7 +292,7 @@ You can disable/enable a client using the API. The following paremeters listed b
             <th>Description</th>
         </tr>
     </thead>
-    
+
     <tbody>
         <tr>
             <td>Id</td>
@@ -324,8 +324,8 @@ You can disable/enable a client using the API. The following paremeters listed b
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
+  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
   -d '{ "id": 123456, "disable": true}'
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client"
@@ -333,11 +333,11 @@ You can disable/enable a client using the API. The following paremeters listed b
 </pre>
         </div>
         </div>
-        </div> 
+        </div>
 
 ## Find by email
 
-You can query the client end-point to find a particular customer with their email address. You must be authenticated as an administrator. 
+You can query the client end-point to find a particular customer with their email address. You must be authenticated as an administrator.
 
 <pre>GET /api/v1/admin/{company_id}/client/find_by_email/{email}</pre>
 
@@ -352,7 +352,7 @@ You can query the client end-point to find a particular customer with their emai
 <pre>
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json" 
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/find_by_email/j.oliver@test.com"
   ```
@@ -392,7 +392,7 @@ You can query the client end-point to find a particular customer with their emai
 
 ### Find by reference
 
-You can query the client end-point to find a particular customer with their reference. You must be authenticated as an administrator. 
+You can query the client end-point to find a particular customer with their reference. You must be authenticated as an administrator.
 
 <pre>GET /api/v1/admin/{company_id}/client/find_by_ref/{reference}</pre>
 
@@ -407,7 +407,7 @@ You can query the client end-point to find a particular customer with their refe
 <pre>
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json" 
+  -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/find_by_ref/123456"
   ```

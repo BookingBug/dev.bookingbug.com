@@ -212,7 +212,7 @@ The example cURL call above is reading a particular service using the public end
 
 ## Update service
 
-You can update the service. The parameters stated below are supported. You must be authenicated as an administrator to make this call.
+You can update the service. The parameters stated below are supported. You must be authenticated as an administrator to make this call.
 
 ### Parameters
 
@@ -279,7 +279,7 @@ You can update the service. The parameters stated below are supported. You must 
 
 ## Delete service
 
-You can delete a service. You must be authenticated as an admininistrator.
+You can delete a service. You must be authenticated as an administrator.
 
 <pre>DELETE /api/v1/admin/{company_id}/services/{id}</pre>
 

@@ -14,7 +14,6 @@ To authenticate with the API, you will require an auth token along with the App-
 curl -X POST -H "App-Key: {app-key}" -H "App-Id: {app-id}" -H "Cache-Control: no-cache" -H "Content-Type: application/json" -d '{ "email": "{email}", "password": "{password}" }' "https://{host}.bookingbug.com/api/v1/login"
 ```
 </pre>
-
         </div>
         <div id="tab-2" class="tab__content">
 <pre>
@@ -76,7 +75,7 @@ The Auth-Token is generated when the login end-point is executed and can be foun
 
 ## Parent/Child Authentication
 
-If you have a parent/child setup the authentiction is slightly different. The login endpoint needs to know
+If you have a parent/child setup the authentication is slightly different. The login endpoint needs to know
 which company you're logging in against and for that you'll need to pass in the company ID. See below an example cURL call.
 
 <div class="tabs">
@@ -88,7 +87,7 @@ which company you're logging in against and for that you'll need to pass in the 
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d
   '{
     "email": "{email}",
     "password": "{password}",
@@ -113,7 +112,7 @@ To authenticate as an administrator you can call the admin login end-point.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d 
+  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d
   '{
     "email": "{email}",
     "password": "{password}"
@@ -130,11 +129,11 @@ For every admin endpoint you must authenticate or if you have already authentica
   {
   "error": "401 Unauthorized"
   }
-</pre> 
+</pre>
 
 ## Logout
 
-If you need to logout the authenitcated user you can do this by calling the logout API.
+If you need to logout the authenticated user you can do this by calling the logout API.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -145,9 +144,9 @@ If you need to logout the authenitcated user you can do this by calling the logo
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}" 
-  -H "Content-Type: application/json" 
-  -H "Cache-Control: no-cache" 
+  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+  -H "Content-Type: application/json"
+  -H "Cache-Control: no-cache"
   "https://{host}.bookingbug.com/api/v1/login"
   ```
 </pre>
