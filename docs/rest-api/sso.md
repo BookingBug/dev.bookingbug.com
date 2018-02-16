@@ -272,9 +272,29 @@ With this token you've generated, you can:
 - initialise the 'Client Booking Journey' and 'Manage My Appointments' interfaces by passing this token into the angular directive or as a URL param when you initialise these interfaces.
 - or use the login API to get an Auth-Token that allows you to use the API as that Administrator or Client
 
-## BookingBug as the client
-The second option is for BookingBug to integrate with your SSO server. We are open to integrating to any standard SSO protocols including LDAP, OAuth, and OpenID or integrating with a custom SSO mechanism.
 
-## Alternatives to SSO
-SSO products(for example Oracle SSO) software that remembers forms and automatically signs in when it recognises a web form. Put the interface behind an another form of authentication, so people can not see the page unless they've signed in.
-Remember me checkboxes on login forms. The user will only have to log in once and on that device.
+## SSO Login 
+
+There are two end-points to login using the SSO Token. See below.  
+
+### Member Login
+
+```
+curl -X POST -H "App-Id: app-id" -H "App-Key: app-key" 
+-H "Content-Type: application/json" 
+-H "Cache-Control: no-cache" 
+-d '{
+    "token": "{SSO Token}"
+}' "https://{host}.bookingbug.com/api/v1/login/sso/{company_id}"
+```
+
+### Admin Login 
+
+```
+curl -X POST -H "App-Id: app-id" -H "App-Key: app-key" 
+-H "Content-Type: application/json" 
+-H "Cache-Control: no-cache" 
+-d '{
+    "token": "{SSO Token}"
+}' "https://{host}.bookingbug.com/api/v1/login/admin_sso/{company_id}"
+```
