@@ -34,6 +34,15 @@ The Bookingbug API requires `App-id` and `App-key` to be parsed in the `HTTP` he
 -H "App-id: {app-id}" -H "App-key: {app-key}"
 </pre>
 
+To find the App-id please follow the steps below:
+
+1. Login to your BookingBug Environment using an account with parent-level privileges
+2. Click on the cog icon on top right hand corner
+3. Click on **Advanced Settings** on the left hand side
+4. Click on **API Settings**
+
+Note: New customers will only require `App-id` and not App-key. This also means you only need to define the `App-id` in the headers.
+
 ### Permission
 
 The Bookingbug platform is separated into three different APIs:
