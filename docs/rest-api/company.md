@@ -244,7 +244,7 @@ In the example below we are only retrieving information for a child company.
 
 ## Update Company Reference
 
-        It is programatically possible update a company reference & coordinates. This functionality is particularly useful if you have many different child companies/branches with unique services in each. 
+        It is programatically possible update a company reference & coordinates. This functionality is particularly useful if you have many different child companies/branches with unique services in each.
 
         <pre>GET /api/v1/{company_id}/company</pre>
 
@@ -315,7 +315,7 @@ In the example below we are only retrieving information for a child company.
         "pretty_workphone": "",
         "_links": {
             "self": {
-                "href": "https://apidemo.bookingbug.com/api/v1/37005/addresses/2"
+                "href": "https://{host}.bookingbug.com/api/v1/37005/addresses/2"
             }
         }
     },
@@ -332,212 +332,212 @@ In the example below we are only retrieving information for a child company.
             "has_wallets": false,
             "_links": {
                 "self": {
-                    "href": "https://apidemo.bookingbug.com/api/v1/37005/settings"
+                    "href": "https://{host}.bookingbug.com/api/v1/37005/settings"
                 }
             }
         }
     },
     "_links": {
         "parent": {
-            "href": "https://apidemo.bookingbug.com/api/v1/company/37003"
+            "href": "https://{host}.bookingbug.com/api/v1/company/37003"
         },
         "company_search": {
-            "href": "https://apidemo.bookingbug.com/api/v1/company/37005/search{?company,address,page,per_page}"
+            "href": "https://{host}.bookingbug.com/api/v1/company/37005/search{?company,address,page,per_page}"
         },
         "self": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/company"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/company"
         },
         "settings": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/settings"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/settings"
         },
         "services": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/services"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/services"
         },
         "categories": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37003/categories{/id}",
+            "href": "https://{host}.bookingbug.com/api/v1/37003/categories{/id}",
             "templated": true
         },
         "address": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/addresses/2"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/addresses/2"
         },
         "addresses": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/addresses"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/addresses"
         },
         "book": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}",
+            "href": "https://{host}.bookingbug.com/api/v1/37005/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}",
             "templated": true
         },
         "space_statuses": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/space_statuses"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/space_statuses"
         },
         "named_categories": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/named_categories"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/named_categories"
         },
         "resources": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/resources{?embed}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/resources{?embed}",
             "templated": true
         },
         "people": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/people{?embed,filter_by,filter_by_fields,order_by,order_by_reverse,page,per_page,site}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/people{?embed,filter_by,filter_by_fields,order_by,order_by_reverse,page,per_page,site}",
             "templated": true
         },
         "clinics": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/clinics{/id}{?start_time,end_time,address_id,availability,start_date,end_date,resource_id,person_id}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/clinics{/id}{?start_time,end_time,address_id,availability,start_date,end_date,resource_id,person_id}",
             "templated": true
         },
         "events": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/events{?start_date,end_date,page,per_page,resource_id,person_id,event_group_id,event_chain_id,summary,member_level_id,embed,include_non_bookable,modified_since,order_by,filter_by}",
+            "href": "https://{host}.bookingbug.com/api/v1/37005/events{?start_date,end_date,page,per_page,resource_id,person_id,event_group_id,event_chain_id,summary,member_level_id,embed,include_non_bookable,modified_since,order_by,filter_by}",
             "templated": true
         },
         "event_chains": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/event_chains{?member_level_id}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/event_chains{?member_level_id}",
             "templated": true
         },
         "event_groups": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/event_groups{?page,per_page}",
+            "href": "https://{host}.bookingbug.com/api/v1/37005/event_groups{?page,per_page}",
             "templated": true
         },
         "client_details": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/client_details"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/client_details"
         },
         "packages": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/packages"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/packages"
         },
         "bulk_purchases": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/bulk_purchases"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/bulk_purchases"
         },
         "checkout": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/basket/checkout{?member_id,take_from_wallet}"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/basket/checkout{?member_id,take_from_wallet}"
         },
         "total": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/purchase_totals/{total_id}",
+            "href": "https://{host}.bookingbug.com/api/v1/37005/purchase_totals/{total_id}",
             "templated": true
         },
         "login": {
-            "href": "https://apidemo.bookingbug.com/api/v1/login/37005"
+            "href": "https://{host}.bookingbug.com/api/v1/login/37005"
         },
         "client": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/client{/id}{?page,per_page,filter_by,filter_by_fields,order_by,order_by_reverse,search_by_fields}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/client{/id}{?page,per_page,filter_by,filter_by_fields,order_by,order_by_reverse,search_by_fields}",
             "templated": true
         },
         "client_by_email": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/client/find_by_email/{email}",
+            "href": "https://{host}.bookingbug.com/api/v1/37005/client/find_by_email/{email}",
             "templated": true
         },
         "booking_text": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/booking_text"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/booking_text"
         },
         "basket": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/basket"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/basket"
         },
         "days": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/day_data{?month,week,date,edate,location,service_id,event_id,person_id,resource_id,people_ids,resource_ids,person_group_id}",
+            "href": "https://{host}.bookingbug.com/api/v1/37005/day_data{?month,week,date,edate,location,service_id,event_id,person_id,resource_id,people_ids,resource_ids,person_group_id}",
             "templated": true
         },
         "times": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/time_data{?service_id,event_id,date,end_date,location,person_id,resource_id,duration,single,num_resources,group_id,resource_ids,time_zone,ignore_booking,person_group_id,people_ids,is_admin}",
+            "href": "https://{host}.bookingbug.com/api/v1/37005/time_data{?service_id,event_id,date,end_date,location,person_id,resource_id,duration,single,num_resources,group_id,resource_ids,time_zone,ignore_booking,person_group_id,people_ids,is_admin}",
             "templated": true
         },
         "coupon": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/basket/coupon"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/basket/coupon"
         },
         "email_password_reset": {
-            "href": "https://apidemo.bookingbug.com/api/v1/login/37005/email_password_reset"
+            "href": "https://{host}.bookingbug.com/api/v1/login/37005/email_password_reset"
         },
         "facebook_login": {
-            "href": "https://apidemo.bookingbug.com/api/v1/login/37005/facebook"
+            "href": "https://{host}.bookingbug.com/api/v1/login/37005/facebook"
         },
         "opening_hours": {
-            "href": "https://apidemo.bookingbug.com/api/v1/37005/opening_hours"
+            "href": "https://{host}.bookingbug.com/api/v1/37005/opening_hours"
         },
         "available_integrations": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/available_integrations"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/available_integrations"
         },
         "new_person": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/people/new{?signup}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/people/new{?signup}",
             "templated": true
         },
         "new_resource": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/resources/new",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/resources/new",
             "templated": true
         },
         "schedules": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/schedules{?start_date,end_date,page,per_page}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/schedules{?start_date,end_date,page,per_page}",
             "templated": true
         },
         "new_schedule": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/schedules/new",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/schedules/new",
             "templated": true
         },
         "administrators": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/administrators"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/administrators"
         },
         "new_administrator": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/administrators/new",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/administrators/new",
             "templated": true
         },
         "slots": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/slots{?start_date,end_date,date,resource_id,service_id,person_id,page,per_page,include_booking_details}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/slots{?start_date,end_date,date,resource_id,service_id,person_id,page,per_page,include_booking_details}",
             "templated": true
         },
         "new_event_chain": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/event_chains/new",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/event_chains/new",
             "templated": true
         },
         "new_event_group": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/event_groups/new",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/event_groups/new",
             "templated": true
         },
         "calendar_events": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/calendar_events{/id}{?start_time,end_time,address_id,availability,start_date,end_date,resource_id}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/calendar_events{/id}{?start_time,end_time,address_id,availability,start_date,end_date,resource_id}",
             "templated": true
         },
         "new_service": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/services/new",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/services/new",
             "templated": true
         },
         "bookings": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/bookings{/id}{?embed,start_date,end_date,page,per_page,include_cancelled,modified_since,slot_id,event_id,resource_id,service_id,person_id,client_id,filter_by_fields,order_by,order_by_reverse,start_time,end_time,locale,clinic_id,children,status,category_id,created_since,email,purchase_id}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/bookings{/id}{?embed,start_date,end_date,page,per_page,include_cancelled,modified_since,slot_id,event_id,resource_id,service_id,person_id,client_id,filter_by_fields,order_by,order_by_reverse,start_time,end_time,locale,clinic_id,children,status,category_id,created_since,email,purchase_id}",
             "templated": true
         },
         "queuers": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/queuers{?client_queue_ids}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/queuers{?client_queue_ids}",
             "templated": true
         },
         "client_queues": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/client_queues"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/client_queues"
         },
         "new_queuer": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/queuers/new",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/queuers/new",
             "templated": true
         },
         "pusher": {
-            "href": "https://apidemo.bookingbug.com/api/v1/push/37005/pusher.json"
+            "href": "https://{host}.bookingbug.com/api/v1/push/37005/pusher.json"
         },
         "external_bookings": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/external_bookings{?start,end,person_id}",
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/external_bookings{?start,end,person_id}",
             "templated": true
         },
         "audit_details_search": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/auditlog/details_search"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/auditlog/details_search"
         },
         "search_client": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/search/client"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/search/client"
         },
         "search_booking": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/search/booking"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/search/booking"
         },
         "search_audit_api": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/search/audit/api"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/search/audit/api"
         },
         "new_client": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/client/new"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/client/new"
         },
         "rule_groups": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/rule_groups"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/rule_groups"
         },
         "new_rule_groups": {
-            "href": "https://apidemo.bookingbug.com/api/v1/admin/37005/rule_groups/new"
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/rule_groups/new"
         }
     },
     "disabled": false
