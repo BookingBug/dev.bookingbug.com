@@ -99,7 +99,7 @@ The API enables an admin to create a client (customer). The following parameters
         </tr>
         <tr>
             <td>send_email</td>
-            <td>string</td>
+            <td>boolean</td>
             <td>true/false</td>
         </tr>
         <tr>
@@ -282,7 +282,7 @@ You can delete a client.
 
 ## Disable/Enable Client
 
-You can disable/enable a client using the API. The following paremeters listed below are supported. You only need to specify either the ID or the email of a client in the body payload.
+You can disable/enable a client using the API. The following parameters listed below are supported. You only need to specify either the ID or the email of a client in the body payload.
 
 <table class="pure-table">
     <thead>
