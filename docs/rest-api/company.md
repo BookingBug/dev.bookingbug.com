@@ -650,25 +650,17 @@ https://host.bookingbug.com/api/v1/admin/{company_id}/company
 
 ## Find By Ref
 
-It is possible to query a Company API endpoint to find a particular Company by their external reference. This is an admin function as well as a public function.
+It is possible to query a company API endpoint to find a particular company by their external reference. This is an admin function as well as a public function.
+
+<pre>GET /api/v1/company/find_by_ref/{ref}</pre>
 
 <pre>GET /api/v1/admin/{company_id}/company/find_by_ref/{ref}</pre>
 
 ```
 curl -X GET
-https://host.bookingbug.com/api/v1/admin/{company_id}/company/{ref}/company
+https://host.bookingbug.com/admin/{company_id}/company/find_by_ref/{ref}
 -H 'app-id: app-id--here'
 -H 'auth-token: auth-token-here'
--H 'cache-control: no-cache'
--H 'content-type: application/json'
-```
-
-<pre>GET /api/v1/company/find_by_ref/{ref}</pre>
-
-```
-curl -X GET
-https://host.bookingbug.com/api/v1/company/find_by_ref/{ref}
--H 'app-id: app-id--here'
 -H 'cache-control: no-cache'
 -H 'content-type: application/json'
 ```
