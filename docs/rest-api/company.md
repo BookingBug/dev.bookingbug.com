@@ -363,35 +363,12 @@ The address parameters are optional, they may be used if necessary, alternativel
                 <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X PUT \
-  https://host.bookingbug.com/api/v1/admin/{company_id}/company \
-  -H 'app-id: app-id--here' \
-  -H 'auth-token: auth-token-here' \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -d '{
-    "name": "Child Branch",
-	  "description": "This is a sample description of a company",
-	  "timezone": "Europe/London",
-	  "website": "https://www.bookingbug.co.uk/",
-	  "ref": "12356789A",
-	  "live": "true",
-    "address": {
-    "name": "Head Office",
-    "address1": "2nd Floor",
-    "address2": "3-7 Herbal Hill",
-    "address3": "Farringdon",
-    "address4": "London",
-    "address5": "Central London",
-    "postcode": "EC1R 5EJ",
-    "country": "United Kingdom",
-    "lat": -0.1084389,
-    "long": 51.5226634
-    }
-  }'
+GET /API/v1/admin/{company_id}
 ```
 </pre>
+
 </div>
+
 <div id="tab-2" class="tab__content">
 <pre>
 
