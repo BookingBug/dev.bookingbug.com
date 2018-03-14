@@ -291,64 +291,48 @@ It is programatically possible update a company with the parameters listed below
                         <td>boolean</td>
                         <td>true/false - if true, live bookings can be taken in this company / branch.</td>
                     </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>string</td>
+                        <td>Name of the uniquely identifiable address e.g. HQ Office</td>
+                    </tr>
+                    <tr>
+                        <td>address1</td>
+                        <td>string</td>
+                        <td>Street Number</td>
+                    </tr>
+                    <tr>
+                        <td>address2</td>
+                        <td>string</td>
+                        <td>Street name</td>
+                    </tr>
+                    <tr>
+                        <td>address3</td>
+                        <td>string</td>
+                        <td>Neighbourhood</td>
+                    </tr>
+                    <tr>
+                        <td>address4</td>
+                        <td>string</td>
+                        <td>City/Town</td>
+                    </tr>
+                    <tr>
+                        <td>address5</td>
+                        <td>string</td>
+                        <td>County</td>
+                    </tr>
+                    <tr>
+                        <td>postcode</td>
+                        <td>string</td>
+                        <td>Postcode</td>
+                    </tr>
+                    <tr>
+                        <td>country</td>
+                        <td>string</td>
+                        <td>Name of the country, e.g. United Kingdom</td>
+                    </tr>
                 </tbody>
             </table>
-
-### Update Address on a Company (Optional Parameters)
-
-The address parameters are optional, they may be used if necessary, alternatively, the address JSON object can be excluded from the PUT API call.
-
-<table class="pure-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>DataType</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>name</td>
-                <td>string</td>
-                <td>Name of the uniquely identifiable address</td>
-            </tr>
-            <tr>
-                <td>address1</td>
-                <td>string</td>
-                <td>Street Number</td>
-            </tr>
-            <tr>
-                <td>address2</td>
-                <td>string</td>
-                <td>Street name</td>
-            </tr>
-            <tr>
-                <td>address3</td>
-                <td>string</td>
-                <td>Neighbourhood</td>
-            </tr>
-            <tr>
-                <td>address4</td>
-                <td>string</td>
-                <td>City/Town</td>
-            </tr>
-            <tr>
-                <td>address5</td>
-                <td>string</td>
-                <td>County</td>
-            </tr>
-            <tr>
-                <td>postcode</td>
-                <td>string</td>
-                <td>Postcode</td>
-            </tr>
-            <tr>
-                <td>country</td>
-                <td>string</td>
-                <td>Name of the country, e.g. United Kingdom</td>
-            </tr>
-        </tbody>
-    </table>
 
 <pre>PUT /api/v1/admin/{company_id}/company</pre>
 
