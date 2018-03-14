@@ -1,6 +1,6 @@
 # Company
 
-The company end-point will show all of the links and properties of a company. If you have a parent/child setup, you can define the parent company ID and all the child companies will be embedded in the response. This is an admin API call so you'll need to authenticate and provide the auth-token in the header. Using the Company API endpoint, it is possible to: `read`, `update`, `delete`, `find a company by reference`, `retrieve settings` and `retrieve addresses`.
+The company end-point will show all of the links and properties of a company. If you have a parent/child setup, you can define the parent company ID and all the child companies will be embedded in the response. This is an admin API call so you'll need to authenticate and provide the auth-token in the header. Using the Company API endpoint, it is possible to: `read`, `update`, <a href:"Delete">`delete`</a>, `find a company by reference`, `retrieve settings` and `retrieve addresses`.
 
 <pre>GET /api/v1/admin/{company_id}/company</pre>
 
@@ -646,7 +646,7 @@ curl -X PUT \
 </div>
 </div>
 </div>
-
+<div id="Delete"></div>
 ## Company Delete
 
 When a company delete API call is executed, it performs a soft delete on a Company object. If a company has any live future/past bookings they remain in the company and they do not get hard deleted, they will remain un-cancelled. After the company is deleted, the parameter "live": becomes `false` and "disabled": becomes `true`.
@@ -843,5 +843,3 @@ Read one address
 </div>
 </div>
 </div>
-
-<div id="Delete">Delete</div>
