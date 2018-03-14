@@ -4,27 +4,30 @@ The company end-point will show all of the links and properties of a company. If
 
 <pre>GET /api/v1/admin/{company_id}/company</pre>
 
-In the example below we are only retrieving information for a child company, `READ` method.
+In the example below we are only retrieving information for a child company using `READ` method.
 
 <div class="tabs">
     <ul class="tabs__menu">
         <li class="current"><a href="#tab-1">cURL</a></li>
         <li><a href="#tab-2">Sample Response Data</a></li>
     </ul>
-
     <div class="tab">
         <div id="tab-1" class="tab__content">
 <pre>
+
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
+curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}"
+-H "Auth-Token: {auth-token}"
+-H "Content-Type: application/json"
+-H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/company"
-  ```
+```
+
 </pre>
         </div>
         <div id="tab-2" class="tab__content">
 <pre>
+
 ```
 {
   "id": 50666,
@@ -236,20 +239,22 @@ In the example below we are only retrieving information for a child company, `RE
     }
   }
 }
-  ```
+```
+
 </pre>
         </div>
-        </div>
+         </div>
         </div>
 
 ## Update Company
 
-        It is programatically possible update a company with the parameters listed below. This functionality replaces the manual input from the GUI and is useful if there is a need to automatically update many companies at once. Depending on your business setup, your Business may have many different child companies/branches with unique services in each.
+It is programatically possible update a company with the parameters listed below. This functionality replaces the manual input from the GUI and is useful if there is a need to automatically update many companies at once. Depending on your business setup, your Business may have many different child companies/branches with unique services in each.
 
 <a href="#Parameters-for-company-update">
 <h4>Parameters for Company Update</h4>
 </a>
-        <table class="pure-table">
+
+<table class="pure-table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -257,7 +262,6 @@ In the example below we are only retrieving information for a child company, `RE
                         <th>Description</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr>
                         <td>name</td>
@@ -304,7 +308,6 @@ The address parameters are optional, they may be used if necessary, alternativel
                 <th>Description</th>
             </tr>
         </thead>
-
         <tbody>
             <tr>
                 <td>name</td>
@@ -348,20 +351,18 @@ The address parameters are optional, they may be used if necessary, alternativel
             </tr>
         </tbody>
     </table>
-
         <pre>PUT /api/v1/admin/{company_id}/company</pre>
-
         <div class="tabs">
             <ul class="tabs__menu">
                 <li class="current"><a href="#tab-1">cURL Example</a></li>
                 <li><a href="#tab-2">Sample Response Data</a></li>
             </ul>
-
             <div class="tab">
                 <div id="tab-1" class="tab__content">
         <pre>
-        ```
-        curl -X PUT \
+
+```
+curl -X PUT \
   https://host.bookingbug.com/api/v1/admin/{company_id}/company \
   -H 'app-id: app-id--here' \
   -H 'auth-token: auth-token-here' \
@@ -387,14 +388,16 @@ The address parameters are optional, they may be used if necessary, alternativel
     "long": 51.5226634
     }
       }'
-          ```
-        </pre>
-                </div>
-                <div id="tab-2" class="tab__content">
-              <pre>
-              ```
-              {
-                "id": 37014,
+```
+
+</pre>
+   </div>
+   <div id="tab-2" class="tab__content">
+   <pre>
+
+```
+{
+"id": 37014,
                 "name": "Child Branch",
                 "description": "This is a sample description of a company",
                 "extra": {},
@@ -639,11 +642,13 @@ The address parameters are optional, they may be used if necessary, alternativel
                 },
                 "disabled": false
             }
-              ```
+```
+
               </pre>
                 </div>
                 </div>
                 </div>
+
 ## Company Delete
 
 When a company delete API call is executed, it performs a soft delete on a Company object. If a company has any live future/past bookings they remain in the company and they do not get hard deleted, they will remain un-cancelled. After the company is deleted, the parameter "live": becomes `false` and "disabled": becomes `true`.
@@ -657,7 +662,7 @@ https://host.bookingbug.com/api/v1/admin/{company_id}/company \
 -H 'auth-token: auth-token-here' \
 -H 'cache-control: no-cache' \
 -H 'content-type: application/json' \
-  ```
+```
 
 ## Find By Ref
 
@@ -672,7 +677,8 @@ https://host.bookingbug.com/api/v1/admin/{company_id}/company/{ref}/company \
 -H 'auth-token: auth-token-here' \
 -H 'cache-control: no-cache' \
 -H 'content-type: application/json' \
-  ```
+```
+
 <pre>GET /api/v1/company/find_by_ref/{ref}</pre>
 
 ```
@@ -681,7 +687,7 @@ https://host.bookingbug.com/api/v1/company/find_by_ref/{ref}
 -H 'app-id: app-id--here' \
 -H 'cache-control: no-cache' \
 -H 'content-type: application/json' \
-  ```
+```
 
 ## Settings
 
@@ -694,20 +700,22 @@ You can retrieve settings block for a company. This is useful for checking if th
         <li class="current"><a href="#tab-1">cURL</a></li>
         <li><a href="#tab-2">Sample Response Data</a></li>
     </ul>
-
     <div class="tab">
         <div id="tab-1" class="tab__content">
 <pre>
+
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}"
   -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/settings"
-  ```
+```
+
 </pre>
         </div>
         <div id="tab-2" class="tab__content">
 <pre>
+
 ```
 {
   "has_coupons": true,
@@ -726,12 +734,12 @@ You can retrieve settings block for a company. This is useful for checking if th
     }
   }
 }
-  ```
+```
+
 </pre>
         </div>
         </div>
         </div>
-
 
 ## Addresses
 
@@ -740,6 +748,7 @@ Get all addresses for a company. A company can be configured to have many addres
 <pre>GET /api/v1/{company_id}/addresses</pre>
 
 Read one address
+
 <pre>GET /api/v1/{company_id}/addresses/{address_id}</pre>
 
 <div class="tabs">
@@ -747,20 +756,22 @@ Read one address
         <li class="current"><a href="#tab-1">cURL</a></li>
         <li><a href="#tab-2">Sample Response Data</a></li>
     </ul>
-
     <div class="tab">
         <div id="tab-1" class="tab__content">
 <pre>
+
 ```
   curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
   -H "Content-Type: application/json"
   -H "Cache-Control: no-cache"
 "https://{host}.bookingbug.com/api/v1/{company_id}/addresses"
-  ```
+```
+
 </pre>
         </div>
         <div id="tab-2" class="tab__content">
 <pre>
+
 ```
 {
   "total_entries": 2,
@@ -829,6 +840,7 @@ Read one address
   }
 }
   ```
+
 </pre>
         </div>
         </div>
