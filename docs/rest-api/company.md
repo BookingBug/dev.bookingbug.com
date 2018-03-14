@@ -352,7 +352,7 @@ The address parameters are optional, they may be used if necessary, alternativel
         </tbody>
     </table>
 
-        <pre>PUT /api/v1/admin/{company_id}/company</pre>
+<pre>PUT /api/v1/admin/{company_id}/company</pre>
 
   <div class="tabs">
         <ul class="tabs__menu">
@@ -363,20 +363,32 @@ The address parameters are optional, they may be used if necessary, alternativel
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}"
--H "Auth-Token: {auth-token}"
--H "Content-Type: application/json"
--H "Cache-Control: no-cache"
--d '{
-"first_name": "Test Name",
-"last_name": "Test surname",
-"email": "test@test.com",
-"mobile_prefix": "+44",
-"mobile": "07912345678",
-"phone": "02032323232",
-"member_type": "2"
-}'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client"
+curl -X PUT \
+  https://{host}.bookingbug.com/api/v1/admin/{company_id}/company \
+  -H 'app-id: app-id--here' \
+  -H 'auth-token: auth-token-here' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+    "name": "Child Branch",
+	  "description": "This is a sample description of a company",
+	  "timezone": "Europe/London",
+	  "website": "https://www.bookingbug.co.uk/",
+	  "ref": "12356789A",
+	  "live": "true",
+    "address": {
+    "name": "Head Office",
+    "address1": "2nd Floor",
+    "address2": "3-7 Herbal Hill",
+    "address3": "Farringdon",
+    "address4": "London",
+    "address5": "Central London",
+    "postcode": "EC1R 5EJ",
+    "country": "United Kingdom",
+    "lat": -0.1084389,
+    "long": 51.5226634
+    }
+  }'
 ```
 </pre>
 </div>
