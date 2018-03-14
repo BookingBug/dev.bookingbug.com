@@ -354,7 +354,7 @@ The address parameters are optional, they may be used if necessary, alternativel
         <pre>PUT /api/v1/admin/{company_id}/company</pre>
         <div class="tabs">
             <ul class="tabs__menu">
-                <li class="current"><a href="#tab-1">cURL Example</a></li>
+                <li class="current"><a href="#tab-1">cURL</a></li>
                 <li><a href="#tab-2">Sample Response Data</a></li>
             </ul>
             <div class="tab">
