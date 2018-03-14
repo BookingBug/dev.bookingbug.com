@@ -354,14 +354,14 @@ The address parameters are optional, they may be used if necessary, alternativel
 
         <pre>PUT /api/v1/admin/{company_id}/company</pre>
 
-        <div class="tabs">
-            <ul class="tabs__menu">
-                <li class="current"><a href="#tab-1">cURL</a></li>
-                <li><a href="#tab-2">Sample Response Data</a></li>
-            </ul>
-            <div class="tab">
-                <div id="tab-1" class="tab__content">
-                <pre>
+  <div class="tabs">
+        <ul class="tabs__menu">
+          <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Sample Response Data</a></li>
+        </ul>
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+        <pre>
                 ```
                   curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
                   -H "Content-Type: application/json"
@@ -377,10 +377,8 @@ The address parameters are optional, they may be used if necessary, alternativel
                   }'
                 "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client"
                   ```
-                </pre>
-
+    </pre>
 </div>
-
 <div id="tab-2" class="tab__content">
 <pre>
 
