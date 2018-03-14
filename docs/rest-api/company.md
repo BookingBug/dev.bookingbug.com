@@ -351,7 +351,9 @@ The address parameters are optional, they may be used if necessary, alternativel
             </tr>
         </tbody>
     </table>
+
         <pre>PUT /api/v1/admin/{company_id}/company</pre>
+
         <div class="tabs">
             <ul class="tabs__menu">
                 <li class="current"><a href="#tab-1">cURL</a></li>
@@ -359,10 +361,8 @@ The address parameters are optional, they may be used if necessary, alternativel
             </ul>
             <div class="tab">
                 <div id="tab-1" class="tab__content">
-        <pre>
-
+<pre>
 ```
-
 curl -X PUT \
   https://host.bookingbug.com/api/v1/admin/{company_id}/company \
   -H 'app-id: app-id--here' \
@@ -389,9 +389,7 @@ curl -X PUT \
     "long": 51.5226634
     }
   }'
-
 ```
-
 </pre>
 </div>
 <div id="tab-2" class="tab__content">
