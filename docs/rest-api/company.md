@@ -250,9 +250,7 @@ curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}"
 
 It is programatically possible update a company with the parameters listed below. This functionality replaces the manual input from the GUI and is useful if there is a need to automatically update many companies at once. Depending on your business setup, your Business may have many different child companies/branches with unique services in each.
 
-<a href="#Parameters-for-company-update">
-<h4>Parameters for Company Update</h4>
-</a>
+### Parameter for Company Update
 
 <table class="pure-table">
                 <thead>
@@ -845,3 +843,5 @@ Read one address
 </div>
 </div>
 </div>
+
+<div id=#Delete>Delete</div>
