@@ -345,12 +345,12 @@ It is programatically possible update a company with the parameters listed below
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X PUT \
-  https://{host}.bookingbug.com/api/v1/admin/{company_id}/company \
-  -H 'app-id: app-id--here' \
-  -H 'auth-token: auth-token-here' \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
+curl -X PUT
+  https://{host}.bookingbug.com/api/v1/admin/{company_id}/company
+  -H 'app-id: app-id--here'
+  -H 'auth-token: auth-token-here'
+  -H 'cache-control: no-cache'
+  -H 'content-type: application/json'
   -d '{
     "name": "Child Branch",
 	  "description": "This is a sample description of a company",
@@ -640,12 +640,12 @@ When a company delete API call is executed, it performs a soft delete on a Compa
 <pre>DELETE /api/v1/admin/{company_id}/company</pre>
 
 ```
-curl -X DELETE \
-https://host.bookingbug.com/api/v1/admin/{company_id}/company \
--H 'app-id: app-id--here' \
--H 'auth-token: auth-token-here' \
--H 'cache-control: no-cache' \
--H 'content-type: application/json' \
+curl -X DELETE
+https://host.bookingbug.com/api/v1/admin/{company_id}/company
+-H 'app-id: app-id--here'
+-H 'auth-token: auth-token-here'
+-H 'cache-control: no-cache'
+-H 'content-type: application/json'
 ```
 
 ## Find By Ref
@@ -655,22 +655,22 @@ It is possible to query a Company API endpoint to find a particular Company by t
 <pre>GET /api/v1/admin/{company_id}/company/find_by_ref/{ref}</pre>
 
 ```
-curl -X GET \
-https://host.bookingbug.com/api/v1/admin/{company_id}/company/{ref}/company \
--H 'app-id: app-id--here' \
--H 'auth-token: auth-token-here' \
--H 'cache-control: no-cache' \
--H 'content-type: application/json' \
+curl -X GET
+https://host.bookingbug.com/api/v1/admin/{company_id}/company/{ref}/company
+-H 'app-id: app-id--here'
+-H 'auth-token: auth-token-here'
+-H 'cache-control: no-cache'
+-H 'content-type: application/json'
 ```
 
 <pre>GET /api/v1/company/find_by_ref/{ref}</pre>
 
 ```
-curl -X GET \
+curl -X GET
 https://host.bookingbug.com/api/v1/company/find_by_ref/{ref}
--H 'app-id: app-id--here' \
--H 'cache-control: no-cache' \
--H 'content-type: application/json' \
+-H 'app-id: app-id--here'
+-H 'cache-control: no-cache'
+-H 'content-type: application/json'
 ```
 
 ## Settings
