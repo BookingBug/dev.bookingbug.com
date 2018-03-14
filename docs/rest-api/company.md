@@ -242,9 +242,9 @@ curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}"
 ```
 
 </pre>
-        </div>
-         </div>
-        </div>
+</div>
+</div>
+</div>
 
 ## Update Company
 
@@ -387,13 +387,13 @@ curl -X PUT \
     "lat": -0.1084389,
     "long": 51.5226634
     }
-      }'
+  }'
 ```
 
 </pre>
-   </div>
-   <div id="tab-2" class="tab__content">
-   <pre>
+</div>
+<div id="tab-2" class="tab__content">
+<pre>
 
 ```
 {
@@ -644,10 +644,10 @@ curl -X PUT \
             }
 ```
 
-              </pre>
-                </div>
-                </div>
-                </div>
+</pre>
+</div>
+</div>
+</div>
 
 ## Company Delete
 
@@ -737,9 +737,9 @@ You can retrieve settings block for a company. This is useful for checking if th
 ```
 
 </pre>
-        </div>
-        </div>
-        </div>
+</div>
+</div>
+</div>
 
 ## Addresses
 
@@ -842,6 +842,6 @@ Read one address
   ```
 
 </pre>
-        </div>
-        </div>
-        </div>
+</div>
+</div>
+</div>
