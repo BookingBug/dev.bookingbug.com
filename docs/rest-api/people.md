@@ -105,7 +105,7 @@ Above is an example cURL call for creating a new person.
 
 ## Update Person
 
-You can update information of a person. The parameters stated below are supported. You must be authenticated as an administrator to make this call. 
+You can update information of a person. The parameters stated below are supported. You must be authenticated as an administrator to make this call.
 
 ### Parameters
 <table class="pure-table">

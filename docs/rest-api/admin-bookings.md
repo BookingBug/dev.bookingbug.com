@@ -773,7 +773,7 @@ curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth
 -d
 '{
 	"notify": true,
-	"cancel_reason": "String"
+	"cancel_reason": "Private Reason - Datatype = String"
 }' "https://{host}.bookingbug.com/api/v1/admin/{company_id}/bookings/{booking_id}/cancel"
   ```
 </pre>
