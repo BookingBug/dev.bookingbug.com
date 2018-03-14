@@ -646,7 +646,9 @@ curl -X PUT \
 </div>
 </div>
 </div>
+
 <div id="Delete"></div>
+
 ## Company Delete
 
 When a company delete API call is executed, it performs a soft delete on a Company object. If a company has any live future/past bookings they remain in the company and they do not get hard deleted, they will remain un-cancelled. After the company is deleted, the parameter "live": becomes `false` and "disabled": becomes `true`.
