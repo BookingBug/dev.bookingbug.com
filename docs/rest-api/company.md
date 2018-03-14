@@ -361,11 +361,23 @@ The address parameters are optional, they may be used if necessary, alternativel
             </ul>
             <div class="tab">
                 <div id="tab-1" class="tab__content">
-<pre>
-```
-GET /API/v1/admin/{company_id}
-```
-</pre>
+                <pre>
+                ```
+                  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
+                  -H "Content-Type: application/json"
+                  -H "Cache-Control: no-cache"
+                  -d '{
+                    "first_name": "Test Name",
+                    "last_name": "Test surname",
+                    "email": "test@test.com",
+                    "mobile_prefix": "+44",
+                    "mobile": "07912345678",
+                    "phone": "02032323232",
+                    "member_type": "2"
+                  }'
+                "https://{host}.bookingbug.com/api/v1/admin/{company_id}/client"
+                  ```
+                </pre>
 
 </div>
 
