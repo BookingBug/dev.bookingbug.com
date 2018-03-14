@@ -362,6 +362,7 @@ The address parameters are optional, they may be used if necessary, alternativel
         <pre>
 
 ```
+
 curl -X PUT \
   https://host.bookingbug.com/api/v1/admin/{company_id}/company \
   -H 'app-id: app-id--here' \
@@ -388,6 +389,7 @@ curl -X PUT \
     "long": 51.5226634
     }
   }'
+
 ```
 
 </pre>
