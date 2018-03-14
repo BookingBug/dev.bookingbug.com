@@ -1,10 +1,10 @@
 # Company
 
-The company end-point will show all of the links and properties of a company. If you have a parent/child setup, you can define the parent company ID and all the child companies will be embedded in the response. This is an admin API call so you'll need to authenticate and provide the auth-token in the header.
+The company end-point will show all of the links and properties of a company. If you have a parent/child setup, you can define the parent company ID and all the child companies will be embedded in the response. This is an admin API call so you'll need to authenticate and provide the auth-token in the header. Using the Company API endpoint, it is possible to: `read`, `update`, `delete`, `find a company by reference`, `retrieve settings` and `retrieve addresses`.
 
 <pre>GET /api/v1/admin/{company_id}/company</pre>
 
-In the example below we are only retrieving information for a child company.
+In the example below we are only retrieving information for a child company, `READ` method.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -242,15 +242,118 @@ In the example below we are only retrieving information for a child company.
         </div>
         </div>
 
-## Update Company Reference
+## Update Company
 
-        It is programatically possible update a company reference & coordinates. This functionality is particularly useful if you have many different child companies/branches with unique services in each.
+        It is programatically possible update a company with the parameters listed below. This functionality replaces the manual input from the GUI and is useful if there is a need to automatically update many companies at once. Depending on your business setup, your Business may have many different child companies/branches with unique services in each.
 
-        <pre>GET /api/v1/{company_id}/company</pre>
+<a href="#Parameters-for-company-update">
+<h4>Parameters for Company Update</h4>
+</a>
+        <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>DataType</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>string</td>
+                        <td>A name of a Child/Parent company</td>
+                    </tr>
+                    <tr>
+                        <td>description</td>
+                        <td>string</td>
+                        <td>Description of the company and it's function, services / events that it offers e.g.</td>
+                    </tr>
+                    <tr>
+                        <td>timezone</td>
+                        <td>string</td>
+                        <td>Time zone of where the company is located for example: "Europe/London"</td>
+                    </tr>
+                    <tr>
+                        <td>website</td>
+                        <td>string</td>
+                        <td>Here it is possible to enter the URL of your website/branch URL.</td>
+                    </tr>
+                    <tr>
+                        <td>ref</td>
+                        <td>string</td>
+                        <td>External ID of your company / branch</td>
+                    </tr>
+                    <tr>
+                        <td>live</td>
+                        <td>boolean</td>
+                        <td>true/false - if true, live bookings can be taken in this company / branch.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+### Update Address on a Company (Optional Parameters)
+
+The address parameters are optional, they may be used if necessary, alternatively, the address JSON object can be excluded from the PUT API call.
+
+<table class="pure-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>DataType</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>name</td>
+                <td>string</td>
+                <td>Name of the uniquely identifiable address</td>
+            </tr>
+            <tr>
+                <td>address1</td>
+                <td>string</td>
+                <td>Street Number</td>
+            </tr>
+            <tr>
+                <td>address2</td>
+                <td>string</td>
+                <td>Street name</td>
+            </tr>
+            <tr>
+                <td>address3</td>
+                <td>string</td>
+                <td>Neighbourhood</td>
+            </tr>
+            <tr>
+                <td>address4</td>
+                <td>string</td>
+                <td>City/Town</td>
+            </tr>
+            <tr>
+                <td>address5</td>
+                <td>string</td>
+                <td>County</td>
+            </tr>
+            <tr>
+                <td>postcode</td>
+                <td>string</td>
+                <td>Postcode</td>
+            </tr>
+            <tr>
+                <td>country</td>
+                <td>string</td>
+                <td>Name of the country, e.g. United Kingdom</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <pre>PUT /api/v1/admin/{company_id}/company</pre>
 
         <div class="tabs">
             <ul class="tabs__menu">
-                <li class="current"><a href="#tab-1">cURL</a></li>
+                <li class="current"><a href="#tab-1">cURL Example</a></li>
                 <li><a href="#tab-2">Sample Response Data</a></li>
             </ul>
 
@@ -265,10 +368,23 @@ In the example below we are only retrieving information for a child company.
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d '{
-    "ref": "referenceXYZ",
-      "address": {
-      "long": 93.255168,
-      "lat": 44.988722
+    "name": "Child Branch",
+	  "description": "This is a sample description of a company",
+	  "timezone": "Europe/London",
+	  "website": "https://www.bookingbug.co.uk/",
+	  "ref": "12356789A",
+	  "live": "true",
+    "address": {
+    "name": "Head Office",
+    "address1": "2nd Floor",
+    "address2": "3-7 Herbal Hill",
+    "address3": "Farringdon",
+    "address4": "London",
+    "address5": "Central London",
+    "postcode": "EC1R 5EJ",
+    "country": "United Kingdom",
+    "lat": -0.1084389,
+    "long": 51.5226634
     }
       }'
           ```
@@ -278,275 +394,295 @@ In the example below we are only retrieving information for a child company.
               <pre>
               ```
               {
-    "id": 37005,
-    "name": "Town Branch",
-    "description": "Company description can be written here",
-    "extra": {
-        "company_question_1": "qwerty555"
-    },
-    "address_id": 2,
-    "website": "https://www.bookingbug.co.uk/",
-    "multi_status": [
-        "no_show",
-        "checked_in",
-        "completed"
-    ],
-    "numeric_widget_id": 4061750,
-    "currency_code": "GBP",
-    "timezone": "Europe/London",
-    "country_code": "gb",
-    "live": true,
-    "ref": "referenceXYZ",
-    "address": {
-        "id": 2,
-        "address1": "",
-        "address2": "",
-        "address3": "",
-        "address4": "",
-        "address5": "",
-        "postcode": "",
-        "country": "United Kingdom",
-        "lat": 44.988722,
-        "long": 93.255168,
-        "map_url": "",
-        "map_marker": "United+Kingdom",
-        "phone": "",
-        "homephone": "",
-        "pretty_workphone": "",
-        "_links": {
-            "self": {
-                "href": "https://{host}.bookingbug.com/api/v1/37005/addresses/2"
+                "id": 37014,
+                "name": "Child Branch",
+                "description": "This is a sample description of a company",
+                "extra": {},
+                "address_id": 13,
+                "website": "https://www.bookingbug.co.uk/",
+                "multi_status": [
+                    "no_show",
+                    "checked_in",
+                    "completed"
+                ],
+                "numeric_widget_id": 4232829,
+                "currency_code": "GBP",
+                "timezone": "Europe/London",
+                "country_code": "us",
+                "live": true,
+                "ref": "12356789A",
+                "address": {
+                    "id": 13,
+                    "name": "Head Office",
+                    "address1": "2nd Floor",
+                    "address2": "3-7 Herbal Hill",
+                    "address3": "Farringdon",
+                    "address4": "London",
+                    "address5": "Central London",
+                    "postcode": "EC1R 5EJ",
+                    "country": "United Kingdom",
+                    "lat": -0.1084389,
+                    "long": 51.5226634,
+                    "map_url": "",
+                    "map_marker": "2nd+Floor,+3-7+Herbal+Hill,+Farringdon,+London,+string,+string,+string",
+                    "phone": "",
+                    "homephone": "",
+                    "pretty_workphone": "",
+                    "_links": {
+                        "self": {
+                            "href": "https://{host}.bookingbug.com/api/v1/37014/addresses/13"
+                        }
+                    }
+                },
+                "_embedded": {
+                    "settings": {
+                        "has_events": true,
+                        "has_classes": true,
+                        "payment_tax": 0,
+                        "currency": "GBP",
+                        "requires_login": false,
+                        "has_wallets": false,
+                        "_links": {
+                            "self": {
+                                "href": "https://{host}.bookingbug.com/api/v1/37014/settings"
+                            }
+                        }
+                    }
+                },
+                "_links": {
+                    "parent": {
+                        "href": "https://{host}.bookingbug.com/api/v1/company/37003"
+                    },
+                    "company_search": {
+                        "href": "https://{host}.bookingbug.com/api/v1/company/37014/search{?company,address,page,per_page}"
+                    },
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/company"
+                    },
+                    "settings": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/settings"
+                    },
+                    "categories": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37003/categories{/id}",
+                        "templated": true
+                    },
+                    "address": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/addresses/13"
+                    },
+                    "addresses": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/addresses"
+                    },
+                    "book": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}",
+                        "templated": true
+                    },
+                    "space_statuses": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/space_statuses"
+                    },
+                    "named_categories": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/named_categories"
+                    },
+                    "resources": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/resources{?embed}",
+                        "templated": true
+                    },
+                    "clinics": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/clinics{/id}{?start_time,end_time,address_id,availability,start_date,end_date,resource_id,person_id}",
+                        "templated": true
+                    },
+                    "events": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/events{?start_date,end_date,page,per_page,resource_id,person_id,event_group_id,event_chain_id,summary,member_level_id,embed,include_non_bookable,modified_since,order_by,filter_by}",
+                        "templated": true
+                    },
+                    "event_chains": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/event_chains{?member_level_id}",
+                        "templated": true
+                    },
+                    "event_groups": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/event_groups{?page,per_page}",
+                        "templated": true
+                    },
+                    "client_details": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/client_details"
+                    },
+                    "packages": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/packages"
+                    },
+                    "bulk_purchases": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/bulk_purchases"
+                    },
+                    "checkout": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/basket/checkout{?member_id,take_from_wallet}"
+                    },
+                    "total": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/purchase_totals/{total_id}",
+                        "templated": true
+                    },
+                    "login": {
+                        "href": "https://{host}.bookingbug.com/api/v1/login/37014"
+                    },
+                    "client": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/client{/id}{?page,per_page,filter_by,filter_by_fields,order_by,order_by_reverse,search_by_fields}",
+                        "templated": true
+                    },
+                    "client_by_email": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/client/find_by_email/{email}",
+                        "templated": true
+                    },
+                    "booking_text": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/booking_text"
+                    },
+                    "basket": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/basket"
+                    },
+                    "days": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/day_data{?month,week,date,edate,location,service_id,event_id,person_id,resource_id,people_ids,resource_ids,person_group_id}",
+                        "templated": true
+                    },
+                    "times": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/time_data{?service_id,event_id,date,end_date,location,person_id,resource_id,duration,single,num_resources,group_id,resource_ids,time_zone,ignore_booking,person_group_id,people_ids,is_admin}",
+                        "templated": true
+                    },
+                    "email_password_reset": {
+                        "href": "https://{host}.bookingbug.com/api/v1/login/37014/email_password_reset"
+                    },
+                    "facebook_login": {
+                        "href": "https://{host}.bookingbug.com/api/v1/login/37014/facebook"
+                    },
+                    "opening_hours": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37014/opening_hours"
+                    },
+                    "available_integrations": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/available_integrations"
+                    },
+                    "new_resource": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/resources/new",
+                        "templated": true
+                    },
+                    "schedules": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/schedules{?start_date,end_date,page,per_page}",
+                        "templated": true
+                    },
+                    "new_schedule": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/schedules/new",
+                        "templated": true
+                    },
+                    "administrators": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/administrators"
+                    },
+                    "new_administrator": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/administrators/new",
+                        "templated": true
+                    },
+                    "slots": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/slots{?start_date,end_date,date,resource_id,service_id,person_id,page,per_page,include_booking_details}",
+                        "templated": true
+                    },
+                    "new_event_chain": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/event_chains/new",
+                        "templated": true
+                    },
+                    "new_event_group": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/event_groups/new",
+                        "templated": true
+                    },
+                    "services": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/services"
+                    },
+                    "calendar_events": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/calendar_events{/id}{?start_time,end_time,address_id,availability,start_date,end_date,resource_id}",
+                        "templated": true
+                    },
+                    "new_service": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/services/new",
+                        "templated": true
+                    },
+                    "bookings": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/bookings{/id}{?embed,start_date,end_date,page,per_page,include_cancelled,modified_since,slot_id,event_id,resource_id,service_id,person_id,client_id,filter_by_fields,order_by,order_by_reverse,start_time,end_time,locale,clinic_id,children,status,category_id,created_since,email,purchase_id}",
+                        "templated": true
+                    },
+                    "queuers": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/queuers{?client_queue_ids}",
+                        "templated": true
+                    },
+                    "client_queues": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/client_queues"
+                    },
+                    "new_queuer": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/queuers/new",
+                        "templated": true
+                    },
+                    "pusher": {
+                        "href": "https://{host}.bookingbug.com/api/v1/push/37014/pusher.json"
+                    },
+                    "audit_details_search": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/auditlog/details_search"
+                    },
+                    "search_client": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/search/client"
+                    },
+                    "search_booking": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/search/booking"
+                    },
+                    "search_audit_api": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/search/audit/api"
+                    },
+                    "new_client": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/client/new"
+                    },
+                    "rule_groups": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/rule_groups"
+                    },
+                    "new_rule_groups": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37014/rule_groups/new"
+                    }
+                },
+                "disabled": false
             }
-        }
-    },
-    "_embedded": {
-        "settings": {
-            "has_coupons": true,
-            "has_deals": true,
-            "has_products": true,
-            "has_services": true,
-            "has_events": true,
-            "payment_tax": 0,
-            "currency": "GBP",
-            "requires_login": false,
-            "has_wallets": false,
-            "_links": {
-                "self": {
-                    "href": "https://{host}.bookingbug.com/api/v1/37005/settings"
-                }
-            }
-        }
-    },
-    "_links": {
-        "parent": {
-            "href": "https://{host}.bookingbug.com/api/v1/company/37003"
-        },
-        "company_search": {
-            "href": "https://{host}.bookingbug.com/api/v1/company/37005/search{?company,address,page,per_page}"
-        },
-        "self": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/company"
-        },
-        "settings": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/settings"
-        },
-        "services": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/services"
-        },
-        "categories": {
-            "href": "https://{host}.bookingbug.com/api/v1/37003/categories{/id}",
-            "templated": true
-        },
-        "address": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/addresses/2"
-        },
-        "addresses": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/addresses"
-        },
-        "book": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/basket/add_item{?event_id,member_id,event_chain_id,service_id,product_id,attachment_id,deal_id,package_id,bulk_purchase_id}",
-            "templated": true
-        },
-        "space_statuses": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/space_statuses"
-        },
-        "named_categories": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/named_categories"
-        },
-        "resources": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/resources{?embed}",
-            "templated": true
-        },
-        "people": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/people{?embed,filter_by,filter_by_fields,order_by,order_by_reverse,page,per_page,site}",
-            "templated": true
-        },
-        "clinics": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/clinics{/id}{?start_time,end_time,address_id,availability,start_date,end_date,resource_id,person_id}",
-            "templated": true
-        },
-        "events": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/events{?start_date,end_date,page,per_page,resource_id,person_id,event_group_id,event_chain_id,summary,member_level_id,embed,include_non_bookable,modified_since,order_by,filter_by}",
-            "templated": true
-        },
-        "event_chains": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/event_chains{?member_level_id}",
-            "templated": true
-        },
-        "event_groups": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/event_groups{?page,per_page}",
-            "templated": true
-        },
-        "client_details": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/client_details"
-        },
-        "packages": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/packages"
-        },
-        "bulk_purchases": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/bulk_purchases"
-        },
-        "checkout": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/basket/checkout{?member_id,take_from_wallet}"
-        },
-        "total": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/purchase_totals/{total_id}",
-            "templated": true
-        },
-        "login": {
-            "href": "https://{host}.bookingbug.com/api/v1/login/37005"
-        },
-        "client": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/client{/id}{?page,per_page,filter_by,filter_by_fields,order_by,order_by_reverse,search_by_fields}",
-            "templated": true
-        },
-        "client_by_email": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/client/find_by_email/{email}",
-            "templated": true
-        },
-        "booking_text": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/booking_text"
-        },
-        "basket": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/basket"
-        },
-        "days": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/day_data{?month,week,date,edate,location,service_id,event_id,person_id,resource_id,people_ids,resource_ids,person_group_id}",
-            "templated": true
-        },
-        "times": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/time_data{?service_id,event_id,date,end_date,location,person_id,resource_id,duration,single,num_resources,group_id,resource_ids,time_zone,ignore_booking,person_group_id,people_ids,is_admin}",
-            "templated": true
-        },
-        "coupon": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/basket/coupon"
-        },
-        "email_password_reset": {
-            "href": "https://{host}.bookingbug.com/api/v1/login/37005/email_password_reset"
-        },
-        "facebook_login": {
-            "href": "https://{host}.bookingbug.com/api/v1/login/37005/facebook"
-        },
-        "opening_hours": {
-            "href": "https://{host}.bookingbug.com/api/v1/37005/opening_hours"
-        },
-        "available_integrations": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/available_integrations"
-        },
-        "new_person": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/people/new{?signup}",
-            "templated": true
-        },
-        "new_resource": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/resources/new",
-            "templated": true
-        },
-        "schedules": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/schedules{?start_date,end_date,page,per_page}",
-            "templated": true
-        },
-        "new_schedule": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/schedules/new",
-            "templated": true
-        },
-        "administrators": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/administrators"
-        },
-        "new_administrator": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/administrators/new",
-            "templated": true
-        },
-        "slots": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/slots{?start_date,end_date,date,resource_id,service_id,person_id,page,per_page,include_booking_details}",
-            "templated": true
-        },
-        "new_event_chain": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/event_chains/new",
-            "templated": true
-        },
-        "new_event_group": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/event_groups/new",
-            "templated": true
-        },
-        "calendar_events": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/calendar_events{/id}{?start_time,end_time,address_id,availability,start_date,end_date,resource_id}",
-            "templated": true
-        },
-        "new_service": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/services/new",
-            "templated": true
-        },
-        "bookings": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/bookings{/id}{?embed,start_date,end_date,page,per_page,include_cancelled,modified_since,slot_id,event_id,resource_id,service_id,person_id,client_id,filter_by_fields,order_by,order_by_reverse,start_time,end_time,locale,clinic_id,children,status,category_id,created_since,email,purchase_id}",
-            "templated": true
-        },
-        "queuers": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/queuers{?client_queue_ids}",
-            "templated": true
-        },
-        "client_queues": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/client_queues"
-        },
-        "new_queuer": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/queuers/new",
-            "templated": true
-        },
-        "pusher": {
-            "href": "https://{host}.bookingbug.com/api/v1/push/37005/pusher.json"
-        },
-        "external_bookings": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/external_bookings{?start,end,person_id}",
-            "templated": true
-        },
-        "audit_details_search": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/auditlog/details_search"
-        },
-        "search_client": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/search/client"
-        },
-        "search_booking": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/search/booking"
-        },
-        "search_audit_api": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/search/audit/api"
-        },
-        "new_client": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/client/new"
-        },
-        "rule_groups": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/rule_groups"
-        },
-        "new_rule_groups": {
-            "href": "https://{host}.bookingbug.com/api/v1/admin/37005/rule_groups/new"
-        }
-    },
-    "disabled": false
-}
               ```
               </pre>
                 </div>
                 </div>
                 </div>
+## Company Delete
+
+When a company delete API call is executed, it performs a soft delete on a Company object. If a company has any live future/past bookings they remain in the company and they do not get hard deleted, they will remain un-cancelled. After the company is deleted, the parameter "live": becomes `false` and "disabled": becomes `true`.
+
+<pre>DELETE /api/v1/admin/{company_id}/company</pre>
+
+```
+curl -X DELETE \
+https://host.bookingbug.com/api/v1/admin/{company_id}/company \
+-H 'app-id: app-id--here' \
+-H 'auth-token: auth-token-here' \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
+  ```
+
+## Find By Ref
+
+It is possible to query a Company API endpoint to find a particular Company by their external reference. This is an admin function as well as a public function.
+
+<pre>GET /api/v1/admin/{company_id}/company/find_by_ref/{ref}</pre>
+
+```
+curl -X GET \
+https://host.bookingbug.com/api/v1/admin/{company_id}/company/{ref}/company \
+-H 'app-id: app-id--here' \
+-H 'auth-token: auth-token-here' \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
+  ```
+<pre>GET /api/v1/company/find_by_ref/{ref}</pre>
+
+```
+curl -X GET \
+https://host.bookingbug.com/api/v1/company/find_by_ref/{ref}
+-H 'app-id: app-id--here' \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
+  ```
+
 ## Settings
 
 You can retrieve settings block for a company. This is useful for checking if the company has services, events etc configured.
@@ -601,10 +737,10 @@ You can retrieve settings block for a company. This is useful for checking if th
 
 Get all addresses for a company. A company can be configured to have many addresses.
 
-<pre>GET /api/vi/{company_id}/addresses</pre>
+<pre>GET /api/v1/{company_id}/addresses</pre>
 
 Read one address
-<pre>GET /api/vi/{company_id}/addresses/{address_id}</pre>
+<pre>GET /api/v1/{company_id}/addresses/{address_id}</pre>
 
 <div class="tabs">
     <ul class="tabs__menu">
