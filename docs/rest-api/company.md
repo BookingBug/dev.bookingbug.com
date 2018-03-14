@@ -347,8 +347,8 @@ It is programatically possible update a company with the parameters listed below
 ```
 curl -X PUT
   https://{host}.bookingbug.com/api/v1/admin/{company_id}/company
-  -H 'app-id: app-id--here'
-  -H 'auth-token: auth-token-here'
+  -H 'app-id: {app-id}'
+  -H 'auth-token: {auth-token}'
   -H 'cache-control: no-cache'
   -H 'content-type: application/json'
   -d '{
@@ -642,8 +642,8 @@ When a company delete API call is executed, it performs a soft delete on a Compa
 ```
 curl -X DELETE
 https://host.bookingbug.com/api/v1/admin/{company_id}/company
--H 'app-id: app-id--here'
--H 'auth-token: auth-token-here'
+-H 'app-id: {app-id}'
+-H 'auth-token: {auth-token}'
 -H 'cache-control: no-cache'
 -H 'content-type: application/json'
 ```
@@ -659,8 +659,8 @@ It is possible to query a company API endpoint to find a particular company by t
 ```
 curl -X GET
 https://host.bookingbug.com/admin/{company_id}/company/find_by_ref/{ref}
--H 'app-id: app-id--here'
--H 'auth-token: auth-token-here'
+-H 'app-id: {app-id}'
+-H 'auth-token: {auth-token}'
 -H 'cache-control: no-cache'
 -H 'content-type: application/json'
 ```
