@@ -141,7 +141,7 @@ Members can update their personal details. The following parameters are availabl
                 <td>Postcode</td>
             </tr>
             <tr>
-                <td>counrty</td>
+                <td>country</td>
                 <td>string</td>
                 <td>Country </td>
             </tr>
@@ -177,7 +177,7 @@ Below is a cURL call updating first and last name of a member.
 
 ## View Bookings
 
-A member can view thier bookings using the following API method.
+A member can view their bookings using the following API method.
 
 <pre>GET /api/vi/{company_id}/members/{member_id}/bookings</pre>
 
@@ -245,6 +245,126 @@ A member can view thier bookings using the following API method.
 "https://{host}.bookingbug.com/api/v1/{company_id}/members/{member_id}/bookings?per_page=50&page=1"
   ```
 </pre>
+
+</div>
+</div>
+</div>
+
+## Update Password for a Member
+
+It is possible for a member to update their own password via API. The details on how to achieve this are below.
+
+<pre>POST /api/v1/login/{company_id}/update_password/{member_id}</pre>
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Sample Response Data</a></li>
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+curl -X POST \
+  https://{host}.bookingbug.com/api/v1/login/37005/update_password/31 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"current_password": "current_members_password",
+	"new_password": "new_password",
+	"confirm_new_password": "new_password"
+}'
+```
+</pre>
         </div>
-        </div>
-        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+{
+    "email": "customer_email@example.com",
+    "auth_token": "Auth-token",
+    "company_id": 37003,
+    "path": "https://{host}.bookingbug.com/api/v1",
+    "_embedded": {
+        "members": [
+            {
+                "id": 31,
+                "name": "Alex Alex",
+                "first_name": "Alex",
+                "last_name": "Alex",
+                "comp_ref": "qwerty_999999",
+                "wallet_amount": 0,
+                "client_type": "Member",
+                "email": "customer_email@example.com",
+                "address1": "55",
+                "address2": "Smith Street",
+                "address3": "West End",
+                "address4": "London",
+                "address5": "Central London",
+                "postcode": "EN15JHK",
+                "country": "United Kingdom",
+                "phone": "",
+                "phone_prefix": "44",
+                "mobile": "",
+                "mobile_prefix": "44",
+                "path": "https://{host}.bookingbug.com/api/v1",
+                "company_id": 37003,
+                "has_active_wallet": false,
+                "default_company_id": 37005,
+                "has_wallet": false,
+                "time_zone": "Europe/Kiev",
+                "answers": [],
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37003/members/31{?embed}",
+                        "templated": true
+                    },
+                    "bookings": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37003/members/31/bookings{?start_date,end_date,include_cancelled,page,per_page}",
+                        "templated": true
+                    },
+                    "pre_paid_bookings": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37003/members/31/pre_paid_bookings{?include_invalid,event_id}",
+                        "templated": true
+                    },
+                    "purchase_totals": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37003/members/31/purchase_totals{?start_date,end_date,page,per_page,fully_paid}",
+                        "templated": true
+                    },
+                    "edit_member": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37003/members/31/edit"
+                    },
+                    "company": {
+                        "href": "https://{host}.bookingbug.com/api/v1/company/37003"
+                    },
+                    "update_password": {
+                        "href": "https://{host}.bookingbug.com/api/v1/login/37003/update_password/31"
+                    },
+                    "send_welcome_email": {
+                        "href": "https://{host}.bookingbug.com/api/v1/37003/members/31/send_welcome_email"
+                    }
+                }
+            }
+        ],
+        "administrators": []
+    },
+    "_links": {
+        "self": {
+            "href": "https://{host}.bookingbug.com/api/v1/login/37003"
+        },
+        "member": {
+            "href": "https://{host}.bookingbug.com/api/v1/37003/members/31{?embed}",
+            "templated": true
+        },
+        "administrators": []
+    }
+}
+  ```
+</pre>
+    </div>
+    </div>
+    </div>
