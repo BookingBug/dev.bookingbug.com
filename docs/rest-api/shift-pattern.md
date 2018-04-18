@@ -1,5 +1,7 @@
 # Shift Patterns
 
+This guide will explain how to work with shift patterns and their purpose. Before understanding the shift patterns, it is useful to know the historical method of how schedules have been created via API.
+
 ## Schedule Rules (Legacy)
 
 Historically via BB API's schedules were supported as part of configuration for a staff member as a business entity. This feature will eventually will be decommissioned and replaced by the Shift Patterns. The decommissioning will be announced well in advance in the future.
@@ -69,10 +71,10 @@ With a rise of mobility of staff in modern consumer world a new feature was deve
 
 Essentially there are 4 significant API endpoints for Shift Patterns. They are as follow:
 
-*=* Admin Schedule
-*=* Admin Shift Pattern
-*=* Admin Shift Pattern Condition (Optional)
-*=* Admin Shift
+- Admin Schedule
+- Admin Shift Pattern
+- Admin Shift Pattern Condition (Optional)
+- Admin Shift
 
 It will be necessary to have an admin access to the BookingBug account and auth-token will be needed to run any of these API calls along with app-key and app-id or just app-id combination.
 
@@ -144,9 +146,8 @@ After a shift pattern is configured for a staff (person) in the API response it 
 
 ## Admin Shift Pattern
 
-This API endpoint is used to specify the exact working pattern for a member of staff. It is possible to configure the start date, end time, occurrence, exclusions and repeat count along with other parameters. As mentioned previously, a shift pattern can contain many shift patterns. A schedule in conjunction with a shift pattern determine the times that the service/person/resource associated with a schedule, is available.
-The except_date attribute is an array of dates that the shifts will not occur on, cancelling out the recurrence pattern for that date. Common use-case example for this would be: public holidays when the banks are closed.
-The end of the shift pattern is indicated by either the end_date or repeat_count (the number of days or weeks that the pattern runs for).
+This API endpoint is used to specify the exact working pattern for a member of staff. As mentioned previously, a schedule can contain many shift patterns. A schedule in conjunction with a shift pattern determine the availability (the time) for a service/person/resource that is associated with a schedule.
+The except_date attribute is an array of dates that the shifts will not occur on, cancelling out the recurrence pattern for that date. Common use-case example for this would be: public holidays when the banks are closed. The end of the shift pattern is indicated by either the end_date or repeat_count (the number of days or weeks that the pattern runs for).
 
 ### Parameters
 <table class="pure-table">
@@ -167,7 +168,7 @@ The end of the shift pattern is indicated by either the end_date or repeat_count
         <tr>
             <td>end_date</td>
             <td>string</td>
-            <td>(End date is optional, duration can also be configured by repeat_count param) ISO-8601 date (YYYY-MM-DD)</td>
+            <td>(Optional) Duration can also be configured by repeat_count param using format ISO-8601 example date (YYYY-MM-DD)</td>
         </tr>
         <tr>
             <td>end_date</td>
