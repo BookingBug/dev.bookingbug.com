@@ -447,7 +447,10 @@ https://{host}.bookingbug.com/api/v1/admin/{company_id}/schedules/{schedule_id}/
   -d '  {
     "name": "Johns Shift Pattern Condition",
     "color": "royalblue",
-    "company_ids": [37005]
+    "company_ids": [
+                      37005,
+                      37019
+                      ]
   }'
   ```
 </pre>
