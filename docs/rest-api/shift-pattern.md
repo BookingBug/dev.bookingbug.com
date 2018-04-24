@@ -4,13 +4,13 @@ This guide will explain how to work with shift patterns and their purpose. Befor
 
 ## Schedule Rules (Legacy)
 
-Historically via BB API's schedules were supported as part of configuration for a staff member as a business entity. This feature will eventually will be decommissioned and replaced by the Shift Patterns. The decommissioning will be announced well in advance in the future.
+Historically via Bookingbug API's schedules were supported as part of configuration for a staff member as a business entity. This feature will eventually will be decommissioned and replaced by the Shift Patterns. The decommissioning will be announced well in advance in the future.
 
 Legacy schedules were created and applied to a member of staff using this API call:
 
 <pre>POST /api/v1/admin/{company_id}/people</pre>
 
-In the example below we creating a new staff member and assigning it a schedule.
+In the example below we are creating a new staff member and assigning a schedule to it.
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -54,14 +54,101 @@ curl -X POST \
         <div id="tab-2" class="tab__content">
 <pre>
 ```
-response needs to go here
+{
+    "id": 15396,
+    "name": "John Smith",
+    "description": "This is a standard Johns Schedule",
+    "type": "person",
+    "extra": {},
+    "deleted": false,
+    "disabled": false,
+    "company_id": 37019,
+    "order": 15396,
+    "phone_prefix": "44",
+    "_links": {
+        "self": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37019/people/15396"
+        },
+        "items": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37019/items?person_id=15396"
+        },
+        "images": {
+            "href": "https://{host}.bookingbug.com/api/v1/37019/media/person_images/15396"
+        },
+        "companies": [
+            {
+                "href": "https://{host}.bookingbug.com/api/v1/admin/37019/company"
+            }
+        ],
+        "edit": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37019/people/15396/edit"
+        },
+        "attendance": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37019/people/15396/attendance"
+        },
+        "block": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37019/people/15396/block"
+        },
+        "cal": {
+            "href": "http://{host}.bookingbug.com/ical/person/15396?calid=1405542703"
+        },
+        "schedule": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37019/schedules/48492{?start_date,end_date}",
+            "templated": true
+        },
+        "enabled_services": [
+            {
+                "href": "https://{host}.bookingbug.com/api/v1/admin/37019/services/48429"
+            },
+            {
+                "href": "https://{host}.bookingbug.com/api/v1/admin/37019/services/48430"
+            },
+            {
+                "href": "https://{host}.bookingbug.com/api/v1/admin/37019/services/48432"
+            },
+            {
+                "href": "https://{host}.bookingbug.com/api/v1/admin/37019/services/48446"
+            },
+            {
+                "href": "https://{host}.bookingbug.com/api/v1/admin/37019/services/48447"
+            },
+            {
+                "href": "https://{host}.bookingbug.com/api/v1/admin/37019/services/48448"
+            }
+        ],
+        "enabled_resources": []
+    },
+    "_embedded": {},
+    "email": "jsmith@example.com",
+    "mobile": "",
+    "queuing_disabled": true,
+    "person_companies": [
+        37019
+    ],
+    "never_booked": false,
+    "resource_ids": [],
+    "service_ids": [
+        48429,
+        48430,
+        48432,
+        48446,
+        48447,
+        48448
+    ]
+}
   ```
 </pre>
         </div>
         </div>
         </div>
 
-This allows to set the specific hours and days for a member of staff.
+To verify the schedule creation, you may use these API endpoints:
+List all of the schedules
+<pre>GET /api/v1/admin/{company_id}/schedules</pre>
+Read a particular schedule
+<pre>GET /api/v1/admin/{company_id}/schedules/{schedule_id}</pre>
+
+As per example above, it was possible to set the specific hours and days for a member of staff for heir schedule.
 
 With a rise of mobility of staff in modern consumer world a new feature was developed to tackle flexible shift patterns for employees. Assuming a multiple branch/company setup, it is a best practice to create members of staff at the HQ / Parent branch and then configure in which branch/es a member of staff will operate in. After this has been decided the next challenge is to configure their shift patterns.
 
@@ -135,7 +222,19 @@ curl -X POST \
         <div id="tab-2" class="tab__content">
 <pre>
 ```
-response here
+{
+    "company_id": 37019,
+    "day_schedule_id": null,
+    "desc": null,
+    "duration": 60,
+    "id": 48494,
+    "name": "Johns working Schedule - contractor",
+    "rules": {},
+    "schedule_type": 0,
+    "style": 0,
+    "uses_shift_patterns": false,
+    "week_start": 0
+}
   ```
 </pre>
         </div>
@@ -244,10 +343,112 @@ https://{host}.bookingbug.com/api/v1/admin/{parent_company_id}/schedules/{schedu
  "frequency": "weekly",
  "interval": 1,
  "repeat_count": 52,
- "by_day": [ "Monday", "Tuesday", “Wednesday”, “Thursday”, “Friday” ],
- "except_date": [ "2018-04-05", "2018-04-09" ],
- "shift_pattern_condition_id": 2
+ "by_day": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+ "except_date": [ "2018-04-07", "2018-04-28" ]
 }'
+  ```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+{
+    "id": 11,
+    "company_id": 37019,
+    "schedule_id": 48494,
+    "start_date": "2018-05-01",
+    "end_date": "2019-04-29",
+    "start_time": "09:00",
+    "end_time": "18:00",
+    "frequency": "weekly",
+    "interval": 1,
+    "repeat_count": 52,
+    "by_day": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+    ],
+    "except_date": [
+        "2018-05-07",
+        "2018-04-28"
+    ],
+    "_links": {
+        "self": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11"
+        },
+        "schedule": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37019/schedules/48494?start_date=2018-05-01&end_date=2019-04-29"
+        },
+        "edit": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11/edit"
+        }
+    }
+}
+  ```
+</pre>
+        </div>
+        </div>
+        </div>
+
+## Admin Shift Pattern Condition (Optional)
+
+It is possible to limit the amount of companies in which the shift pattern can be used in. If a member of staff is configured to work in 2 branches / companies out of 4, for example, Branch “A” - Mon- Tues and Branch “B” Wed-Friday, then using the companies parameter, it is possible to apply this restriction. Additionally, this API endpoint will allow to set the colour in the schedule editor in Studio version of the BookingBug interface. Additionally, For example:
+
+### Parameters
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>Paramater</th>
+            <th>Datatype</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>Name of the Admin Shift Pattern Condition</td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td>string</td>
+            <td>Available colours are: "red", "blue", "orange", "indigo", "yellow", "violet", "olive", "salmon", "sienna", "crimson", "gold", "orchid", "peru", "teal", "purple", "tomato", "lime", "royalblue" Or it is also possible to specify the colours in Hexadecimal, for example for Red use: "#ff0000"</td>
+        </tr>
+        <tr>
+            <td>company_ids</td>
+            <td>array</td>
+            <td>(Optional) It is possible to specify an array of company id’s similar to this example: [37005, 37014]</td>
+        </tr>
+    </tbody>
+</table>
+
+<pre>POST /api/v1/admin/{company_id}/schedules/{schedule_id}/shift_pattern_conditions</pre>
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Sample Response Data</a></li>
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+curl -X POST \
+https://{host}.bookingbug.com/api/v1/admin/{company_id}/schedules/{schedule_id}/shift_pattern_conditions \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '  {
+    "name": "Johns Shift Pattern Condition",
+    "color": "royalblue",
+    "company_ids": [37005]
+  }'
   ```
 </pre>
         </div>
@@ -304,19 +505,174 @@ Show me all shifts for the next 2 weeks from today (10/04/2018) example:
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-'https://{host}.bookingbug.com/api/v1/admin/{company_id}/schedules/{schedule_id}/shifts?start_date=2018-04-01&end_date=2018-04-14' \
-  -H 'App-Id: {app-id}' \
-  -H 'App-Key: {app-key}' \
-  -H 'Auth-Token: {auth-token}' \
+curl -X GET \
+  'https://{host}.bookingbug.com/api/v1/admin/37019/schedules/48494/shifts?start_date=2018-05-01&end_date=2018-05-14' \
+  -H 'App-key: {app-key}' \
   -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
+  -H 'app-id: {app-id}' \
+  -H 'auth-token: {auth-token}}' \
+  -H 'content-type: application/json' \
   ```
 </pre>
         </div>
         <div id="tab-2" class="tab__content">
 <pre>
 ```
-Output here
+{
+    "_embedded": {
+        "shifts": [
+            {
+                "shift_pattern_id": 11,
+                "company_id": 37019,
+                "schedule_id": 48494,
+                "date": "2018-05-01",
+                "start": "2018-05-01T09:00",
+                "end": "2018-05-01T18:00",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shifts/2018-05-01-11"
+                    },
+                    "shift_pattern": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11"
+                    }
+                }
+            },
+            {
+                "shift_pattern_id": 11,
+                "company_id": 37019,
+                "schedule_id": 48494,
+                "date": "2018-05-02",
+                "start": "2018-05-02T09:00",
+                "end": "2018-05-02T18:00",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shifts/2018-05-02-11"
+                    },
+                    "shift_pattern": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11"
+                    }
+                }
+            },
+            {
+                "shift_pattern_id": 11,
+                "company_id": 37019,
+                "schedule_id": 48494,
+                "date": "2018-05-03",
+                "start": "2018-05-03T09:00",
+                "end": "2018-05-03T18:00",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shifts/2018-05-03-11"
+                    },
+                    "shift_pattern": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11"
+                    }
+                }
+            },
+            {
+                "shift_pattern_id": 11,
+                "company_id": 37019,
+                "schedule_id": 48494,
+                "date": "2018-05-04",
+                "start": "2018-05-04T09:00",
+                "end": "2018-05-04T18:00",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shifts/2018-05-04-11"
+                    },
+                    "shift_pattern": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11"
+                    }
+                }
+            },
+            {
+                "shift_pattern_id": 11,
+                "company_id": 37019,
+                "schedule_id": 48494,
+                "date": "2018-05-08",
+                "start": "2018-05-08T09:00",
+                "end": "2018-05-08T18:00",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shifts/2018-05-08-11"
+                    },
+                    "shift_pattern": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11"
+                    }
+                }
+            },
+            {
+                "shift_pattern_id": 11,
+                "company_id": 37019,
+                "schedule_id": 48494,
+                "date": "2018-05-09",
+                "start": "2018-05-09T09:00",
+                "end": "2018-05-09T18:00",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shifts/2018-05-09-11"
+                    },
+                    "shift_pattern": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11"
+                    }
+                }
+            },
+            {
+                "shift_pattern_id": 11,
+                "company_id": 37019,
+                "schedule_id": 48494,
+                "date": "2018-05-10",
+                "start": "2018-05-10T09:00",
+                "end": "2018-05-10T18:00",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shifts/2018-05-10-11"
+                    },
+                    "shift_pattern": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11"
+                    }
+                }
+            },
+            {
+                "shift_pattern_id": 11,
+                "company_id": 37019,
+                "schedule_id": 48494,
+                "date": "2018-05-11",
+                "start": "2018-05-11T09:00",
+                "end": "2018-05-11T18:00",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shifts/2018-05-11-11"
+                    },
+                    "shift_pattern": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11"
+                    }
+                }
+            },
+            {
+                "shift_pattern_id": 11,
+                "company_id": 37019,
+                "schedule_id": 48494,
+                "date": "2018-05-14",
+                "start": "2018-05-14T09:00",
+                "end": "2018-05-14T18:00",
+                "_links": {
+                    "self": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shifts/2018-05-14-11"
+                    },
+                    "shift_pattern": {
+                        "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shift_patterns/11"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48494/shifts"
+        }
+    }
+}
   ```
 </pre>
         </div>
