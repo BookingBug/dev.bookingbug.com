@@ -131,6 +131,8 @@ For every admin endpoint you must authenticate or if you have already authentica
   }
 </pre>
 
+It is possible to cache the returned auth-token for later use. This is a good practice if there is a need to perform admin functions later down the line in the same company or child companies if the admin authentication was done at the parent company level.
+
 ## Logout
 
 If you need to logout the authenticated user you can do this by calling the logout API.
