@@ -173,7 +173,7 @@ This API endpoint will LIST all of the available schedules that exist on the Boo
 <table class="pure-table">
     <thead>
         <tr>
-            <th>Paramater</th>
+            <th>Parameter</th>
             <th>Datatype</th>
             <th>Description</th>
         </tr>
@@ -252,7 +252,7 @@ The except_date attribute is an array of dates that the shifts will not occur on
 <table class="pure-table">
     <thead>
         <tr>
-            <th>Paramater</th>
+            <th>Parameter</th>
             <th>Datatype</th>
             <th>Description</th>
         </tr>
@@ -400,7 +400,7 @@ It is possible to limit the amount of companies in which the shift pattern can b
 <table class="pure-table">
     <thead>
         <tr>
-            <th>Paramater</th>
+            <th>Parameter</th>
             <th>Datatype</th>
             <th>Description</th>
         </tr>
@@ -438,7 +438,7 @@ It is possible to limit the amount of companies in which the shift pattern can b
 <pre>
 ```
 curl -X POST \
-https://{host}.bookingbug.com/api/v1/admin/{company_id}/schedules/{schedule_id}/shift_pattern_conditions \
+https://{host}.bookingbug.com/api/v1/admin/{parent_company_id}/schedules/{schedule_id}/shift_pattern_conditions \
   -H 'App-Id: {app-id}' \
   -H 'App-Key: {app-key}' \
   -H 'Auth-Token: {auth-token}' \
@@ -458,7 +458,29 @@ https://{host}.bookingbug.com/api/v1/admin/{company_id}/schedules/{schedule_id}/
         <div id="tab-2" class="tab__content">
 <pre>
 ```
-response here
+{
+    "id": 4,
+    "schedule_id": 48495,
+    "name": "Johns Shift Pattern Condition",
+    "color": "royalblue",
+    "company_ids": [
+        37005,
+        37019
+    ],
+    "_links": {
+        "self": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48495/shift_pattern_conditions/4",
+            "templated": false
+        },
+        "schedule": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/#<Schedule:0x00000011c4b588>{?start_date,end_date}",
+            "templated": true
+        },
+        "edit": {
+            "href": "https://{host}.bookingbug.com/api/v1/admin/37003/schedules/48495/shift_pattern_conditions/4/edit"
+        }
+    }
+}
   ```
 </pre>
         </div>
@@ -476,7 +498,7 @@ This API endpoint is useful for looking up the occurrences of shift patterns dur
 <table class="pure-table">
     <thead>
         <tr>
-            <th>Paramater</th>
+            <th>Parameter</th>
             <th>Datatype</th>
             <th>Description</th>
         </tr>

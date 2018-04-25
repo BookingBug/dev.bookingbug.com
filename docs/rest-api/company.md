@@ -1,6 +1,6 @@
 # Company
 
-The company end-point will show all of the links and properties of a company. If you have a parent/child setup, you can define the parent company ID and all the child companies will be embedded in the response. This is an admin API call so you'll need to authenticate and provide the auth-token in the header. Using the Company API endpoint, it is possible to: `read`, `update`, <a href="docs/rest-api/company#Delete">delete</a>, `find a company by reference`, `retrieve settings` and `retrieve addresses`.
+A Company API Endpoint in BookingBug represents a set of Services / Events, Staff who can carry out the service, customers and other business logic. A Company in BookingBug could represent either of the following business entities: Walk in Branch, Centre, Retail Store, Office Location or any other similar set of services / events that a Business can carry out. The company end-point will show all of the links and properties of a company. If you have a parent/child setup, you can define the parent company ID and all the child companies will be embedded in the response. This is an admin API call so you'll need to authenticate and provide the auth-token in the header. Using the Company API endpoint, it is possible to: `read`, `update`, <a href="docs/rest-api/company#Delete">delete</a>, `find a company by reference`, `retrieve settings` and `retrieve addresses`.
 
 <pre>GET /api/v1/admin/{company_id}/company</pre>
 
