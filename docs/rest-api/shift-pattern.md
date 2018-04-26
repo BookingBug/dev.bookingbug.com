@@ -425,7 +425,7 @@ It is possible to limit the amount of companies in which the shift pattern can b
     </tbody>
 </table>
 
-<pre>POST /api/v1/admin/{company_id}/schedules/{schedule_id}/shift_pattern_conditions</pre>
+<pre>POST /api/v1/admin/{parent_company_id}/schedules/{schedule_id}/shift_pattern_conditions</pre>
 
 <div class="tabs">
     <ul class="tabs__menu">
