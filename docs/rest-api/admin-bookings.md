@@ -271,6 +271,603 @@ If you have a parent/child company setup, you can list bookings by calling the p
 
 <pre>GET /api/v1/admin/{parent_company_id}/bookings?children=true</pre>
 
+Example use-case could be that it is necessary to search for all bookings by a client across all of the companies. This would be achieved using this API call:
+
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+        <li><a href="#tab-2">Sample Response Data</a></li>
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+curl -X GET \
+  'https://{host}.bookingbug.com/api/v1/admin/37003/bookings?children=true&email=client123@company.co.uk' \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'auth-token: {auth-token}}' \
+  ```
+</pre>
+        </div>
+        <div id="tab-2" class="tab__content">
+<pre>
+```
+{
+    "total_entries": 2,
+    "include_cancelled": false,
+    "_embedded": {
+        "bookings": [
+            {
+                "id": 355,
+                "full_describe": "Queens - Private Bday party - (Chld) 37014",
+                "resource_name": "My Resource",
+                "service_name": "Service 1",
+                "resource_id": 24,
+                "member_id": 102,
+                "client_name": "John Smith",
+                "client_email": "client123@company.co.uk",
+                "client_phone": "",
+                "client_mobile": "+44 (0)7933 439175",
+                "service_id": 48457,
+                "datetime": "2018-04-25T18:00:00+01:00",
+                "end_datetime": "2018-04-25T22:00:00+01:00",
+                "duration": 240,
+                "duration_span": 14400,
+                "listed_duration": 240,
+                "on_waitlist": false,
+                "company_id": 37014,
+                "company_name": "PZ EVENTS (Chld) 37014",
+                "attended": true,
+                "booking_updated": "2018-04-25T10:09:38Z",
+                "updated_at": "2018-04-25T10:09:19Z",
+                "created_at": "2018-04-24T08:56:58Z",
+                "client_id": 102,
+                "price": 0,
+                "paid": 0,
+                "quantity": 1,
+                "is_cancelled": false,
+                "multi_status": {},
+                "purchase_id": 323,
+                "purchase_ref": "IjT1Kdns-VjzFozfMzIz",
+                "event_chain_id": 39,
+                "notes": {
+                    "public": [],
+                    "private": []
+                },
+                "channel": "Client",
+                "status": 4,
+                "_embedded": {
+                    "client": {
+                        "first_name": "John",
+                        "last_name": "Smith",
+                        "email": "client123@company.co.uk",
+                        "address1": "33c Daneshill Road",
+                        "address2": "West End",
+                        "address3": "Leicester",
+                        "address4": "Leicestershire",
+                        "postcode": "LE36AN",
+                        "country": "United Kingdom",
+                        "mobile": "7933439175",
+                        "id": 102,
+                        "member_type": 1,
+                        "reference": "test_customer",
+                        "files": [],
+                        "deleted": false,
+                        "phone_prefix": "44",
+                        "mobile_prefix": "44",
+                        "default_company_id": 37019,
+                        "q": {},
+                        "join_date": "2018-04-24",
+                        "time_zone": "Europe/London",
+                        "locale": "en",
+                        "answers": [],
+                        "_links": {
+                            "self": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/client/102"
+                            },
+                            "bookings": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/bookings{/id}?client_id=102{&embed,start_date,end_date,page,per_page,include_cancelled,modified_since,slot_id,event_id,resource_id,service_id,person_id,filter_by_fields,order_by,order_by_reverse,start_time,end_time,locale,clinic_id,children,status,category_id,created_since,email,purchase_id}",
+                                "templated": true
+                            },
+                            "pre_paid_bookings": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/37014/members/102/pre_paid_bookings{?include_invalid,event_id}",
+                                "templated": true
+                            },
+                            "questions": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/37014/client_details"
+                            },
+                            "edit": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/client/102/edit"
+                            },
+                            "interactions": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/auditlog/interactions/102",
+                                "templated": true
+                            }
+                        }
+                    },
+                    "answers": [
+                        {
+                            "id": 310,
+                            "value": "TI4AAKG",
+                            "price": 0,
+                            "question_id": 1,
+                            "admin_only": false,
+                            "important": false,
+                            "_embedded": {
+                                "question": {
+                                    "id": 1,
+                                    "name": "Car/Bike Registration Number",
+                                    "required": true,
+                                    "important": false,
+                                    "admin_only": false,
+                                    "applies_to": 0,
+                                    "ask_member": true,
+                                    "detail_type": "text_field",
+                                    "help_text": "Please fill in your Car Registration Number here",
+                                    "settings": {},
+                                    "price": 0,
+                                    "price_per_booking": false,
+                                    "outcome": false,
+                                    "_links": {
+                                        "self": {
+                                            "href": "https://apidemo.bookingbug.com/api/v1/37003/questions/1"
+                                        }
+                                    }
+                                }
+                            },
+                            "question_text": "Car/Bike Registration Number",
+                            "outcome": false,
+                            "company_id": 37003,
+                            "_links": {
+                                "self": {
+                                    "href": "https://apidemo.bookingbug.com/api/v1/37003/answers/310"
+                                },
+                                "question": {
+                                    "title": "Car/Bike Registration Number",
+                                    "href": "https://apidemo.bookingbug.com/api/v1/37003/questions/1"
+                                }
+                            }
+                        },
+                        {
+                            "id": 311,
+                            "value": "Mac",
+                            "price": 0,
+                            "question_id": 39,
+                            "admin_only": false,
+                            "important": false,
+                            "_embedded": {
+                                "question": {
+                                    "id": 39,
+                                    "name": "Operating System",
+                                    "required": true,
+                                    "important": false,
+                                    "admin_only": false,
+                                    "applies_to": 0,
+                                    "ask_member": true,
+                                    "detail_type": "select",
+                                    "options": [
+                                        {
+                                            "name": "Linux",
+                                            "price": 0,
+                                            "is_default": false,
+                                            "id": 24
+                                        },
+                                        {
+                                            "name": "Windows",
+                                            "price": 0,
+                                            "is_default": false,
+                                            "id": 25
+                                        },
+                                        {
+                                            "name": "Mac",
+                                            "price": 0,
+                                            "is_default": false,
+                                            "id": 26
+                                        }
+                                    ],
+                                    "settings": {},
+                                    "price": 0,
+                                    "price_per_booking": false,
+                                    "outcome": false,
+                                    "_links": {
+                                        "self": {
+                                            "href": "https://apidemo.bookingbug.com/api/v1/37003/questions/39"
+                                        }
+                                    }
+                                }
+                            },
+                            "question_text": "Operating System",
+                            "outcome": false,
+                            "company_id": 37003,
+                            "_links": {
+                                "self": {
+                                    "href": "https://apidemo.bookingbug.com/api/v1/37003/answers/311"
+                                },
+                                "question": {
+                                    "title": "Operating System",
+                                    "href": "https://apidemo.bookingbug.com/api/v1/37003/questions/39"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "slot_id": 742,
+                "settings": {
+                    "obfuscated_id": "4mCUoi-rLyRNYZ0T",
+                    "who_updated": "member",
+                    "alternate_mobile": "+44 (0)7854 015802"
+                },
+                "slot_settings": {},
+                "answers_summary": [
+                    {
+                        "question_id": 1,
+                        "name": "Car/Bike Registration Number",
+                        "answer": "TI4AAKG"
+                    },
+                    {
+                        "question_id": 39,
+                        "name": "Operating System",
+                        "answer": "Mac"
+                    }
+                ],
+                "survey_answers_summary": [],
+                "questions": {
+                    "1": {
+                        "answer": "TI4AAKG",
+                        "name": "Car/Bike Registration Number"
+                    },
+                    "39": {
+                        "answer": "Mac",
+                        "name": "Operating System"
+                    }
+                },
+                "min_cancellation_time": "2018-04-20T18:00:00+01:00",
+                "mobile": "+44 (0)7933 439175",
+                "booked_by": "Attendee Thirty",
+                "booked_by_email": "pattendee+at30@bookingbug.com",
+                "_links": {
+                    "self": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/bookings/355?locale=en"
+                    },
+                    "client": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/client/102"
+                    },
+                    "comms": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/bookings/355/comms"
+                    },
+                    "check_in": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/bookings/355/check_in"
+                    },
+                    "event_groups": {
+                        "title": "Group 1",
+                        "href": "https://apidemo.bookingbug.com/api/v1/37014/event_groups/48457"
+                    },
+                    "event_chain": {
+                        "title": "Queens - Private Bday party",
+                        "href": "https://apidemo.bookingbug.com/api/v1/37014/event_chains/39{?member_level_id,embed}",
+                        "templated": true
+                    },
+                    "edit": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/bookings/355/edit{?locale}",
+                        "templated": true
+                    },
+                    "cancel": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/bookings/355/cancel{?notify,cancel_reason}",
+                        "templated": true
+                    },
+                    "address": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/37014/addresses/13"
+                    },
+                    "resource": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/resources/24"
+                    },
+                    "slot": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/slots/742"
+                    },
+                    "service": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/services/48457"
+                    },
+                    "company": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37014/company"
+                    }
+                }
+            },
+            {
+                "id": 364,
+                "full_describe": "Residential Mortgage Appointment - 2y Fixed with Banker29 at Bank (Chld) 37019",
+                "person_name": "Banker29",
+                "service_name": "Residential Mortgage Appointment - 2y Fixed",
+                "member_id": 102,
+                "client_name": "John Smith",
+                "client_email": "client123@company.co.uk",
+                "client_phone": "",
+                "client_mobile": "+44 (0)7933 439175",
+                "service_id": 48429,
+                "datetime": "2018-04-25T14:00:00+01:00",
+                "end_datetime": "2018-04-25T15:00:00+01:00",
+                "duration": 60,
+                "duration_span": 3600,
+                "listed_duration": 60,
+                "on_waitlist": false,
+                "company_id": 37019,
+                "company_name": "Bank (Chld) 37019",
+                "attended": false,
+                "booking_updated": "2018-04-25T10:11:12Z",
+                "updated_at": "2018-04-25T10:11:12Z",
+                "created_at": "2018-04-25T09:40:24Z",
+                "client_id": 102,
+                "person_id": 15382,
+                "price": 0,
+                "paid": 0,
+                "quantity": 1,
+                "is_cancelled": false,
+                "multi_status": {},
+                "purchase_id": 339,
+                "purchase_ref": "X1V7z7BJ5fmEdNU7MzM5",
+                "notes": {
+                    "public": [],
+                    "private": [
+                        {
+                            "id": 26,
+                            "note": "This is a private note, that was entered from the GUI"
+                        }
+                    ]
+                },
+                "channel": "Client",
+                "status": 4,
+                "_embedded": {
+                    "client": {
+                        "first_name": "John",
+                        "last_name": "Smith",
+                        "email": "client123@company.co.uk",
+                        "address1": "33c Daneshill Road",
+                        "address2": "West End",
+                        "address3": "Leicester",
+                        "address4": "Leicestershire",
+                        "postcode": "LE36AN",
+                        "country": "United Kingdom",
+                        "mobile": "7854015802",
+                        "id": 102,
+                        "member_type": 1,
+                        "reference": "test_customer",
+                        "files": [],
+                        "deleted": false,
+                        "phone_prefix": "44",
+                        "mobile_prefix": "44",
+                        "default_company_id": 37019,
+                        "q": {},
+                        "join_date": "2018-04-24",
+                        "time_zone": "Europe/London",
+                        "locale": "en",
+                        "answers": [],
+                        "_links": {
+                            "self": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/client/102"
+                            },
+                            "bookings": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/bookings{/id}?client_id=102{&embed,start_date,end_date,page,per_page,include_cancelled,modified_since,slot_id,event_id,resource_id,service_id,person_id,filter_by_fields,order_by,order_by_reverse,start_time,end_time,locale,clinic_id,children,status,category_id,created_since,email,purchase_id}",
+                                "templated": true
+                            },
+                            "pre_paid_bookings": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/37019/members/102/pre_paid_bookings{?include_invalid,event_id}",
+                                "templated": true
+                            },
+                            "questions": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/37019/client_details"
+                            },
+                            "edit": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/client/102/edit"
+                            },
+                            "interactions": {
+                                "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/auditlog/interactions/102",
+                                "templated": true
+                            }
+                        }
+                    },
+                    "answers": [
+                        {
+                            "id": 308,
+                            "value": "AG09HBY",
+                            "price": 0,
+                            "question_id": 1,
+                            "admin_only": false,
+                            "important": false,
+                            "_embedded": {
+                                "question": {
+                                    "id": 1,
+                                    "name": "Car/Bike Registration Number",
+                                    "required": true,
+                                    "important": false,
+                                    "admin_only": false,
+                                    "applies_to": 0,
+                                    "ask_member": true,
+                                    "detail_type": "text_field",
+                                    "help_text": "Please fill in your Car Registration Number here",
+                                    "settings": {},
+                                    "price": 0,
+                                    "price_per_booking": false,
+                                    "outcome": false,
+                                    "_links": {
+                                        "self": {
+                                            "href": "https://apidemo.bookingbug.com/api/v1/37003/questions/1"
+                                        }
+                                    }
+                                }
+                            },
+                            "question_text": "Car/Bike Registration Number",
+                            "outcome": false,
+                            "company_id": 37003,
+                            "_links": {
+                                "self": {
+                                    "href": "https://apidemo.bookingbug.com/api/v1/37003/answers/308"
+                                },
+                                "question": {
+                                    "title": "Car/Bike Registration Number",
+                                    "href": "https://apidemo.bookingbug.com/api/v1/37003/questions/1"
+                                }
+                            }
+                        },
+                        {
+                            "id": 309,
+                            "value": "Mac",
+                            "price": 0,
+                            "question_id": 39,
+                            "admin_only": false,
+                            "important": false,
+                            "_embedded": {
+                                "question": {
+                                    "id": 39,
+                                    "name": "Operating System",
+                                    "required": true,
+                                    "important": false,
+                                    "admin_only": false,
+                                    "applies_to": 0,
+                                    "ask_member": true,
+                                    "detail_type": "select",
+                                    "options": [
+                                        {
+                                            "name": "Linux",
+                                            "price": 0,
+                                            "is_default": false,
+                                            "id": 24
+                                        },
+                                        {
+                                            "name": "Windows",
+                                            "price": 0,
+                                            "is_default": false,
+                                            "id": 25
+                                        },
+                                        {
+                                            "name": "Mac",
+                                            "price": 0,
+                                            "is_default": false,
+                                            "id": 26
+                                        }
+                                    ],
+                                    "settings": {},
+                                    "price": 0,
+                                    "price_per_booking": false,
+                                    "outcome": false,
+                                    "_links": {
+                                        "self": {
+                                            "href": "https://apidemo.bookingbug.com/api/v1/37003/questions/39"
+                                        }
+                                    }
+                                }
+                            },
+                            "question_text": "Operating System",
+                            "outcome": false,
+                            "company_id": 37003,
+                            "_links": {
+                                "self": {
+                                    "href": "https://apidemo.bookingbug.com/api/v1/37003/answers/309"
+                                },
+                                "question": {
+                                    "title": "Operating System",
+                                    "href": "https://apidemo.bookingbug.com/api/v1/37003/questions/39"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "slot_id": 751,
+                "settings": {
+                    "resource": -1,
+                    "person": -1,
+                    "earliest_time": "2018-04-25T10:00:00.000Z",
+                    "child_clients": [],
+                    "obfuscated_id": "Qcss0VtfKEDKXA0v",
+                    "who_updated": "member",
+                    "alternate_mobile": "+44 (0)7933 439175"
+                },
+                "slot_settings": {},
+                "answers_summary": [
+                    {
+                        "question_id": 1,
+                        "name": "Car/Bike Registration Number",
+                        "answer": "AG09HBY"
+                    },
+                    {
+                        "question_id": 39,
+                        "name": "Operating System",
+                        "answer": "Mac"
+                    }
+                ],
+                "survey_answers_summary": [],
+                "questions": {
+                    "1": {
+                        "answer": "AG09HBY",
+                        "name": "Car/Bike Registration Number"
+                    },
+                    "39": {
+                        "answer": "Mac",
+                        "name": "Operating System"
+                    }
+                },
+                "private_note": "This is a private note, that was entered from the GUI",
+                "min_cancellation_time": "2018-04-24T14:00:00+01:00",
+                "mobile": "+44 (0)7933 439175",
+                "booked_by": "John Smith",
+                "booked_by_email": "client123@company.co.uk",
+                "_links": {
+                    "self": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/bookings/364?locale=en"
+                    },
+                    "client": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/client/102"
+                    },
+                    "comms": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/bookings/364/comms"
+                    },
+                    "check_in": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/bookings/364/check_in"
+                    },
+                    "questions": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/questions?detail_group_id=18529"
+                    },
+                    "edit": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/bookings/364/edit{?locale}",
+                        "templated": true
+                    },
+                    "cancel": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/bookings/364/cancel{?notify,cancel_reason}",
+                        "templated": true
+                    },
+                    "address": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/37019/addresses/16"
+                    },
+                    "person": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/people/15382"
+                    },
+                    "slot": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/slots/751"
+                    },
+                    "service": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/services/48429"
+                    },
+                    "company": {
+                        "href": "https://apidemo.bookingbug.com/api/v1/admin/37019/company"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://apidemo.bookingbug.com/api/v1/admin/37003/bookings?page=1&per_page=30&include_cancelled=false&locale=en&children=true&email=pzhuravlenko%40yahoo.co.uk"
+        }
+    }
+}
+  ```
+</pre>
+        </div>
+        </div>
+        </div>
+
 ## New Booking
 
 You can create a new booking/appointment in the Bookingbug platform on behalf of the customer or if bookings are only created by an administrator.
@@ -572,10 +1169,10 @@ You can create a new booking/appointment and create the client. The cURL call ex
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}" 
--H "Content-Type: application/json" 
--H "Cache-Control: no-cache" 
--d 
+curl -X POST -H "App-id: {app-id}" -H "App-key: {app-key}" -H "Auth-Token: {auth-token}"
+-H "Content-Type: application/json"
+-H "Cache-Control: no-cache"
+-d
 '{
   "service_id": 48323,
   "datetime": "2017-12-09T13:30:00+03:00",
