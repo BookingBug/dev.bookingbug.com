@@ -80,7 +80,7 @@ You can list the queues configured against your Bookingbug company.
         </div>
 
 Looking at the sample response we can tell which services and people are also configured for the queue.
-<b>Note:</b> You can have multiple queues but only one is supported in the front-end at present.
+<!-- <b>Note:</b> You can have multiple queues but only one is supported in the front-end at present. -->
 
 ## Read queue
 
