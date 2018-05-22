@@ -50,9 +50,12 @@ The cURL call below will list all the event groups with pagination of 100 per pa
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/event_chains?page=1&per_page=100"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/event_chains?page=1&per_page=100 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -148,9 +151,12 @@ The cURL call below will list all the events with pagination of 100 per page.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/event_chains?page=1&per_page=100"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/event_chains?page=1&per_page=100 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -301,9 +307,12 @@ The cURL call below will list all bookable events from the 1st of Jan 2016 to th
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/events?start_date=2016-01-01&end_date=2016-01-10"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/events?start_date=2016-01-01&end_date=2016-01-10 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -369,7 +378,7 @@ The cURL call below will list all bookable events from the 1st of Jan 2016 to th
 
 ### Adding an event to the basket
 
-Looking at the results from the events API we can add the events to the basket. Below is an example of adding an event. 
+Looking at the results from the events API we can add the events to the basket. Below is an example cURL call. 
 
 <div class="tabs">
     <ul class="tabs__menu">
@@ -380,10 +389,15 @@ Looking at the results from the events API we can add the events to the basket. 
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
-  -H "Cache-Control: no-cache"
-  -d '{"event_id": "104748", "event_chain_id": "3432423"}'
-"https://{host}.bookingbug.com/api/v1/{company_id}/basket/add_item"
+  curl -X POST \
+   https://{host}.bookingbug.com/api/v1/{company_id}/basket/add_item \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -d '{
+    "event_id": "104748", "event_chain_id": "3432423"
+  }'
   ```
 </pre>
         </div>

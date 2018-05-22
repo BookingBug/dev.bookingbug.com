@@ -46,9 +46,12 @@ The Day end-point will load a list of bookable event items for a particular date
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-   -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/company_id/day/YYYY-MM-DD"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/company_id/day?date={date} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -149,9 +152,12 @@ The cURL below is an example that will return back all available slots for a giv
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/company_id/day_data?service_id=xxx&date=2016-13-12&edate=2016-20-12"
+  curl -X GET \
+    https://{host}.bookingbug.com/api/v1/company_id/day_data?service_id=xxx&date=2016-13-12&edate=2016-20-12
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -293,9 +299,12 @@ The cURL call below will list all available time slots for a particular date and
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-   -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/company_id/time_data?date=YYYY-MM-DD&person_id=12345"
+  curl -X GET \
+    https://{host}.bookingbug.com/api/v1/company_id/time_data?date={date}&person_id={person_id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>

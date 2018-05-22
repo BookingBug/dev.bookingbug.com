@@ -11,7 +11,15 @@ To authenticate with the API, you will require an auth token along with the App-
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-curl -X POST -H "App-Key: {app-key}" -H "App-Id: {app-id}" -H "Cache-Control: no-cache" -H "Content-Type: application/json" -d '{ "email": "{email}", "password": "{password}" }' "https://{host}.bookingbug.com/api/v1/login"
+curl -X POST \
+ https://{host}.bookingbug.com/api/v1/login \
+ -H 'App-Key: {app-key}' \
+ -H 'App-Id: {app-id}' \
+ -H 'Content-Type: application/json' \
+ -H 'Cache-Control: no-cache' \
+ -d '{
+   "email": "{email}", "password": "{password}" 
+ }' 
 ```
 </pre>
         </div>
@@ -87,12 +95,17 @@ which company you're logging in against and for that you'll need to pass in the 
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d
-  '{
+  curl -X POST \
+   https://{host}.bookingbug.com/api/v1/login \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache" \
+  -d'{
     "email": "{email}",
     "password": "{password}",
     "id": {company_id}
-  }' "https://{host}.bookingbug.com/api/v1/login"
+  }' 
   ```
 </pre>
         </div>
@@ -112,11 +125,16 @@ To authenticate as an administrator you can call the admin login end-point.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d
-  '{
+  curl -X POST \
+   https://{host}.bookingbug.com/api/v1/login/admin/{company_id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -d '{
     "email": "{email}",
     "password": "{password}"
-  }' "https://{host}.bookingbug.com/api/v1/login/admin/{company_id}"
+  }' 
   ```
 </pre>
         </div>
@@ -146,10 +164,13 @@ If you need to logout the authenticated user you can do this by calling the logo
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-  "https://{host}.bookingbug.com/api/v1/login"
+  curl -X DELETE \
+   https://{host}.bookingbug.com/api/v1/login \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>

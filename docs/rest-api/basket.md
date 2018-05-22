@@ -72,10 +72,15 @@ Below is an example of adding a service to the basket. In the header response we
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-  -d '{"service_id": "104748", "date": "2017-02-01", "time": "630"}'
-"https://{host}.bookingbug.com/api/v1/{company_id}/basket/add_item"
+  curl -X POST \
+   https://{host}.bookingbug.com/api/v1/{company_id}/basket/add_item \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -d '{
+    "service_id": "104748", "date": "2017-02-01", "time": "630"
+  }'
   ```
 </pre>
         </div>
@@ -180,10 +185,15 @@ The `member_id` is optional at `add_item` stage but is required upon checkout.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-  -d '{"event_id": "104748", "event_chain_id": "3432423"}'
-"https://{host}.bookingbug.com/api/v1/{company_id}/basket/add_item"
+  curl -X POST \
+   https://{host}.bookingbug.com/api/v1/{company_id}/basket/add_item \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -d '{
+    "event_id": "104748", "event_chain_id": "3432423"
+  }'
   ```
 </pre>
         </div>
@@ -220,9 +230,14 @@ You can view the basket using this method. Notice we are passing in the same `Au
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache" -H "Auth-Token: Boq2lgDNQLAFTmiJQaABRA"
-"https://{host}.bookingbug.com/api/v1/{company_id}/basket"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/basket \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Auth-Token: Boq2lgDNQLAFTmiJQaABRA' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
+
   ```
 </pre>
         </div>
@@ -318,9 +333,14 @@ If you have more than one items in your basket you can view the basket item. Eac
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache" -H "Auth-Token: Boq2lgDNQLAFTmiJQaABRA"
-"https://{host}.bookingbug.com/api/v1/{company_id}/basket/5c733ffc20bc6b24"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/basket/5c733ffc20bc6b24 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Auth-Token: Boq2lgDNQLAFTmiJQaABRA' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
+
   ```
 </pre>
         </div>
@@ -390,9 +410,13 @@ You can delete an item from the basket. Basket item ID is required with `DELETE`
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache" -H "Auth-Token: Boq2lgDNQLAFTmiJQaABRA"
-"https://{host}.bookingbug.com/api/v1/{company_id}/basket/5c733ffc20bc6b24"
+  curl -X DELETE \
+   https://{host}.bookingbug.com/api/v1/{company_id}/basket/5c733ffc20bc6b24 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Auth-Token: Boq2lgDNQLAFTmiJQaABRA' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -450,18 +474,49 @@ To complete the booking you must checkout the basket before the basket session e
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache" -H "Auth-Token: Boq2lgDNQLAFTmiJQaABRA"
-  -d '{"member_id": "232323", "take_from_wallet": "false"}'
-"https://{host}.bookingbug.com/api/v1/{company_id}/basket/checkout"
+  curl -X POST \
+   https://{host}.bookingbug.com/api/v1/{company_id}/basket/checkout \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Auth-Token: Boq2lgDNQLAFTmiJQaABRA' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -d '{
+    "member_id": "232323", "take_from_wallet": "false"
+  }'
   ```
 </pre>
         </div>
 
-## Using Wallets
+## Checkout With New Client
 
-Wallets enable your customers to credit their account with real or virtual currency which they can then use to pay for bookings.  To use wallets, you must have online payments setup.
+You can pass in the client object on the basket checkout call. This will create a new client in Bookingbug and if the client exist it will lookup the client and link the appointment with the same client. 
 
-for more information about setting wallets up see [this guide](http://feedback.bookingbug.com/hc/en-gb/articles/204119572-How-to-setup-wallet-credit-that-my-customers-can-buy-)
+<pre> POST /api/v1/{company_id}/basket/checkout </pre>
 
-for more information regarding setting up payments you can take a look at our [payment guides](http://feedback.bookingbug.com/hc/en-gb/sections/201679355-Payments)
+<div class="tabs">
+    <ul class="tabs__menu">
+        <li class="current"><a href="#tab-1">cURL</a></li>
+    </ul>
+
+    <div class="tab">
+        <div id="tab-1" class="tab__content">
+<pre>
+```
+curl -X POST \
+  https://{host}.bookingbug.com/api/v1/{company_id}/basket/checkout \
+  -H 'App-Id: {App-id}' \
+  -H 'App-Key: {App-key}' \ 
+  -H 'Auth-Token: {Auth-Token}' \ 
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \ 
+  -d '{
+  "client": {
+    "first_name": "Bob", 
+    "last_name": "Smith", 
+    "email": "bsmith@test.com"
+  }
+}'
+  ```
+</pre>
+        </div>

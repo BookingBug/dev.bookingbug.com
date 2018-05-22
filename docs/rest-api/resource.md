@@ -122,9 +122,13 @@ The API enables an admin to create a resource. The following parameters listed b
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
+  curl -X POST \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/resources \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   -d '{
     "name": "Consultation room 1",
     "description": "Consultation room 1",
@@ -143,7 +147,6 @@ The API enables an admin to create a resource. The following parameters listed b
         "country": "United Kingdom"
     }
 }'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/resources"
   ```
 </pre>
         </div>
@@ -168,9 +171,13 @@ You can update information of a resource. The parameters stated above can be use
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
+  curl -X PUT \
+    https://{host}.bookingbug.com/api/v1/admin/{company_id}/resources/{id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   -d '{
     "name": "Consultation room 1",
     "description": "Consultation room 1",
@@ -189,7 +196,6 @@ You can update information of a resource. The parameters stated above can be use
         "country": "United Kingdom"
     }
 }'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/resources/{id}"
   ```
 </pre>
         </div>
@@ -239,10 +245,13 @@ There are two different ways of listing resources. The first method is using the
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/resource?page=1&per_page=50"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/resource?page=1&per_page=50 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -375,10 +384,13 @@ The resource read method enables you to view a particular resource's information
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/resources/{id}"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/resources/{id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -403,10 +415,13 @@ You can delete a resource using the API method below.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/resources/{id}"
+  curl -X DELETE \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/resources/{id}
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -429,14 +444,17 @@ You can block a time slot for a resource in their calendar. The following parame
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/resource/{id}/block \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {token-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   -d '{
   	"start_time": "2017-09-07T11:00:00",
 	"end_time": "2017-09-07T12:00:00"
   }'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/resource/{id}/block"
   ```
 </pre>
         </div>

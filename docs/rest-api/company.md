@@ -14,15 +14,15 @@ In the example below we are only retrieving information for a child company usin
     <div class="tab">
         <div id="tab-1" class="tab__content">
 <pre>
-
 ```
-curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}"
--H "Auth-Token: {auth-token}"
--H "Content-Type: application/json"
--H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/company"
+curl -X GET \
+ https://{host}.bookingbug.com/api/v1/admin/{company_id}/company \
+-H 'App-Id: {app-id}' \
+-H 'App-Key: {app-key}' \
+-H 'Auth-Token: {auth-token}' \
+-H 'Content-Type: application/json' \
+-H 'Cache-Control: no-cache' \
 ```
-
 </pre>
         </div>
         <div id="tab-2" class="tab__content">
@@ -346,12 +346,12 @@ It is programatically possible update a company with the parameters listed below
 <pre>
 ```
 curl -X PUT
-  https://{host}.bookingbug.com/api/v1/admin/{company_id}/company
-  -H 'app-id: {app-id}'
-  -H 'App-Key: {app-key}'
-  -H 'auth-token: {auth-token}'
-  -H 'cache-control: no-cache'
-  -H 'content-type: application/json'
+  https://{host}.bookingbug.com/api/v1/admin/{company_id}/company \
+  -H 'app-id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'auth-token: {auth-token}' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
   -d '{
     "name": "Child Branch",
 	  "description": "This is a sample description of a company",
@@ -641,13 +641,13 @@ When a company delete API call is executed, it performs a soft delete on a Compa
 <pre>DELETE /api/v1/admin/{company_id}/company</pre>
 
 ```
-curl -X DELETE
-https://host.bookingbug.com/api/v1/admin/{company_id}/company
--H 'app-id: {app-id}'
--H 'App-Key: {app-key}'
--H 'auth-token: {auth-token}'
--H 'cache-control: no-cache'
--H 'content-type: application/json'
+curl -X DELETE \
+https://host.bookingbug.com/api/v1/admin/{company_id}/company \
+-H 'app-id: {app-id}' \
+-H 'App-Key: {app-key}' \
+-H 'auth-token: {auth-token}' \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
 ```
 
 ## Find By Ref
@@ -659,13 +659,13 @@ It is possible to query a company API endpoint to find a particular company by t
 <pre>GET /api/v1/admin/{company_id}/company/find_by_ref/{ref}</pre>
 
 ```
-curl -X GET
-https://host.bookingbug.com/admin/{company_id}/company/find_by_ref/{ref}
--H 'app-id: {app-id}'
--H 'App-Key: {app-key}'
--H 'auth-token: {auth-token}'
--H 'cache-control: no-cache'
--H 'content-type: application/json'
+curl -X GET \
+ https://host.bookingbug.com/admin/{company_id}/company/find_by_ref/{ref} \
+-H 'app-id: {app-id}' \
+-H 'App-Key: {app-key}' \
+-H 'auth-token: {auth-token}' \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
 ```
 
 ## Settings
@@ -684,10 +684,12 @@ You can retrieve settings block for a company. This is useful for checking if th
 <pre>
 
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/settings"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/settings \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
 ```
 
 </pre>
@@ -738,19 +740,19 @@ Read one address
     <div class="tab">
         <div id="tab-1" class="tab__content">
 <pre>
-
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/addresses"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/addresses \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
 ```
-
 </pre>
         </div>
         <div id="tab-2" class="tab__content">
 <pre>
-
 ```
 {
   "total_entries": 2,

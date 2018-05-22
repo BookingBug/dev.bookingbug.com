@@ -50,16 +50,19 @@ The API enables you to create a service. You must be an administrator to create,
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
+  curl -X POST \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/services \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   -d '{
     "name": "Test Service",
     "reference": "TS001",
     "duration": "60",
     "spaces": "1"
   }'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/services"
   ```
 </pre>
         </div>
@@ -85,10 +88,12 @@ You can list services configured in your company in your bookingbug account. The
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/services"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/services \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -198,10 +203,12 @@ The service read method enables you to view a particular service. Once again the
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/services/{id}"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/services/{id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -261,16 +268,19 @@ You can update the service. The parameters stated below are supported. You must 
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
+  curl -X PUT \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/{id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   -d '{
     "name": "Test Service",
     "reference": "TS001",
     "duration": "60",
     "spaces": "1"
   }'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/{id}"
   ```
 </pre>
         </div>
@@ -293,10 +303,13 @@ You can delete a service. You must be authenticated as an administrator.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/{id}"
+  curl -X DELETE \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/{id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -321,10 +334,13 @@ You can query the service end-point to find a particular service with their refe
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/find_by_ref/TA123456"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/services/find_by_ref/TA123456 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {token-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>

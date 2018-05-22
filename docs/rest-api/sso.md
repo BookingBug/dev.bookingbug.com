@@ -280,21 +280,27 @@ There are two end-points to login using the SSO Token. See below.
 ### Member Login
 
 ```
-curl -X POST -H "App-Id: app-id" -H "App-Key: app-key" 
--H "Content-Type: application/json" 
--H "Cache-Control: no-cache" 
+curl -X POST \
+ https://{host}.bookingbug.com/api/v1/login/sso/{company_id} \
+-H 'App-Id: app-id' \
+-H 'App-Key: app-key' \ 
+-H 'Content-Type: application/json' \
+-H 'Cache-Control: no-cache' \
 -d '{
     "token": "{SSO Token}"
-}' "https://{host}.bookingbug.com/api/v1/login/sso/{company_id}"
+}'
 ```
 
 ### Admin Login 
 
 ```
-curl -X POST -H "App-Id: app-id" -H "App-Key: app-key" 
--H "Content-Type: application/json" 
--H "Cache-Control: no-cache" 
+curl -X POST \
+ https://{host}.bookingbug.com/api/v1/login/admin_sso/{company_id} \
+-H 'App-Id: app-id' \
+-H 'App-Key: app-key' \ 
+-H 'Content-Type: application/json' \
+-H 'Cache-Control: no-cache' \
 -d '{
     "token": "{SSO Token}"
-}' "https://{host}.bookingbug.com/api/v1/login/admin_sso/{company_id}"
+}'
 ```

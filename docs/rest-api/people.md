@@ -82,9 +82,13 @@ The API enables an admin to create a person. The following parameters listed bel
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
+  curl -X POST \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/people \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   -d '{
     "name": "Test Staff",
     "description": "Test description"
@@ -94,7 +98,6 @@ The API enables an admin to create a person. The following parameters listed bel
     "reference": "123400",
     "notify": false
   }'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people"
   ```
 </pre>
         </div>
@@ -183,9 +186,13 @@ You can update information of a person. The parameters stated below are supporte
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
+  curl -X PUT \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   -d '{
     "name": "Test Staff 1",
     "description": "Test description 1"
@@ -194,7 +201,6 @@ You can update information of a person. The parameters stated below are supporte
     "phone": "07912345678",
     "reference": "123400"
   }'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}"
   ```
 </pre>
         </div>
@@ -249,10 +255,13 @@ There are two different ways of listing people. The first method is using the ad
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people?page=1&per_page=50&include_disabled=false"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/people?page=1&per_page=50&include_disabled=false \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -490,10 +499,13 @@ The person read method enables you to view a particular staff's information. Onc
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -518,10 +530,13 @@ You can delete a person using the API method below.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}"
+  curl -X DELETE \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -544,10 +559,13 @@ You can query the people end-point to find a particular staff with their referen
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/find_by_ref/{ref}"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/find_by_ref/{ref} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {token-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -642,14 +660,17 @@ You can block a time slot for a person in their calendar. The following paramete
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}/block \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {token-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   -d '{
   	"start_time": "2017-09-07T11:00:00",
 	"end_time": "2017-09-07T12:00:00"
   }'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}/block"
   ```
 </pre>
         </div>
@@ -710,10 +731,13 @@ You can read a person's image. The image must be uploaded first from the backend
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/media/person_images/{person_id}"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/media/person_images/{person_id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {token-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>

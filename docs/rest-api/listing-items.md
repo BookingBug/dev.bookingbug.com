@@ -68,9 +68,12 @@ You can list the staff (people) members configured for a company. These are peop
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/people"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/people \
+   -H 'App-Id: {app-id}' \
+   -H 'App-Key: {app-key}' \
+   -H 'Content-Type: application/json' \
+   -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -136,9 +139,12 @@ You can list the services configured for a company. As per our example above the
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/services"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/services \
+   -H 'App-Id: {app-id}' \
+   -H 'App-Key: {app-key}' \
+   -H 'Content-Type: application/json' \
+   -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -233,9 +239,12 @@ You can list resources configured for a company. Resources are physical bookable
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/services"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/resources \
+   -H 'App-Id: {app-id}' \
+   -H 'App-Key: {app-key}' \
+   -H 'Content-Type: application/json' \
+   -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
