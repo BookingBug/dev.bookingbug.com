@@ -17,12 +17,13 @@ The LIST end-point will return a list of all administrators based on the company
 <pre>
 ```
 curl -X GET \
-'https://apidemo.bookingbug.com/api/v1/admin/37003/administrators?page=1&per_page=30' \
+ https://{host}.bookingbug.com/api/v1/admin/{company_id}/administrators?page=1&per_page=30 \
+-H 'App-id: {app-id}' \
+-H 'App-key: {app-key}' \
+-H 'auth-token: {auth-token}' \
+-H 'content-type: application/json' \
 -H 'Cache-Control: no-cache' \
--H 'app-id: c2dc0990f7a7d42078547c650ad0c02d96c07accbe6d' \
--H 'auth-token: _NfZCPvjOGZdhglZt15n7Q' \
--H 'content-type: application/json'
-  ```
+```
 </pre>
         </div>
         <div id="tab-2" class="tab__content">
@@ -48,11 +49,12 @@ response here
 <pre>
 ```
 curl -X GET \
-  https://apidemo.bookingbug.com/api/v1/admin/37003/administrators/12 \
+  https://{host}.bookingbug.com/api/v1/admin/{company_id}/administrators/12 \
+  -H 'App-id: {app-id}' \
+  -H 'App-key: {app-key}' \
+  -H 'auth-token: {auth-token}' \
+  -H 'content-type: application/json' \
   -H 'Cache-Control: no-cache' \
-  -H 'app-id: c2dc0990f7a7d42078547c650ad0c02d96c07accbe6d' \
-  -H 'auth-token: _NfZCPvjOGZdhglZt15n7Q' \
-  -H 'content-type: application/json'
   ```
 </pre>
         </div>
@@ -72,43 +74,42 @@ This is an example of how it is possible to create an Administrator account.
 
 #### Parameters
 
-        <table class="pure-table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Datatype</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>name</td>
-                        <td>string</td>
-                        <td>Name of the administrator</td>
-                    </tr>
-                    <tr>
-                        <td>email</td>
-                        <td>string</td>
-                        <td>Email of the administrator</td>
-                    </tr>
-                    <tr>
-                        <td>role</td>
-                        <td>string</td>
-                        <td>Role of the Administrator, "owner", "admin, "user", "callcentre"</td>
-                    </tr>
-                    <tr>
-                        <td>password</td>
-                        <td>string</td>
-                        <td>Password_for_the_administrator</td>
-                    </tr>
-                    <tr>
-                        <td>password_confirmation</td>
-                        <td>string</td>
-                        <td>Password_for_the_administrator</td>
-                    </tr>
-                </tbody>
-            </table>
+<table class="pure-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Datatype</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Name of the administrator</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>string</td>
+      <td>Email of the administrator</td>
+    </tr>
+    <tr>
+      <td>role</td>
+      <td>string</td>
+      <td>Role of the Administrator, "owner", "admin, "user", "callcentre"</td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td>string</td>
+      <td>Password_for_the_administrator</td>
+    </tr>
+    <tr>
+      <td>password_confirmation</td>
+      <td>string</td>
+      <td>Password_for_the_administrator</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="tabs">
   <ul class="tabs__menu">
@@ -119,11 +120,12 @@ This is an example of how it is possible to create an Administrator account.
 <pre>
 ```
 curl -X GET \
-https://apidemo.bookingbug.com/api/v1/admin/37003/administrators/12 \
--H 'Cache-Control: no-cache' \
--H 'app-id: c2dc0990f7a7d42078547c650ad0c02d96c07accbe6d' \
--H 'auth-token: _NfZCPvjOGZdhglZt15n7Q' \
--H 'content-type: application/json'
+https://{host}.bookingbug.com/api/v1/admin/{company_id}/administrators/12 \
+  -H 'App-id: {app-id}' \
+  -H 'App-key: {app-key}' \
+  -H 'auth-token: {auth-token}' \
+  -H 'content-type: application/json' \
+  -H 'Cache-Control: no-cache' \
 ```
 </pre>
         </div>
@@ -144,33 +146,32 @@ Please proceed with caution and ensure that there is another admin who can admin
 
 #### Parameters
 
-        <table class="pure-table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Datatype</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>name</td>
-                        <td>string</td>
-                        <td>Name of the administrator (required when updating an administrator)</td>
-                    </tr>
-                    <tr>
-                        <td>role</td>
-                        <td>string</td>
-                        <td>Role of the Administrator, "owner", "admin, "user", "callcentre"</td>
-                    </tr>
-                    <tr>
-                        <td>reference</td>
-                        <td>string</td>
-                        <td>External reference</td>
-                    </tr>
-                </tbody>
-            </table>
+<table class="pure-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Datatype</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Name of the administrator (required when updating an administrator)</td>
+    </tr>
+    <tr>
+      <td>role</td>
+      <td>string</td>
+      <td>Role of the Administrator, "owner", "admin, "user", "callcentre"</td>
+    </tr>
+    <tr>
+      <td>reference</td>
+      <td>string</td>
+      <td>External reference</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="tabs">
   <ul class="tabs__menu">
@@ -181,11 +182,12 @@ Please proceed with caution and ensure that there is another admin who can admin
 <pre>
 ```
 curl -X PUT \
-  https://apidemo.bookingbug.com/api/v1/admin/37003/administrators/12 \
-  -H 'Cache-Control: no-cache' \
-  -H 'app-id: c2dc0990f7a7d42078547c650ad0c02d96c07accbe6d' \
-  -H 'auth-token: _NfZCPvjOGZdhglZt15n7Q' \
+  https://{host}.bookingbug.com/api/v1/admin/{company_id}/administrators/12 \
+  -H 'App-id: {app-id}' \
+  -H 'App-key: {app-key}' \
+  -H 'auth-token: {auth-token}' \
   -H 'content-type: application/json' \
+  -H 'Cache-Control: no-cache' \
   -d '{
 	"name": "John Smith",
 	"role": "admin",
@@ -215,11 +217,12 @@ response here
 <pre>
 ```
 curl -X GET \
-  https://apidemo.bookingbug.com/api/v1/admin/37003/administrators/find_by_ref/new_external_reference \
-  -H 'Cache-Control: no-cache' \
-  -H 'app-id: c2dc0990f7a7d42078547c650ad0c02d96c07accbe6d' \
-  -H 'auth-token: _NfZCPvjOGZdhglZt15n7Q' \
+  https://{host}.bookingbug.com/api/v1/admin/{company_id}/administrators/find_by_ref/new_external_reference \
+  -H 'App-id: {app-id}' \
+  -H 'App-key: {app-key}' \
+  -H 'auth-token: {auth-token}' \
   -H 'content-type: application/json' \
+  -H 'Cache-Control: no-cache' \
 ```
 </pre>
         </div>
@@ -244,11 +247,12 @@ response here
 <pre>
 ```
 curl -X DELETE \
-  https://apidemo.bookingbug.com/api/v1/admin/37003/administrators/12 \
-  -H 'Cache-Control: no-cache' \
-  -H 'app-id: c2dc0990f7a7d42078547c650ad0c02d96c07accbe6d' \
-  -H 'auth-token: _NfZCPvjOGZdhglZt15n7Q' \
+  https://{host}.bookingbug.com/api/v1/admin/{company_id}/administrators/12 \
+  -H 'App-id: {app-id}' \
+  -H 'App-key: {app-key}' \
+  -H 'auth-token: {auth-token}' \
   -H 'content-type: application/json' \
+  -H 'Cache-Control: no-cache' \
 ```
 </pre>
       </div>
@@ -261,33 +265,3 @@ response here
           </div>
           </div>
           </div>
-
-The cURL below is an example that will return back all available slots for a given service, start date and an end date.
-
-<div class="tabs">
-    <ul class="tabs__menu">
-        <li class="current"><a href="#tab-1">cURL</a></li>
-        <li><a href="#tab-2">Sample Response Data</a></li>
-    </ul>
-
-    <div class="tab">
-        <div id="tab-1" class="tab__content">
-<pre>
-```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/company_id/day_data?service_id=xxx&date=2016-13-12&edate=2016-20-12"
-  ```
-</pre>
-        </div>
-        <div id="tab-2" class="tab__content">
-<pre>
-```
-response here
-```
-</pre>
-        </div>
-        </div>
-        </div>
-
-**Note:** We recommend that you use shorter date range for better performance.
