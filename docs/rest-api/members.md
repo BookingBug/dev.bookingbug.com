@@ -27,10 +27,13 @@ Once authenticated you can view the members details with the following method.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-  -H "Auth-Token: {auth-token}"
-"https://{host}.bookingbug.com/api/v1/{company_id}/members/{member_id}"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/members/{member_id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -161,14 +164,17 @@ Below is a cURL call updating first and last name of a member.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Auth-token: {auth-token}"
-  -H "Cache-Control: no-cache"
+  curl -X PUT \
+   https://{host}.bookingbug.com/api/v1/{company_id}/members/{member_id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Content-Type: application/json' \
+  -H 'Auth-token: {auth-token}' \
+  -H 'Cache-Control: no-cache' \
   -d '{
   "first_name": "Bookingbug",
   "last_name": "User"
   }'
-"https://{host}.bookingbug.com/api/v1/{company_id}/members/{member_id}"
   ```
 </pre>
         </div>
@@ -239,10 +245,13 @@ A member can view their bookings using the following API method.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json"
-  -H "Auth-Token: {auth-token}"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/{company_id}/members/{member_id}/bookings?per_page=50&page=1"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/{company_id}/members/{member_id}/bookings?per_page=50&page=1
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
 

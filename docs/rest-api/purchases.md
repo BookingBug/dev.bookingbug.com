@@ -63,9 +63,13 @@ Below is a cURL example listing all purchases created after 2017-03-01 and befor
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
-  -H "Cache-Control: no-cache" -H "Auth-Token: {auth-token}"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/purchases?created_from=2017-03-01T09:00:00&created_to=2017-04-08T12:00:00"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/purchases?created_from=2017-03-01T09:00:00&created_to=2017-04-08T12:00:00 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json'  \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
 
@@ -89,9 +93,13 @@ Returns a booking purchase total. The response data also embeds the client (memb
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
-  -H "Cache-Control: no-cache" -H "Auth-Token: {auth-token}"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/purchases/11610441"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/purchases/11610441 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
 </div>

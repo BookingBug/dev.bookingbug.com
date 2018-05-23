@@ -132,9 +132,13 @@ The API enables an admin to create a client (customer). The following parameters
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X POST -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
+  curl -X POST \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/client \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   -d '{
     "first_name": "Test Name",
     "last_name": "Test surname",
@@ -144,7 +148,6 @@ The API enables an admin to create a client (customer). The following parameters
     "phone": "02032323232",
     "member_type": "2"
   }'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client"
   ```
 </pre>
         </div>
@@ -167,10 +170,13 @@ Above is an example cURL call creating a new client. If you would like to update
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/client \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -242,10 +248,13 @@ Above is an example cURL call for listing all the clients. By default it will li
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/{id}"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/{id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -270,10 +279,13 @@ You can delete a client.
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X DELETE -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/{id}"
+  curl -X DELETE \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/{id} \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -324,11 +336,16 @@ You can disable/enable a client using the API. The following parameters listed b
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X PUT -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {auth-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-  -d '{ "id": 123456, "disable": true}'
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client"
+  curl -X PUT \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/client \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -d '{
+   "id": 123456, "disable": true
+ }'
   ```
 </pre>
         </div>
@@ -351,10 +368,13 @@ You can query the client end-point to find a particular customer with their emai
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/find_by_email/j.oliver@test.com"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/find_by_email/j.oliver@test.com \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {token-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
@@ -406,10 +426,13 @@ You can query the client end-point to find a particular customer with their refe
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Auth-Token: {token-token}"
-  -H "Content-Type: application/json"
-  -H "Cache-Control: no-cache"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/find_by_ref/123456"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/client/find_by_ref/123456 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {token-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>

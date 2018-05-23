@@ -77,9 +77,13 @@ Below is a cURL example on how to retrieve slots for given date. This is an admi
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET -H "App-Id: {app-id}" -H "App-Key: {app-key}" -H "Content-Type: application/json" 
-  -H "Cache-Control: no-cache" -H "Auth-Token: {auth-token}"
-"https://{host}.bookingbug.com/api/v1/admin/{company_id}/slots?date=2017-02-27"
+  curl -X GET \
+   https://{host}.bookingbug.com/api/v1/admin/{company_id}/slots?date=2017-02-27 \
+  -H 'App-Id: {app-id}' \
+  -H 'App-Key: {app-key}' \ 
+  -H 'Auth-Token: {auth-token}' \
+  -H 'Content-Type: application/json' \
+  -H 'Cache-Control: no-cache' \
   ```
 </pre>
         </div>
