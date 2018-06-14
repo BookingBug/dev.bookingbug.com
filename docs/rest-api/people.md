@@ -660,7 +660,7 @@ You can block a time slot for a person in their calendar. The following paramete
         <div id="tab-1" class="tab__content">
 <pre>
 ```
-  curl -X GET \
+  curl -X PUT \
    https://{host}.bookingbug.com/api/v1/admin/{company_id}/people/{id}/block \
   -H 'App-Id: {app-id}' \
   -H 'App-Key: {app-key}' \ 
