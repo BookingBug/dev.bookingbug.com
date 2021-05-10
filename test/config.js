@@ -37,6 +37,7 @@ exports.config = {
      * desired capabilities
      */
     capabilities: {
+        // browserName: 'phantomjs'
         browserName: 'chrome'
     },
 
